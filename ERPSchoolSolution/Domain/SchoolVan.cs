@@ -44,7 +44,7 @@ namespace Domain
         }
         public bool IsValid()
         {
-            return true;
+            return (this.capacity>=1 && this.capacity<=15);
         }
         public override bool Equals(object aSchoolVan)
         {
