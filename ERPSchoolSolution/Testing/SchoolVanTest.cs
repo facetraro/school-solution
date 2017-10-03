@@ -4,7 +4,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Testing
 {
-
     [TestClass]
     public class SchoolVanTest
     {
@@ -13,8 +12,9 @@ namespace Testing
         {
             SchoolVan aVan = new SchoolVan();
             SchoolVan anotherVan = new SchoolVan();
-            aVan.Id = 1;
-            anotherVan.Id = 1;
+            int aTestId = 1;
+            aVan.Id = aTestId;
+            anotherVan.Id = aTestId;
             Assert.IsTrue(aVan.Equals(anotherVan));
         }
         [TestMethod]
@@ -22,8 +22,10 @@ namespace Testing
         {
             SchoolVan aVan = new SchoolVan();
             SchoolVan anotherVan = new SchoolVan();
-            aVan.Id = 1;
-            anotherVan.Id = 2;
+            int aTestId = 1;
+            int anotherTestId = 2;
+            aVan.Id = aTestId;
+            anotherVan.Id = anotherTestId;
             Assert.IsFalse(aVan.Equals(anotherVan));
         }
     }
