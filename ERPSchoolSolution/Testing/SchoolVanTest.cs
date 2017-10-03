@@ -28,5 +28,14 @@ namespace Testing
             anotherVan.Id = anotherTestId;
             Assert.IsFalse(aVan.Equals(anotherVan));
         }
+        [TestMethod]
+        public void CompareSchoolVanDifferentObject()
+        {
+            SchoolVan aVan = new SchoolVan();
+            SchoolVan anotherVan = new SchoolVan();
+            int test = 4;
+            aVan.Id = 1;
+            Assert.IsFalse(aVan.Equals(test));
+        }
     }
 }
