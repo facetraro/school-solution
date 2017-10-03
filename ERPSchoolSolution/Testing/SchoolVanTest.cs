@@ -51,7 +51,9 @@ namespace Testing
         [TestMethod]
         public void ValidSchoolVanCapacity()
         {
-            SchoolVan aVan = new SchoolVan(1, 10);
+            int aId = 1;
+            int capacity = 5;
+            SchoolVan aVan = new SchoolVan(aId, capacity);
             Assert.IsTrue(aVan.IsValid());
         }
     }
