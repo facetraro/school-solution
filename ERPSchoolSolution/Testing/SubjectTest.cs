@@ -1,14 +1,20 @@
 ﻿using System;
+using Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Testing
 {
     [TestClass]
-    public class UnitTest1
+    public class SubjectTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void CompareSubjectSuccess()
         {
+            Subject aSubject = new Subject();
+            aSubject.Code = "A3";
+            Subject anotherSubject = new Subject();
+            anotherSubject.Code = "A3";
+            Assert.IsTrue(aSubject.Equals(anotherSubject));
         }
     }
 }
