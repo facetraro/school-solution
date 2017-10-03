@@ -10,7 +10,10 @@ namespace Domain
     {
         public string Code { get; set; }
 
-
+        public bool IsValid()
+        {
+            return true;
+        }
        
         public override bool Equals(object aSubject)
         {
@@ -18,5 +21,6 @@ namespace Domain
             return (this.Code.Equals(theSubject.Code));
 
         }
+
     }
 }

@@ -28,5 +28,16 @@ namespace Testing
             anotherSubject.Code = subject2;
             Assert.IsFalse(aSubject.Equals(anotherSubject));
         }
+        [TestMethod]
+        public void SubjectCodeNotEmpty()
+        {
+            Subject aSubject = new Subject();
+            aSubject.Code = null;
+            Assert.IsFalse(aSubject.IsValid());
+        }
+      /*  public void ConstructorSubjectSuccess()
+        {
+            Subject aSubject = new Subject()
+        }*/
     }
 }
