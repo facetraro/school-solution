@@ -17,5 +17,14 @@ namespace Testing
             anotherVan.Id = 1;
             Assert.IsTrue(aVan.Equals(anotherVan));
         }
+        [TestMethod]
+        public void CompareSchoolVanFail()
+        {
+            SchoolVan aVan = new SchoolVan();
+            SchoolVan anotherVan = new SchoolVan();
+            aVan.Id = 1;
+            anotherVan.Id = 2;
+            Assert.IsTrue(aVan.Equals(anotherVan));
+        }
     }
 }
