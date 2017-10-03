@@ -48,5 +48,11 @@ namespace Testing
             anotherVan.Id = aId;
             Assert.IsTrue(aVan.Equals(anotherVan));
         }
+        [TestMethod]
+        public void ValidSchoolVanCapacity()
+        {
+            SchoolVan aVan = new SchoolVan(1, 10);
+            Assert.IsTrue(aVan.IsValid());
+        }
     }
 }
