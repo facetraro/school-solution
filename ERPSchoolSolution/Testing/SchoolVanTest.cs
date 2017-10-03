@@ -33,8 +33,9 @@ namespace Testing
         {
             SchoolVan aVan = new SchoolVan();
             SchoolVan anotherVan = new SchoolVan();
+            int aTestId = 1;
             int test = 4;
-            aVan.Id = 1;
+            aVan.Id = aTestId;
             Assert.IsFalse(aVan.Equals(test));
         }
     }
