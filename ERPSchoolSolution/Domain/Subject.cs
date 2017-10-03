@@ -12,7 +12,7 @@ namespace Domain
 
         public bool IsValid()
         {
-            return true;
+            return this.Code != null;
         }
        
         public override bool Equals(object aSubject)

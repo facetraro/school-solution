@@ -35,9 +35,6 @@ namespace Testing
             aSubject.Code = null;
             Assert.IsFalse(aSubject.IsValid());
         }
-      /*  public void ConstructorSubjectSuccess()
-        {
-            Subject aSubject = new Subject()
-        }*/
+
     }
 }
