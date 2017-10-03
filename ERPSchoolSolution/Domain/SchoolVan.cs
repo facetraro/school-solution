@@ -23,6 +23,10 @@ namespace Domain
         public override bool Equals(object aSchoolVan)
         {
             SchoolVan theSchoolVan = aSchoolVan as SchoolVan;
+            if ((System.Object)theSchoolVan == null)
+            {
+                return false;
+            }
             return (this.Id == theSchoolVan.Id);
         }
     }
