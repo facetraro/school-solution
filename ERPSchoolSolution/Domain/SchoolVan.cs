@@ -22,7 +22,8 @@ namespace Domain
         }
         public override bool Equals(object aSchoolVan)
         {
-           return true;
+            SchoolVan theSchoolVan = aSchoolVan as SchoolVan;
+            return (this.Id == theSchoolVan.Id);
         }
     }
 }

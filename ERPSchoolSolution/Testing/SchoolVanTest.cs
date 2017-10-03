@@ -24,7 +24,7 @@ namespace Testing
             SchoolVan anotherVan = new SchoolVan();
             aVan.Id = 1;
             anotherVan.Id = 2;
-            Assert.IsTrue(aVan.Equals(anotherVan));
+            Assert.IsFalse(aVan.Equals(anotherVan));
         }
     }
 }
