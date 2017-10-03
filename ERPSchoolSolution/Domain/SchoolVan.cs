@@ -42,6 +42,10 @@ namespace Domain
                 this.capacity = value;
             }
         }
+        public bool IsValid()
+        {
+            return true;
+        }
         public override bool Equals(object aSchoolVan)
         {
             SchoolVan theSchoolVan = aSchoolVan as SchoolVan;
