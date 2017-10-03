@@ -21,9 +21,11 @@ namespace Testing
         public void CompareSubjectFail()
         {
             Subject aSubject = new Subject();
-            aSubject.Code = "A3";
+            string subject1= "A3";
+            string subject2 = "A2";
+            aSubject.Code = subject1;
             Subject anotherSubject = new Subject();
-            anotherSubject.Code = "A2";
+            anotherSubject.Code = subject2;
             Assert.IsFalse(aSubject.Equals(anotherSubject));
         }
     }
