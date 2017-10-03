@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPSchoolUI", "ERPSchoolUI\ERPSchoolUI.csproj", "{24E31082-B768-4B47-B8F7-3AB39027739E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{45F2AA8B-ADB7-460D-953B-7CA52E2C0588}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{69D22703-8978-435A-AC82-91F488D22370}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{24E31082-B768-4B47-B8F7-3AB39027739E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24E31082-B768-4B47-B8F7-3AB39027739E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24E31082-B768-4B47-B8F7-3AB39027739E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45F2AA8B-ADB7-460D-953B-7CA52E2C0588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45F2AA8B-ADB7-460D-953B-7CA52E2C0588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45F2AA8B-ADB7-460D-953B-7CA52E2C0588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45F2AA8B-ADB7-460D-953B-7CA52E2C0588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69D22703-8978-435A-AC82-91F488D22370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69D22703-8978-435A-AC82-91F488D22370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69D22703-8978-435A-AC82-91F488D22370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69D22703-8978-435A-AC82-91F488D22370}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
