@@ -8,11 +8,21 @@ namespace Domain
 {
     public class SchoolVan
     {
-        public int Id { get; set; }
-
+        private int id;
+        public int Id
+        {
+            get
+            {
+                return this.id;
+            }
+            set
+            {
+                this.id = value;
+            }
+        }
         public override bool Equals(object aSchoolVan)
         {
-            return true;
+           return true;
         }
     }
 }
