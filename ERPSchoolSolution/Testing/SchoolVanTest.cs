@@ -38,5 +38,13 @@ namespace Testing
             aVan.Id = aTestId;
             Assert.IsFalse(aVan.Equals(test));
         }
+        [TestMethod]
+        public void ConstructorSchoolVanIdSuccess()
+        {
+            SchoolVan aVan = new SchoolVan(1, 1);
+            SchoolVan anotherVan = new SchoolVan();
+            anotherVan.Id = 1;
+            Assert.IsFalse(aVan.Equals(anotherVan));
+        }
     }
 }
