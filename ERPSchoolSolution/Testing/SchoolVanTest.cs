@@ -56,5 +56,13 @@ namespace Testing
             SchoolVan aVan = new SchoolVan(aId, capacity);
             Assert.IsTrue(aVan.IsValid());
         }
+        [TestMethod]
+        public void OutOfBandsSchoolVanCapacity()
+        {
+            int aId = 1;
+            int capacity = 2000;
+            SchoolVan aVan = new SchoolVan(aId, capacity);
+            Assert.IsFalse(aVan.IsValid());
+        }
     }
 }
