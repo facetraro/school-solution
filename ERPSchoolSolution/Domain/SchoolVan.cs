@@ -9,7 +9,7 @@ namespace Domain
     public class SchoolVan
     {
         private int id;
-        private int Capacity { get; set; }
+        private int capacity;
         public SchoolVan()
         {
             this.Id = 0;
@@ -29,6 +29,17 @@ namespace Domain
             set
             {
                 this.id = value;
+            }
+        }
+        public int Capacity
+        {
+            get
+            {
+                return this.capacity;
+            }
+            set
+            {
+                this.capacity = value;
             }
         }
         public override bool Equals(object aSchoolVan)

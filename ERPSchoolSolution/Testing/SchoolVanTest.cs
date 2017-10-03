@@ -41,9 +41,11 @@ namespace Testing
         [TestMethod]
         public void ConstructorSchoolVanIdSuccess()
         {
-            SchoolVan aVan = new SchoolVan(1, 1);
+            int aId = 1;
+            int capacity = 5;
+            SchoolVan aVan = new SchoolVan(aId, capacity);
             SchoolVan anotherVan = new SchoolVan();
-            anotherVan.Id = 1;
+            anotherVan.Id = aId;
             Assert.IsTrue(aVan.Equals(anotherVan));
         }
     }
