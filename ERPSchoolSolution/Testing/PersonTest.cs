@@ -1,14 +1,19 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using Domain;
 namespace Testing
 {
     [TestClass]
-    public class UnitTest1
+    public class PersonTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ComparePersonSuccess()
         {
+            Person aPerson = new Person();
+            aPerson.Id = 123;
+            Person anotherPerson = new Person();
+            anotherPerson.Id = 123;
+            Assert.IsTrue(aPerson.Equals(anotherPerson));
         }
     }
 }
