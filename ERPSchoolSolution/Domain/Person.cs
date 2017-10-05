@@ -9,6 +9,20 @@ namespace Domain
     public class Person
     {
         public int Id { get; set; }
+        public String Name { get; set; }
+        public String LastName { get; set; }
+        public Person()
+        {
+            Id = 0;
+            Name = "";
+            LastName = "";
+        }
+        public Person(int id, string name, string lastname)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.LastName = lastname;
+        }
         public override bool Equals(object aPerson)
         {
             Person thePerson = aPerson as Person;

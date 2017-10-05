@@ -19,7 +19,7 @@ namespace Testing
         [TestMethod]
         public void PersonConstructorTest()
         {
-            int testId = "123";
+            int testId = 123;
             string testName = "Charly";
             string testLastName = "Garcia";
             Person aPerson = new Person();
