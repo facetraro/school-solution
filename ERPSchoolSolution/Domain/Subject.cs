@@ -9,18 +9,19 @@ namespace Domain
     public class Subject
     {
         public string Code { get; set; }
-
-        public bool IsValid()
+        public bool IsCodeValid()
         {
             return this.Code != null;
         }
-       
+        public bool IsValid()
+        {
+            return IsCodeValid();
+        }
         public override bool Equals(object aSubject)
         {
             Subject theSubject = aSubject as Subject;
             return (this.Code.Equals(theSubject.Code));
 
         }
-
     }
 }

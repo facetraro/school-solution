@@ -35,6 +35,5 @@ namespace Testing
             aSubject.Code = null;
             Assert.IsFalse(aSubject.IsValid());
         }
-
     }
 }
