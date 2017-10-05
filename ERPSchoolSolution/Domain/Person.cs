@@ -14,8 +14,8 @@ namespace Domain
         public Person()
         {
             Id = 0;
-            Name = "";
-            LastName = "";
+            Name = "defaultname";
+            LastName = "defaultlastname";
         }
         public Person(int id, string name, string lastname)
         {
