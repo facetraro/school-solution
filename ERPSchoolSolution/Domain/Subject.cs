@@ -9,6 +9,17 @@ namespace Domain
     public class Subject
     {
         public string Code { get; set; }
+        public string Name { get; set; }
+        public Subject()
+        {
+            this.Code = "";
+            this.Name = "";
+        }
+        public Subject(string code, string name)
+        {
+            this.Code = code;
+            this.Name = name;
+        }
         public bool IsCodeValid()
         {
             return this.Code != null;
