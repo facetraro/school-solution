@@ -18,5 +18,6 @@ namespace Domain
             }
             return (this.Id == thePerson.Id);
         }
+
     }
 }

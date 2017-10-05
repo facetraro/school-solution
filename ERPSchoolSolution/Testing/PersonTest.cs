@@ -15,5 +15,19 @@ namespace Testing
             anotherPerson.Id = 123;
             Assert.IsTrue(aPerson.Equals(anotherPerson));
         }
+
+        [TestMethod]
+        public void PersonConstructorTest()
+        {
+            int testId = "123";
+            string testName = "Charly";
+            string testLastName = "Garcia";
+            Person aPerson = new Person();
+            aPerson.Id = testId;
+            aPerson.Name = testName;
+            aPerson.LastName = testLastName;
+            Person anotherPerson = new Person(123, "Charly", "Garcia");
+            Assert.IsTrue(aPerson.Equals(anotherPerson));
+        }
     }
 }
