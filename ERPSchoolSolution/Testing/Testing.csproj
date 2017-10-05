@@ -50,13 +50,19 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SchoolVanTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubjectTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{0320b488-9247-4f8a-938c-3418358858b2}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{69d22703-8978-435a-ac82-91f488d22370}</Project>
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
