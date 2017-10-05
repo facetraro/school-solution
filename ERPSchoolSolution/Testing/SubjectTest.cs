@@ -35,5 +35,14 @@ namespace Testing
             aSubject.Code = null;
             Assert.IsFalse(aSubject.IsValid());
         }
+        [TestMethod]
+        public void SubjectConstructorSuccess()
+        {
+            Subject aSubject = new Subject();
+            aSubject.Code="AJ55";
+            aSubject.Name = "Mathematics";
+            Subject anotherSubject = new Subject("AJ55","Mathematics");
+            Assert.IsTrue(aSubject.Equals(anotherSubject));
+        }
     }
 }
