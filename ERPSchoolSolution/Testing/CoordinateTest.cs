@@ -11,11 +11,13 @@ namespace Testing
         public void CompareCoordinateSuccess()
         {
             Coordinate aCoordinate = new Coordinate();
-            aCoordinate.X = 1;
+            int xCoordinateTest = 1;
+            int yCoordinateTest = 1;
+            aCoordinate.X = xCoordinateTest;
             aCoordinate.Y = 1;
             Coordinate anotherCoordinate = new Coordinate();
-            aCoordinate.X = 1;
-            aCoordinate.Y = 1;
+            aCoordinate.X = xCoordinateTest;
+            aCoordinate.Y = yCoordinateTest;
             Assert.IsTrue(aCoordinate.Equals(anotherCoordinate));
         }
     }
