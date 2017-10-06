@@ -46,7 +46,7 @@ namespace Domain
         }
         public int GetDistanceOf(Coordinate aCoordinate)
         {
-            return GetDistanceX(aCoordinate.X);
+            return GetDistanceX(aCoordinate.X) + Math.Abs(aCoordinate.Y - this.Y);
         }
         public override bool Equals(object aCoordinate)
         {
