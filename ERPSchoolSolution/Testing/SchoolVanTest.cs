@@ -57,7 +57,8 @@ namespace Testing
             SchoolVan aVan = new SchoolVan();
             aVan.Id = aId;
             aVan.Capacity = capacity;
-            Assert.IsTrue(aVan.IsValid());
+            SchoolVanValidator validator=new SchoolVanValidator();
+            Assert.IsTrue(validator.IsValid(aVan));
         }
         [TestMethod]
         public void OutOfBandsSchoolVanCapacity()
@@ -67,7 +68,8 @@ namespace Testing
             SchoolVan aVan = new SchoolVan();
             aVan.Id = aId;
             aVan.Capacity = capacity;
-            Assert.IsFalse(aVan.IsValid());
+            SchoolVanValidator validator = new SchoolVanValidator();
+            Assert.IsFalse(validator.IsValid(aVan));
         }
     }
 }

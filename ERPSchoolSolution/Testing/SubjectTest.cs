@@ -33,7 +33,8 @@ namespace Testing
         {
             Subject aSubject = new Subject();
             aSubject.Code = null;
-            Assert.IsFalse(aSubject.IsValid());
+            SubjectValidator validator = new SubjectValidator();
+            Assert.IsFalse(validator.IsValid(aSubject));
         }
         [TestMethod]
         public void SubjectConstructorSuccess()

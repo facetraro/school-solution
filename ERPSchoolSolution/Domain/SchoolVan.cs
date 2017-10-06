@@ -10,8 +10,6 @@ namespace Domain
     {
         private int id;
         private int capacity;
-        private static int MAX_CAPACITY = 15;
-        private static int MIN_CAPACITY = 1;
         public SchoolVan()
         {
             this.Id = 0;
@@ -39,14 +37,7 @@ namespace Domain
                 this.capacity = value;
             }
         }
-        private bool validCapacity()
-        {
-            return (this.capacity >= MIN_CAPACITY && this.capacity <= MAX_CAPACITY);
-        }
-        public bool IsValid()
-        {
-            return validCapacity();
-        }
+        
         public override bool Equals(object aSchoolVan)
         {
             SchoolVan theSchoolVan = aSchoolVan as SchoolVan;

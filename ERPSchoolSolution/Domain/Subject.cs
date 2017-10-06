@@ -15,14 +15,7 @@ namespace Domain
             this.Code = "";
             this.Name = "";
         }
-        public bool IsCodeValid()
-        {
-            return this.Code != null;
-        }
-        public bool IsValid()
-        {
-            return IsCodeValid();
-        }
+       
         public override bool Equals(object aSubject)
         {
             Subject theSubject = aSubject as Subject;
