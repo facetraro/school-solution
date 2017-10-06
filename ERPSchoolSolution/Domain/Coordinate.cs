@@ -10,7 +10,6 @@ namespace Domain
     {
         public int X { get; set; }
         public int Y { get; set; }
-
         private bool CompareX(int xPosition)
         {
             return this.X == xPosition;
@@ -19,8 +18,10 @@ namespace Domain
         {
             return this.Y == yPosition;
         }
-        
-
+        public int GetDistanceOf(Coordinate aCoordinate)
+        {
+            return 0;
+        }
         public override bool Equals(object aCoordinate)
         {
             Coordinate theCoordinate = aCoordinate as Coordinate;

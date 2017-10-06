@@ -48,7 +48,8 @@ namespace Testing
             Coordinate anotherCoordinate = new Coordinate();
             anotherCoordinate.X = xDifferentCoordinateTest;
             anotherCoordinate.Y = yDifferentCoordinateTest;
-            Assert.IsTrue(aCoordinate.GetDistanceOf(anotherCoordinate));
+            int coordinateDistance = aCoordinate.GetDistanceOf(anotherCoordinate);
+            Assert.IsTrue(coordinateDistance==0);
         }
     }
 }
