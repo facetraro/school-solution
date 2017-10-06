@@ -44,9 +44,13 @@ namespace Domain
         {
             return Math.Abs(xPosition - this.X);
         }
+        private int GetDistanceY(int yPosition)
+        {
+            return Math.Abs(yPosition - this.Y);
+        }
         public int GetDistanceOf(Coordinate aCoordinate)
         {
-            return GetDistanceX(aCoordinate.X) + Math.Abs(aCoordinate.Y - this.Y);
+            return GetDistanceX(aCoordinate.X) + GetDistanceY(aCoordinate.Y);
         }
         public override bool Equals(object aCoordinate)
         {
