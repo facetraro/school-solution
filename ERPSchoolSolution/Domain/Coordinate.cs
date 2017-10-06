@@ -18,9 +18,13 @@ namespace Domain
         {
             return this.Y == yPosition;
         }
+        private int GetDistanceX(int xPosition)
+        {
+            return xPosition - this.X;
+        }
         public int GetDistanceOf(Coordinate aCoordinate)
         {
-            return aCoordinate.X-this.X;
+            return GetDistanceX(aCoordinate.X);
         }
         public override bool Equals(object aCoordinate)
         {
