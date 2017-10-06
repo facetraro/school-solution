@@ -20,7 +20,7 @@ namespace Domain
         }
         public int GetDistanceOf(Coordinate aCoordinate)
         {
-            return 0;
+            return aCoordinate.X-this.X;
         }
         public override bool Equals(object aCoordinate)
         {

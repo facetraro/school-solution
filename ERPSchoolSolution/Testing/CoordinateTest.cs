@@ -66,7 +66,7 @@ namespace Testing
             anotherCoordinate.X = xDifferentCoordinateTest;
             anotherCoordinate.Y = yDifferentCoordinateTest;
             int coordinateDistance = aCoordinate.GetDistanceOf(anotherCoordinate);
-            int expectedDistance = 9;
+            int expectedDistance = 4;
             Assert.IsTrue(coordinateDistance == expectedDistance);
         }
     }
