@@ -86,5 +86,24 @@ namespace Testing
             int expectedDistance = 4;
             Assert.IsTrue(coordinateDistance == expectedDistance);
         }
+        [TestMethod]
+        public void GetDistanceOf4SuccessTest()
+        {
+            Coordinate aCoordinate = new Coordinate();
+            int xCoordinateTest = 4;
+            int yCoordinateTest = 0;
+            int xDifferentCoordinateTest = 0;
+            int yDifferentCoordinateTest = 3;
+            aCoordinate.X = xCoordinateTest;
+            aCoordinate.Y = yCoordinateTest;
+            Coordinate anotherCoordinate = new Coordinate();
+            anotherCoordinate.X = xDifferentCoordinateTest;
+            anotherCoordinate.Y = yDifferentCoordinateTest;
+            int coordinateDistance = aCoordinate.GetDistanceOf(anotherCoordinate);
+            int expectedDistance = 7;
+            Assert.IsTrue(coordinateDistance == expectedDistance);
+        }
+
+
     }
 }
