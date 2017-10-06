@@ -20,7 +20,7 @@ namespace Domain
         }
         private int GetDistanceX(int xPosition)
         {
-            return xPosition - this.X;
+            return Math.Abs(xPosition - this.X);
         }
         public int GetDistanceOf(Coordinate aCoordinate)
         {
