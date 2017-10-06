@@ -16,8 +16,8 @@ namespace Testing
             aCoordinate.X = xCoordinateTest;
             aCoordinate.Y = 1;
             Coordinate anotherCoordinate = new Coordinate();
-            aCoordinate.X = xCoordinateTest;
-            aCoordinate.Y = yCoordinateTest;
+            anotherCoordinate.X = xCoordinateTest;
+            anotherCoordinate.Y = yCoordinateTest;
             Assert.IsTrue(aCoordinate.Equals(anotherCoordinate));
         }
         [TestMethod]
@@ -31,8 +31,8 @@ namespace Testing
             aCoordinate.X = xCoordinateTest;
             aCoordinate.Y = 1;
             Coordinate anotherCoordinate = new Coordinate();
-            aCoordinate.X = xDifferentCoordinateTest;
-            aCoordinate.Y = yDifferentCoordinateTest;
+            anotherCoordinate.X = xDifferentCoordinateTest;
+            anotherCoordinate.Y = yDifferentCoordinateTest;
             Assert.IsFalse(aCoordinate.Equals(anotherCoordinate));
         }
     }

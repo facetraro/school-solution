@@ -13,7 +13,8 @@ namespace Domain
 
         public override bool Equals(object aCoordinate)
         {
-            return true;
+            Coordinate theCoordinate = aCoordinate as Coordinate;
+            return (this.X == theCoordinate.X && this.Y==theCoordinate.Y);
         }
     }
 }
