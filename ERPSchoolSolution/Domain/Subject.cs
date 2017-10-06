@@ -15,11 +15,6 @@ namespace Domain
             this.Code = "";
             this.Name = "";
         }
-        public Subject(string code, string name)
-        {
-            this.Code = code;
-            this.Name = name;
-        }
         public bool IsCodeValid()
         {
             return this.Code != null;

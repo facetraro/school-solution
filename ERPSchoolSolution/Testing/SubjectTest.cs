@@ -43,8 +43,8 @@ namespace Testing
             Subject aSubject = new Subject();
             aSubject.Code = testCode;
             aSubject.Name = testName;
-            Subject anotherSubject = new Subject("AJ55", "Mathematics");
-            Assert.IsTrue(aSubject.Equals(anotherSubject));
+            Assert.IsTrue(aSubject.Code.Equals(testCode));
+            Assert.IsTrue(aSubject.Name.Equals(testName));
         }
 
     }

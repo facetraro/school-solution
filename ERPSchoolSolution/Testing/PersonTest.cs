@@ -26,8 +26,9 @@ namespace Testing
             aPerson.Id = testId;
             aPerson.Name = testName;
             aPerson.LastName = testLastName;
-            Person anotherPerson = new Person(123, "Charly", "Garcia");
-            Assert.IsTrue(aPerson.Equals(anotherPerson));
+            Assert.IsTrue(aPerson.Id.Equals(testId));
+            Assert.IsTrue(aPerson.Name.Equals(testName));
+            Assert.IsTrue(aPerson.LastName.Equals(testLastName));
         }
     }
 }

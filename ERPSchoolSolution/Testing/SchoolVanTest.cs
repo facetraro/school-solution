@@ -43,17 +43,20 @@ namespace Testing
         {
             int aId = 1;
             int capacity = 5;
-            SchoolVan aVan = new SchoolVan(aId, capacity);
-            SchoolVan anotherVan = new SchoolVan();
-            anotherVan.Id = aId;
-            Assert.IsTrue(aVan.Equals(anotherVan));
+            SchoolVan aVan = new SchoolVan();
+            aVan.Id = aId;
+            aVan.Capacity = capacity;
+            Assert.IsTrue(aVan.Id.Equals(aId));
+            Assert.IsTrue(aVan.Capacity.Equals(capacity));
         }
         [TestMethod]
         public void ValidSchoolVanCapacity()
         {
             int aId = 1;
             int capacity = 5;
-            SchoolVan aVan = new SchoolVan(aId, capacity);
+            SchoolVan aVan = new SchoolVan();
+            aVan.Id = aId;
+            aVan.Capacity = capacity;
             Assert.IsTrue(aVan.IsValid());
         }
         [TestMethod]
@@ -61,7 +64,9 @@ namespace Testing
         {
             int aId = 1;
             int capacity = 2000;
-            SchoolVan aVan = new SchoolVan(aId, capacity);
+            SchoolVan aVan = new SchoolVan();
+            aVan.Id = aId;
+            aVan.Capacity = capacity;
             Assert.IsFalse(aVan.IsValid());
         }
     }

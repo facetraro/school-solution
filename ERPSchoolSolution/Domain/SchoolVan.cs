@@ -17,11 +17,6 @@ namespace Domain
             this.Id = 0;
             this.Capacity = 1;
         }
-        public SchoolVan(int id, int capacity)
-        {
-            this.Id = id;
-            this.Capacity = capacity;
-        }
         public int Id
         {
             get
