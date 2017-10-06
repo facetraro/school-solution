@@ -8,8 +8,30 @@ namespace Domain
 {
     public class Coordinate
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        private int x { get; set; }
+        private int y { get; set; }
+        public int X
+        {
+            get
+            {
+                return this.x;
+            }
+            set
+            {
+                this.x = value;
+            }
+        }
+        public int Y
+        {
+            get
+            {
+                return this.y;
+            }
+            set
+            {
+                this.y = value;
+            }
+        }
         private bool CompareX(int xPosition)
         {
             return this.X == xPosition;
