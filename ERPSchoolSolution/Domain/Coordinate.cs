@@ -11,10 +11,20 @@ namespace Domain
         public int X { get; set; }
         public int Y { get; set; }
 
+        private bool CompareX(int xPosition)
+        {
+            return this.X == xPosition;
+        }
+        private bool CompareY(int yPosition)
+        {
+            return this.Y == yPosition;
+        }
+        
+
         public override bool Equals(object aCoordinate)
         {
             Coordinate theCoordinate = aCoordinate as Coordinate;
-            return (this.X == theCoordinate.X && this.Y==theCoordinate.Y);
+            return CompareX(theCoordinate.X) && CompareY(theCoordinate.Y);
         }
     }
 }
