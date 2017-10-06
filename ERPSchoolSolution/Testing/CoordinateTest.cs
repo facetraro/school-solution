@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Domain;
 
 namespace Testing
 {
@@ -7,7 +8,7 @@ namespace Testing
     public class CoordinateTest
     {
         [TestMethod]
-        public void CompareSchoolVanSuccess()
+        public void CompareCoordinateSuccess()
         {
             Coordinate aCoordinate = new Coordinate();
             aCoordinate.X = 1;
