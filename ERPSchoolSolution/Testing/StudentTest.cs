@@ -11,9 +11,10 @@ namespace Testing
         public void CompareStudentSuccess()
         {
             Student aStudent = new Student();
-            aStudent.Id = 123;
+            int testId = 123;
+            aStudent.Id = testId;
             Student anotherStudent = new Student();
-            anotherStudent.Id = 123;
+            anotherStudent.Id = testId;
             Assert.IsTrue(aStudent.Equals(anotherStudent));
         }
     }
