@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,9 +7,57 @@ namespace Domain
 {
     public class Student : Person
     {
-        public int Ci { get; set; }
-        public int StudentNumber { get; set; }
-        public Coordinate Coordinates { get; set; }
-        public List<Subject> Subjects { get; set; }
+        private int ci { get; set; }
+        private int studentNumber { get; set; }
+        private Coordinate coordinates { get; set; }
+        private List<Subject> subjects { get; set; }
+
+        public int Ci
+        {
+            get
+            {
+                return this.ci;
+            }
+            set
+            {
+                this.ci = value;
+            }
+        }
+
+        public int StudentNumber
+        {
+            get
+            {
+                return this.studentNumber;
+            }
+            set
+            {
+                this.studentNumber = value;
+            }
+        }
+
+        public Coordinate Coordinates
+        {
+            get
+            {
+                return this.coordinates;
+            }
+            set
+            {
+                this.coordinates = value;
+            }
+        }
+
+        public List<Subject> Subjects
+        {
+            get
+            {
+                return this.subjects;
+            }
+            set
+            {
+                this.subjects = value;
+            }
+        }
     }
 }
