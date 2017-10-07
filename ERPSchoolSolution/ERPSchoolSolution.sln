@@ -5,11 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPSchoolUI", "ERPSchoolUI\ERPSchoolUI.csproj", "{24E31082-B768-4B47-B8F7-3AB39027739E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B234D1F6-6D83-41C0-84B0-6C10AAFC1D48}"
-	ProjectSection(SolutionItems) = preProject
-		Testing\Testing.csproj = Testing\Testing.csproj
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{45F2AA8B-ADB7-460D-953B-7CA52E2C0588}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{0320B488-9247-4F8A-938C-3418358858B2}"
