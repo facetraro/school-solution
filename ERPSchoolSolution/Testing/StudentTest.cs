@@ -45,17 +45,6 @@ namespace Testing
         public void IsInscriptedSubjectSuccess()
         {
             Student aStudent = new Student();
-            int intTest = 1;
-            string stringTest = "thisIsATest";
-            aStudent.Id = intTest;
-            aStudent.Name = stringTest;
-            aStudent.LastName = stringTest;
-            Coordinate aCoordinate = new Coordinate();
-            aCoordinate.X = 1;
-            aCoordinate.Y = 2;
-            aStudent.Coordinates = aCoordinate;
-            aStudent.Ci = 47801236;
-            aStudent.StudentNumber = 193221;
             List<Subject> subjectList = new List<Subject>();
             Subject newSubject = new Subject();
             string code = "DA1";
@@ -70,17 +59,6 @@ namespace Testing
         public void IsInscriptedSubjectFail()
         {
             Student aStudent = new Student();
-            int intTest = 1;
-            string stringTest = "thisIsATest";
-            aStudent.Id = intTest;
-            aStudent.Name = stringTest;
-            aStudent.LastName = stringTest;
-            Coordinate aCoordinate = new Coordinate();
-            aCoordinate.X = 1;
-            aCoordinate.Y = 2;
-            aStudent.Coordinates = aCoordinate;
-            aStudent.Ci = 47801236;
-            aStudent.StudentNumber = 193221;
             List<Subject> subjectList = new List<Subject>();
             Subject newSubject = new Subject();
             string code = "DA1";
