@@ -24,7 +24,14 @@ namespace Domain
         public bool IsValid(object anObject)
         {
             Student theStudent = anObject as Student;
-            return IsCiValid(theStudent) && IsNameValid(theStudent) && IsLastNameValid(theStudent);
+            if ((System.Object)theStudent == null)
+            {
+                
+            } else
+            {
+                return IsCiValid(theStudent) && IsNameValid(theStudent) && IsLastNameValid(theStudent);
+            }
+            return false;
         }
     }
 }
