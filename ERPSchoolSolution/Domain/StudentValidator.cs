@@ -26,12 +26,9 @@ namespace Domain
             Student theStudent = anObject as Student;
             if ((System.Object)theStudent == null)
             {
-                
-            } else
-            {
-                return IsCiValid(theStudent) && IsNameValid(theStudent) && IsLastNameValid(theStudent);
+                return false;
             }
-            return false;
+            return IsCiValid(theStudent) && IsNameValid(theStudent) && IsLastNameValid(theStudent);
         }
     }
 }
