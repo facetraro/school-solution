@@ -57,7 +57,7 @@ namespace Domain
         }
         public bool IsInscriptedSubject(Subject aSubject)
         {
-            return true;
+            return subjects.Contains(aSubject);
         }
     }
 }
