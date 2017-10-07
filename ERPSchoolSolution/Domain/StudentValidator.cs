@@ -8,10 +8,22 @@ namespace Domain
 {
     public class StudentValidator : IValidator
     {
+        private bool IsCiValid(Student aStudent)
+        {
+            return aStudent.Ci > 0;
+        }
+        private bool IsNameValid(Student aStudent)
+        {
+            return aStudent.Name.Length > 0;
+        }
+        private bool IsLastNameValid(Student aStudent)
+        {
+            return aStudent.LastName.Length > 0;
+        }
         public bool IsValid(object anObject)
         {
             Student theStudent = anObject as Student;
-            return theStudent.Ci > 0 && theStudent.Name.Length> 0 && theStudent.LastName.Length > 0 && theStudent.Name.Length > 0;
+            return IsCiValid(theStudent) && IsNameValid(theStudent) && IsLastNameValid(theStudent);
         }
     }
 }
