@@ -109,5 +109,12 @@ namespace Testing
             aStudent.Ci = 9999999;
             Assert.IsFalse(validator.IsValid(aStudent));
         }
+        [TestMethod]
+        public void IsValidDifferentObjectFail()
+        {
+            StudentValidator validator = new StudentValidator();
+            int testInt = 5;
+            Assert.IsFalse(validator.IsValid(testInt));
+        }
     }
 }

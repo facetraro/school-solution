@@ -47,6 +47,5 @@ namespace Testing
             Assert.IsTrue(aSubject.Code.Equals(testCode));
             Assert.IsTrue(aSubject.Name.Equals(testName));
         }
-
     }
 }
