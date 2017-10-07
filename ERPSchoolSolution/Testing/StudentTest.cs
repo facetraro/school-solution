@@ -94,5 +94,12 @@ namespace Testing
             StudentValidator validator = new StudentValidator();
             Assert.IsTrue(validator.IsValid(aStudent));
         }
+        [TestMethod]
+        public void IsValidStudentFail()
+        {
+            Student aStudent = new Student();
+            StudentValidator validator = new StudentValidator();
+            Assert.IsFalse(validator.IsValid(aStudent));
+        }
     }
 }
