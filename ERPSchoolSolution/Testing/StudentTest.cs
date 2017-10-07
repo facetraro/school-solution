@@ -31,13 +31,15 @@ namespace Testing
             aStudent.Coordinates = aCoordinate;
             aStudent.Ci = 47801236;
             aStudent.StudentNumber = 193221;
-            aStudent.Subjects = new List<Subject>();
+            List<Subject> subjectList = new List<Subject>();
+            aStudent.Subjects = subjectList;
+            Assert.IsTrue(aStudent.Id.Equals(1));
             Assert.IsTrue(aStudent.Name.Equals("TestName"));
             Assert.IsTrue(aStudent.LastName.Equals("TestLastName"));
             Assert.IsTrue(aStudent.Coordinates.Equals(aCoordinate));
             Assert.IsTrue(aStudent.Ci.Equals(47801236));
             Assert.IsTrue(aStudent.StudentNumber.Equals(193221));
-            Assert.IsTrue(aStudent.Subjects.Equals(new List<Subject>());
+            Assert.IsTrue(aStudent.Subjects.Equals(subjectList));
         }
     }
 }
