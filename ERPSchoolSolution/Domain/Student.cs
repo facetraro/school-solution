@@ -59,5 +59,9 @@ namespace Domain
                 this.subjects = value;
             }
         }
+        public bool IsInscriptedSubject(Subject aSubject)
+        {
+            return true;
+        }
     }
 }
