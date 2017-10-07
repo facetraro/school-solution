@@ -41,5 +41,27 @@ namespace Testing
             Assert.IsTrue(aStudent.StudentNumber.Equals(193221));
             Assert.IsTrue(aStudent.Subjects.Equals(subjectList));
         }
+        [TestMethod]
+        public void IsInscriptedSubjectSuccess()
+        {
+            Student aStudent = new Student();
+            aStudent.Id = 1;
+            aStudent.Name = "TestName";
+            aStudent.LastName = "TestLastName";
+            Coordinate aCoordinate = new Coordinate();
+            aCoordinate.X = 1;
+            aCoordinate.Y = 2;
+            aStudent.Coordinates = aCoordinate;
+            aStudent.Ci = 47801236;
+            aStudent.StudentNumber = 193221;
+            List<Subject> subjectList = new List<Subject>();
+            Subject newSubject = new Subject();
+            newSubject.Code = "DA1";
+            newSubject.Name = "Diseño de Aplicaciones 1";
+            subjectList.Add(newSubject);
+            aStudent.Subjects = subjectList;
+            Assert.IsTrue(aStudent.IsInscriptedSubject(newSubject));
+           
+        }
     }
 }
