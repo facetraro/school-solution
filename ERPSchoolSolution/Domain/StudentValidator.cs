@@ -10,7 +10,7 @@ namespace Domain
     {
         private bool IsCiValid(Student aStudent)
         {
-            return aStudent.Ci > 0;
+            return aStudent.Ci > 9999999;
         }
         private bool IsNameValid(Student aStudent)
         {
