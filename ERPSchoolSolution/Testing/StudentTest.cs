@@ -45,9 +45,11 @@ namespace Testing
         public void IsInscriptedSubjectSuccess()
         {
             Student aStudent = new Student();
-            aStudent.Id = 1;
-            aStudent.Name = "TestName";
-            aStudent.LastName = "TestLastName";
+            int intTest = 1;
+            string stringTest = "thisIsATest";
+            aStudent.Id = intTest;
+            aStudent.Name = stringTest;
+            aStudent.LastName = stringTest;
             Coordinate aCoordinate = new Coordinate();
             aCoordinate.X = 1;
             aCoordinate.Y = 2;
@@ -56,12 +58,13 @@ namespace Testing
             aStudent.StudentNumber = 193221;
             List<Subject> subjectList = new List<Subject>();
             Subject newSubject = new Subject();
-            newSubject.Code = "DA1";
-            newSubject.Name = "Diseño de Aplicaciones 1";
+            string code = "DA1";
+            string name = "Diseño de Aplicaciones 1";
+            newSubject.Code = code;
+            newSubject.Name = name;
             subjectList.Add(newSubject);
             aStudent.Subjects = subjectList;
             Assert.IsTrue(aStudent.IsInscriptedSubject(newSubject));
-           
         }
     }
 }

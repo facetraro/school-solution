@@ -11,7 +11,6 @@ namespace Domain
         private int studentNumber { get; set; }
         private Coordinate coordinates { get; set; }
         private List<Subject> subjects { get; set; }
-
         public int Ci
         {
             get
@@ -23,7 +22,6 @@ namespace Domain
                 this.ci = value;
             }
         }
-
         public int StudentNumber
         {
             get
@@ -35,7 +33,6 @@ namespace Domain
                 this.studentNumber = value;
             }
         }
-
         public Coordinate Coordinates
         {
             get
@@ -47,7 +44,6 @@ namespace Domain
                 this.coordinates = value;
             }
         }
-
         public List<Subject> Subjects
         {
             get
