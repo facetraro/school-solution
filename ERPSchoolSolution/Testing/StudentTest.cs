@@ -78,15 +78,17 @@ namespace Testing
         public void IsValidStudentSuccess()
         {
             Student aStudent = new Student();
-            aStudent.Id = 1;
-            aStudent.Name = "TestName";
-            aStudent.LastName = "TestLastName";
+            int intTest = 47801236;
+            string testStrings = "thisIsATest";
+            aStudent.Id = intTest;
+            aStudent.Name = testStrings;
+            aStudent.LastName = testStrings;
             Coordinate aCoordinate = new Coordinate();
-            aCoordinate.X = 1;
-            aCoordinate.Y = 2;
+            aCoordinate.X = intTest;
+            aCoordinate.Y = intTest;
             aStudent.Coordinates = aCoordinate;
-            aStudent.Ci = 47801236;
-            aStudent.StudentNumber = 193221;
+            aStudent.Ci = intTest;
+            aStudent.StudentNumber = intTest;
             List<Subject> subjectList = new List<Subject>();
             aStudent.Subjects = subjectList;
             StudentValidator validator = new StudentValidator();
