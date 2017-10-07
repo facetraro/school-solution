@@ -8,9 +8,10 @@ namespace Domain
 {
     public class StudentValidator : IValidator
     {
+        private static int MIN_CI = 9999999;
         private bool IsCiValid(Student aStudent)
         {
-            return aStudent.Ci > 9999999;
+            return aStudent.Ci > MIN_CI;
         }
         private bool IsNameValid(Student aStudent)
         {
