@@ -74,5 +74,23 @@ namespace Testing
             aStudent.Subjects = subjectList;
             Assert.IsFalse(aStudent.IsInscriptedSubject(anotherSubject));
         }
+        [TestMethod]
+        public void IsValidStudentSuccess()
+        {
+            Student aStudent = new Student();
+            aStudent.Id = 1;
+            aStudent.Name = "TestName";
+            aStudent.LastName = "TestLastName";
+            Coordinate aCoordinate = new Coordinate();
+            aCoordinate.X = 1;
+            aCoordinate.Y = 2;
+            aStudent.Coordinates = aCoordinate;
+            aStudent.Ci = 47801236;
+            aStudent.StudentNumber = 193221;
+            List<Subject> subjectList = new List<Subject>();
+            aStudent.Subjects = subjectList;
+            StudentValidator validator = new StudentValidator();
+            Assert.IsTrue(validator.IsValid(aStudent));
+        }
     }
 }
