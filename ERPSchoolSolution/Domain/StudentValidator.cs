@@ -10,7 +10,8 @@ namespace Domain
     {
         public bool IsValid(object anObject)
         {
-            return true;
+            Student theStudent = anObject as Student;
+            return theStudent.Ci > 0 && theStudent.Name.Length> 0 && theStudent.LastName.Length > 0 && theStudent.Name.Length > 0;
         }
     }
 }
