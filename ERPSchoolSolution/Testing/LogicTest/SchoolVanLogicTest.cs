@@ -1,12 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Domain;
+using Logic;
 
 namespace Testing.LogicTest
 {
-    class SchoolVanLogicTest
+    [TestClass]
+    public class SchoolVanLogicTest
     {
+        [TestMethod]
+        public void AddSchoolVanSuccess()
+        {
+            SchoolVan newSchoolVan = new SchoolVan();
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            testLogic.Add(newSchoolVan);
+            Assert.IsTrue(testLogic.Exists(newSchoolVan));
+        }
     }
 }
