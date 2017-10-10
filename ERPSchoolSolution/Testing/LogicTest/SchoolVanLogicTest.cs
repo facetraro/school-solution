@@ -53,7 +53,7 @@ namespace Testing.LogicTest
         {
             SetUp();
             SchoolVan newSchoolVan = new SchoolVan();
-            newSchoolVan.Capacity = -30;
+            newSchoolVan.Capacity=-30;
             SchoolVanLogic testLogic = new SchoolVanLogic();
             testLogic.Add(newSchoolVan);
             Assert.IsFalse(testLogic.Exists(newSchoolVan));
@@ -64,6 +64,17 @@ namespace Testing.LogicTest
             SetUp();
             SchoolVan newSchoolVan = new SchoolVan();
             SchoolVanLogic testLogic = new SchoolVanLogic();
+            Assert.IsFalse(testLogic.Exists(newSchoolVan));
+        }
+        [TestMethod]
+        public void DeleteSchoolDifferentObjectFail()
+        {
+            SetUp();
+            SchoolVan newSchoolVan = new SchoolVan();
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            int a = 0;
+            testLogic.Add(newSchoolVan);
+            testLogic.Remove(a);
             Assert.IsFalse(testLogic.Exists(newSchoolVan));
         }
         [TestMethod]
