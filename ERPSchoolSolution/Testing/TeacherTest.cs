@@ -39,10 +39,13 @@ namespace Testing
         [TestMethod]
         public void IsValidTeacherSuccess()
         {
+            int idTest = 123;
+            string nameTest = "Juan";
+            string lastNameTest = "Martinez";
             Teacher aTeacher = new Teacher();
-            aTeacher.Id = 123;
-            aTeacher.Name = "Juan";
-            aTeacher.LastName = "Martinez";
+            aTeacher.Id = idTest;
+            aTeacher.Name = nameTest;
+            aTeacher.LastName = lastNameTest;
             List<Subject> subjects = new List<Subject>();
             aTeacher.Subjects = subjects;
             TeacherValidator validator = new TeacherValidator();
