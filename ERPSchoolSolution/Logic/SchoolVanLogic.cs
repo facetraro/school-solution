@@ -16,7 +16,8 @@ namespace Logic
         }
         private bool CanIAdd(Object anObject)
         {
-            return IsObjectASchoolVan(anObject) && !Exists(anObject);
+            SchoolVanValidator validator = new SchoolVanValidator();
+            return IsObjectASchoolVan(anObject) && validator.IsValid(anObject) && !Exists(anObject);
         }
         public void Add(Object anObject)
         {
