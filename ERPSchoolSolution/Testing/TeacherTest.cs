@@ -58,5 +58,12 @@ namespace Testing
             TeacherValidator validator = new TeacherValidator();
             Assert.IsFalse(validator.IsValid(aTeacher));
         }
+        [TestMethod]
+        public void IsValidDifferentObjectFail()
+        {
+            TeacherValidator validator = new TeacherValidator();
+            int testInt = 5;
+            Assert.IsFalse(validator.IsValid(testInt));
+        }
     }
 }
