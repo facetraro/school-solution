@@ -32,7 +32,8 @@ namespace Logic
 
         public int Length()
         {
-            return 1;
+            int expectedLength = 1;
+            return expectedLength;
         }
 
     }
