@@ -38,8 +38,12 @@ namespace Logic
         }
         public void Modify(Object oldObject, Object newObject)
         {
-            this.Remove(oldObject);
-            this.Add(newObject);
+            Singleton theRepository = Singleton.Instance;
+            if (theRepository.SchoolVans.Contains(oldObject))
+            {
+                this.Remove(oldObject);
+                this.Add(newObject);
+            }
         }
         public int Length()
         {
