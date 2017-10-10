@@ -15,13 +15,18 @@ namespace Logic
             StudentValidator validator = new StudentValidator();
             return validator.IsValid(anObject) && !Exists(anObject);
         }
+        private void Insert(Student toAdd)
+        {
+            
+            Singleton theRepository = Singleton.Instance;
+            theRepository.Students.Add(toAdd);
+        }
         public void Add(Object anObject)
         {
             if (CanIAdd(anObject))
             {
                 Student toAdd = anObject as Student;
-                Singleton theRepository = Singleton.Instance;
-                theRepository.Students.Add(toAdd);
+                Insert(toAdd);
             }
         }
         public void Remove(Object anObject)
@@ -34,8 +39,7 @@ namespace Logic
         {
             Remove(anObject);
             Student toAdd = anotherObject as Student;
-            Singleton theRepository = Singleton.Instance;
-            theRepository.Students.Add(toAdd);
+            Insert(toAdd);
         }
         public void Empty()
         {
