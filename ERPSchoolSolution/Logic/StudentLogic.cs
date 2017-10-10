@@ -32,7 +32,9 @@ namespace Logic
         }
         public void Modify(Object anObject, Object anotherObject)
         {
-
+            Student toDelete = anObject as Student;
+            Singleton theRepository = Singleton.Instance;
+            theRepository.Students.Remove(toDelete);
         }
         public void Empty()
         {
