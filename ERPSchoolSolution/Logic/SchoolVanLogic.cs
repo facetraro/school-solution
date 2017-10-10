@@ -38,8 +38,7 @@ namespace Logic
         }
         public void Modify(Object oldObject, Object newObject)
         {
-            Singleton theRepository = Singleton.Instance;
-            if (theRepository.SchoolVans.Contains(oldObject))
+            if (Exists(oldObject))
             {
                 this.Remove(oldObject);
                 this.Add(newObject);
