@@ -106,5 +106,18 @@ namespace Testing.LogicTest
             testLogic.Modify(newStudent, anotherStudent);
             Assert.IsTrue(testLogic.Exists(anotherStudent));
         }
+        [TestMethod]
+        public void ModifyStudentFail()
+        {
+            SetUp();
+            StudentLogic testLogic = new StudentLogic();
+            Student newStudent = TestStudent();
+            Student anotherStudent = TestStudent();
+            anotherStudent.Id = -3;
+            anotherStudent.Name = "";
+            testLogic.Add(newStudent);
+            testLogic.Modify(newStudent, anotherStudent);
+            Assert.IsFalse(testLogic.Exists(anotherStudent));
+        }
     }
 }
