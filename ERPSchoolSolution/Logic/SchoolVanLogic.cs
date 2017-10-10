@@ -10,14 +10,10 @@ namespace Logic
 {
     public class SchoolVanLogic : IAddRemoveModify
     {
-        private bool IsObjectASchoolVan(Object anObject)
-        {
-            return anObject is SchoolVan;
-        }
         private bool CanIAdd(Object anObject)
         {
             SchoolVanValidator validator = new SchoolVanValidator();
-            return IsObjectASchoolVan(anObject) && validator.IsValid(anObject) && !Exists(anObject);
+            return validator.IsValid(anObject) && !Exists(anObject);
         }
         public void Add(Object anObject)
         {
