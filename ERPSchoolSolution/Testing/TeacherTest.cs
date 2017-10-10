@@ -36,6 +36,34 @@ namespace Testing
             Assert.IsTrue(aTeacher.LastName.Equals(lastNameTest));
             Assert.IsTrue(aTeacher.Subjects.Equals(listSubject));
         }
-
+        [TestMethod]
+        public void IsValidTeacherSuccess()
+        {
+            int idTest = 123;
+            string nameTest = "Juan";
+            string lastNameTest = "Martinez";
+            Teacher aTeacher = new Teacher();
+            aTeacher.Id = idTest;
+            aTeacher.Name = nameTest;
+            aTeacher.LastName = lastNameTest;
+            List<Subject> subjects = new List<Subject>();
+            aTeacher.Subjects = subjects;
+            TeacherValidator validator = new TeacherValidator();
+            Assert.IsTrue(validator.IsValid(aTeacher));
+        }
+        [TestMethod]
+        public void IsValidTeacherFail()
+        {
+            Teacher aTeacher = new Teacher();
+            TeacherValidator validator = new TeacherValidator();
+            Assert.IsFalse(validator.IsValid(aTeacher));
+        }
+        [TestMethod]
+        public void IsValidDifferentObjectFail()
+        {
+            TeacherValidator validator = new TeacherValidator();
+            int testInt = 5;
+            Assert.IsFalse(validator.IsValid(testInt));
+        }
     }
 }
