@@ -16,5 +16,14 @@ namespace Testing.LogicTest
             testLogic.Add(newStudent);
             Assert.IsTrue(testLogic.Exists(newStudent));
         }
+        [TestMethod]
+        public void AddStudentFail()
+        {
+            Student newStudent = new Student();
+            StudentLogic testLogic = new StudentLogic();
+            testLogic.Add(newStudent);
+            testLogic.Add(newStudent);
+            Assert.IsTrue(testLogic.Length()==1);
+        }
     }
 }
