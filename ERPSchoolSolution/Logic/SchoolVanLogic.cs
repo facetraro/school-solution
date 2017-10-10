@@ -12,7 +12,7 @@ namespace Logic
     {
         public void Add(Object anObject)
         {
-            if (!Exists(anObject))
+            if (anObject is SchoolVan && !Exists(anObject))
             {
                 Singleton theRepository = Singleton.Instance;
                 SchoolVan newSchoolVan = anObject as SchoolVan;
