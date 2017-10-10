@@ -88,6 +88,18 @@ namespace Testing.LogicTest
             Assert.IsFalse(testLogic.Exists(newSchoolVan));
         }
         [TestMethod]
+        public void DeleteSchoolVanFail()
+        {
+            SetUp();
+            SchoolVan newSchoolVan = new SchoolVan();
+            newSchoolVan.Id = 5;
+            SchoolVan anotherSchoolVan = new SchoolVan();
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            testLogic.Add(newSchoolVan);
+            testLogic.Remove(anotherSchoolVan);
+            Assert.IsFalse(testLogic.Exists(newSchoolVan));
+        }
+        [TestMethod]
         public void ModifySchoolVanFail()
         {
             SetUp();
