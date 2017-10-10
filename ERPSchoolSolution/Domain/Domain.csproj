@@ -54,6 +54,7 @@
     <Compile Include="SchoolVan.cs" />
     <Compile Include="SchoolVanValidator.cs" />
     <Compile Include="SubjectValidator.cs" />
+    <Compile Include="Teacher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
