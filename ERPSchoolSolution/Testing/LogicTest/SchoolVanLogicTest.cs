@@ -53,7 +53,7 @@ namespace Testing.LogicTest
         {
             SetUp();
             SchoolVan newSchoolVan = new SchoolVan();
-            newSchoolVan.Capacity=-30;
+            newSchoolVan.Capacity = -30;
             SchoolVanLogic testLogic = new SchoolVanLogic();
             testLogic.Add(newSchoolVan);
             Assert.IsFalse(testLogic.Exists(newSchoolVan));
@@ -94,6 +94,7 @@ namespace Testing.LogicTest
             SchoolVan newSchoolVan = new SchoolVan();
             newSchoolVan.Id = 5;
             SchoolVan anotherSchoolVan = new SchoolVan();
+            anotherSchoolVan.Id = 6;
             SchoolVanLogic testLogic = new SchoolVanLogic();
             testLogic.Add(newSchoolVan);
             testLogic.Remove(anotherSchoolVan);
