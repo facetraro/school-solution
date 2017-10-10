@@ -29,6 +29,14 @@ namespace Logic
             SchoolVan newSchoolVan = anObject as SchoolVan;
             theRepository.SchoolVans.Remove(newSchoolVan);
         }
+        public void Modify(Object oldObject, Object newObject)
+        {
+            Singleton theRepository = Singleton.Instance;
+            SchoolVan oldSchoolVan = oldObject as SchoolVan;
+            SchoolVan newSchoolVan = newObject as SchoolVan;
+            theRepository.SchoolVans.Remove(oldSchoolVan);
+            theRepository.SchoolVans.Add(newSchoolVan);
+        }
         public void Empty()
         {
             Singleton theRepository = Singleton.Instance;
