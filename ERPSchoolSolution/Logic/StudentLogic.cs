@@ -38,11 +38,7 @@ namespace Logic
         public void Modify(Object anObject, Object anotherObject)
         {
             Remove(anObject);
-            if (CanIAdd(anotherObject))
-            {
-                Student toAdd = anotherObject as Student;
-                 Insert(toAdd);
-            }
+            Add(anotherObject);
         }
         public void Empty()
         {
