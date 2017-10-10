@@ -4,21 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain;
+using Repository;
 namespace Logic
 {
 
 
     public class SubjectLogic
     {
-        private Subject testSubject()
-        {
-            Subject aSubject = new Subject();
-            aSubject.Name = "testSubject";
-            aSubject.Code = "132";
-            aSubject.Students = new List<Student>();
-            aSubject.Teachers = new List<Teacher>();
-            return aSubject;
-        }
+
 
         public void Add(Object anObject)
         {
@@ -35,6 +28,11 @@ namespace Logic
         public void Modify(Object oldObject, Object newObject)
         {
 
+        }
+        public int Length()
+        {
+            Singleton theRepository = Singleton.Instance;
+            return theRepository.Subjects.Count;
         }
     }
 }
