@@ -30,5 +30,10 @@ namespace Logic
 
         }
 
+        public int Length()
+        {
+            return 1;
+        }
+
     }
 }
