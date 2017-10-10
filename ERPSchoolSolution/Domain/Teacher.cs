@@ -8,6 +8,6 @@ namespace Domain
 {
     public class Teacher : Person
     {
-        
+        public List<Subject> Subjects { get; set; }
     }
 }

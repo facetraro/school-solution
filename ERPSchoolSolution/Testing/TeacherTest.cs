@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
+using System.Collections.Generic;
 
 namespace Testing
 {
@@ -25,10 +26,11 @@ namespace Testing
             aTeacher.Id = 123;
             aTeacher.Name = "TestName";
             aTeacher.LastName = "TestLastName";
-            aTeacher.Subjects = List<Subject>();
+            List<Subject> listSubject = new List<Subject>();
+            aTeacher.Subjects = listSubject;
             Assert.IsTrue(aTeacher.Name.Equals("TestName"));
             Assert.IsTrue(aTeacher.LastName.Equals("TestLastName"));
-            Assert.IsTrue(aTeacher.Subjects.Equals(new List<Subject>()));
+            Assert.IsTrue(aTeacher.Subjects.Equals(listSubject));
         }
     }
 }
