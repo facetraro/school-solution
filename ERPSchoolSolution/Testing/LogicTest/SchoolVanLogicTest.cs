@@ -39,6 +39,16 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Length() == expectedSchoolVanListLength);
         }
         [TestMethod]
+        public void AddSchoolVanDifferentObjectFail()
+        {
+            SetUp();
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            int test = 0;
+            testLogic.Add(test);
+            int expectedSchoolVanListLength = 0;
+            Assert.IsTrue(testLogic.Length() == expectedSchoolVanListLength);
+        }
+        [TestMethod]
         public void ExistsSchoolVanFail()
         {
             SetUp();
