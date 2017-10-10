@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    public class StudentLogic
+    public class StudentLogic : IAddRemoveModify
     {
         public void Add(Object anObject)
         {
-           
+
+        }
+        public void Remove(Object anObject)
+        {
+
+        }
+        public void Modify(Object anObject, Object anotherObject)
+        {
+
         }
         public bool Exists(Object anObject)
         {
