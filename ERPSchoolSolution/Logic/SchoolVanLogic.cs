@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    public class SchoolVanLogic
+    public class SchoolVanLogic : IAddRemoveModify
     {
         public void Add(Object anObject)
         {
