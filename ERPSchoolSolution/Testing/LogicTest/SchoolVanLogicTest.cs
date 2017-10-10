@@ -41,7 +41,7 @@ namespace Testing.LogicTest
             SchoolVan newSchoolVan = new SchoolVan();
             SchoolVanLogic testLogic = new SchoolVanLogic();
             testLogic.Add(newSchoolVan);
-            testLogic.Delete(newSchoolVan);
+            testLogic.Remove(newSchoolVan);
             Assert.IsFalse(testLogic.Exists(newSchoolVan));
         }
     }
