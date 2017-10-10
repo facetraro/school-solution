@@ -17,10 +17,10 @@ namespace Logic
         }
         public void Add(Object anObject)
         {
-            Singleton theRepository = Singleton.Instance;
             if (CanIAdd(anObject))
             {
                 Student toAdd = anObject as Student;
+                Singleton theRepository = Singleton.Instance;
                 theRepository.Students.Add(toAdd);
             }
         }
