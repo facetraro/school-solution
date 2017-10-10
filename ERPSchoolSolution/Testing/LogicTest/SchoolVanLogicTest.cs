@@ -122,7 +122,7 @@ namespace Testing.LogicTest
             editedSchoolVan.Id = 50;
             testLogic.Add(schoolVan);
             testLogic.Modify(schoolVan, editedSchoolVan);
-            Assert.IsFalse(testLogic.Exists(editedSchoolVan));
+            Assert.IsTrue(testLogic.Exists(editedSchoolVan));
         }
     }
 }
