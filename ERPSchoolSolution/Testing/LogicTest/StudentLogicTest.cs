@@ -23,7 +23,8 @@ namespace Testing.LogicTest
             StudentLogic testLogic = new StudentLogic();
             testLogic.Add(newStudent);
             testLogic.Add(newStudent);
-            Assert.IsTrue(testLogic.Length()==1);
+            int expectedStudentListLength = 1;
+            Assert.IsTrue(testLogic.Length() == expectedStudentListLength);
         }
     }
 }
