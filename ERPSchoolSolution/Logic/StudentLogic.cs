@@ -37,8 +37,15 @@ namespace Logic
         }
         public void Modify(Object anObject, Object anotherObject)
         {
-            Remove(anObject);
-            Add(anotherObject);
+
+            Singleton theRepository = Singleton.Instance;
+            Student lookUp = anObject as Student;
+            if (theRepository.Students.Contains(lookUp))
+            {
+                Remove(anObject);
+                Add(anotherObject);
+            }
+    
         }
         public void Empty()
         {
