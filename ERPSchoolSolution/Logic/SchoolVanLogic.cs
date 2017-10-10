@@ -23,6 +23,12 @@ namespace Logic
             SchoolVan newSchoolVan = anObject as SchoolVan;
             return theRepository.SchoolVans.Contains(newSchoolVan);
         }
+        public void Delete(Object anObject)
+        {
+            Singleton theRepository = Singleton.Instance;
+            SchoolVan newSchoolVan = anObject as SchoolVan;
+            theRepository.SchoolVans.Remove(newSchoolVan);
+        }
         public void Empty()
         {
             Singleton theRepository = Singleton.Instance;
