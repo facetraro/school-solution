@@ -11,16 +11,28 @@ namespace Testing.LogicTest
         [TestMethod]
         public void AddStudentSuccess()
         {
-            Student newStudent = new Student();
             StudentLogic testLogic = new StudentLogic();
+            testLogic.Empty();
+            Student newStudent = new Student();
+            newStudent.Id = 1;
+            newStudent.Ci = 47642349;
+            newStudent.Name = "TestName";
+            newStudent.LastName = "TestLastName";
+
             testLogic.Add(newStudent);
             Assert.IsTrue(testLogic.Exists(newStudent));
         }
         [TestMethod]
         public void AddStudentFail()
         {
-            Student newStudent = new Student();
             StudentLogic testLogic = new StudentLogic();
+            testLogic.Empty();
+            Student newStudent = new Student();
+            newStudent.Id = 1;
+            newStudent.Ci = 47642349;
+            newStudent.Name = "TestName";
+            newStudent.LastName = "TestLastName";
+      
             testLogic.Add(newStudent);
             testLogic.Add(newStudent);
             int expectedStudentListLength = 1;
@@ -29,22 +41,39 @@ namespace Testing.LogicTest
         [TestMethod]
         public void AddStudentLengthSuccess()
         {
-            Student newStudent = new Student();
-            Student anotherStudent = new Student();
-            anotherStudent.Id = 4;
             StudentLogic testLogic = new StudentLogic();
+            testLogic.Empty();
+            Student newStudent = new Student();
+            newStudent.Id = 1;
+            newStudent.Ci = 47642349;
+            newStudent.Name = "TestName";
+            newStudent.LastName = "TestLastName";
+            Student anotherStudent = new Student();
+            anotherStudent.Id = 2;
+            anotherStudent.Ci = 47642340;
+            anotherStudent.Name = "TestName";
+            anotherStudent.LastName = "TestLastName";
+           
             testLogic.Add(newStudent);
+            testLogic.Length();
             testLogic.Add(newStudent);
+            testLogic.Length();
             testLogic.Add(anotherStudent);
+            testLogic.Length();
             int expectedStudentListLength = 2;
             Assert.IsTrue(testLogic.Length() == expectedStudentListLength);
         }
         [TestMethod]
         public void AddDifferentObjectStudentFail()
         {
-            Student newStudent = new Student();
-            int a = 0;
             StudentLogic testLogic = new StudentLogic();
+            testLogic.Empty();
+            Student newStudent = new Student();
+            newStudent.Id = 1;
+            newStudent.Ci = 47642349;
+            newStudent.Name = "TestName";
+            newStudent.LastName = "TestLastName";
+            int a = 0;
             testLogic.Add(newStudent);
             testLogic.Add(a);
             int expectedStudentListLength = 1;

@@ -13,7 +13,7 @@ namespace Logic
         private bool CanIAdd(Object anObject)
         {
             StudentValidator validator = new StudentValidator();
-            return !Exists(anObject);
+            return validator.IsValid(anObject) && !Exists(anObject);
         }
         public void Add(Object anObject)
         {
@@ -31,6 +31,11 @@ namespace Logic
         public void Modify(Object anObject, Object anotherObject)
         {
 
+        }
+        public void Empty()
+        {
+            Singleton theRepository = Singleton.Instance;
+            theRepository.Students = new List<Student>();
         }
         public bool Exists(Object anObject)
         {
