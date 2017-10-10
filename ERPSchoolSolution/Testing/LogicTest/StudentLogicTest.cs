@@ -31,6 +31,7 @@ namespace Testing.LogicTest
         {
             Student newStudent = new Student();
             Student anotherStudent = new Student();
+            anotherStudent.Id = 4;
             StudentLogic testLogic = new StudentLogic();
             testLogic.Add(newStudent);
             testLogic.Add(newStudent);

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Domain;
+using Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +12,16 @@ namespace Logic
     {
         public void Add(Object anObject)
         {
+            Singleton theRepository = Singleton.Instance;
 
+     
+            if (!Exists(anObject))
+            {
+                Student toAdd = anObject as Student;
+                     theRepository.Students.Add(toAdd);
+
+            }
+       
         }
         public void Remove(Object anObject)
         {
@@ -22,11 +33,14 @@ namespace Logic
         }
         public bool Exists(Object anObject)
         {
-            return true;
+            Singleton theRepository = Singleton.Instance;
+            Student lookUp = anObject as Student;
+            return theRepository.Students.Contains(lookUp);
         }
         public int Length()
         {
-            return 1;
+            Singleton theRepository = Singleton.Instance;
+            return theRepository.Students.Count;
         }
     }
 }
