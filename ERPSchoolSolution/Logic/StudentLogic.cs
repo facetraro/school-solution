@@ -10,18 +10,19 @@ namespace Logic
 {
     public class StudentLogic : IAddRemoveModify
     {
+        private bool CanIAdd(Object anObject)
+        {
+            StudentValidator validator = new StudentValidator();
+            return !Exists(anObject);
+        }
         public void Add(Object anObject)
         {
             Singleton theRepository = Singleton.Instance;
-
-     
-            if (!Exists(anObject))
+            if (CanIAdd(anObject))
             {
                 Student toAdd = anObject as Student;
-                     theRepository.Students.Add(toAdd);
-
+                theRepository.Students.Add(toAdd);
             }
-       
         }
         public void Remove(Object anObject)
         {
