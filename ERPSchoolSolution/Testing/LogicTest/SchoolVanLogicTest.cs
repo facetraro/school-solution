@@ -75,7 +75,7 @@ namespace Testing.LogicTest
             int a = 0;
             testLogic.Add(newSchoolVan);
             testLogic.Remove(a);
-            Assert.IsFalse(testLogic.Exists(newSchoolVan));
+            Assert.IsTrue(testLogic.Exists(newSchoolVan));
         }
         [TestMethod]
         public void DeleteSchoolVanSuccess()
