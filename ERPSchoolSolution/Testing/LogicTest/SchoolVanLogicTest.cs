@@ -117,6 +117,7 @@ namespace Testing.LogicTest
         {
             SetUp();
             SchoolVan schoolVan = new SchoolVan();
+            schoolVan.Id = 4;
             SchoolVanLogic testLogic = new SchoolVanLogic();
             SchoolVan editedSchoolVan = new SchoolVan();
             editedSchoolVan.Id = 50;
