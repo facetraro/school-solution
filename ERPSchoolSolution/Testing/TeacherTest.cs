@@ -23,14 +23,19 @@ namespace Testing
        public void ConstructorTeacherTest()
         {
             Teacher aTeacher = new Teacher();
-            aTeacher.Id = 123;
-            aTeacher.Name = "TestName";
-            aTeacher.LastName = "TestLastName";
+            int testId = 123;
+            aTeacher.Id = testId;
+            string nameTest = "Ricardo";
+            aTeacher.Name = nameTest;
+            string lastNameTest = "Gonzalez";
+            aTeacher.LastName = lastNameTest;
             List<Subject> listSubject = new List<Subject>();
             aTeacher.Subjects = listSubject;
-            Assert.IsTrue(aTeacher.Name.Equals("TestName"));
-            Assert.IsTrue(aTeacher.LastName.Equals("TestLastName"));
+            Assert.IsTrue(aTeacher.Id.Equals(testId));
+            Assert.IsTrue(aTeacher.Name.Equals(nameTest));
+            Assert.IsTrue(aTeacher.LastName.Equals(lastNameTest));
             Assert.IsTrue(aTeacher.Subjects.Equals(listSubject));
         }
+
     }
 }
