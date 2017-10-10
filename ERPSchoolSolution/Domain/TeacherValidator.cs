@@ -27,14 +27,9 @@ namespace Domain
 
             if ((System.Object)theTeacher == null)
             {
-
+                return false;
             }
-            else
-            {
-                return (IsIdValid(theTeacher) && IsNameValid(theTeacher) && IsLastNameValid(theTeacher));
-
-            }
-            return false;
+            return (IsIdValid(theTeacher) && IsNameValid(theTeacher) && IsLastNameValid(theTeacher));
 
         }
     }
