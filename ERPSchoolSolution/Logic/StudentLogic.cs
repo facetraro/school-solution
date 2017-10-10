@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    class StudentLogic
+    public class StudentLogic
     {
+        public void Add(Object anObject)
+        {
+           
+        }
+        public bool Exists(Object anObject)
+        {
+            return true;
+        }
     }
 }

@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="CoordinateTest.cs" />
     <Compile Include="LogicTest\SchoolVanLogicTest.cs" />
+    <Compile Include="LogicTest\StudentLogicTest.cs" />
     <Compile Include="SchoolVanTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentTest.cs" />
