@@ -38,5 +38,19 @@ namespace Testing.LogicTest
             int expectedLength = 1;
             Assert.IsTrue(testLogic.Length() == expectedLength);
         }
+        [TestMethod]
+        public void AddSubjectFailLength()
+        {
+            Subject newSubject = new Subject();
+
+            SubjectLogic testLogic = new SubjectLogic();
+            testLogic.Add(newSubject);
+            Subject anotherSubject = new Subject();
+            anotherSubject.Code = "12";
+            testLogic.Add(anotherSubject);
+            Assert.IsTrue(testLogic.Length() == 2);
+        }
+
+
     }
 }
