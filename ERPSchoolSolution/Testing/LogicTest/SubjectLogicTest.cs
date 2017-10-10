@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
+using Logic;
 namespace Testing.LogicTest
 {
     [TestClass]
@@ -14,6 +15,6 @@ namespace Testing.LogicTest
             testLogic.Add(newSubjectTest);
             Assert.IsTrue(testLogic.Exists(newSubjectTest));
         }
-        
+
     }
 }
