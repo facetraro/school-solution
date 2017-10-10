@@ -49,6 +49,16 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Length() == expectedSchoolVanListLength);
         }
         [TestMethod]
+        public void AddInvalidSchoolVan()
+        {
+            SetUp();
+            SchoolVan newSchoolVan = new SchoolVan();
+            newSchoolVan.Capacity = -30;
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            testLogic.Add(newSchoolVan);
+            Assert.IsFalse(testLogic.Exists(newSchoolVan));
+        }
+        [TestMethod]
         public void ExistsSchoolVanFail()
         {
             SetUp();
