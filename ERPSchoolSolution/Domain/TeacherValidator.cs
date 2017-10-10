@@ -20,12 +20,22 @@ namespace Domain
         {
             return (aTeacher.LastName.Length > 0);
         }
-
+        
         public bool IsValid(Object anObject)
         {
             Teacher theTeacher = anObject as Teacher;
-            return (IsIdValid(theTeacher) && IsNameValid(theTeacher) && IsLastNameValid(theTeacher));
+
+            if ((System.Object)theTeacher == null)
+            {
+
+            }
+            else
+            {
+                return (IsIdValid(theTeacher) && IsNameValid(theTeacher) && IsLastNameValid(theTeacher));
+
+            }
+            return false;
+
         }
     }
-    
 }
