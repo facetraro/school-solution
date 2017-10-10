@@ -27,6 +27,17 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Exists(newSchoolVan));
         }
         [TestMethod]
+        public void AddSchoolVanFail()
+        {
+            SetUp();
+            SchoolVan newSchoolVan = new SchoolVan();
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            testLogic.Add(newSchoolVan);
+            SchoolVan anotherNewSchoolVan = new SchoolVan();
+            testLogic.Add(anotherNewSchoolVan);
+            Assert.IsTrue(testLogic.Length()==1);
+        }
+        [TestMethod]
         public void ExistsSchoolVanFail()
         {
             SetUp();
