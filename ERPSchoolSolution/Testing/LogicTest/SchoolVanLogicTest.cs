@@ -112,5 +112,17 @@ namespace Testing.LogicTest
             testLogic.Modify(schoolVan, editedSchoolVan);
             Assert.IsFalse(testLogic.Exists(schoolVan));
         }
+        [TestMethod]
+        public void ModifySchoolVanSuccess()
+        {
+            SetUp();
+            SchoolVan schoolVan = new SchoolVan();
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            SchoolVan editedSchoolVan = new SchoolVan();
+            editedSchoolVan.Id = 50;
+            testLogic.Add(schoolVan);
+            testLogic.Modify(schoolVan, editedSchoolVan);
+            Assert.IsFalse(testLogic.Exists(editedSchoolVan));
+        }
     }
 }
