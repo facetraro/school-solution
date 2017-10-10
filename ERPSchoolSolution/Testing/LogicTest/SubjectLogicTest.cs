@@ -10,6 +10,7 @@ namespace Testing.LogicTest
         [TestMethod]
         public void AddSubjectSuccess()
         {
+            
             Subject newSubjectTest = new Subject();
             SubjectLogic testLogic = new SubjectLogic();
             testLogic.Add(newSubjectTest);
