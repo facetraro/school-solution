@@ -10,9 +10,17 @@ namespace Logic
 {
     public class SchoolVanLogic : IAddRemoveModify
     {
+        private bool IsObjectASchoolVan(Object anObject)
+        {
+            return anObject is SchoolVan;
+        }
+        private bool CanIAdd(Object anObject)
+        {
+            return IsObjectASchoolVan(anObject) && !Exists(anObject);
+        }
         public void Add(Object anObject)
         {
-            if (anObject is SchoolVan && !Exists(anObject))
+            if (CanIAdd(anObject))
             {
                 Singleton theRepository = Singleton.Instance;
                 SchoolVan newSchoolVan = anObject as SchoolVan;
