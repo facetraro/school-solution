@@ -9,6 +9,8 @@ namespace Logic
     public interface IAddRemoveModify
     {
         void Add(object anObject);
+        void Remove(object anObject);
+        void Modify(object anObject, object anotherObject);
         bool Exists(object anObject);
     }
 }

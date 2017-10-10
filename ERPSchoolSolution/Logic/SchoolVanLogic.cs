@@ -10,7 +10,6 @@ namespace Logic
 {
     public class SchoolVanLogic : IAddRemoveModify
     {
-
         public void Add(Object anObject)
         {
             Singleton theRepository = Singleton.Instance;
@@ -31,11 +30,13 @@ namespace Logic
         }
         public void Modify(Object oldObject, Object newObject)
         {
+            this.Remove(oldObject);
+            this.Add(newObject);
+        }
+        public int Length()
+        {
             Singleton theRepository = Singleton.Instance;
-            SchoolVan oldSchoolVan = oldObject as SchoolVan;
-            SchoolVan newSchoolVan = newObject as SchoolVan;
-            theRepository.SchoolVans.Remove(oldSchoolVan);
-            theRepository.SchoolVans.Add(newSchoolVan);
+            return theRepository.SchoolVans.Count;
         }
         public void Empty()
         {
