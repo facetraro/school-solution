@@ -11,10 +11,11 @@ namespace Testing
         public void CompareTeacherSuccess()
         {
             Teacher aTeacher = new Teacher();
-            aTeacher.Id = 123;
+            int id = 123;
+            aTeacher.Id = id;
 
             Teacher anotherTeacher = new Teacher();
-            anotherTeacher.Id = 123;
+            anotherTeacher.Id = id;
             Assert.IsTrue(aTeacher.Equals(anotherTeacher));
             
         }
