@@ -55,7 +55,7 @@ namespace Testing.LogicTest
             Student anotherStudent = TestStudent();
             anotherStudent.Id = 2;
             testLogic.Add(newStudent);
-            testLogic.Add(newStudent);;
+            testLogic.Add(newStudent); ;
             testLogic.Add(anotherStudent);
             int expectedStudentListLength = 2;
             Assert.IsTrue(testLogic.Length() == expectedStudentListLength);
