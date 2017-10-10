@@ -72,9 +72,9 @@ namespace Testing.LogicTest
             SetUp();
             SchoolVan newSchoolVan = new SchoolVan();
             SchoolVanLogic testLogic = new SchoolVanLogic();
-            int a = 0;
+            int testInt = 0;
             testLogic.Add(newSchoolVan);
-            testLogic.Remove(a);
+            testLogic.Remove(testInt);
             Assert.IsTrue(testLogic.Exists(newSchoolVan));
         }
         [TestMethod]
