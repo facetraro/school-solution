@@ -91,7 +91,7 @@ namespace Testing.LogicTest
             Student anotherStudent = TestStudent();
             anotherStudent.Id = 3;
             testLogic.Add(newStudent);
-            testLogic.Modify(newStudent, newStudent);
+            testLogic.Modify(newStudent, anotherStudent);
             Assert.IsFalse(testLogic.Exists(newStudent));
         }
         [TestMethod]

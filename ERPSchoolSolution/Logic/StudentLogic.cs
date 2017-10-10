@@ -33,6 +33,9 @@ namespace Logic
         public void Modify(Object anObject, Object anotherObject)
         {
             Remove(anObject);
+            Student toAdd = anotherObject as Student;
+            Singleton theRepository = Singleton.Instance;
+            theRepository.Students.Add(toAdd);
         }
         public void Empty()
         {
