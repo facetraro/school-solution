@@ -2,9 +2,6 @@
 using Repository;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Logic
 {
@@ -17,7 +14,7 @@ namespace Logic
         }
         private void Insert(Student toAdd)
         {
-            
+
             Singleton theRepository = Singleton.Instance;
             theRepository.Students.Add(toAdd);
         }
@@ -37,15 +34,11 @@ namespace Logic
         }
         public void Modify(Object anObject, Object anotherObject)
         {
-
-            Singleton theRepository = Singleton.Instance;
-            Student lookUp = anObject as Student;
-            if (theRepository.Students.Contains(lookUp))
+            if (Exists(anObject))
             {
                 Remove(anObject);
                 Add(anotherObject);
             }
-    
         }
         public void Empty()
         {
