@@ -34,5 +34,15 @@ namespace Testing.LogicTest
             SchoolVanLogic testLogic = new SchoolVanLogic();
             Assert.IsFalse(testLogic.Exists(newSchoolVan));
         }
+        [TestMethod]
+        public void DeleteSchoolVanSuccess()
+        {
+            SetUp();
+            SchoolVan newSchoolVan = new SchoolVan();
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            testLogic.Add(newSchoolVan);
+            testLogic.Delete(newSchoolVan);
+            Assert.IsFalse(testLogic.Exists(newSchoolVan));
+        }
     }
 }
