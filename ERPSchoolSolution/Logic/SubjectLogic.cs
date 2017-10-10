@@ -15,7 +15,7 @@ namespace Logic
 
         public void Add(Object anObject)
         {
-         
+            
         }
         public bool Exists(Object anObject)
         {
@@ -29,10 +29,6 @@ namespace Logic
         {
 
         }
-        public int Length()
-        {
-            Singleton theRepository = Singleton.Instance;
-            return theRepository.Subjects.Count;
-        }
+
     }
 }
