@@ -97,7 +97,7 @@ namespace Testing.LogicTest
             SchoolVanLogic testLogic = new SchoolVanLogic();
             testLogic.Add(newSchoolVan);
             testLogic.Remove(anotherSchoolVan);
-            Assert.IsFalse(testLogic.Exists(newSchoolVan));
+            Assert.IsTrue(testLogic.Exists(newSchoolVan));
         }
         [TestMethod]
         public void ModifySchoolVanFail()
