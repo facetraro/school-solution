@@ -36,6 +36,16 @@ namespace Testing
             Assert.IsTrue(aTeacher.LastName.Equals(lastNameTest));
             Assert.IsTrue(aTeacher.Subjects.Equals(listSubject));
         }
-
+        public void IsValidTeacherSuccess()
+        {
+            Teacher aTeacher = new Teacher();
+            aTeacher.Id = 123;
+            aTeacher.Name = "Juan";
+            aTeacher.LastName = "Martinez";
+            List<Subject> subjects = new List<Subject>();
+            aTeacher.Subjects = subjects;
+            TeacherValidator validator = new TeacherValidator();
+            Assert.IsTrue(validator.equals(aTeacher));
+        }
     }
 }
