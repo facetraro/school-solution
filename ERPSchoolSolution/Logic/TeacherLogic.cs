@@ -42,5 +42,10 @@ namespace Logic
             Singleton theRepository = Singleton.Instance;
             return theRepository.Teachers.Count;
         }
+        public void Empty()
+        {
+            Singleton theRepository = Singleton.Instance;
+            theRepository.Teachers = new List<Teacher>();
+        }
     }
 }

@@ -10,6 +10,15 @@ namespace Testing.LogicTest
     [TestClass]
     public class TeacherLogicTest
     {
+        public void ClearRepository()
+        {
+            TeacherLogic testLogic = new TeacherLogic();
+            testLogic.Empty();
+        }
+        public void SetUp()
+        {
+            ClearRepository();
+        }
         Teacher TeacherTest()
         {
             Teacher teacherTest = new Teacher();
@@ -21,6 +30,7 @@ namespace Testing.LogicTest
         [TestMethod]
         public void AddTeacherSuccess()
         {
+            SetUp();
             TeacherLogic testLogic = new TeacherLogic();
             Teacher newTeacher = TeacherTest();
             testLogic.Add(newTeacher);
@@ -29,6 +39,7 @@ namespace Testing.LogicTest
         [TestMethod]
         public void AddTeacherFail()
         {
+            SetUp();
             TeacherLogic testLogic = new TeacherLogic();
             Teacher newTeacher = TeacherTest();
             testLogic.Add(newTeacher);
@@ -39,6 +50,7 @@ namespace Testing.LogicTest
         [TestMethod]
         public void AddTeacherLengthSuccess()
         {
+            SetUp();
             TeacherLogic testLogic = new TeacherLogic();
             Teacher newTeacher = TeacherTest();
             Teacher anotherTeacher = TeacherTest();
@@ -52,6 +64,7 @@ namespace Testing.LogicTest
         [TestMethod]
         public void AddDifferentObjectTeacherFail()
         {
+            SetUp();
             TeacherLogic testLogic = new TeacherLogic();
             Teacher newTeacher = TeacherTest();
             int intTest = 0;
@@ -59,6 +72,6 @@ namespace Testing.LogicTest
             testLogic.Add(intTest);
             int expectedTeacherListLength = 1;
             Assert.IsTrue(testLogic.Length() == expectedTeacherListLength);
-        }
+        }  
     }
 }
