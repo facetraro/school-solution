@@ -31,9 +31,13 @@ namespace Logic
             Singleton theRepository = Singleton.Instance;
             theRepository.Students.Remove(toDelete);
         }
+        private bool CanIModify(Object anObject, Object anotherObject)
+        {
+            return (Exists(anObject) && CanIAdd(anotherObject));
+        }
         public void Modify(Object anObject, Object anotherObject)
         {
-            if (Exists(anObject) && CanIAdd(anotherObject))
+            if (CanIModify(anObject, anotherObject))
             {
                 Remove(anObject);
                 Add(anotherObject);
