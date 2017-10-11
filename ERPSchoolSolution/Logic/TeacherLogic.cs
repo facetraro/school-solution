@@ -47,6 +47,7 @@ namespace Logic
         public void Modify(Object anObject, Object anotherObject)
         {
             Remove(anObject);
+            Insert(anotherObject);
         }
         public int Length()
         {
