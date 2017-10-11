@@ -150,5 +150,23 @@ namespace Testing.LogicTest
             testLogic.Modify(newSchoolVan, anotherSchoolVan);
             Assert.IsTrue(testLogic.Exists(newSchoolVan));
         }
+        [TestMethod]
+        [ExpectedException(typeof(NoStudentsInSystem))]
+        public void GetBestRoutesWithoutStudents()
+        {
+            SetUp();
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            SchoolVan newSchoolVan = new SchoolVan();
+            testLogic.Add(newSchoolVan);
+            try
+            {
+                testLogic.GetBestRoutes();
+                Assert.Fail("Should have a Exception here");
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
     }
 }
