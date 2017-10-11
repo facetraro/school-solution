@@ -76,6 +76,7 @@ namespace Testing.LogicTest
         [TestMethod]
         public void AddInvalidTeacherSuccess()
         {
+            SetUp();
             TeacherLogic testLogic = new TeacherLogic();
             Teacher newTeacher = new Teacher();
             testLogic.Add(newTeacher);

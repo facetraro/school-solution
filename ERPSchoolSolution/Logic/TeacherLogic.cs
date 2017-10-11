@@ -20,7 +20,16 @@ namespace Logic
         {
             if(anObject is Teacher)
             {
-                return !this.Exists(anObject);
+
+                Teacher toAdd = anObject as Teacher;
+                if (toAdd.Id != 0)
+                {
+                    return !this.Exists(anObject);
+
+                }
+
+
+         
             }
             return false;
         }
