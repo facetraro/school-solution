@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    public class TeacherLogic 
+    public class TeacherLogic
     {
         public void Insert(Object anObject)
         {
@@ -18,18 +18,10 @@ namespace Logic
         }
         public bool CanIAdd(Object anObject)
         {
-            if(anObject is Teacher)
+            TeacherValidator validator = new TeacherValidator();
+            if (validator.IsValid(anObject))
             {
-
-                Teacher toAdd = anObject as Teacher;
-                if (toAdd.Id != 0)
-                {
-                    return !this.Exists(anObject);
-
-                }
-
-
-         
+                return !this.Exists(anObject);
             }
             return false;
         }
@@ -39,7 +31,7 @@ namespace Logic
             {
                 Insert(anObject);
             }
-        }   
+        }
         public bool Exists(Object anObject)
         {
             Singleton theRepository = Singleton.Instance;
