@@ -42,11 +42,11 @@ namespace Logic
         }
         public void Modify(Object oldObject, Object newObject)
         {
-            Singleton theRepository = Singleton.Instance;
-            Subject oldSubject = oldObject as Subject;
-            Subject newSubject = newObject as Subject;
-            theRepository.Subjects.Remove(oldSubject);
-            theRepository.Subjects.Add(newSubject);
+            if (Exists(oldObject))
+            {
+                this.Remove(oldObject);
+                this.Add(newObject);
+            }
 
         }
 
