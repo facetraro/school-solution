@@ -106,5 +106,17 @@ namespace Testing.LogicTest
             testLogic.Modify(newTeacher, anotherTeacher);
             Assert.IsFalse(testLogic.Exists(newTeacher));
         }
+        [TestMethod]
+        public void ModifyTeacherCheckUpdateSuccess()
+        {
+            SetUp();
+            TeacherLogic testLogic = new TeacherLogic();
+            Teacher newTeacher = TeacherTest();
+            Teacher anotherTeacher = TeacherTest();
+            anotherTeacher.Id = 99;
+            testLogic.Add(newTeacher);
+            testLogic.Modify(newTeacher, anotherTeacher);
+            Assert.IsTrue(testLogic.Exists(anotherTeacher));
+        }
     }
 }
