@@ -9,6 +9,11 @@ namespace Testing.LogicTest
     [TestClass]
     public class SubjectLogicTest
     {
+        public void ClearRepository()
+        {
+            SubjectLogic testLogic = new SubjectLogic();
+            testLogic.Empty();
+        }
         private Subject testSubject()
         {
             Subject aSubject = new Subject();
@@ -21,7 +26,7 @@ namespace Testing.LogicTest
         [TestMethod]
         public void AddSubjectSuccess()
         {
-            
+            ClearRepository();
             Subject newSubjectTest = new Subject();
             SubjectLogic testLogic = new SubjectLogic();
             testLogic.Add(newSubjectTest);
@@ -30,6 +35,7 @@ namespace Testing.LogicTest
         [TestMethod]
         public void AddSubjectFail()
         {
+            ClearRepository();
             Subject newSubject = new Subject();
             SubjectLogic testLogic = new SubjectLogic();
             testLogic.Add(newSubject);
@@ -39,18 +45,18 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Length() == expectedLength);
         }
         [TestMethod]
+
         public void AddSubjectFailLength()
         {
+            ClearRepository();
             Subject newSubject = new Subject();
-
             SubjectLogic testLogic = new SubjectLogic();
+            newSubject.Code = "1";
             testLogic.Add(newSubject);
             Subject anotherSubject = new Subject();
             anotherSubject.Code = "12";
             testLogic.Add(anotherSubject);
             Assert.IsTrue(testLogic.Length() == 2);
         }
-
-
     }
 }

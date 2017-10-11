@@ -12,14 +12,22 @@ namespace Logic
     public class SubjectLogic
     {
 
-
         public void Add(Object anObject)
         {
-            
+            SubjectValidator validator = new SubjectValidator();
+            if (validator.IsValid(anObject) && !Exists(anObject)){
+                {
+                    Singleton theRepository = Singleton.Instance;
+                    Subject newSubject = anObject as Subject;
+                    theRepository.Subjects.Add(newSubject);
+                }
+            }
         }
         public bool Exists(Object anObject)
         {
-            return true;
+            Singleton theRepository = Singleton.Instance;
+            Subject newSubject = anObject as Subject;
+            return theRepository.Subjects.Contains(newSubject);
         }
         public void Remove(Object anObject)
         {
@@ -32,9 +40,15 @@ namespace Logic
 
         public int Length()
         {
-            int expectedLength = 1;
-            return expectedLength;
+            Singleton theRepository = Singleton.Instance;
+            return theRepository.Subjects.Count;
+           
         }
 
+        public void Empty()
+        {
+            Singleton theRepository = Singleton.Instance;
+            theRepository.Subjects = new List<Subject>();
+        }
     }
 }
