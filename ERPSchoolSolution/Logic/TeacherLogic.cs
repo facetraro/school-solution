@@ -46,7 +46,9 @@ namespace Logic
         }
         public void Modify(Object anObject, Object anotherObject)
         {
-           
+            Singleton theRepository = Singleton.Instance;
+            Teacher toRemove = anObject as Teacher;
+            theRepository.Teachers.Remove(toRemove);
         }
         public int Length()
         {
