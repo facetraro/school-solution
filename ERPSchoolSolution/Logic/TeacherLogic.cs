@@ -10,13 +10,23 @@ namespace Logic
 {
     public class TeacherLogic 
     {
-        public void Add(Object anObject)
+        public void Insert(Object anObject)
         {
             Singleton theRepository = Singleton.Instance;
-            if (!Exists(anObject))
+            Teacher toAdd = anObject as Teacher;
+            theRepository.Teachers.Add(toAdd);
+        }
+        public bool CanIAdd(Object anObject)
+        {
+            return !this.Exists(anObject);
+        }
+
+
+        public void Add(Object anObject)
+        {
+            if (CanIAdd(anObject))
             {
-                Teacher toAdd = anObject as Teacher;
-                theRepository.Teachers.Add(toAdd);
+                Insert(anObject);
             }
         }
         
