@@ -100,6 +100,7 @@ namespace Testing.LogicTest
         [TestMethod]
         public void ModifySubjectFail()
         {
+            ClearRepository();
             Subject newSubject = testSubject();
             Subject editedSubject = new Subject();
             SubjectLogic testLogic = new SubjectLogic();
@@ -112,13 +113,14 @@ namespace Testing.LogicTest
         [TestMethod]
         public void ModifySubjectSuccess()
         {
+            ClearRepository();
             Subject newSubject = testSubject();
             Subject editedSubject = new Subject();
             SubjectLogic testLogic = new SubjectLogic();
             editedSubject.Code = "3";
             testLogic.Add(newSubject);
             testLogic.Modify(newSubject, editedSubject);
-            Assert.IsTrue(testLogic.Exists(editedSubject);
+            Assert.IsTrue(testLogic.Exists(editedSubject));
         }
     }
 }
