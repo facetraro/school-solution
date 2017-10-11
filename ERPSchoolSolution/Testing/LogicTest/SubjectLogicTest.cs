@@ -70,5 +70,17 @@ namespace Testing.LogicTest
             int expectedSubjectLength = 0;
             Assert.IsTrue(testLogic.Length() == expectedSubjectLength);
         }
+        
+        [TestMethod]
+        public void DeleteSubjectSuccess()
+        {
+            ClearRepository();
+            Subject newSubject = new Subject();
+            SubjectLogic testLogic = new SubjectLogic();
+            testLogic.Add(newSubject);
+            testLogic.Remove(newSubject);
+            Assert.IsFalse(testLogic.Exists(newSubject));
+        }
+
     }
 }
