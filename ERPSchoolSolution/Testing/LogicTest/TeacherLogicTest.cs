@@ -113,7 +113,8 @@ namespace Testing.LogicTest
             TeacherLogic testLogic = new TeacherLogic();
             Teacher newTeacher = TeacherTest();
             Teacher anotherTeacher = TeacherTest();
-            anotherTeacher.Id = 99;
+            int differentId = 99;
+            anotherTeacher.Id = differentId;
             testLogic.Add(newTeacher);
             testLogic.Modify(newTeacher, anotherTeacher);
             Assert.IsTrue(testLogic.Exists(anotherTeacher));
