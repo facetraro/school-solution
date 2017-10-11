@@ -18,7 +18,11 @@ namespace Logic
         }
         public bool CanIAdd(Object anObject)
         {
-            return !this.Exists(anObject);
+            if(anObject is Teacher)
+            {
+                return !this.Exists(anObject);
+            }
+            return false;
         }
 
 
