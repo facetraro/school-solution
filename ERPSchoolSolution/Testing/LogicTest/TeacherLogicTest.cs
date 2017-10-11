@@ -39,7 +39,7 @@ namespace Testing.LogicTest
         [TestMethod]
         public void AddTeacherLengthSuccess()
         {
-            StudentLogic testLogic = new StudentLogic();
+            TeacherLogic testLogic = new TeacherLogic();
             Teacher newTeacher = TeacherTest();
             Teacher anotherTeacher = TeacherTest();
             anotherTeacher.Id = 2;
