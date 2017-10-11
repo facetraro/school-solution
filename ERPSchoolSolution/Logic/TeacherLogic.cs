@@ -46,17 +46,11 @@ namespace Logic
         }
         public void Modify(Object anObject, Object anotherObject)
         {
-            Singleton theRepository = Singleton.Instance;
-            Teacher lookUp = anObject as Teacher;
-            if (theRepository.Teachers.Contains(lookUp))
+            if (this.Exists(anObject))
             {
                 Remove(anObject);
-                if (CanIAdd(anotherObject))
-                {
-                    Insert(anotherObject);
-                }
-            }
-            
+                Add(anotherObject);
+            }  
         }
         public int Length()
         {
