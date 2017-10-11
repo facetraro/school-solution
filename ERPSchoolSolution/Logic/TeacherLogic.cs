@@ -44,9 +44,13 @@ namespace Logic
             Teacher toRemove = anObject as Teacher;
             theRepository.Teachers.Remove(toRemove);
         }
+        private bool CanIModify(Object anObject, Object anotherObject)
+        {
+            return (this.Exists(anObject) && CanIAdd(anotherObject));
+        }
         public void Modify(Object anObject, Object anotherObject)
         {
-            if (this.Exists(anObject) && CanIAdd(anotherObject))
+            if (this.CanIModify(anObject,anotherObject))
             {
                 Remove(anObject);
                 Add(anotherObject);
