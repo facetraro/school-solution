@@ -50,11 +50,13 @@ namespace Testing.LogicTest
         {
             ClearRepository();
             Subject newSubject = new Subject();
+            string testCode = "1";
+            string anotherTestCode = "12";
             SubjectLogic testLogic = new SubjectLogic();
-            newSubject.Code = "1";
+            newSubject.Code = testCode;
             testLogic.Add(newSubject);
             Subject anotherSubject = new Subject();
-            anotherSubject.Code = "12";
+            anotherSubject.Code = anotherTestCode;
             testLogic.Add(anotherSubject);
             Assert.IsTrue(testLogic.Length() == 2);
         }

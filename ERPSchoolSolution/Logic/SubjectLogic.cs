@@ -11,11 +11,16 @@ namespace Logic
 
     public class SubjectLogic
     {
+        private bool CanIAdd(Object anObject)
+        {
+            SubjectValidator validator = new SubjectValidator();
+            return validator.IsValid(anObject) && !Exists(anObject);
+        }
 
         public void Add(Object anObject)
         {
-            SubjectValidator validator = new SubjectValidator();
-            if (validator.IsValid(anObject) && !Exists(anObject)){
+
+            if (CanIAdd(anObject)){
                 {
                     Singleton theRepository = Singleton.Instance;
                     Subject newSubject = anObject as Subject;
