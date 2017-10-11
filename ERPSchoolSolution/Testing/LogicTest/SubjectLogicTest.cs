@@ -75,7 +75,7 @@ namespace Testing.LogicTest
         public void DeleteSubjectSuccess()
         {
             ClearRepository();
-            Subject newSubject = new Subject();
+            Subject newSubject = testSubject();
             SubjectLogic testLogic = new SubjectLogic();
             testLogic.Add(newSubject);
             testLogic.Remove(newSubject);
