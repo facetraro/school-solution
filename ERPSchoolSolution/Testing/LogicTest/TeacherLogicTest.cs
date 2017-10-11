@@ -26,5 +26,14 @@ namespace Testing.LogicTest
             testLogic.Add(newTeacher);
             Assert.IsTrue(testLogic.Exists(newTeacher));
         }
+        [TestMethod]
+        public void AddTeacherFail()
+        {
+            StudentLogic testLogic = new StudentLogic();
+            Teacher newTeacher = TeacherTest();
+            testLogic.Add(newTeacher);
+            testLogic.Add(newTeacher);
+            Assert.IsTrue(testLogic.Length() == 1);
+        }
     }
 }
