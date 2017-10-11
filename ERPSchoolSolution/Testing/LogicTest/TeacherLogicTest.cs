@@ -89,6 +89,7 @@ namespace Testing.LogicTest
             SetUp();
             TeacherLogic testLogic = new TeacherLogic();
             Teacher newTeacher = new Teacher();
+            newTeacher.Name = "toDelete";
             testLogic.Add(newTeacher);
             testLogic.Remove(newTeacher);
             Assert.IsFalse(testLogic.Exists(newTeacher));

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    public class TeacherLogic
+    public class TeacherLogic : IAddRemoveModify
     {
         public void Insert(Object anObject)
         {
@@ -43,6 +43,10 @@ namespace Logic
             Singleton theRepository = Singleton.Instance;
             Teacher toRemove = anObject as Teacher;
             theRepository.Teachers.Remove(toRemove);
+        }
+        public void Modify(Object anObject, Object anotherObject)
+        {
+           
         }
         public int Length()
         {
