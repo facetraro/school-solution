@@ -10,11 +10,19 @@ namespace Testing.LogicTest
     [TestClass]
     public class TeacherLogicTest
     {
+        Teacher TeacherTest()
+        {
+            Teacher teacherTest = new Teacher();
+            teacherTest.Name = "testName";
+            teacherTest.LastName = "testLastName";
+            teacherTest.Id = 4;
+            return teacherTest;
+        }
         [TestMethod]
         public void AddTeacherSuccess()
         {
             TeacherLogic testLogic = new TeacherLogic();
-            Teacher newTeacher = new Teacher();
+            Teacher newTeacher = TeacherTest();
             testLogic.Add(newTeacher);
             Assert.IsTrue(testLogic.Exists(newTeacher));
         }
