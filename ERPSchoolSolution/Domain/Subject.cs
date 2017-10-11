@@ -17,7 +17,6 @@ namespace Domain
             this.Code = "";
             this.Name = "";
         }
-       
         public override bool Equals(object aSubject)
         {
             Subject theSubject = aSubject as Subject;

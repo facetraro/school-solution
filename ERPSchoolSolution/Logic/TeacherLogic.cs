@@ -50,11 +50,11 @@ namespace Logic
         }
         public void Modify(Object anObject, Object anotherObject)
         {
-            if (this.CanIModify(anObject,anotherObject))
+            if (this.CanIModify(anObject, anotherObject))
             {
                 Remove(anObject);
                 Add(anotherObject);
-            }  
+            }
         }
         public int Length()
         {

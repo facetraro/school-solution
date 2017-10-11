@@ -20,7 +20,7 @@ namespace Domain
         {
             return (aTeacher.LastName.Length > 0);
         }
-        
+
         public bool IsValid(Object anObject)
         {
             Teacher theTeacher = anObject as Teacher;
@@ -30,7 +30,6 @@ namespace Domain
                 return false;
             }
             return (IsIdValid(theTeacher) && IsNameValid(theTeacher) && IsLastNameValid(theTeacher));
-
         }
     }
 }

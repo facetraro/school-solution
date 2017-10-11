@@ -45,7 +45,6 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Length() == expectedLength);
         }
         [TestMethod]
-
         public void AddSubjectFailLength()
         {
             ClearRepository();
@@ -70,7 +69,6 @@ namespace Testing.LogicTest
             int expectedSubjectLength = 0;
             Assert.IsTrue(testLogic.Length() == expectedSubjectLength);
         }
-        
         [TestMethod]
         public void DeleteSubjectSuccess()
         {
@@ -96,7 +94,6 @@ namespace Testing.LogicTest
             testLogic.Remove(anotherNewSubject);
             Assert.IsTrue(testLogic.Exists(newSubject));
         }
-
         [TestMethod]
         public void ModifySubjectFail()
         {
@@ -133,7 +130,7 @@ namespace Testing.LogicTest
             string testCode = "3";
             editedSubject.Code = testCode;
             testLogic.Modify(newSubject, editedSubject);
-            Assert.IsFalse(testLogic.Exists(editedSubject));          
+            Assert.IsFalse(testLogic.Exists(editedSubject));
         }
     }
 }

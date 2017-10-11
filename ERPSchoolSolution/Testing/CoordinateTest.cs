@@ -103,7 +103,5 @@ namespace Testing
             int expectedDistance = 7;
             Assert.IsTrue(coordinateDistance == expectedDistance);
         }
-
-
     }
 }

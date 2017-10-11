@@ -21,7 +21,6 @@ namespace Domain
                 return false;
             }
             return IsCodeValid(theSubject);
-        }
-         
+        }        
     }
 }
