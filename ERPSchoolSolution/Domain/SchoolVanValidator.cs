@@ -21,7 +21,7 @@ namespace Domain
             {
                 return false;
             }
-            return validCapacity(theSchoolVan);
+            return validCapacity(theSchoolVan) && 0<=theSchoolVan.Id;
         }
     }
 }
