@@ -81,6 +81,19 @@ namespace Testing.LogicTest
             testLogic.Remove(newSubject);
             Assert.IsFalse(testLogic.Exists(newSubject));
         }
+        [TestMethod]
+        public void DeleteSubjectFail()
+        {
+            ClearRepository();
+            Subject newSubject = testSubject();
+            newSubject.Code ="5";
+            Subject anotherNewSubject = testSubject();
+            anotherNewSubject.Code = "6";
+            SubjectLogic testLogic = new SubjectLogic();
+            testLogic.Add(newSubject);
+            testLogic.Remove(newSubject);
+            Assert.IsTrue(testLogic.Exists(newSubject));
+        }
 
     }
 }
