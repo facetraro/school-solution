@@ -12,11 +12,14 @@ namespace Repository
         private static Singleton instance;
         public List<SchoolVan> SchoolVans { get; set; }
         public List<Student> Students { get; set; }
+        public List<Subject> Subjects { get; set; }
 
         private Singleton()
         {
             this.SchoolVans = new List<SchoolVan>();
             this.Students = new List<Student>();
+            this.Subjects = new List<Subject>();
+
         }
         public static Singleton Instance
         {

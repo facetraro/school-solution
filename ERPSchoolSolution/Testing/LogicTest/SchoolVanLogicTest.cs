@@ -124,6 +124,7 @@ namespace Testing.LogicTest
             testLogic.Add(schoolVan);
             testLogic.Modify(schoolVan, editedSchoolVan);
             Assert.IsTrue(testLogic.Exists(editedSchoolVan));
+
         }
         [TestMethod]
         public void ModifySchoolVanModifyNonExistent()
