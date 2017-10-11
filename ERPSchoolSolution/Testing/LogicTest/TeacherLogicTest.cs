@@ -33,7 +33,8 @@ namespace Testing.LogicTest
             Teacher newTeacher = TeacherTest();
             testLogic.Add(newTeacher);
             testLogic.Add(newTeacher);
-            Assert.IsTrue(testLogic.Length() == 1);
+            int expectedTeacherListLength = 1;
+            Assert.IsTrue(testLogic.Length() == expectedTeacherListLength);
         }
     }
 }
