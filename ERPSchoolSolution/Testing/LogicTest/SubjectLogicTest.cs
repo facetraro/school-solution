@@ -86,9 +86,11 @@ namespace Testing.LogicTest
         {
             ClearRepository();
             Subject newSubject = testSubject();
-            newSubject.Code ="5";
+            string testCode = "5";
+            newSubject.Code = testCode;
             Subject anotherNewSubject = testSubject();
-            anotherNewSubject.Code = "6";
+            string anotherTestCode = "6";
+            anotherNewSubject.Code = anotherTestCode;
             SubjectLogic testLogic = new SubjectLogic();
             testLogic.Add(newSubject);
             testLogic.Remove(anotherNewSubject);
