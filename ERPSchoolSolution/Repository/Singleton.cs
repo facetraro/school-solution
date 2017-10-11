@@ -13,13 +13,14 @@ namespace Repository
         public List<SchoolVan> SchoolVans { get; set; }
         public List<Student> Students { get; set; }
         public List<Subject> Subjects { get; set; }
+        public List<Teacher> Teachers { get; set; }
 
         private Singleton()
         {
             this.SchoolVans = new List<SchoolVan>();
             this.Students = new List<Student>();
             this.Subjects = new List<Subject>();
-
+            this.Teachers = new List<Teacher>();
         }
         public static Singleton Instance
         {

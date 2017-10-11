@@ -14,7 +14,6 @@ namespace Logic
         }
         private void Insert(Student toAdd)
         {
-
             Singleton theRepository = Singleton.Instance;
             theRepository.Students.Add(toAdd);
         }
