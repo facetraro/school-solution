@@ -67,8 +67,7 @@ namespace Testing.LogicTest
             SubjectLogic testLogic = new SubjectLogic();
             int test = 0;
             testLogic.Add(test);
-            int expectedSubjectLength = 0;
-            Assert.IsTrue(testLogic.Length() == expectedSubjectLength);
+            Assert.IsTrue(testLogic.Length() == 0);
         }
     }
 }
