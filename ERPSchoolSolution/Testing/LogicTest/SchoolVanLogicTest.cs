@@ -138,5 +138,17 @@ namespace Testing.LogicTest
             testLogic.Modify(schoolVan, editedSchoolVan);
             Assert.IsFalse(testLogic.Exists(editedSchoolVan));
         }
+        [TestMethod]
+        public void ModifySchoolVanFailCheckOldSchoolVan()
+        {
+            SetUp();
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            SchoolVan newSchoolVan = new SchoolVan();
+            SchoolVan anotherSchoolVan = new SchoolVan();
+            anotherSchoolVan.Id = -3;
+            testLogic.Add(newSchoolVan);
+            testLogic.Modify(newSchoolVan, anotherSchoolVan);
+            Assert.IsTrue(testLogic.Exists(newSchoolVan));
+        }
     }
 }
