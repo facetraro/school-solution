@@ -46,7 +46,7 @@ namespace Logic
         }
         public void Modify(Object anObject, Object anotherObject)
         {
-            if (this.Exists(anObject))
+            if (this.Exists(anObject) && CanIAdd(anotherObject))
             {
                 Remove(anObject);
                 Add(anotherObject);
