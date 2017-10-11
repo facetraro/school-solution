@@ -83,5 +83,15 @@ namespace Testing.LogicTest
             int expectedTeacherListLength = 0;
             Assert.IsTrue(testLogic.Length() == expectedTeacherListLength);
         }
+        [TestMethod]
+        public void DeleteTeacherSuccess()
+        {
+            SetUp();
+            TeacherLogic testLogic = new TeacherLogic();
+            Teacher newTeacher = new Teacher();
+            testLogic.Add(newTeacher);
+            testLogic.Remove(newTeacher);
+            Assert.IsFalse(testLogic.Exists(newTeacher));
+        }
     }
 }
