@@ -29,7 +29,7 @@ namespace Testing.LogicTest
         [TestMethod]
         public void AddTeacherFail()
         {
-            StudentLogic testLogic = new StudentLogic();
+            TeacherLogic testLogic = new TeacherLogic();
             Teacher newTeacher = TeacherTest();
             testLogic.Add(newTeacher);
             testLogic.Add(newTeacher);
