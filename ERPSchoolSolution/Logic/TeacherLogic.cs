@@ -38,6 +38,12 @@ namespace Logic
             Teacher lookUp = anObject as Teacher;
             return theRepository.Teachers.Contains(lookUp);
         }
+        public void Remove(Object anObject)
+        {
+            Singleton theRepository = Singleton.Instance;
+            Teacher toRemove = anObject as Teacher;
+            theRepository.Teachers.Remove(toRemove);
+        }
         public int Length()
         {
             Singleton theRepository = Singleton.Instance;
