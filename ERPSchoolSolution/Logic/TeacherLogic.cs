@@ -24,16 +24,13 @@ namespace Logic
             }
             return false;
         }
-
-
         public void Add(Object anObject)
         {
             if (CanIAdd(anObject))
             {
                 Insert(anObject);
             }
-        }
-        
+        }   
         public bool Exists(Object anObject)
         {
             Singleton theRepository = Singleton.Instance;
