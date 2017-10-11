@@ -47,7 +47,14 @@ namespace Logic
         public void Modify(Object anObject, Object anotherObject)
         {
             Remove(anObject);
-            Insert(anotherObject);
+
+            TeacherValidator validator = new TeacherValidator();
+            if (validator.IsValid(anotherObject))
+            {
+                Insert(anotherObject);
+
+            }
+            
         }
         public int Length()
         {
