@@ -91,7 +91,7 @@ namespace Testing.LogicTest
             anotherNewSubject.Code = "6";
             SubjectLogic testLogic = new SubjectLogic();
             testLogic.Add(newSubject);
-            testLogic.Remove(newSubject);
+            testLogic.Remove(anotherNewSubject);
             Assert.IsTrue(testLogic.Exists(newSubject));
         }
 
