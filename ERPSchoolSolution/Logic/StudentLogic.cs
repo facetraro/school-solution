@@ -33,7 +33,7 @@ namespace Logic
         }
         public void Modify(Object anObject, Object anotherObject)
         {
-            if (Exists(anObject))
+            if (Exists(anObject) && CanIAdd(anotherObject))
             {
                 Remove(anObject);
                 Add(anotherObject);
