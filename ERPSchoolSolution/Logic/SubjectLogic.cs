@@ -36,7 +36,9 @@ namespace Logic
         }
         public void Remove(Object anObject)
         {
-
+            Singleton theRepository = Singleton.Instance;
+            Subject newSubject = anObject as Subject;
+            theRepository.Subjects.Remove(newSubject);
         }
         public void Modify(Object oldObject, Object newObject)
         {
