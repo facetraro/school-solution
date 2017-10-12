@@ -47,5 +47,18 @@ namespace Testing
             newRoute.Add(newStudent);
             Assert.IsTrue(newRoute.TotalDistance() == 0);
         }
+        [TestMethod]
+        public void CalculateSimpleDistance()
+        {
+            Route newRoute = new Route();
+            Coordinate newCoordinate = new Coordinate();
+            newCoordinate.X = 5;
+            newRoute.Add(newCoordinate);
+            Student newStudent = TestStudent();
+            newStudent.Coordinates.X = 5;
+            newStudent.Coordinates.Y = 5;
+            newRoute.Add(newStudent);
+            Assert.IsTrue(newRoute.TotalDistance() == 10);
+        }
     }
 }
