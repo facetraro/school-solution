@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
 using Logic;
 using Exceptions;
-
+using System.Collections.Generic;
 
 namespace Testing.LogicTest
 {
@@ -178,6 +178,30 @@ namespace Testing.LogicTest
             newStudent.LastName = "TestLastName";
             testLogic.Add(newStudent);
             schoolVanLogic.GetBestRoutes();
+        }
+        [TestMethod]
+        public void GetBasicBestRoutes()
+        {
+            SetUp();
+            StudentLogic testLogic = new StudentLogic();
+            SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
+            Student newStudent = new Student();
+            newStudent.Ci = 47803333;
+            newStudent.Id = 1;
+            newStudent.Name = "TestName";
+            newStudent.LastName = "TestLastName";
+            testLogic.Add(newStudent);
+            SchoolVanLogic logic = new SchoolVanLogic();
+            SchoolVan newSchoolVan = new SchoolVan();
+            logic.Add(newSchoolVan);
+            Route expectedRoute = new Route();
+            Coordinate schoolCoordinate = new Coordinate();
+            expectedRoute.Add(schoolCoordinate);
+            expectedRoute.Add(newStudent);
+            expectedRoute.Add(schoolCoordinate);
+            List<Route> expectedRoutes = new List<Route>();
+            expectedRoutes.Add(expectedRoute);
+            Assert.AreEqual(expectedRoutes, schoolVanLogic.GetBestRoutes());
         }
     }
 }
