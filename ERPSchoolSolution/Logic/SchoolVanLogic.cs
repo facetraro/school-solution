@@ -112,39 +112,70 @@ namespace Logic
             }
             return false;
         }
-        public List<Route> GetBestRoutes()
+        private void AddStudentToRoute(Route schoolVanRoute, Student aStudent, int studentsInSchoolVan)
         {
-            List<Route> newRoutes = new List<Route>();
-            if (CanIGetBestRoutes())
+            studentsInSchoolVan++;
+            schoolVanRoute.Add(aStudent);
+        }
+        private void CanIAddStudentToRoute(Route schoolVanRoute, Student aStudent, int studentsInSchoolVan)
+        {
+            if (!schoolVanRoute.IsStudentInRoute(aStudent))
             {
-                Singleton theRepository = Singleton.Instance;
-                List<SchoolVan> allSchoolVans = theRepository.SchoolVans;
-                List<Student> allStudents = theRepository.Students;
-                foreach (SchoolVan aSchoolVan in allSchoolVans)
-                {
-                    Route schoolVanRoute = new Route();
-                    newRoutes.Add(schoolVanRoute);
-                    Coordinate coor = new Coordinate();
-                    
-                    schoolVanRoute.Add(coor);
-                    int studentsInSchoolVan = 0;
-                    while((aSchoolVan.Capacity - studentsInSchoolVan)>=0 && !AllStudentsAlreadyDelivered(allStudents, newRoutes))
-                    {
-                        foreach (Student aStudent in allStudents)
-                        {
-                            if (!schoolVanRoute.IsStudentInRoute(aStudent))
-                            {
-                                studentsInSchoolVan++;
-                                schoolVanRoute.Add(aStudent);
-                            } 
-                        }
-                    }
-                    schoolVanRoute.Add(coor);
-                    studentsInSchoolVan = 0;
-                   
-                }
+                AddStudentToRoute(schoolVanRoute, aStudent, studentsInSchoolVan);
+            }
+        }
+        public void SearchNextStudent(Route schoolVanRoute, int studentsInSchoolVan)
+        {
+            Singleton theRepository = Singleton.Instance;
+            List<Student> allStudents = theRepository.Students;
+            foreach (Student aStudent in allStudents)
+            {
+                CanIAddStudentToRoute(schoolVanRoute, aStudent, studentsInSchoolVan);
+            }
+        }
+        public bool KeepSearching(List<Route> newRoutes, int studentsInSchoolVan, SchoolVan aSchoolVan)
+        {
+            Singleton theRepository = Singleton.Instance;
+            List<Student> allStudents = theRepository.Students;
+            return (aSchoolVan.Capacity - studentsInSchoolVan) >= 0 && !AllStudentsAlreadyDelivered(allStudents, newRoutes);
+        }
+        public void AddSchoolCoordinate(Route theRoute)
+        {
+            theRoute.Add(new Coordinate());
+        }
+        public Route BestRoute(List<Route> newRoutes, SchoolVan aSchoolVan)
+        {
+            Route schoolVanRoute = new Route();
+            newRoutes.Add(schoolVanRoute);
+            AddSchoolCoordinate(schoolVanRoute);
+            int studentsInSchoolVan = 0;
+            while (KeepSearching(newRoutes, studentsInSchoolVan, aSchoolVan))
+            {
+                SearchNextStudent(schoolVanRoute, studentsInSchoolVan);
+            }
+            AddSchoolCoordinate(schoolVanRoute);
+            studentsInSchoolVan = 0;
+            return schoolVanRoute;
+        }
+        private List<Route> FindBestRoutes()
+        {
+            Singleton theRepository = Singleton.Instance;
+            List<SchoolVan> allSchoolVans = theRepository.SchoolVans;
+            List<Route> newRoutes = new List<Route>();
+            foreach (SchoolVan aSchoolVan in allSchoolVans)
+            {
+                newRoutes.Add(BestRoute(newRoutes, aSchoolVan));
             }
             return newRoutes;
+        }
+        public List<Route> GetBestRoutes()
+        {
+
+            if (CanIGetBestRoutes())
+            {
+                return FindBestRoutes();
+            }
+            return new List<Route>();
         }
     }
 }
