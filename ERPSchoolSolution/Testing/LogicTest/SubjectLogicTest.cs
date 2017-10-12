@@ -27,7 +27,7 @@ namespace Testing.LogicTest
         public void AddSubjectSuccess()
         {
             ClearRepository();
-            Subject newSubjectTest = new Subject();
+            Subject newSubjectTest = testSubject();
             SubjectLogic testLogic = new SubjectLogic();
             testLogic.Add(newSubjectTest);
             Assert.IsTrue(testLogic.Exists(newSubjectTest));
@@ -36,7 +36,7 @@ namespace Testing.LogicTest
         public void AddSubjectFail()
         {
             ClearRepository();
-            Subject newSubject = new Subject();
+            Subject newSubject = testSubject();
             SubjectLogic testLogic = new SubjectLogic();
             testLogic.Add(newSubject);
             Subject anotherSubject = new Subject();

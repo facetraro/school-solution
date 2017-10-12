@@ -11,7 +11,7 @@ namespace Domain
         public bool IsCodeValid(Subject theSubject)
         {
 
-            return theSubject.Code != null;
+            return theSubject.Code != null && theSubject.Code != "";
         }
         public bool IsValid(Object anObject)
         {
