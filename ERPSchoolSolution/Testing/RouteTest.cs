@@ -8,13 +8,22 @@ namespace Testing
     [TestClass]
     public class RouteTest
     {
+        private Student TestStudent()
+        {
+            Student testStudent = new Student();
+            testStudent.Id = 54;
+            testStudent.Ci = 47642349;
+            testStudent.Name = "TestName";
+            testStudent.LastName = "TestLastName";
+            return testStudent;
+        }
         [TestMethod]
         public void AddToRouteSuccess()
         {
             Route newRoute = new Route();
             Coordinate newCoordinate = new Coordinate();
             newRoute.Add(newCoordinate);
-            Student newStudent = new Student();
+            Student newStudent = TestStudent();
             newRoute.Add(newStudent);
             Assert.IsTrue(newRoute.Length()==2);
         }
@@ -34,7 +43,7 @@ namespace Testing
             Route newRoute = new Route();
             Coordinate newCoordinate = new Coordinate();
             newRoute.Add(newCoordinate);
-            Student newStudent = new Student();
+            Student newStudent = TestStudent();
             newRoute.Add(newStudent);
             Assert.IsTrue(newRoute.TotalDistance() == 0);
         }
