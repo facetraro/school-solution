@@ -43,7 +43,7 @@ namespace Logic
         }
         public void Modify(Object oldObject, Object newObject)
         {
-            if (CanIModify(oldObject,newObject))
+            if (CanIModify(oldObject, newObject))
             {
                 this.Remove(oldObject);
                 this.Add(newObject);
@@ -59,10 +59,12 @@ namespace Logic
             Singleton theRepository = Singleton.Instance;
             theRepository.SchoolVans = new List<SchoolVan>();
         }
+     
         public void GetBestRoutes()
         {
             Singleton theRepository = Singleton.Instance;
-            if(theRepository.Students.Count()==0)
+            StudentLogic studentLogic = new StudentLogic();
+            if (studentLogic.IsEmpty())
             {
                 throw new NoStudentsInSystemException("No Students in the system");
             }
