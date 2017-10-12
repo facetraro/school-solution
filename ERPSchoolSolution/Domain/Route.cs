@@ -8,7 +8,18 @@ namespace Domain
 {
     public class Route
     {
-        public List<Object> TheRoute { get; set; }
+        private List<Object> theRoute { get; set; }
+        public List<Object> TheRoute
+        {
+            get
+            {
+                return this.theRoute;
+            }
+            set
+            {
+                this.theRoute = value;
+            }
+        }
         public void Add(Object anObject)
         {
 
