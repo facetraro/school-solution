@@ -132,5 +132,18 @@ namespace Testing.LogicTest
             testLogic.Modify(newSubject, editedSubject);
             Assert.IsFalse(testLogic.Exists(editedSubject));
         }
+        [TestMethod]
+        public void ModifySubjectFailOldSubject()
+        {
+            ClearRepository();
+            SubjectLogic testLogic = new SubjectLogic();
+            Subject newSubject = testSubject();
+            Subject anotherSubject = new Subject();
+            anotherSubject.Code = "";
+            testLogic.Add(newSubject);
+            testLogic.Modify(newSubject, anotherSubject);
+            Assert.IsTrue(testLogic.Exists(newSubject));
+
+        }
     }
 }

@@ -7,8 +7,6 @@ using Domain;
 using Repository;
 namespace Logic
 {
-
-
     public class SubjectLogic
     {
         private bool CanIAdd(Object anObject)
@@ -42,14 +40,12 @@ namespace Logic
         }
         public void Modify(Object oldObject, Object newObject)
         {
-            if (Exists(oldObject))
+            if (Exists(oldObject)) 
             {
                 this.Remove(oldObject);
                 this.Add(newObject);
             }
-
         }
-
         public int Length()
         {
             Singleton theRepository = Singleton.Instance;

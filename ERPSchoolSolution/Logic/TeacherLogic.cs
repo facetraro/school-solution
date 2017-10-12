@@ -32,6 +32,7 @@ namespace Logic
                 Insert(anObject);
             }
         }
+       
         public bool Exists(Object anObject)
         {
             Singleton theRepository = Singleton.Instance;
