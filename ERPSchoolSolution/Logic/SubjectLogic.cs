@@ -38,9 +38,14 @@ namespace Logic
             Subject newSubject = anObject as Subject;
             theRepository.Subjects.Remove(newSubject);
         }
+        public bool CanIModify(Object oldObject, Object newObject)
+        {
+            return Exists(oldObject) && CanIAdd(newObject);
+
+        }
         public void Modify(Object oldObject, Object newObject)
         {
-            if (Exists(oldObject) && CanIAdd(newObject)) 
+            if (CanIModify(oldObject,newObject))
             {
                 this.Remove(oldObject);
                 this.Add(newObject);

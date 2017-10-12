@@ -139,7 +139,8 @@ namespace Testing.LogicTest
             SubjectLogic testLogic = new SubjectLogic();
             Subject newSubject = testSubject();
             Subject anotherSubject = new Subject();
-            anotherSubject.Code = "";
+            string emptyCode = "";
+            anotherSubject.Code = emptyCode;
             testLogic.Add(newSubject);
             testLogic.Modify(newSubject, anotherSubject);
             Assert.IsTrue(testLogic.Exists(newSubject));
