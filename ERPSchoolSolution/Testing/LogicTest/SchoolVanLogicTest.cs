@@ -172,6 +172,10 @@ namespace Testing.LogicTest
             StudentLogic testLogic = new StudentLogic();
             SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
             Student newStudent = new Student();
+            newStudent.Ci = 47803333;
+            newStudent.Id = 1;
+            newStudent.Name = "TestName";
+            newStudent.LastName = "TestLastName";
             testLogic.Add(newStudent);
             schoolVanLogic.GetBestRoutes();
         }

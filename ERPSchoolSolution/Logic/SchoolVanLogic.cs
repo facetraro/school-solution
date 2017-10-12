@@ -68,6 +68,10 @@ namespace Logic
             {
                 throw new NoStudentsInSystemException("No Students in the system");
             }
+            if (theRepository.SchoolVans.Count==0)
+            {
+                throw new NoSchoolVanInSystemException("No School Vans in the system");
+            }
         }
     }
 }
