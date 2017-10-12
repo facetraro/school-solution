@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
+using Exceptions;
 
 namespace Testing
 {
@@ -17,6 +18,7 @@ namespace Testing
             newRoute.Add(newStudent);
             Assert.IsTrue(newRoute.Length()==2);
         }
+        [ExpectedException(typeof(InvalidObjectAddIntoRouteSystemException))]
         [TestMethod]
         public void AddToRouteFail()
         {
@@ -25,7 +27,6 @@ namespace Testing
             newRoute.Add(newCoordinate);
             int invalidObjectRoute = 5;
             newRoute.Add(invalidObjectRoute);
-            Assert.IsTrue(newRoute.Length() == 1);
         }
     }
 }

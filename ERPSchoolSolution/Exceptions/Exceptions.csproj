@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InvalidObjectAddIntoRouteSystemException.cs" />
     <Compile Include="NoSchoolVanInSystemException.cs" />
     <Compile Include="NoStudentsInSystemException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
