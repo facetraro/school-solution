@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
 using Logic;
+using Exceptions;
+
 
 namespace Testing.LogicTest
 {
@@ -151,22 +153,15 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Exists(newSchoolVan));
         }
         [TestMethod]
-        [ExpectedException(typeof(NoStudentsInSystem))]
+        [ExpectedException(typeof(NoStudentsInSystemException))]
         public void GetBestRoutesWithoutStudents()
         {
             SetUp();
+            NoStudentsInSystemException expectedExcetpion = new NoStudentsInSystemException("No Students in the system");
             SchoolVanLogic testLogic = new SchoolVanLogic();
             SchoolVan newSchoolVan = new SchoolVan();
             testLogic.Add(newSchoolVan);
-            try
-            {
-                testLogic.GetBestRoutes();
-                Assert.Fail("Should have a Exception here");
-            }
-            catch (Exception ex)
-            {
-                
-            }
+            testLogic.GetBestRoutes();
         }
     }
 }

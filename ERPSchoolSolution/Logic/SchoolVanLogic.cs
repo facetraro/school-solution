@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Exceptions;
 using Repository;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,14 @@ namespace Logic
         {
             Singleton theRepository = Singleton.Instance;
             theRepository.SchoolVans = new List<SchoolVan>();
+        }
+        public void GetBestRoutes()
+        {
+            Singleton theRepository = Singleton.Instance;
+            if(theRepository.Students.Count()==0)
+            {
+                throw new NoStudentsInSystemException("No Students in the system");
+            }
         }
     }
 }
