@@ -52,9 +52,28 @@ namespace Domain
                 throw new InvalidObjectAddIntoRouteSystemException("Invalid object into Route");
             }
         }
+
         public int TotalDistance()
         {
-            return 0;
+            int totalDistance = 0;
+            Coordinate actualCoordinate = new Coordinate();
+            foreach (Object anObject in this.theRoute)
+            {
+                if (this.IsAStudent(anObject))
+                {
+                    Student aStudent = anObject as Student;
+                    totalDistance = totalDistance + actualCoordinate.GetDistanceOf(aStudent.Coordinates);
+                    actualCoordinate = aStudent.Coordinates;
+                }
+                if (this.IsACoordinate(anObject))
+                {
+                    Coordinate aCoordinate = anObject as Coordinate;
+                    totalDistance = totalDistance + actualCoordinate.GetDistanceOf(aCoordinate);
+                    actualCoordinate = aCoordinate;
+                }
+            }
+
+            return totalDistance;
         }
         public int Length()
         {

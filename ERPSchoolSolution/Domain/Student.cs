@@ -11,6 +11,15 @@ namespace Domain
         private int studentNumber { get; set; }
         private Coordinate coordinates { get; set; }
         private List<Subject> subjects { get; set; }
+        public Student()
+        {
+            Id = 0;
+            Name = "defaultname";
+            LastName = "defaultlastname";
+            coordinates = new Coordinate();
+            subjects = new List<Subject>();
+        }
+
         public int Ci
         {
             get
