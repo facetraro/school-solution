@@ -28,5 +28,15 @@ namespace Testing
             int invalidObjectRoute = 5;
             newRoute.Add(invalidObjectRoute);
         }
+        [TestMethod]
+        public void CalculateBasicDistance()
+        {
+            Route newRoute = new Route();
+            Coordinate newCoordinate = new Coordinate();
+            newRoute.Add(newCoordinate);
+            Student newStudent = new Student();
+            newRoute.Add(newStudent);
+            Assert.IsTrue(newRoute.TotalDistance() == 0);
+        }
     }
 }
