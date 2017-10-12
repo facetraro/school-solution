@@ -25,23 +25,32 @@ namespace Domain
                 this.theRoute = value;
             }
         }
+        private bool IsACoordinate(Object anObject)
+        {
+            return (anObject is Coordinate);
+        }
+        private bool IsAStudent(Object anObject)
+        {
+            return (anObject is Student);
+        }
+        private bool IsARouteObject(Object anObject)
+        {
+            return IsACoordinate(anObject) || IsAStudent(anObject);
+        }
+        public void AddIntoRoute(Object anObject)
+        {
+            this.theRoute.Add(anObject);
+        }
         public void Add(Object anObject)
         {
-            if ((anObject is Coordinate)|| (anObject is Student))
+            if (IsARouteObject(anObject))
             {
-                if (anObject is Coordinate)
-                {
-                    this.theRoute.Add(anObject);
-                }
-                if (anObject is Student)
-                {
-                    this.theRoute.Add(anObject);
-                }
-            } else
+                AddIntoRoute(anObject);
+            }
+            else
             {
                 throw new InvalidObjectAddIntoRouteSystemException("Invalid object into Route");
             }
-           
         }
         public int Length()
         {
