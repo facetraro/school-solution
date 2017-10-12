@@ -17,5 +17,15 @@ namespace Testing
             newRoute.Add(newStudent);
             Assert.IsTrue(newRoute.Length()==2);
         }
+        [TestMethod]
+        public void AddToRouteFail()
+        {
+            Route newRoute = new Route();
+            Coordinate newCoordinate = new Coordinate();
+            newRoute.Add(newCoordinate);
+            int invalidObjectRoute = 5;
+            newRoute.Add(invalidObjectRoute);
+            Assert.IsTrue(newRoute.Length() == 1);
+        }
     }
 }
