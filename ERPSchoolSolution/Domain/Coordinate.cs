@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Coordinate
+    public class Coordinate : IRouteObject
     {
         private int x { get; set; }
         private int y { get; set; }
+        public Coordinate GetCoordinates()
+        {
+            return this;
+        }
         public int X
         {
             get

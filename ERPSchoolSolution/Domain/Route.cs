@@ -9,12 +9,12 @@ namespace Domain
 {
     public class Route
     {
-        private List<Object> theRoute { get; set; }
+        private List<IRouteObject> theRoute { get; set; }
         public Route()
         {
-            theRoute = new List<Object>();
+            theRoute = new List<IRouteObject>();
         }
-        public List<Object> TheRoute
+        public List<IRouteObject> TheRoute
         {
             get
             {
@@ -25,21 +25,14 @@ namespace Domain
                 this.theRoute = value;
             }
         }
-        private bool IsACoordinate(Object anObject)
-        {
-            return (anObject is Coordinate);
-        }
-        private bool IsAStudent(Object anObject)
-        {
-            return (anObject is Student);
-        }
         private bool IsARouteObject(Object anObject)
         {
-            return IsACoordinate(anObject) || IsAStudent(anObject);
+            return (anObject is IRouteObject);
         }
         public void AddIntoRoute(Object anObject)
         {
-            this.theRoute.Add(anObject);
+            IRouteObject toAdd = anObject as IRouteObject;
+            this.theRoute.Add(toAdd);
         }
         public void Add(Object anObject)
         {
@@ -52,27 +45,19 @@ namespace Domain
                 throw new InvalidObjectAddIntoRouteSystemException("Invalid object into Route");
             }
         }
-
+        public int calculateDistanceObject(IRouteObject anObject, Coordinate actualCoordinate)
+        {
+            return anObject.GetCoordinates().GetDistanceOf(actualCoordinate);
+        }
         public int TotalDistance()
         {
             int totalDistance = 0;
             Coordinate actualCoordinate = new Coordinate();
-            foreach (Object anObject in this.theRoute)
+            foreach (IRouteObject anObject in this.theRoute)
             {
-                if (this.IsAStudent(anObject))
-                {
-                    Student aStudent = anObject as Student;
-                    totalDistance = totalDistance + actualCoordinate.GetDistanceOf(aStudent.Coordinates);
-                    actualCoordinate = aStudent.Coordinates;
-                }
-                if (this.IsACoordinate(anObject))
-                {
-                    Coordinate aCoordinate = anObject as Coordinate;
-                    totalDistance = totalDistance + actualCoordinate.GetDistanceOf(aCoordinate);
-                    actualCoordinate = aCoordinate;
-                }
+                totalDistance = totalDistance + calculateDistanceObject(anObject, actualCoordinate);
+                actualCoordinate = anObject.GetCoordinates();
             }
-
             return totalDistance;
         }
         public int Length()

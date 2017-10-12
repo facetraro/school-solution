@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Student : Person
+    public class Student : Person, IRouteObject
     {
         private int ci { get; set; }
         private int studentNumber { get; set; }
@@ -19,7 +19,10 @@ namespace Domain
             coordinates = new Coordinate();
             subjects = new List<Subject>();
         }
-
+        public Coordinate GetCoordinates()
+        {
+            return coordinates;
+        }
         public int Ci
         {
             get
