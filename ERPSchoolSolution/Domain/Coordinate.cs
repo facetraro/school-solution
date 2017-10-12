@@ -61,5 +61,9 @@ namespace Domain
             Coordinate theCoordinate = aCoordinate as Coordinate;
             return CompareX(theCoordinate.X) && CompareY(theCoordinate.Y);
         }
+        public string PrintCoordinate()
+        {
+            return "[" + this.X + "," + this.Y + "]";
+        }
     }
 }

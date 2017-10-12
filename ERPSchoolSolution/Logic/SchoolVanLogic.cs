@@ -89,11 +89,62 @@ namespace Logic
         private bool CanIGetBestRoutes()
         {
             return !IsStudentsEmpty() && !IsSchoolVanEmpty();
-
         }
-        public void GetBestRoutes()
+        private bool IsStudentAlreadyDeilvered(Student aStudent, List<Route> routes)
         {
-            CanIGetBestRoutes();
+            foreach (Route route in routes)
+            {
+                if (route.IsStudentInRoute(aStudent))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool AllStudentsAlreadyDelivered(List<Student> allStudents, List<Route> routes)
+        {
+            foreach (Student aStudent in allStudents)
+            {
+                if (this.IsStudentAlreadyDeilvered(aStudent, routes))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public List<Route> GetBestRoutes()
+        {
+            List<Route> newRoutes = new List<Route>();
+            if (CanIGetBestRoutes())
+            {
+                Singleton theRepository = Singleton.Instance;
+                List<SchoolVan> allSchoolVans = theRepository.SchoolVans;
+                List<Student> allStudents = theRepository.Students;
+                foreach (SchoolVan aSchoolVan in allSchoolVans)
+                {
+                    Route schoolVanRoute = new Route();
+                    newRoutes.Add(schoolVanRoute);
+                    Coordinate coor = new Coordinate();
+                    
+                    schoolVanRoute.Add(coor);
+                    int studentsInSchoolVan = 0;
+                    while((aSchoolVan.Capacity - studentsInSchoolVan)>=0 && !AllStudentsAlreadyDelivered(allStudents, newRoutes))
+                    {
+                        foreach (Student aStudent in allStudents)
+                        {
+                            if (!schoolVanRoute.IsStudentInRoute(aStudent))
+                            {
+                                studentsInSchoolVan++;
+                                schoolVanRoute.Add(aStudent);
+                            } 
+                        }
+                    }
+                    schoolVanRoute.Add(coor);
+                    studentsInSchoolVan = 0;
+                   
+                }
+            }
+            return newRoutes;
         }
     }
 }

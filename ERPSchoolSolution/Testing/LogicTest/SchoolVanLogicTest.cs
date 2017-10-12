@@ -201,7 +201,18 @@ namespace Testing.LogicTest
             expectedRoute.Add(schoolCoordinate);
             List<Route> expectedRoutes = new List<Route>();
             expectedRoutes.Add(expectedRoute);
-            Assert.AreEqual(expectedRoutes, schoolVanLogic.GetBestRoutes());
+            List<Route> obtainRoutes = schoolVanLogic.GetBestRoutes();
+            string expectedRoutesString = "";
+            string obtainRoutesString = "";
+            foreach (Route route in expectedRoutes)
+            {
+                expectedRoutesString = route.ToStringRoute();
+            }
+            foreach (Route route in obtainRoutes)
+            {
+                obtainRoutesString = route.ToStringRoute();
+            }
+            Assert.AreEqual(expectedRoutesString, obtainRoutesString);
         }
     }
 }

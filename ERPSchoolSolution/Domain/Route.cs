@@ -9,10 +9,12 @@ namespace Domain
 {
     public class Route
     {
-        private List<IRouteObject> theRoute { get; set; }
+        private List<IRouteObject> theRoute;
+        private SchoolVan theSchoolVan;
         public Route()
         {
             theRoute = new List<IRouteObject>();
+            theSchoolVan = new SchoolVan();
         }
         public List<IRouteObject> TheRoute
         {
@@ -25,14 +27,45 @@ namespace Domain
                 this.theRoute = value;
             }
         }
+        public SchoolVan TheSchoolVan
+        {
+            get
+            {
+                return this.TheSchoolVan;
+            }
+            set
+            {
+                this.TheSchoolVan = value;
+            }
+        }
         private bool IsARouteObject(Object anObject)
         {
             return (anObject is IRouteObject);
         }
-        public void AddIntoRoute(Object anObject)
+        private bool IsAStudent(Object anObject)
+        {
+            return (anObject is Student);
+        }
+        private void AddIntoRoute(Object anObject)
         {
             IRouteObject toAdd = anObject as IRouteObject;
             this.theRoute.Add(toAdd);
+        }
+        public bool IsStudentInRoute(Student lookUpStudent)
+        {
+            bool founded = false;
+            foreach (IRouteObject anObject in this.theRoute)
+            {
+                if (IsAStudent(anObject))
+                {
+                    Student anObjectStudent = anObject as Student;
+                    if (anObjectStudent.Equals(lookUpStudent))
+                    {
+                        founded = true;
+                    }
+                }
+            }
+            return founded;
         }
         public void Add(Object anObject)
         {
@@ -48,6 +81,15 @@ namespace Domain
         public int calculateDistanceObject(IRouteObject anObject, Coordinate actualCoordinate)
         {
             return anObject.GetCoordinates().GetDistanceOf(actualCoordinate);
+        }
+        public string ToStringRoute()
+        {
+            string stringRoute = "Ruta Camioneta: ";
+            foreach (IRouteObject anObject in this.theRoute)
+            {
+                stringRoute = stringRoute + anObject.GetCoordinates().PrintCoordinate();     
+            }
+            return stringRoute;
         }
         public int TotalDistance()
         {
