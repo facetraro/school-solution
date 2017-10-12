@@ -46,6 +46,108 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddSchoolVan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddSchoolVan.Designer.cs">
+      <DependentUpon>AddSchoolVan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddStudent.Designer.cs">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddSubject.Designer.cs">
+      <DependentUpon>AddSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddTeacher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddTeacher.Designer.cs">
+      <DependentUpon>AddTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalculateRout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CalculateRout.Designer.cs">
+      <DependentUpon>CalculateRout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultSchoolVans.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConsultSchoolVans.Designer.cs">
+      <DependentUpon>ConsultSchoolVans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultStudents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConsultStudents.Designer.cs">
+      <DependentUpon>ConsultStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultTeachers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConsultTeachers.Designer.cs">
+      <DependentUpon>ConsultTeachers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifySchoolVan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModifySchoolVan.Designer.cs">
+      <DependentUpon>ModifySchoolVan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifySchoolVanSelectList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModifySchoolVanSelectList.Designer.cs">
+      <DependentUpon>ModifySchoolVanSelectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModifyStudent.Designer.cs">
+      <DependentUpon>ModifyStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyStudentSelectList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModifyStudentSelectList.Designer.cs">
+      <DependentUpon>ModifyStudentSelectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifySubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModifySubject.Designer.cs">
+      <DependentUpon>ModifySubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifySubjectSelectList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModifySubjectSelectList.Designer.cs">
+      <DependentUpon>ModifySubjectSelectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyTeacher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModifyTeacher.Designer.cs">
+      <DependentUpon>ModifyTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyTeacherSelectList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModifyTeacherSelectList.Designer.cs">
+      <DependentUpon>ModifyTeacherSelectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipalWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrincipalWindow.Designer.cs">
+      <DependentUpon>PrincipalWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +156,105 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoveSchoolVan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RemoveSchoolVan.Designer.cs">
+      <DependentUpon>RemoveSchoolVan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RemoveStudent.Designer.cs">
+      <DependentUpon>RemoveStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveSubject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RemoveSubject.Designer.cs">
+      <DependentUpon>RemoveSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveTeacher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RemoveTeacher.Designer.cs">
+      <DependentUpon>RemoveTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StudentMenu.Designer.cs">
+      <DependentUpon>StudentMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubjectMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubjectMenu.Designer.cs">
+      <DependentUpon>SubjectMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherMenu.Designer.cs">
+      <DependentUpon>TeacherMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolVanMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SchoolVanMenu.Designer.cs">
+      <DependentUpon>SchoolVanMenu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddSchoolVan.resx">
+      <DependentUpon>AddSchoolVan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddStudent.resx">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSubject.resx">
+      <DependentUpon>AddSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTeacher.resx">
+      <DependentUpon>AddTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalculateRout.resx">
+      <DependentUpon>CalculateRout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultSchoolVans.resx">
+      <DependentUpon>ConsultSchoolVans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultStudents.resx">
+      <DependentUpon>ConsultStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultTeachers.resx">
+      <DependentUpon>ConsultTeachers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifySchoolVan.resx">
+      <DependentUpon>ModifySchoolVan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifySchoolVanSelectList.resx">
+      <DependentUpon>ModifySchoolVanSelectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyStudent.resx">
+      <DependentUpon>ModifyStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyStudentSelectList.resx">
+      <DependentUpon>ModifyStudentSelectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifySubject.resx">
+      <DependentUpon>ModifySubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifySubjectSelectList.resx">
+      <DependentUpon>ModifySubjectSelectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyTeacher.resx">
+      <DependentUpon>ModifyTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyTeacherSelectList.resx">
+      <DependentUpon>ModifyTeacherSelectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrincipalWindow.resx">
+      <DependentUpon>PrincipalWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +264,30 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RemoveSchoolVan.resx">
+      <DependentUpon>RemoveSchoolVan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoveStudent.resx">
+      <DependentUpon>RemoveStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoveSubject.resx">
+      <DependentUpon>RemoveSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoveTeacher.resx">
+      <DependentUpon>RemoveTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchoolVanMenu.resx">
+      <DependentUpon>SchoolVanMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentMenu.resx">
+      <DependentUpon>StudentMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubjectMenu.resx">
+      <DependentUpon>SubjectMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherMenu.resx">
+      <DependentUpon>TeacherMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
