@@ -15,7 +15,7 @@ namespace Testing
             newRoute.Add(newCoordinate);
             Student newStudent = new Student();
             newRoute.Add(newStudent);
-            Assert.IsTrue(Route.Length()==2);
+            Assert.IsTrue(newRoute.Length()==2);
         }
     }
 }

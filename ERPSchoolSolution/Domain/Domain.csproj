@@ -46,6 +46,7 @@
     <Compile Include="Coordinate.cs" />
     <Compile Include="IValidator.cs" />
     <Compile Include="Person.cs" />
+    <Compile Include="Route.cs" />
     <Compile Include="StudentValidator.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Subject.cs" />
