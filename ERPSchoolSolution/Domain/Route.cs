@@ -52,6 +52,10 @@ namespace Domain
                 throw new InvalidObjectAddIntoRouteSystemException("Invalid object into Route");
             }
         }
+        public int TotalDistance()
+        {
+            return 0;
+        }
         public int Length()
         {
             return this.theRoute.Count;
