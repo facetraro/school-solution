@@ -59,19 +59,42 @@ namespace Logic
             Singleton theRepository = Singleton.Instance;
             theRepository.SchoolVans = new List<SchoolVan>();
         }
-     
-        public void GetBestRoutes()
+        public bool IsEmpty()
         {
             Singleton theRepository = Singleton.Instance;
-            StudentLogic studentLogic = new StudentLogic();
-            if (studentLogic.IsEmpty())
+            return theRepository.SchoolVans.Count == 0;
+        }
+
+
+        private bool IsStudentsEmpty()
+        {
+            StudentLogic logic = new StudentLogic();
+            bool studentsEmpty = logic.IsEmpty();
+            if (studentsEmpty)
             {
                 throw new NoStudentsInSystemException("No Students in the system");
             }
-            if (theRepository.SchoolVans.Count==0)
+            return studentsEmpty;
+        }
+        private bool IsSchoolVanEmpty()
+        {
+            bool schoolVanEmpty = this.IsEmpty();
+            if (schoolVanEmpty)
             {
                 throw new NoSchoolVanInSystemException("No School Vans in the system");
             }
+            return schoolVanEmpty;
+        }
+
+        private bool CanIGetBestRoutes()
+        {
+            return !IsStudentsEmpty() && !IsSchoolVanEmpty();
+
+        }
+        public void GetBestRoutes()
+        {
+            CanIGetBestRoutes();
         }
     }
 }
+
