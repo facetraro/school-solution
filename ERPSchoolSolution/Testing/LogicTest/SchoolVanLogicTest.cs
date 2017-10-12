@@ -163,5 +163,17 @@ namespace Testing.LogicTest
             testLogic.Add(newSchoolVan);
             testLogic.GetBestRoutes();
         }
+        [TestMethod]
+        [ExpectedException(typeof(NoSchoolVanInSystemException))]
+        public void GetBestRoutesWithoutSchoolVan()
+        {
+            SetUp();
+            NoStudentsInSystemException expectedExcetpion = new NoStudentsInSystemException("No Students in the system");
+            StudentLogic testLogic = new StudentLogic();
+            SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
+            Student newStudent = new Student();
+            testLogic.Add(newStudent);
+            schoolVanLogic.GetBestRoutes();
+        }
     }
 }
