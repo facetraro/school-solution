@@ -16,7 +16,7 @@ namespace Logic
             Teacher toAdd = anObject as Teacher;
             theRepository.Teachers.Add(toAdd);
         }
-        public bool CanIAdd(Object anObject)
+        private bool CanIAdd(Object anObject)
         {
             TeacherValidator validator = new TeacherValidator();
             if (validator.IsValid(anObject))

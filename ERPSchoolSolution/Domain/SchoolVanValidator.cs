@@ -11,17 +11,17 @@ namespace Domain
         private static int MAX_CAPACITY = 15;
         private static int MIN_CAPACITY = 1;
         private static int MIN_ID = 0;
-        private bool validCapacity(SchoolVan aSchoolVan)
+        private bool ValidCapacity(SchoolVan aSchoolVan)
         {
             return (aSchoolVan.Capacity >= MIN_CAPACITY && aSchoolVan.Capacity <= MAX_CAPACITY);
         }
-        private bool validId(SchoolVan aSchoolVan)
+        private bool ValidId(SchoolVan aSchoolVan)
         {
             return (aSchoolVan.Id >= MIN_ID);
         }
-        private bool allAtributesAreValid(SchoolVan theSchoolVan)
+        private bool AllAtributesAreValid(SchoolVan theSchoolVan)
         {
-            return validCapacity(theSchoolVan) && validId(theSchoolVan);
+            return ValidCapacity(theSchoolVan) && ValidId(theSchoolVan);
         }
         public bool IsValid(object anObject)
         {
@@ -30,7 +30,7 @@ namespace Domain
             {
                 return false;
             }
-            return allAtributesAreValid(theSchoolVan);
+            return AllAtributesAreValid(theSchoolVan);
         }
     }
 }
