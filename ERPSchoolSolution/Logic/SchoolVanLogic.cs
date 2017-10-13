@@ -168,6 +168,15 @@ namespace Logic
             }
             return newRoutes;
         }
+        private List<Student> SelectStudentsToSchoolVan(List<Student> sortedStudent, int actualLoop, int studentsPerSchoolVan)
+        {
+            List<Student> studentsToSchoolVan = new List<Student>();
+            for (int i = (actualLoop * studentsPerSchoolVan); i < ((actualLoop * studentsPerSchoolVan) + studentsPerSchoolVan); i++)
+            {
+                studentsToSchoolVan.Add(sortedStudent.ElementAt(i));
+            }
+            return studentsToSchoolVan;
+        }
         public List<Tuple<SchoolVan, List<Student>>> StudentAssignment()
         {
             List<Tuple<SchoolVan, List<Student>>> assignment = new List<Tuple<SchoolVan, List<Student>>>();
@@ -177,27 +186,20 @@ namespace Logic
             int countAllSchoolVans = allSchoolVans.Count;
             int countAllStudents = allStudent.Count;
             int studentsPerSchoolVan = countAllStudents / countAllSchoolVans;
-
             SortSchoolVans schoolVanSort = new SortSchoolVans();
             List<SchoolVan> sortedSchoolVans = schoolVanSort.GenerateSortedList(allSchoolVans);
             SortStudents studentSort = new SortStudents();
             List<Student> sortedStudent = studentSort.GenerateSortedList(allStudent);
-            int actualSchoolVan = 0;
+            int actualLoop = 0;
             foreach (SchoolVan aSchoolVan in sortedSchoolVans)
             {
-
-                List<Student> studentsToSchoolVan = new List<Student>();
-                for (int i = (actualSchoolVan * studentsPerSchoolVan); i < ((actualSchoolVan * studentsPerSchoolVan) + studentsPerSchoolVan); i++)
-                {
-                    studentsToSchoolVan.Add(sortedStudent.ElementAt(i));
-                }
+                List<Student> studentsToSchoolVan = SelectStudentsToSchoolVan(sortedStudent, actualLoop, studentsPerSchoolVan);
                 Tuple<SchoolVan, List<Student>> newAssignment = new Tuple<SchoolVan, List<Student>>(aSchoolVan, studentsToSchoolVan);
-                actualSchoolVan++;
                 assignment.Add(newAssignment);
+                actualLoop++;
             }
             return assignment;
         }
-
         public List<Route> GetBestRoutes()
         {
 

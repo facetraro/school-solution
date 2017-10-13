@@ -29,6 +29,15 @@ namespace Testing.LogicTest
             }
             return true;
         }
+        private Student testStudent(int id)
+        {
+            Student testStudent = new Student();
+            testStudent.Ci = 47803333;
+            testStudent.Id = id;
+            testStudent.Name = "TestName";
+            testStudent.LastName = "TestLastName";
+            return testStudent;
+        }
         private void ClearRepository()
         {
             SchoolVanLogic testLogic = new SchoolVanLogic();
@@ -238,70 +247,37 @@ namespace Testing.LogicTest
         {
             SetUp();
             List<Tuple<SchoolVan, List<Student>>> expectedValue = new List<Tuple<SchoolVan, List<Student>>>();
-
             StudentLogic testLogic = new StudentLogic();
-
-
             SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
-            Student newStudent = new Student();
-            newStudent.Ci = 47803333;
-            newStudent.Id = 1;
-            newStudent.Name = "TestName";
-            newStudent.LastName = "TestLastName";
+            Student newStudent = testStudent(1);
             testLogic.Add(newStudent);
-            Student anotherStudent = new Student();
-            anotherStudent.Ci = 47803333;
-            anotherStudent.Id = 7;
-            anotherStudent.Name = "TestName";
-            anotherStudent.LastName = "TestLastName";
+            Student anotherStudent = testStudent(6);
             testLogic.Add(anotherStudent);
-            Student otherStudent = new Student();
-            otherStudent.Ci = 47803333;
-            otherStudent.Id = 5;
-            otherStudent.Name = "TestName";
-            otherStudent.LastName = "TestLastName";
+            Student otherStudent = testStudent(5);
             testLogic.Add(otherStudent);
-            Student lastStudent = new Student();
-            lastStudent.Ci = 47803333;
-            lastStudent.Id = 2;
-            lastStudent.Name = "TestName";
-            lastStudent.LastName = "TestLastName";
+            Student lastStudent = testStudent(2);
             testLogic.Add(lastStudent);
-
-
             SchoolVanLogic logic = new SchoolVanLogic();
             SchoolVan newSchoolVan = new SchoolVan();
             newSchoolVan.Id = 15;
             newSchoolVan.Capacity = 10;
             logic.Add(newSchoolVan);
-
             List<Student> firstStudentList = new List<Student>();
             firstStudentList.Add(newStudent);
             firstStudentList.Add(lastStudent);
-
-
-
-
             SchoolVan anotherSchoolVan = new SchoolVan();
             anotherSchoolVan.Id = 25;
             anotherSchoolVan.Capacity = 14;
             logic.Add(anotherSchoolVan);
-
             List<Student> nextStudentList = new List<Student>();
             nextStudentList.Add(otherStudent);
             nextStudentList.Add(anotherStudent);
             Tuple<SchoolVan, List<Student>> firstTouple = new Tuple<SchoolVan, List<Student>>(anotherSchoolVan, firstStudentList);
             Tuple<SchoolVan, List<Student>> nextTouple = new Tuple<SchoolVan, List<Student>>(newSchoolVan, nextStudentList);
-
             expectedValue.Add(firstTouple);
             expectedValue.Add(nextTouple);
-
             List<Tuple<SchoolVan, List<Student>>> ObtainValue = logic.StudentAssignment();
-
             Assert.IsTrue(CompareStudentAssignment(ObtainValue, expectedValue));
         }
-
-
-
     }
 }
