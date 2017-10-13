@@ -64,6 +64,7 @@
     <Compile Include="PersonTest.cs" />
     <Compile Include="TeacherTest.cs" />
     <Compile Include="RouteTest.cs" />
+    <Compile Include="SortStudentsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">
