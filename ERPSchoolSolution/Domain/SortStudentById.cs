@@ -14,7 +14,36 @@ namespace Domain
         }
         public int Compare(Student aStudent, Student anotherStudent)
         {
-            return 0;
+            if (aStudent == null)
+            {
+                if (anotherStudent == null)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            else
+            {
+                if (anotherStudent == null)
+                {
+                    return 1;
+                }
+            }
+            if (aStudent.Id > anotherStudent.Id)
+            {
+                return 1;
+            }
+            else if (aStudent.Id < anotherStudent.Id)
+            {
+                return -1;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

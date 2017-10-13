@@ -47,8 +47,8 @@ namespace Testing
             expectedList.Add(thirdTestStudent);
             expectedList.Add(firstTestStudent);
             SortStudents sort = new SortStudents();
-            sort.GenerateSortedList(toSort);
-            Assert.IsTrue(expectedList.SequenceEqual(toSort));
+            List<Student> obtainedList = sort.GenerateSortedList(toSort);
+            Assert.IsTrue(expectedList.SequenceEqual(obtainedList));
         }
     }
 }

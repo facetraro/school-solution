@@ -12,21 +12,15 @@ namespace Domain
         {
 
         }
-        public List<Student> CopyStudentList(List<Student> toSort)
-        {
-            List<Student> newStudentList = new List<Student>();
-            foreach (Student aStudent in toSort)
-            {
-                newStudentList.Add(aStudent);
-            }
-            return newStudentList;
-        }
-
         public List<Student> GenerateSortedList(List<Student> toSort)
         {
-            List<Student> studentList = CopyStudentList(toSort);
-            studentList.Sort(new SortStudentById());
-            return studentList;
+            List<Student> sortedList = new List<Student>();
+            foreach (Student aStudent in toSort)
+            {
+                sortedList.Add(aStudent);
+            }
+            sortedList.Sort(new SortStudentById());
+            return sortedList;
         }
     }
 }
