@@ -4,18 +4,37 @@ using Domain;
 using Logic;
 using Exceptions;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Testing.LogicTest
 {
     [TestClass]
     public class SchoolVanLogicTest
     {
-        public void ClearRepository()
+        private bool CompareStudentAssignment(List<Tuple<SchoolVan, List<Student>>> a1, List<Tuple<SchoolVan, List<Student>>> a2)
+        {
+            int actualValue = 0;
+            foreach (Tuple<SchoolVan, List<Student>> touple in a1)
+            {
+                Tuple<SchoolVan, List<Student>> anotherTouple = a2.ElementAt(actualValue);
+                if (!touple.Item1.Equals(anotherTouple.Item1))
+                {
+                    return false;
+                }
+                if (!touple.Item2.SequenceEqual(anotherTouple.Item2))
+                {
+                    return false;
+                }
+                actualValue++;
+            }
+            return true;
+        }
+        private void ClearRepository()
         {
             SchoolVanLogic testLogic = new SchoolVanLogic();
             testLogic.Empty();
         }
-        public void SetUp()
+        private void SetUp()
         {
             ClearRepository();
         }
@@ -219,7 +238,7 @@ namespace Testing.LogicTest
         {
             SetUp();
             List<Tuple<SchoolVan, List<Student>>> expectedValue = new List<Tuple<SchoolVan, List<Student>>>();
-            
+
             StudentLogic testLogic = new StudentLogic();
 
 
@@ -259,9 +278,9 @@ namespace Testing.LogicTest
             List<Student> firstStudentList = new List<Student>();
             firstStudentList.Add(newStudent);
             firstStudentList.Add(lastStudent);
-            Tuple<SchoolVan, List<Student>> nextTouple = new Tuple<SchoolVan, List<Student>>(newSchoolVan, firstStudentList);
 
-            expectedValue.Add(nextTouple);
+
+
 
             SchoolVan anotherSchoolVan = new SchoolVan();
             anotherSchoolVan.Id = 25;
@@ -269,15 +288,17 @@ namespace Testing.LogicTest
             logic.Add(anotherSchoolVan);
 
             List<Student> nextStudentList = new List<Student>();
-            nextStudentList.Add(anotherStudent);
             nextStudentList.Add(otherStudent);
-            Tuple<SchoolVan, List<Student>> firstTouple = new Tuple<SchoolVan, List<Student>>(anotherSchoolVan, nextStudentList);
+            nextStudentList.Add(anotherStudent);
+            Tuple<SchoolVan, List<Student>> firstTouple = new Tuple<SchoolVan, List<Student>>(anotherSchoolVan, firstStudentList);
+            Tuple<SchoolVan, List<Student>> nextTouple = new Tuple<SchoolVan, List<Student>>(newSchoolVan, nextStudentList);
 
             expectedValue.Add(firstTouple);
+            expectedValue.Add(nextTouple);
 
-            List<Tuple<SchoolVan, List<Student>>> ObtainValue = StudentAssignment();
+            List<Tuple<SchoolVan, List<Student>>> ObtainValue = logic.StudentAssignment();
 
-            Assert.IsTrue(expectedValue.SequenceEqual(ObtainValue));
+            Assert.IsTrue(CompareStudentAssignment(ObtainValue, expectedValue));
         }
 
 
