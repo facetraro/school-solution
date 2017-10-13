@@ -48,7 +48,7 @@
     <Compile Include="IValidator.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Route.cs" />
-    <Compile Include="SortStudent.cs" />
+    <Compile Include="SortStudentById.cs" />
     <Compile Include="SortSchoolVanById.cs" />
     <Compile Include="SortSchoolVans.cs" />
     <Compile Include="SortStudents.cs" />
