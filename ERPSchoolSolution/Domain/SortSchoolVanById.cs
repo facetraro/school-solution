@@ -14,7 +14,25 @@ namespace Domain
         }
         public int Compare(SchoolVan aSchoolVan, SchoolVan anotherSchoolVan)
         {
-            return 0;
+            if (aSchoolVan == null)
+            {
+                if (anotherSchoolVan == null)
+                {
+                    return 0;
+                } else if (anotherSchoolVan == null)
+                {
+                    return -1;
+                }
+              
+            }
+            else
+            {
+                if (anotherSchoolVan == null)
+                {
+                    return 1;
+                }
+            }
+            return anotherSchoolVan.Capacity.CompareTo(aSchoolVan.Capacity);
         }
     }
 }
