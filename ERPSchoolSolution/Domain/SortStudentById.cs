@@ -20,10 +20,7 @@ namespace Domain
                 {
                     return 0;
                 }
-                else
-                {
-                    return -1;
-                }
+                return -1;
             }
             else
             {
@@ -32,18 +29,7 @@ namespace Domain
                     return 1;
                 }
             }
-            if (aStudent.Id > anotherStudent.Id)
-            {
-                return 1;
-            }
-            else if (aStudent.Id < anotherStudent.Id)
-            {
-                return -1;
-            }
-            else
-            {
-                return 0;
-            }
+            return aStudent.Id.CompareTo(anotherStudent.Id);
         }
     }
 }
