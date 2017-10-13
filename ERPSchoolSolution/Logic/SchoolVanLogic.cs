@@ -168,12 +168,44 @@ namespace Logic
             }
             return newRoutes;
         }
-        private List<Student> SelectStudentsToSchoolVan(List<Student> sortedStudent, int actualLoop, int studentsPerSchoolVan)
+        private List<Student> SelectStudentsToSchoolVan(List<Student> sortedStudent, int actualLoop, double studentsPerSchoolVan)
         {
             List<Student> studentsToSchoolVan = new List<Student>();
-            for (int i = (actualLoop * studentsPerSchoolVan); i < ((actualLoop * studentsPerSchoolVan) + studentsPerSchoolVan); i++)
+            Singleton theRepository = Singleton.Instance;
+
+            int countAllSchoolVans = theRepository.SchoolVans.Count;
+            double result = studentsPerSchoolVan - Math.Truncate(studentsPerSchoolVan);
+            int a = (int)(result * countAllSchoolVans);
+
+            int studentsPerSchoolVanFloor = (int)Math.Floor(studentsPerSchoolVan);
+            if (a != 0)
             {
-                studentsToSchoolVan.Add(sortedStudent.ElementAt(i));
+                if (a >= actualLoop)
+                {
+                    for (int i = actualLoop; i < actualLoop + studentsPerSchoolVanFloor + 1; i++)
+                    {
+                        studentsToSchoolVan.Add(sortedStudent.ElementAt(i));
+                    }
+                    actualLoop = actualLoop + studentsPerSchoolVanFloor + 1;
+                }
+                else
+                {
+                    for (int i = actualLoop; i < actualLoop + studentsPerSchoolVanFloor; i++)
+                    {
+                        studentsToSchoolVan.Add(sortedStudent.ElementAt(i));
+
+                    }
+                    actualLoop = actualLoop + studentsPerSchoolVanFloor;
+                }
+            }
+            else
+            {
+                for (int i = actualLoop; i < actualLoop + studentsPerSchoolVanFloor; i++)
+                {
+                    studentsToSchoolVan.Add(sortedStudent.ElementAt(i));
+
+                }
+                actualLoop = actualLoop + studentsPerSchoolVanFloor;
             }
             return studentsToSchoolVan;
         }
@@ -183,9 +215,9 @@ namespace Logic
             Singleton theRepository = Singleton.Instance;
             List<SchoolVan> allSchoolVans = theRepository.SchoolVans;
             List<Student> allStudent = theRepository.Students;
-            int countAllSchoolVans = allSchoolVans.Count;
-            int countAllStudents = allStudent.Count;
-            int studentsPerSchoolVan = countAllStudents / countAllSchoolVans;
+            double countAllSchoolVans = allSchoolVans.Count;
+            double countAllStudents = allStudent.Count;
+            double studentsPerSchoolVan = (countAllStudents / countAllSchoolVans);
             SortSchoolVans schoolVanSort = new SortSchoolVans();
             List<SchoolVan> sortedSchoolVans = schoolVanSort.GenerateSortedList(allSchoolVans);
             SortStudents studentSort = new SortStudents();
@@ -194,9 +226,10 @@ namespace Logic
             foreach (SchoolVan aSchoolVan in sortedSchoolVans)
             {
                 List<Student> studentsToSchoolVan = SelectStudentsToSchoolVan(sortedStudent, actualLoop, studentsPerSchoolVan);
+                actualLoop = actualLoop + studentsToSchoolVan.Count;
                 Tuple<SchoolVan, List<Student>> newAssignment = new Tuple<SchoolVan, List<Student>>(aSchoolVan, studentsToSchoolVan);
+
                 assignment.Add(newAssignment);
-                actualLoop++;
             }
             return assignment;
         }

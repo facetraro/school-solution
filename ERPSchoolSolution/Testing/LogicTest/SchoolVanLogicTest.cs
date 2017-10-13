@@ -41,7 +41,9 @@ namespace Testing.LogicTest
         private void ClearRepository()
         {
             SchoolVanLogic testLogic = new SchoolVanLogic();
+            StudentLogic studentLogic = new StudentLogic();
             testLogic.Empty();
+            studentLogic.Empty();
         }
         private void SetUp()
         {
