@@ -124,13 +124,17 @@ namespace Domain
             }
             return cloneRoute;
         }
+        private bool AreSameType(IRouteObject item, IRouteObject anotherItem)
+        {
+            return item.GetType().ToString().Equals(anotherItem.GetType().ToString());
+        }
         private bool IsTheSameRoute(List<IRouteObject> list)
         {
 
             for (int i = 0; i < list.Count; i++)
             {
                 IRouteObject item = list.ElementAt(i);
-                if (!item.GetType().ToString().Equals(this.theRoute.ElementAt(i).GetType().ToString()))
+                if (!AreSameType(item,this.theRoute.ElementAt(i)))
                 {
                     return false;
                 }
