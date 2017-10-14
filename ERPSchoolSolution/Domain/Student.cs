@@ -5,12 +5,24 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Student : Person
+    public class Student : Person, IRouteObject
     {
         private int ci { get; set; }
         private int studentNumber { get; set; }
         private Coordinate coordinates { get; set; }
         private List<Subject> subjects { get; set; }
+        public Student()
+        {
+            Id = 0;
+            Name = "defaultname";
+            LastName = "defaultlastname";
+            coordinates = new Coordinate();
+            subjects = new List<Subject>();
+        }
+        public Coordinate GetCoordinates()
+        {
+            return coordinates;
+        }
         public int Ci
         {
             get

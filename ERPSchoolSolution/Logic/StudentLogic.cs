@@ -59,5 +59,9 @@ namespace Logic
             Singleton theRepository = Singleton.Instance;
             return theRepository.Students.Count;
         }
+        public bool IsEmpty()
+        { 
+            return Length() == 0;
+        }
     }
 }

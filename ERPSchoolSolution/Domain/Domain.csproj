@@ -44,8 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coordinate.cs" />
+    <Compile Include="IRouteObject.cs" />
     <Compile Include="IValidator.cs" />
     <Compile Include="Person.cs" />
+    <Compile Include="Route.cs" />
+    <Compile Include="SortStudentById.cs" />
+    <Compile Include="SortSchoolVanById.cs" />
+    <Compile Include="SortSchoolVans.cs" />
+    <Compile Include="SortStudents.cs" />
     <Compile Include="StudentValidator.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Subject.cs" />
@@ -59,6 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Exceptions\Exceptions.csproj">
+      <Project>{115BA8EF-0B0E-4AE9-A576-A4145233618C}</Project>
+      <Name>Exceptions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
