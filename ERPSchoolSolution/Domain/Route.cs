@@ -46,6 +46,7 @@ namespace Domain
         {
             return (anObject is Student);
         }
+
         private void AddIntoRoute(Object anObject)
         {
             IRouteObject toAdd = anObject as IRouteObject;
@@ -134,7 +135,7 @@ namespace Domain
             for (int i = 0; i < list.Count; i++)
             {
                 IRouteObject item = list.ElementAt(i);
-                if (!AreSameType(item,this.theRoute.ElementAt(i)))
+                if (!AreSameType(item, this.theRoute.ElementAt(i)))
                 {
                     return false;
                 }
@@ -144,6 +145,22 @@ namespace Domain
                 }
             }
             return true;
+        }
+        public int NumberOfStudentsInThisRide()
+        {
+            int numberOfStudents = 0;
+            foreach (IRouteObject item in this.theRoute)
+            {
+                if (IsAStudent(item))
+                {
+                    numberOfStudents++;
+                }
+                else
+                {
+                    numberOfStudents = 0;
+                }
+            }
+            return numberOfStudents;
         }
         private bool AreEquals(Route theRoute)
         {
