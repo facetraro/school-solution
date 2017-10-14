@@ -137,10 +137,14 @@ namespace Domain
             }
             return true;
         }
+        private bool AreEquals(Route theRoute)
+        {
+            return (theRoute.theSchoolVan.Equals(this.theSchoolVan) && this.Length() == theRoute.Length() && IsTheSameRoute(theRoute.theRoute));
+        }
         public override bool Equals(object aRoute)
         {
             Route theRoute = aRoute as Route;
-            return (theRoute.theSchoolVan.Equals(this.theSchoolVan) && this.Length() == theRoute.Length() && IsTheSameRoute(theRoute.theRoute));
+            return AreEquals(theRoute);
         }
     }
 }
