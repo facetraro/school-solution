@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModifySubject));
             this.label5 = new System.Windows.Forms.Label();
             this.textCode = new System.Windows.Forms.TextBox();
             this.textName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(216, 28);
+            this.label5.Location = new System.Drawing.Point(216, 46);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(198, 29);
             this.label5.TabIndex = 13;
@@ -47,41 +50,73 @@
             // 
             // textCode
             // 
-            this.textCode.Location = new System.Drawing.Point(246, 118);
+            this.textCode.Location = new System.Drawing.Point(247, 151);
             this.textCode.Name = "textCode";
             this.textCode.ReadOnly = true;
             this.textCode.Size = new System.Drawing.Size(168, 22);
             this.textCode.TabIndex = 12;
+            this.textCode.TextChanged += new System.EventHandler(this.textCode_TextChanged);
             // 
             // textName
             // 
-            this.textName.Location = new System.Drawing.Point(246, 179);
+            this.textName.Location = new System.Drawing.Point(247, 212);
             this.textName.Name = "textName";
             this.textName.Size = new System.Drawing.Size(243, 22);
             this.textName.TabIndex = 11;
+            this.textName.TextChanged += new System.EventHandler(this.textName_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(94, 118);
+            this.label2.Location = new System.Drawing.Point(95, 151);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "Codigo:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(94, 179);
+            this.label1.Location = new System.Drawing.Point(95, 212);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Nombre de materia: ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.Transparent;
+            this.backButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(40, 28);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(71, 72);
+            this.backButton.TabIndex = 36;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(488, 565);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(105, 36);
+            this.saveButton.TabIndex = 38;
+            this.saveButton.Text = "Guardar";
+            this.saveButton.UseVisualStyleBackColor = true;
             // 
             // ModifySubject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textCode);
             this.Controls.Add(this.textName);
@@ -101,5 +136,7 @@
         private System.Windows.Forms.TextBox textName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button saveButton;
     }
 }

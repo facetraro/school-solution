@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSubject));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textName = new System.Windows.Forms.TextBox();
             this.textCode = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -73,16 +76,44 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(209, 26);
+            this.label5.Location = new System.Drawing.Point(209, 35);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(230, 29);
             this.label5.TabIndex = 8;
             this.label5.Text = "Agregar una materia";
             // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.Transparent;
+            this.backButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(32, 26);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(71, 72);
+            this.backButton.TabIndex = 35;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(492, 569);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(105, 36);
+            this.saveButton.TabIndex = 38;
+            this.saveButton.Text = "Guardar";
+            this.saveButton.UseVisualStyleBackColor = true;
+            // 
             // AddSubject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textCode);
             this.Controls.Add(this.textName);
@@ -102,5 +133,7 @@
         private System.Windows.Forms.TextBox textName;
         private System.Windows.Forms.TextBox textCode;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button saveButton;
     }
 }

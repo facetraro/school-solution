@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RemoveSubject));
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -35,6 +36,8 @@
             this.listSubjectsSelected = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.listSubjects = new System.Windows.Forms.ListBox();
+            this.backButton = new System.Windows.Forms.Button();
+            this.confirmRemoveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label7
@@ -103,10 +106,38 @@
             this.listSubjects.Size = new System.Drawing.Size(181, 196);
             this.listSubjects.TabIndex = 51;
             // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.Transparent;
+            this.backButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(33, 31);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(71, 72);
+            this.backButton.TabIndex = 58;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // confirmRemoveButton
+            // 
+            this.confirmRemoveButton.Location = new System.Drawing.Point(478, 564);
+            this.confirmRemoveButton.Name = "confirmRemoveButton";
+            this.confirmRemoveButton.Size = new System.Drawing.Size(105, 36);
+            this.confirmRemoveButton.TabIndex = 75;
+            this.confirmRemoveButton.Text = "Confirmar";
+            this.confirmRemoveButton.UseVisualStyleBackColor = true;
+            // 
             // RemoveSubject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.confirmRemoveButton);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
@@ -130,5 +161,7 @@
         private System.Windows.Forms.ListBox listSubjectsSelected;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listSubjects;
+        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button confirmRemoveButton;
     }
 }

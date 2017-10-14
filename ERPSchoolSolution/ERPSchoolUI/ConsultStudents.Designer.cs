@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultStudents));
             this.listStudents = new System.Windows.Forms.ListBox();
             this.listSubjects = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listStudents
@@ -56,7 +58,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(210, 57);
+            this.label5.Location = new System.Drawing.Point(210, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(224, 29);
             this.label5.TabIndex = 42;
@@ -73,10 +75,28 @@
             this.label3.Text = "Materias que esta inscripto: ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.Transparent;
+            this.backButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(31, 24);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(71, 72);
+            this.backButton.TabIndex = 45;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
             // ConsultStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.listStudents);
             this.Controls.Add(this.listSubjects);
             this.Controls.Add(this.label5);
@@ -94,5 +114,6 @@
         private System.Windows.Forms.ListBox listSubjects;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button backButton;
     }
 }

@@ -12,9 +12,19 @@ namespace ERPSchoolUI
 {
     public partial class ConsultStudents : UserControl
     {
-        public ConsultStudents()
+        private Panel mainPanel;
+
+        public ConsultStudents(Panel mainPanel)
         {
             InitializeComponent();
+            this.mainPanel = mainPanel;
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            StudentMenu backStudentMenu = new StudentMenu(mainPanel);
+            mainPanel.Controls.Add(backStudentMenu);
         }
     }
 }

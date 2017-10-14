@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.listTeachers = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -61,10 +62,21 @@
             this.listTeachers.Size = new System.Drawing.Size(265, 388);
             this.listTeachers.TabIndex = 34;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(501, 573);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 32);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Continuar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ModifyTeacherSelectList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listTeachers);
@@ -80,5 +92,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listTeachers;
+        private System.Windows.Forms.Button button1;
     }
 }

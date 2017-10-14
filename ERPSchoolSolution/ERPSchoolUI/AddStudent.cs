@@ -12,9 +12,13 @@ namespace ERPSchoolUI
 {
     public partial class AddStudent : UserControl
     {
-        public AddStudent()
+        private Panel mainPanel;
+
+        public AddStudent(Panel mainPanel)
         {
             InitializeComponent();
+            this.mainPanel = mainPanel;
+            
         }
 
         private void AddStudent_Load(object sender, EventArgs e)
@@ -60,6 +64,18 @@ namespace ERPSchoolUI
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            StudentMenu backStudentMenu = new StudentMenu(mainPanel);
+            mainPanel.Controls.Add(backStudentMenu);
         }
     }
 }

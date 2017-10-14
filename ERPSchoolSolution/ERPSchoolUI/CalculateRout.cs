@@ -12,9 +12,18 @@ namespace ERPSchoolUI
 {
     public partial class CalculateRout : UserControl
     {
-        public CalculateRout()
+        private Panel mainPanel;
+        public CalculateRout(Panel mainPanel)
         {
             InitializeComponent();
+            this.mainPanel = mainPanel;
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            SchoolVanMenu backSchoolVanMenu = new SchoolVanMenu(mainPanel);
+            mainPanel.Controls.Add(backSchoolVanMenu);
         }
     }
 }

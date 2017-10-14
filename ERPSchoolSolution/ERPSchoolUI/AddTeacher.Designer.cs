@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTeacher));
             this.label5 = new System.Windows.Forms.Label();
             this.textCode = new System.Windows.Forms.TextBox();
             this.textNameTeacher = new System.Windows.Forms.TextBox();
@@ -42,6 +43,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label5
@@ -75,7 +78,7 @@
             this.listSubjects.ItemHeight = 16;
             this.listSubjects.Location = new System.Drawing.Point(99, 352);
             this.listSubjects.Name = "listSubjects";
-            this.listSubjects.Size = new System.Drawing.Size(181, 212);
+            this.listSubjects.Size = new System.Drawing.Size(181, 196);
             this.listSubjects.TabIndex = 12;
             // 
             // label3
@@ -132,7 +135,7 @@
             this.listSubjectsSelected.ItemHeight = 16;
             this.listSubjectsSelected.Location = new System.Drawing.Point(363, 352);
             this.listSubjectsSelected.Name = "listSubjectsSelected";
-            this.listSubjectsSelected.Size = new System.Drawing.Size(181, 212);
+            this.listSubjectsSelected.Size = new System.Drawing.Size(181, 196);
             this.listSubjectsSelected.TabIndex = 18;
             // 
             // button1
@@ -173,10 +176,38 @@
             this.label7.Text = "Materias seleccionadas:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.Transparent;
+            this.backButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(24, 30);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(71, 72);
+            this.backButton.TabIndex = 35;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(496, 573);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(105, 36);
+            this.saveButton.TabIndex = 38;
+            this.saveButton.Text = "Guardar";
+            this.saveButton.UseVisualStyleBackColor = true;
+            // 
             // AddTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
@@ -214,5 +245,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button saveButton;
     }
 }

@@ -29,50 +29,52 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalWindow));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.subjectManagement = new System.Windows.Forms.Button();
+            this.studentManagement = new System.Windows.Forms.Button();
+            this.teacherManagement = new System.Windows.Forms.Button();
+            this.schoolVansManagement = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // button1
+            // subjectManagement
             // 
-            this.button1.Location = new System.Drawing.Point(101, 161);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(157, 60);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Gestión Materias";
-            this.button1.UseVisualStyleBackColor = true;
+            this.subjectManagement.Location = new System.Drawing.Point(101, 161);
+            this.subjectManagement.Name = "subjectManagement";
+            this.subjectManagement.Size = new System.Drawing.Size(157, 60);
+            this.subjectManagement.TabIndex = 1;
+            this.subjectManagement.Text = "Gestión Materias";
+            this.subjectManagement.UseVisualStyleBackColor = true;
+            this.subjectManagement.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button2
+            // studentManagement
             // 
-            this.button2.Location = new System.Drawing.Point(101, 298);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(157, 60);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Gestión Alumnos";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.studentManagement.Location = new System.Drawing.Point(101, 298);
+            this.studentManagement.Name = "studentManagement";
+            this.studentManagement.Size = new System.Drawing.Size(157, 60);
+            this.studentManagement.TabIndex = 2;
+            this.studentManagement.Text = "Gestión Alumnos";
+            this.studentManagement.UseVisualStyleBackColor = true;
+            this.studentManagement.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // teacherManagement
             // 
-            this.button3.Location = new System.Drawing.Point(101, 433);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(157, 60);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Gestión Docentes";
-            this.button3.UseVisualStyleBackColor = true;
+            this.teacherManagement.Location = new System.Drawing.Point(101, 433);
+            this.teacherManagement.Name = "teacherManagement";
+            this.teacherManagement.Size = new System.Drawing.Size(157, 60);
+            this.teacherManagement.TabIndex = 3;
+            this.teacherManagement.Text = "Gestión Docentes";
+            this.teacherManagement.UseVisualStyleBackColor = true;
+            this.teacherManagement.Click += new System.EventHandler(this.teacherManagement_Click);
             // 
-            // button4
+            // schoolVansManagement
             // 
-            this.button4.Location = new System.Drawing.Point(101, 564);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(157, 60);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Gestión Camionetas";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.schoolVansManagement.Location = new System.Drawing.Point(101, 564);
+            this.schoolVansManagement.Name = "schoolVansManagement";
+            this.schoolVansManagement.Size = new System.Drawing.Size(157, 60);
+            this.schoolVansManagement.TabIndex = 4;
+            this.schoolVansManagement.Text = "Gestión Camionetas";
+            this.schoolVansManagement.UseVisualStyleBackColor = true;
+            this.schoolVansManagement.Click += new System.EventHandler(this.button4_Click);
             // 
             // mainPanel
             // 
@@ -89,10 +91,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1051, 774);
             this.Controls.Add(this.mainPanel);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.schoolVansManagement);
+            this.Controls.Add(this.teacherManagement);
+            this.Controls.Add(this.studentManagement);
+            this.Controls.Add(this.subjectManagement);
             this.Name = "PrincipalWindow";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -101,10 +103,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button subjectManagement;
+        private System.Windows.Forms.Button studentManagement;
+        private System.Windows.Forms.Button teacherManagement;
+        private System.Windows.Forms.Button schoolVansManagement;
         private System.Windows.Forms.Panel mainPanel;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RemoveStudent));
             this.Docen = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.unselectStudent = new System.Windows.Forms.Button();
@@ -35,6 +36,8 @@
             this.listStudentsSelected = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.listStudents = new System.Windows.Forms.ListBox();
+            this.backButton = new System.Windows.Forms.Button();
+            this.confirmRemoveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Docen
@@ -90,9 +93,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(221, 49);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(220, 29);
+            this.label5.Size = new System.Drawing.Size(188, 29);
             this.label5.TabIndex = 67;
-            this.label5.Text = "Eliminar Estudiante";
+            this.label5.Text = "Eliminar Alumno";
             // 
             // listStudents
             // 
@@ -103,10 +106,38 @@
             this.listStudents.Size = new System.Drawing.Size(181, 196);
             this.listStudents.TabIndex = 66;
             // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.Transparent;
+            this.backButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(37, 31);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(71, 72);
+            this.backButton.TabIndex = 73;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // confirmRemoveButton
+            // 
+            this.confirmRemoveButton.Location = new System.Drawing.Point(482, 564);
+            this.confirmRemoveButton.Name = "confirmRemoveButton";
+            this.confirmRemoveButton.Size = new System.Drawing.Size(105, 36);
+            this.confirmRemoveButton.TabIndex = 75;
+            this.confirmRemoveButton.Text = "Confirmar";
+            this.confirmRemoveButton.UseVisualStyleBackColor = true;
+            // 
             // RemoveStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.confirmRemoveButton);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.Docen);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.unselectStudent);
@@ -130,5 +161,7 @@
         private System.Windows.Forms.ListBox listStudentsSelected;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listStudents;
+        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button confirmRemoveButton;
     }
 }

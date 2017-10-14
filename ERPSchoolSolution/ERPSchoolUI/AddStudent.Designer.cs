@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStudent));
             this.textLastNameStudent = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,6 +45,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.removeSubject = new System.Windows.Forms.Button();
             this.addSubject = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textLastNameStudent
@@ -70,9 +73,10 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(218, 41);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(250, 29);
+            this.label5.Size = new System.Drawing.Size(218, 29);
             this.label5.TabIndex = 24;
-            this.label5.Text = "Agregar un Estudiante";
+            this.label5.Text = "Agregar un Alumno";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textStudentNumber
             // 
@@ -97,7 +101,7 @@
             this.listSubjects.ItemHeight = 16;
             this.listSubjects.Location = new System.Drawing.Point(95, 378);
             this.listSubjects.Name = "listSubjects";
-            this.listSubjects.Size = new System.Drawing.Size(181, 196);
+            this.listSubjects.Size = new System.Drawing.Size(181, 180);
             this.listSubjects.TabIndex = 21;
             // 
             // label3
@@ -154,7 +158,7 @@
             this.listSubjectsSelected.ItemHeight = 16;
             this.listSubjectsSelected.Location = new System.Drawing.Point(362, 378);
             this.listSubjectsSelected.Name = "listSubjectsSelected";
-            this.listSubjectsSelected.Size = new System.Drawing.Size(181, 196);
+            this.listSubjectsSelected.Size = new System.Drawing.Size(181, 180);
             this.listSubjectsSelected.TabIndex = 29;
             // 
             // label7
@@ -195,10 +199,38 @@
             this.addSubject.Text = "->";
             this.addSubject.UseVisualStyleBackColor = true;
             // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.Transparent;
+            this.backButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(31, 23);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(71, 72);
+            this.backButton.TabIndex = 34;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(493, 580);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(105, 36);
+            this.saveButton.TabIndex = 37;
+            this.saveButton.Text = "Guardar";
+            this.saveButton.UseVisualStyleBackColor = true;
+            // 
             // AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.removeSubject);
@@ -241,5 +273,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button removeSubject;
         private System.Windows.Forms.Button addSubject;
+        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button saveButton;
     }
 }

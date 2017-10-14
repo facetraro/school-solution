@@ -12,9 +12,18 @@ namespace ERPSchoolUI
 {
     public partial class RemoveSubject : UserControl
     {
-        public RemoveSubject()
+        private Panel mainPanel;
+        public RemoveSubject(Panel mainPanel)
         {
             InitializeComponent();
+            this.mainPanel = mainPanel;
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            SubjectMenu backSubjectMenu = new SubjectMenu(mainPanel);
+            mainPanel.Controls.Add(backSubjectMenu);
         }
     }
 }

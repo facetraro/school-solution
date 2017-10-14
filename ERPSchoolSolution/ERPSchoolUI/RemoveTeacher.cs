@@ -12,9 +12,12 @@ namespace ERPSchoolUI
 {
     public partial class RemoveTeacher : UserControl
     {
-        public RemoveTeacher()
+        private Panel mainPanel;
+
+        public RemoveTeacher(Panel mainPanel)
         {
             InitializeComponent();
+            this.mainPanel = mainPanel;
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -25,6 +28,13 @@ namespace ERPSchoolUI
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            TeacherMenu backTeacherMenu = new TeacherMenu(mainPanel);
+            mainPanel.Controls.Add(backTeacherMenu);
         }
     }
 }

@@ -12,9 +12,18 @@ namespace ERPSchoolUI
 {
     public partial class ModifyTeacherSelectList : UserControl
     {
-        public ModifyTeacherSelectList()
+        private Panel mainPanel;
+        public ModifyTeacherSelectList(Panel mainPanel)
         {
             InitializeComponent();
+            this.mainPanel = mainPanel;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            ModifyTeacher modifyTeacher = new ModifyTeacher(mainPanel);
+            mainPanel.Controls.Add(modifyTeacher);
         }
     }
 }

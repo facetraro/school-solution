@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculateRout));
             this.label5 = new System.Windows.Forms.Label();
             this.listSchoolVans = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listRoutes = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label5
@@ -67,7 +69,7 @@
             // 
             this.listRoutes.FormattingEnabled = true;
             this.listRoutes.ItemHeight = 16;
-            this.listRoutes.Location = new System.Drawing.Point(148, 412);
+            this.listRoutes.Location = new System.Drawing.Point(148, 400);
             this.listRoutes.Name = "listRoutes";
             this.listRoutes.Size = new System.Drawing.Size(350, 148);
             this.listRoutes.TabIndex = 19;
@@ -75,16 +77,34 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(271, 392);
+            this.label2.Location = new System.Drawing.Point(271, 380);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 17);
             this.label2.TabIndex = 20;
             this.label2.Text = "Rutas a realizar";
             // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.Transparent;
+            this.backButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.ForeColor = System.Drawing.Color.Transparent;
+            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
+            this.backButton.Location = new System.Drawing.Point(35, 18);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(71, 72);
+            this.backButton.TabIndex = 37;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
             // CalculateRout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listRoutes);
             this.Controls.Add(this.label1);
@@ -104,5 +124,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listRoutes;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button backButton;
     }
 }

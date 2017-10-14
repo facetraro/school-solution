@@ -12,9 +12,12 @@ namespace ERPSchoolUI
 {
     public partial class AddSchoolVan : UserControl
     {
-        public AddSchoolVan()
+        private Panel mainPanel;
+
+        public AddSchoolVan(Panel mainPanel)
         {
             InitializeComponent();
+            this.mainPanel = mainPanel;
         }
 
         private void AddSchoolVan_Load(object sender, EventArgs e)
@@ -45,6 +48,18 @@ namespace ERPSchoolUI
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            SchoolVanMenu backSchoolVanMenu = new SchoolVanMenu(mainPanel);
+            mainPanel.Controls.Add(backSchoolVanMenu);
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

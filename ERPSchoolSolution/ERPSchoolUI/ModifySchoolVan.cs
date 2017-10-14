@@ -12,9 +12,19 @@ namespace ERPSchoolUI
 {
     public partial class ModifySchoolVan : UserControl
     {
-        public ModifySchoolVan()
+        private Panel mainPanel;
+
+        public ModifySchoolVan(Panel mainPanel)
         {
             InitializeComponent();
+            this.mainPanel = mainPanel;
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            SchoolVanMenu backSchoolVanMenu = new SchoolVanMenu(mainPanel);
+            mainPanel.Controls.Add(backSchoolVanMenu);
         }
     }
 }

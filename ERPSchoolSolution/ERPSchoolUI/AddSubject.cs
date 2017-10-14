@@ -12,14 +12,24 @@ namespace ERPSchoolUI
 {
     public partial class AddSubject : UserControl
     {
-        public AddSubject()
+        private Panel mainPanel;
+
+        public AddSubject(Panel mainPanel)
         {
             InitializeComponent();
+            this.mainPanel = mainPanel;
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            SubjectMenu backSubjectMenu = new SubjectMenu(mainPanel);
+            mainPanel.Controls.Add(backSubjectMenu);
         }
     }
 }
