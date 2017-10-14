@@ -60,5 +60,27 @@ namespace Testing
             newRoute.Add(newStudent);
             Assert.IsTrue(newRoute.TotalDistance() == 10);
         }
+
+        [TestMethod]
+        public void RouteEqualsSuccess()
+        {
+            Route newRoute = new Route();
+            Coordinate newCoordinate = new Coordinate();
+            newCoordinate.X = 5;
+            newRoute.Add(newCoordinate);
+            Student newStudent = new Student();
+            newStudent.Id = 4;
+            newRoute.Add(newStudent);
+
+            Route anotherEqualsRoute = new Route();
+            Coordinate anotherEqualsCoordinate = new Coordinate();
+            anotherEqualsCoordinate.X = 5;
+            anotherEqualsRoute.Add(anotherEqualsCoordinate);
+            Student anotherEqualsStudent = new Student();
+            anotherEqualsStudent.Id = 4;
+            anotherEqualsRoute.Add(anotherEqualsStudent);
+
+            Assert.IsTrue(newRoute.Equals(anotherEqualsRoute));
+        }
     }
 }
