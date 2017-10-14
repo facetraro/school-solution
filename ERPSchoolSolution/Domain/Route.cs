@@ -31,11 +31,11 @@ namespace Domain
         {
             get
             {
-                return this.TheSchoolVan;
+                return this.theSchoolVan;
             }
             set
             {
-                this.TheSchoolVan = value;
+                this.theSchoolVan = value;
             }
         }
         private bool IsARouteObject(Object anObject)
@@ -78,6 +78,13 @@ namespace Domain
                 throw new InvalidObjectAddIntoRouteSystemException("Invalid object into Route");
             }
         }
+        public void RemoveLast()
+        {
+            if (this.Length() != 0)
+            {
+                this.theRoute.RemoveAt(this.Length() - 1);
+            }
+        }
         public int calculateDistanceObject(IRouteObject anObject, Coordinate actualCoordinate)
         {
             return anObject.GetCoordinates().GetDistanceOf(actualCoordinate);
@@ -87,7 +94,7 @@ namespace Domain
             string stringRoute = "Ruta Camioneta: ";
             foreach (IRouteObject anObject in this.theRoute)
             {
-                stringRoute = stringRoute + anObject.GetCoordinates().PrintCoordinate();     
+                stringRoute = stringRoute + anObject.GetCoordinates().PrintCoordinate();
             }
             return stringRoute;
         }
@@ -105,6 +112,35 @@ namespace Domain
         public int Length()
         {
             return this.theRoute.Count;
+        }
+        public Route Clone()
+        {
+            Route cloneRoute = new Route();
+            cloneRoute.theSchoolVan.Capacity = this.theSchoolVan.Capacity;
+            cloneRoute.theSchoolVan.Id = this.theSchoolVan.Id;
+            foreach (IRouteObject anObject in this.theRoute)
+            {
+                cloneRoute.Add(anObject);
+            }
+            return cloneRoute;
+        }
+        private bool IsTheSameRoute(List<IRouteObject> list)
+        {
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                IRouteObject item = list.ElementAt(i);
+                if (!item.GetType().ToString().Equals(this.theRoute.ElementAt(i).GetType().ToString()))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        public override bool Equals(object aRoute)
+        {
+            Route theRoute = aRoute as Route;
+            return (theRoute.theSchoolVan.Equals(this.theSchoolVan) && this.Length() == theRoute.Length() && IsTheSameRoute(theRoute.theRoute));
         }
     }
 }
