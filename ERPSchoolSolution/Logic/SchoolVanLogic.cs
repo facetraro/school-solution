@@ -11,6 +11,7 @@ namespace Logic
 {
     public class SchoolVanLogic : IAddRemoveModify
     {
+        private Route RouteBest;
         private bool CanIAdd(Object anObject)
         {
             SchoolVanValidator validator = new SchoolVanValidator();
@@ -90,83 +91,124 @@ namespace Logic
         {
             return !IsStudentsEmpty() && !IsSchoolVanEmpty();
         }
-        private bool IsStudentAlreadyDeilvered(Student aStudent, List<Route> routes)
+        private bool IsStudentAlreadyDeilvered(Student aStudent, Route route)
         {
-            foreach (Route route in routes)
+            if (route.IsStudentInRoute(aStudent))
             {
-                if (route.IsStudentInRoute(aStudent))
-                {
-                    return true;
-                }
+                return true;
             }
+
             return false;
         }
-        private bool AllStudentsAlreadyDelivered(List<Student> allStudents, List<Route> routes)
+        private bool AllStudentsAlreadyDelivered(List<Student> allStudents, Route route)
         {
             foreach (Student aStudent in allStudents)
             {
-                if (this.IsStudentAlreadyDeilvered(aStudent, routes))
+                if (!this.IsStudentAlreadyDeilvered(aStudent, route))
                 {
-                    return true;
+                    return false;
                 }
             }
-            return false;
+            return true;
         }
-        private void AddStudentToRoute(Route schoolVanRoute, Student aStudent, int studentsInSchoolVan)
+        private void AddStudentToRoute(Route schoolVanRoute, Student aStudent)
         {
-            studentsInSchoolVan++;
             schoolVanRoute.Add(aStudent);
         }
-        private void CanIAddStudentToRoute(Route schoolVanRoute, Student aStudent, int studentsInSchoolVan)
+        private bool CanIAddStudentToRoute(Route schoolVanRoute, Student aStudent)
         {
-            if (!schoolVanRoute.IsStudentInRoute(aStudent))
+            if (!IsStudentAlreadyDeilvered(aStudent, schoolVanRoute))
             {
-                AddStudentToRoute(schoolVanRoute, aStudent, studentsInSchoolVan);
+                return true;
+            }
+            return false;
+        }
+        private List<Student> GetStudentsBySchoolVan(SchoolVan aSchoolVan)
+        {
+            List<Tuple<SchoolVan, List<Student>>> studentsAssignment = StudentAssignment();
+            foreach (Tuple<SchoolVan, List<Student>> tuple in studentsAssignment)
+            {
+                if (tuple.Item1.Equals(aSchoolVan))
+                {
+                    return tuple.Item2;
+                }
+            }
+            return new List<Student>();
+        }
+
+        private void btAux(Route route, List<Student> students, int actualCapacitiy)
+        {
+            if (AllStudentsAlreadyDelivered(students, route))
+            {
+                Route bestSolutionRoute = RouteBest;
+                if (route.TotalDistance() < bestSolutionRoute.TotalDistance())
+                {
+                    bestSolutionRoute = route.Clone();
+                    RouteBest = bestSolutionRoute.Clone();
+                }
+            }
+            else
+            {
+                foreach (Student aStudent in students)
+                {
+                    if (CanIAddStudentToRoute(route, aStudent))
+                    {
+                        if (!(route.TheSchoolVan.Capacity <= actualCapacitiy))
+                        {
+                            AddStudentToRoute(route, aStudent);
+                            btAux(route, students, actualCapacitiy + 1);
+                            IRouteObject routeObject = route.TheRoute.Last();
+                            route.RemoveLast();
+                        }
+                        else
+                        {
+                            int newCapacity = 0;
+                            route.TheRoute.Add(new Coordinate());
+                            btAux(route, students, newCapacity);
+                            IRouteObject routeObject = route.TheRoute.Last();
+                            route.RemoveLast();
+                        }
+
+                    }
+                }
             }
         }
-        public void SearchNextStudent(Route schoolVanRoute, int studentsInSchoolVan)
+
+        public void bt(Route schoolVanRoute, List<Student> studentsBySchoolVan)
         {
-            Singleton theRepository = Singleton.Instance;
-            List<Student> allStudents = theRepository.Students;
-            foreach (Student aStudent in allStudents)
-            {
-                CanIAddStudentToRoute(schoolVanRoute, aStudent, studentsInSchoolVan);
-            }
+            schoolVanRoute.TheRoute.Add(new Coordinate());
+            Route unSolved = new Route();
+            Coordinate farAway = new Coordinate();
+            farAway.X = 99999999;
+            farAway.Y = 99999999;
+            unSolved.TheRoute.Add(farAway);
+            RouteBest = unSolved;
+            btAux(schoolVanRoute, studentsBySchoolVan, 0);
         }
-        public bool KeepSearching(List<Route> newRoutes, int studentsInSchoolVan, SchoolVan aSchoolVan)
-        {
-            Singleton theRepository = Singleton.Instance;
-            List<Student> allStudents = theRepository.Students;
-            return (aSchoolVan.Capacity - studentsInSchoolVan) >= 0 && !AllStudentsAlreadyDelivered(allStudents, newRoutes);
-        }
+        
         public void AddSchoolCoordinate(Route theRoute)
         {
             theRoute.Add(new Coordinate());
         }
-        public Route BestRoute(List<Route> newRoutes, SchoolVan aSchoolVan)
-        {
-            Route schoolVanRoute = new Route();
-            newRoutes.Add(schoolVanRoute);
-            AddSchoolCoordinate(schoolVanRoute);
-            int studentsInSchoolVan = 0;
-            while (KeepSearching(newRoutes, studentsInSchoolVan, aSchoolVan))
-            {
-                SearchNextStudent(schoolVanRoute, studentsInSchoolVan);
-            }
-            AddSchoolCoordinate(schoolVanRoute);
-            studentsInSchoolVan = 0;
-            return schoolVanRoute;
-        }
+  
         private List<Route> FindBestRoutes()
         {
             Singleton theRepository = Singleton.Instance;
             List<SchoolVan> allSchoolVans = theRepository.SchoolVans;
-            List<Route> newRoutes = new List<Route>();
-            foreach (SchoolVan aSchoolVan in allSchoolVans)
+            SortSchoolVans schoolVanSort = new SortSchoolVans(); ;
+            List<SchoolVan> sortedSchoolVans = schoolVanSort.GenerateSortedList(allSchoolVans);
+
+            List<Route> bestRoutes = new List<Route>();
+            foreach (SchoolVan aSchoolVan in sortedSchoolVans)
             {
-                newRoutes.Add(BestRoute(newRoutes, aSchoolVan));
+                Route schoolVanRoute = new Route();
+                schoolVanRoute.TheSchoolVan = aSchoolVan;
+                List<Student> studentsBySchoolVan = GetStudentsBySchoolVan(aSchoolVan);
+                bt(schoolVanRoute, studentsBySchoolVan);
+                Route bestSolutionRoute = RouteBest.Clone();
+                bestRoutes.Add(bestSolutionRoute.Clone());
             }
-            return newRoutes;
+            return bestRoutes;
         }
         List<Student> SelectLessStudents(int schoolVansWithMoreStudents, int actualLoop, int studentsPerSchoolVanFloor)
         {
@@ -246,7 +288,6 @@ namespace Logic
         }
         public List<Route> GetBestRoutes()
         {
-
             if (CanIGetBestRoutes())
             {
                 return FindBestRoutes();
