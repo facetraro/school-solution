@@ -134,6 +134,10 @@ namespace Domain
                 {
                     return false;
                 }
+                if (!item.GetCoordinates().Equals(this.theRoute.ElementAt(i).GetCoordinates()))
+                {
+                    return false;
+                }
             }
             return true;
         }
