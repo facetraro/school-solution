@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Coordinate
+    public class Coordinate : IRouteObject
     {
         private int x { get; set; }
         private int y { get; set; }
+        public Coordinate GetCoordinates()
+        {
+            return this;
+        }
         public int X
         {
             get
@@ -56,6 +60,10 @@ namespace Domain
         {
             Coordinate theCoordinate = aCoordinate as Coordinate;
             return CompareX(theCoordinate.X) && CompareY(theCoordinate.Y);
+        }
+        public string PrintCoordinate()
+        {
+            return "[" + this.X + "," + this.Y + "]";
         }
     }
 }
