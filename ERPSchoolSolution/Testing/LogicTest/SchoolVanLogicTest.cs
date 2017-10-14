@@ -228,21 +228,10 @@ namespace Testing.LogicTest
             Coordinate schoolCoordinate = new Coordinate();
             expectedRoute.Add(schoolCoordinate);
             expectedRoute.Add(newStudent);
-            expectedRoute.Add(schoolCoordinate);
             List<Route> expectedRoutes = new List<Route>();
             expectedRoutes.Add(expectedRoute);
             List<Route> obtainRoutes = schoolVanLogic.GetBestRoutes();
-            string expectedRoutesString = "";
-            string obtainRoutesString = "";
-            foreach (Route route in expectedRoutes)
-            {
-                expectedRoutesString = route.ToStringRoute();
-            }
-            foreach (Route route in obtainRoutes)
-            {
-                obtainRoutesString = route.ToStringRoute();
-            }
-            Assert.AreEqual(expectedRoutesString, obtainRoutesString);
+            Assert.IsTrue(obtainRoutes.SequenceEqual(expectedRoutes));
         }
         [TestMethod]
         public void SchoolVanStudentAssignmentSuccess()
@@ -314,6 +303,62 @@ namespace Testing.LogicTest
             expectedValue.Add(nextTouple);
             List<Tuple<SchoolVan, List<Student>>> ObtainValue = logic.StudentAssignment();
             Assert.IsTrue(CompareStudentAssignment(ObtainValue, expectedValue));
+        }
+        [TestMethod]
+        public void GetAdvancedBestRoutes()
+        {
+            SetUp();
+            StudentLogic testLogic = new StudentLogic();
+            SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
+            Student student1 = testStudent(1);
+            student1.Coordinates.X = 8;
+            student1.Coordinates.Y = 8;
+            testLogic.Add(student1);
+            Student student2 = testStudent(6);
+            student2.Coordinates.X = 9;
+            student2.Coordinates.Y = 9;
+            testLogic.Add(student2);
+            Student student3 = testStudent(3);
+            student3.Coordinates.X = 1;
+            student3.Coordinates.Y = 1;
+            testLogic.Add(student3);
+            Student student4 = testStudent(2);
+            student4.Coordinates.X = 5;
+            student4.Coordinates.Y = 5;
+            testLogic.Add(student4);
+            Student student5 = testStudent(8);
+            student5.Coordinates.X = 5;
+            student5.Coordinates.Y = 9;
+            testLogic.Add(student5);
+            SchoolVanLogic logic = new SchoolVanLogic();
+            SchoolVan newSchoolVan = new SchoolVan();
+            newSchoolVan.Capacity = 2;
+            logic.Add(newSchoolVan);
+            SchoolVan anotherSchoolVan = new SchoolVan();
+            anotherSchoolVan.Capacity = 3;
+            anotherSchoolVan.Id = 4;
+            logic.Add(anotherSchoolVan);
+
+
+            Route expectedRoute1 = new Route();
+            expectedRoute1.TheRoute.Add(new Coordinate());
+            expectedRoute1.TheRoute.Add(student3);
+            expectedRoute1.TheRoute.Add(student4);
+            expectedRoute1.TheRoute.Add(student1);
+            expectedRoute1.TheSchoolVan = anotherSchoolVan;
+
+            Route expectedRoute2 = new Route();
+            expectedRoute2.TheRoute.Add(new Coordinate());
+            expectedRoute2.TheRoute.Add(student5);
+            expectedRoute2.TheRoute.Add(student2);
+            expectedRoute2.TheSchoolVan = newSchoolVan;
+
+            List<Route> expectedRoutes = new List<Route>();
+            expectedRoutes.Add(expectedRoute1);
+            expectedRoutes.Add(expectedRoute2);
+            List<Route> obtainRoutes = schoolVanLogic.GetBestRoutes();
+
+            Assert.IsTrue(obtainRoutes.SequenceEqual(expectedRoutes));
         }
     }
 }
