@@ -41,7 +41,6 @@ namespace Logic
         }
         private bool CanIModify(Object anObject, Object anotherObject)
         {
-
             return (Exists(anObject) && ModifyValidation(anObject, anotherObject));
         }
         public void Modify(Object anObject, Object anotherObject)
@@ -51,6 +50,11 @@ namespace Logic
                 Remove(anObject);
                 Add(anotherObject);
             }
+        }
+      
+        public int GetNextIdFree()
+        {
+            return 1;
         }
         public void Empty()
         {

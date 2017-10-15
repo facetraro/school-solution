@@ -106,7 +106,7 @@ namespace Testing
         {
             Student aStudent = new Student();
             StudentValidator validator = new StudentValidator();
-            aStudent.Ci = 9999999;
+            aStudent.Ci = 999999;
             Assert.IsFalse(validator.IsValid(aStudent));
         }
         [TestMethod]
