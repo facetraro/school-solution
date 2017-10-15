@@ -171,6 +171,18 @@ namespace Testing.LogicTest
             StudentLogic logic = new StudentLogic();
             int expectedValue = 1;
             Assert.IsTrue(logic.GetNextIdFree().Equals(expectedValue));
+
+        }
+        [TestMethod]
+        public void GetNextStudentId()
+        {
+            SetUp();
+            StudentLogic logic = new StudentLogic();
+            Student newStudent = TestStudent();
+            newStudent.Id = 1;
+            logic.Add(newStudent);
+            int expectedValue = 2;
+            Assert.IsTrue(logic.GetNextIdFree().Equals(expectedValue));
         }
     }
 }
