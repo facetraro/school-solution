@@ -7,44 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Module;
 
 namespace ERPSchoolUI
 {
     public partial class ModifySubject : UserControl
     {
         private Panel mainPanel;
+        private Object selectedObject;
 
-        public ModifySubject(Panel mainPanel)
+        public ModifySubject(Panel mainPanel, Object selectedObject)
         {
             InitializeComponent();
-            this.mainPanel = mainPanel; 
-        }
-
-        private void label2_Click(object sender, EventArgs e)
+            this.mainPanel = mainPanel;
+            this.selectedObject = selectedObject;
+            Load();
+        }      
+        private void Load()
         {
-
+            SubjectModule module = new SubjectModule();
+            module.LoadFields(selectedObject, textName, textCode);
         }
-
-        private void textCode_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void backButton_Click(object sender, EventArgs e)
         {
             mainPanel.Controls.Clear();
             SubjectMenu backSubjectMenu = new SubjectMenu(mainPanel);
             mainPanel.Controls.Add(backSubjectMenu);
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            SubjectModule module = new SubjectModule();
+            module.ModifySubject(selectedObject, textName, textCode);
         }
     }
 }

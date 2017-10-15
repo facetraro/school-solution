@@ -43,6 +43,7 @@
     <Compile Include="InvalidObjectAddIntoRouteSystemException.cs" />
     <Compile Include="NoSchoolVanInSystemException.cs" />
     <Compile Include="NoStudentsInSystemException.cs" />
+    <Compile Include="ObjectIsNotSubjectException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

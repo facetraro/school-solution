@@ -13,7 +13,6 @@ namespace ERPSchoolUI
     public partial class ModifySchoolVanSelectList : UserControl
     {
         private Panel mainPanel;
-
         public ModifySchoolVanSelectList(Panel mainPanel)
         {
             InitializeComponent();

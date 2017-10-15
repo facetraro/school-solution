@@ -20,8 +20,15 @@ namespace Domain
         public override bool Equals(object aSubject)
         {
             Subject theSubject = aSubject as Subject;
+            if ((System.Object)theSubject == null)
+            {
+                return false;
+            }
             return (this.Code.Equals(theSubject.Code));
-
+        }
+        public override string ToString()
+        {
+            return "Materia: " + Name + " [" + Code + "]";
         }
     }
 }

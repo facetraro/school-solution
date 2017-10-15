@@ -35,7 +35,8 @@ namespace Logic
             SubjectValidator validator = new SubjectValidator();
             return validator.IsValid(anObject) && !Exists(anObject);
         }
-        
+     
+
         public void AddNewSubject(string name)
         {
             Subject newSubject = new Subject();
@@ -65,9 +66,14 @@ namespace Logic
             Subject newSubject = anObject as Subject;
             theRepository.Subjects.Remove(newSubject);
         }
+        private bool CanIModifySubject(Object anObject, Object oldObject)
+        {
+            SubjectValidator validator = new SubjectValidator();
+            return validator.IsValid(anObject) && (!Exists(anObject)||anObject.Equals(oldObject));
+        }
         private bool CanIModify(Object oldObject, Object newObject)
         {
-            return Exists(oldObject) && CanIAdd(newObject);
+            return Exists(oldObject) && CanIModifySubject(newObject,oldObject);
 
         }
         public void Modify(Object oldObject, Object newObject)
