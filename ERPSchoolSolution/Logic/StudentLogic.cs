@@ -51,16 +51,19 @@ namespace Logic
                 Add(anotherObject);
             }
         }
-      
-        public int GetNextIdFree()
+        private int GetBiggestIdStudent(List<Student> list)
         {
-            List<Student> list = GetAllStudents();
             int biggestSoFar = 0;
             foreach (Student item in list)
             {
                 if (item.Id > biggestSoFar) biggestSoFar = item.Id;
             }
-            return (biggestSoFar+1);
+            return biggestSoFar;
+        }
+        public int GetNextIdFree()
+        {
+            List<Student> list = GetAllStudents();
+            return (GetBiggestIdStudent(list) + 1);
         }
         public void Empty()
         {
@@ -82,7 +85,6 @@ namespace Logic
         {
             return Length() == 0;
         }
-
         public List<Student> GetAllStudents()
         {
             Singleton theRepository = Singleton.Instance;
