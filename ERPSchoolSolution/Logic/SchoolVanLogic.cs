@@ -40,11 +40,17 @@ namespace Logic
             SchoolVan newSchoolVan = anObject as SchoolVan;
             theRepository.SchoolVans.Remove(newSchoolVan);
         }
-        private bool CanIModify(Object oldObject, Object newObject)
+        private bool ModifyValidation(Object anObject, Object anotherObject)
         {
             SchoolVanValidator validator = new SchoolVanValidator();
-
-            return (Exists(oldObject) && validator.IsValid(newObject) && (!Exists(newObject) || oldObject.Equals(newObject)));
+            bool domainValidation = validator.IsValid(anotherObject);
+            bool nonExists = !Exists(anotherObject);
+            bool sameId = anObject.Equals(anotherObject);
+            return domainValidation && (nonExists || sameId);
+        }
+        private bool CanIModify(Object oldObject, Object newObject)
+        {
+            return (Exists(oldObject) && ModifyValidation(oldObject, newObject));
         }
         public void Modify(Object oldObject, Object newObject)
         {

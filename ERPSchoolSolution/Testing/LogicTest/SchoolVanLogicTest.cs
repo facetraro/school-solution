@@ -183,6 +183,28 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Exists(newSchoolVan));
         }
         [TestMethod]
+        public void ModifySchoolVanWithTheSameId()
+        {
+            SetUp();
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            SchoolVan schoolVan = new SchoolVan();
+            schoolVan.Id = 4;
+            schoolVan.Capacity = 14;
+            SchoolVan updateSchoolVan = new SchoolVan();
+            updateSchoolVan.Id = 4;
+            updateSchoolVan.Capacity = 4;
+            testLogic.Add(schoolVan);
+            testLogic.Modify(schoolVan, updateSchoolVan);
+            List<SchoolVan> list = testLogic.GetSchoolVansSortedByCapacity();
+            bool assertion = false;
+            if (list.Count != 0)
+            {
+                SchoolVan test = list.ElementAt(0);
+                assertion = test.Capacity.Equals(4);
+            }
+            Assert.IsTrue(assertion);
+        }
+        [TestMethod]
         [ExpectedException(typeof(NoStudentsInSystemException))]
         public void GetBestRoutesWithoutStudents()
         {
@@ -359,28 +381,6 @@ namespace Testing.LogicTest
             List<Route> obtainRoutes = schoolVanLogic.GetBestRoutes();
 
             Assert.IsTrue(obtainRoutes.SequenceEqual(expectedRoutes));
-        }
-        [TestMethod]
-        public void ModifySchoolVanWithTheSameId()
-        {
-            SetUp();
-            SchoolVanLogic testLogic = new SchoolVanLogic();
-            SchoolVan schoolVan = new SchoolVan();
-            schoolVan.Id = 4;
-            schoolVan.Capacity = 14;
-            SchoolVan updateSchoolVan = new SchoolVan();
-            updateSchoolVan.Id = 4;
-            updateSchoolVan.Capacity = 4;
-            testLogic.Add(schoolVan);
-            testLogic.Modify(schoolVan, updateSchoolVan);
-            List<SchoolVan> list = testLogic.GetSchoolVansSortedByCapacity();
-            bool assertion = false;
-            if (list.Count != 0)
-            {
-                SchoolVan test = list.ElementAt(0);
-                assertion = test.Capacity.Equals(4);
-            }
-            Assert.IsTrue(assertion);
-        }
+        } 
     }
 }
