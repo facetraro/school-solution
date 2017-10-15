@@ -169,7 +169,8 @@ namespace Testing.LogicTest
         {
             SetUp();
             StudentLogic logic = new StudentLogic();
-            Assert.IsTrue(logic.GetNextIdFree().Equals(1));
+            int expectedValue = 1;
+            Assert.IsTrue(logic.GetNextIdFree().Equals(expectedValue));
         }
     }
 }
