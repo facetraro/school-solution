@@ -32,7 +32,7 @@ namespace Logic
                 Insert(anObject);
             }
         }
-       
+
         public bool Exists(Object anObject)
         {
             Singleton theRepository = Singleton.Instance;
@@ -45,11 +45,18 @@ namespace Logic
             Teacher toRemove = anObject as Teacher;
             theRepository.Teachers.Remove(toRemove);
         }
-        private bool CanIModify(Object anObject, Object anotherObject)
+        private bool ModifyValidation(Object anObject, Object anotherObject)
         {
             TeacherValidator validator = new TeacherValidator();
+            bool domainValidation = validator.IsValid(anotherObject);
+            bool nonExists = !Exists(anotherObject);
+            bool sameId = anObject.Equals(anotherObject);
+            return domainValidation && (nonExists || sameId);
+        }
 
-                return (this.Exists(anObject) && validator.IsValid(anotherObject) && (!Exists(anotherObject)||anotherObject.Equals(anObject)));
+        private bool CanIModify(Object anObject, Object anotherObject)
+        {
+            return (this.Exists(anObject) && ModifyValidation(anObject, anotherObject));
         }
         public void Modify(Object anObject, Object anotherObject)
         {
