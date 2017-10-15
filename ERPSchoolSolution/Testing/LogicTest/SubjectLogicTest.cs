@@ -175,7 +175,7 @@ namespace Testing.LogicTest
             logic.Modify(oldSubject, newSubject);
             List<Subject> allSubjects = logic.GetAllSubjects();
             bool assertion = false;
-            if (logic.IsEmpty())
+            if (!logic.IsEmpty())
             {
                 Subject subjectTest = allSubjects.ElementAt(0);
                 assertion = subjectTest.Name.Equals("aa");
