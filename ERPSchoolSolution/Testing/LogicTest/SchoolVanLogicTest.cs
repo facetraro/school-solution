@@ -371,7 +371,7 @@ namespace Testing.LogicTest
             SchoolVan updateSchoolVan = new SchoolVan();
             updateSchoolVan.Id = 4;
             updateSchoolVan.Capacity = 4;
-
+            testLogic.Add(schoolVan);
             testLogic.Modify(schoolVan, updateSchoolVan);
             List<SchoolVan> list = testLogic.GetSchoolVansSortedByCapacity();
             bool assertion = false;

@@ -42,7 +42,9 @@ namespace Logic
         }
         private bool CanIModify(Object oldObject, Object newObject)
         {
-            return (Exists(oldObject) && CanIAdd(newObject));
+            SchoolVanValidator validator = new SchoolVanValidator();
+
+            return (Exists(oldObject) && validator.IsValid(newObject) && (!Exists(newObject) || oldObject.Equals(newObject)));
         }
         public void Modify(Object oldObject, Object newObject)
         {
