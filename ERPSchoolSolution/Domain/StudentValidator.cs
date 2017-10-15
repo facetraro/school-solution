@@ -11,7 +11,7 @@ namespace Domain
         private static int MIN_CI = 9999999;
         private bool IsCiValid(Student aStudent)
         {
-            return aStudent.Ci > MIN_CI;
+            return aStudent.Ci >= MIN_CI;
         }
         private bool IsNameValid(Student aStudent)
         {
