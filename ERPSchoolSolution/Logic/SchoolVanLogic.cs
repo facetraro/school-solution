@@ -204,7 +204,7 @@ namespace Logic
         {
             theRoute.Add(SchoolCoordinate);
         }
-        private List<SchoolVan> GetSchoolVansSortedByCapacity()
+        public List<SchoolVan> GetSchoolVansSortedByCapacity()
         {
             Singleton theRepository = Singleton.Instance;
             List<SchoolVan> allSchoolVans = theRepository.SchoolVans;

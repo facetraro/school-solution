@@ -29,7 +29,7 @@ namespace Testing.LogicTest
             }
             return true;
         }
-        private Student testStudent(int id)
+        private Student TestStudent(int id)
         {
             Student testStudent = new Student();
             testStudent.Ci = 47803333;
@@ -240,13 +240,13 @@ namespace Testing.LogicTest
             List<Tuple<SchoolVan, List<Student>>> expectedValue = new List<Tuple<SchoolVan, List<Student>>>();
             StudentLogic testLogic = new StudentLogic();
             SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
-            Student newStudent = testStudent(1);
+            Student newStudent = TestStudent(1);
             testLogic.Add(newStudent);
-            Student anotherStudent = testStudent(6);
+            Student anotherStudent = TestStudent(6);
             testLogic.Add(anotherStudent);
-            Student otherStudent = testStudent(5);
+            Student otherStudent = TestStudent(5);
             testLogic.Add(otherStudent);
-            Student lastStudent = testStudent(2);
+            Student lastStudent = TestStudent(2);
             testLogic.Add(lastStudent);
             SchoolVanLogic logic = new SchoolVanLogic();
             SchoolVan newSchoolVan = new SchoolVan();
@@ -277,11 +277,11 @@ namespace Testing.LogicTest
             List<Tuple<SchoolVan, List<Student>>> expectedValue = new List<Tuple<SchoolVan, List<Student>>>();
             StudentLogic testLogic = new StudentLogic();
             SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
-            Student newStudent = testStudent(1);
+            Student newStudent = TestStudent(1);
             testLogic.Add(newStudent);
-            Student otherStudent = testStudent(5);
+            Student otherStudent = TestStudent(5);
             testLogic.Add(otherStudent);
-            Student lastStudent = testStudent(2);
+            Student lastStudent = TestStudent(2);
             testLogic.Add(lastStudent);
             SchoolVanLogic logic = new SchoolVanLogic();
             SchoolVan newSchoolVan = new SchoolVan();
@@ -310,23 +310,23 @@ namespace Testing.LogicTest
             SetUp();
             StudentLogic testLogic = new StudentLogic();
             SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
-            Student student1 = testStudent(1);
+            Student student1 = TestStudent(1);
             student1.Coordinates.X = 8;
             student1.Coordinates.Y = 8;
             testLogic.Add(student1);
-            Student student2 = testStudent(6);
+            Student student2 = TestStudent(6);
             student2.Coordinates.X = 9;
             student2.Coordinates.Y = 9;
             testLogic.Add(student2);
-            Student student3 = testStudent(3);
+            Student student3 = TestStudent(3);
             student3.Coordinates.X = 1;
             student3.Coordinates.Y = 1;
             testLogic.Add(student3);
-            Student student4 = testStudent(2);
+            Student student4 = TestStudent(2);
             student4.Coordinates.X = 5;
             student4.Coordinates.Y = 5;
             testLogic.Add(student4);
-            Student student5 = testStudent(8);
+            Student student5 = TestStudent(8);
             student5.Coordinates.X = 5;
             student5.Coordinates.Y = 9;
             testLogic.Add(student5);
@@ -359,6 +359,28 @@ namespace Testing.LogicTest
             List<Route> obtainRoutes = schoolVanLogic.GetBestRoutes();
 
             Assert.IsTrue(obtainRoutes.SequenceEqual(expectedRoutes));
+        }
+        [TestMethod]
+        public void ModifySchoolVanWithTheSameId()
+        {
+            SetUp();
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            SchoolVan schoolVan = new SchoolVan();
+            schoolVan.Id = 4;
+            schoolVan.Capacity = 14;
+            SchoolVan updateSchoolVan = new SchoolVan();
+            updateSchoolVan.Id = 4;
+            updateSchoolVan.Capacity = 4;
+
+            testLogic.Modify(schoolVan, updateSchoolVan);
+            List<SchoolVan> list = testLogic.GetSchoolVansSortedByCapacity();
+            bool assertion = false;
+            if (list.Count != 0)
+            {
+                SchoolVan test = list.ElementAt(0);
+                assertion = test.Capacity.Equals(4);
+            }
+            Assert.IsTrue(assertion);
         }
     }
 }
