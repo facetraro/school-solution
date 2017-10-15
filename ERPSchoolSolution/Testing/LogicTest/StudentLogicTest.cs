@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
 using Logic;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Testing.LogicTest
 {
@@ -141,6 +143,26 @@ namespace Testing.LogicTest
             testLogic.Add(newStudent);
             testLogic.Modify(newStudent, anotherStudent);
             Assert.IsTrue(testLogic.Exists(newStudent));
+        }
+        [TestMethod]
+        public void ModifyStudentWithTheSameId()
+        {
+            SetUp();
+            StudentLogic testLogic = new StudentLogic();
+            Student newStudent = TestStudent();
+            Student anotherStudent = TestStudent();
+            anotherStudent.Name = "new Name";
+            testLogic.Add(newStudent);
+            testLogic.Add(anotherStudent);
+            testLogic.Modify(newStudent, anotherStudent);
+            List<Student> list = testLogic.GetAllStudents();
+            bool assertion = false;
+            if (list.Count != 0)
+            {
+                Student testStudent = list.ElementAt(0);
+                assertion = testStudent.Name.Equals("new Name");
+            }
+            Assert.IsTrue(assertion);
         }
     }
 }
