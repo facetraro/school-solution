@@ -47,7 +47,9 @@ namespace Logic
         }
         private bool CanIModify(Object anObject, Object anotherObject)
         {
-            return (this.Exists(anObject) && CanIAdd(anotherObject));
+            TeacherValidator validator = new TeacherValidator();
+
+                return (this.Exists(anObject) && validator.IsValid(anotherObject) && (!Exists(anotherObject)||anotherObject.Equals(anObject)));
         }
         public void Modify(Object anObject, Object anotherObject)
         {
@@ -66,6 +68,12 @@ namespace Logic
         {
             Singleton theRepository = Singleton.Instance;
             theRepository.Teachers = new List<Teacher>();
+        }
+
+        public List<Teacher> GetAllTeachers()
+        {
+            Singleton theRepository = Singleton.Instance;
+            return theRepository.Teachers;
         }
     }
 }
