@@ -125,15 +125,16 @@ namespace Logic
         }
         private List<Student> GetStudentsBySchoolVan(SchoolVan aSchoolVan)
         {
+            List<Student> students = new List<Student>();
             List<Tuple<SchoolVan, List<Student>>> studentsAssignment = StudentAssignment();
             foreach (Tuple<SchoolVan, List<Student>> tuple in studentsAssignment)
             {
                 if (tuple.Item1.Equals(aSchoolVan))
                 {
-                    return tuple.Item2;
+                    students = tuple.Item2;
                 }
             }
-            return new List<Student>();
+            return students;
         }
         private void SaveNewBestSolution(Route route)
         {
@@ -306,11 +307,12 @@ namespace Logic
         }
         public List<Route> GetBestRoutes()
         {
+            List<Route> bestRoutes = new List<Route>();
             if (CanIGetBestRoutes())
             {
-                return FindBestRoutes();
+                bestRoutes = FindBestRoutes();
             }
-            return new List<Route>();
+            return bestRoutes;
         }
     }
 }
