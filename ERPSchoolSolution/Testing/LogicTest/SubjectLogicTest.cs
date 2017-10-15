@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
 using Logic;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Testing.LogicTest
 {
@@ -146,5 +147,24 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Exists(newSubject));
 
         }
+        [TestMethod]
+        public void GenerateNewCodeSuccess()
+        {
+            ClearRepository();
+            string testCode = "testCode";
+            SubjectLogic logic = new SubjectLogic();
+            logic.AddNewSubject("testName");
+            List<Subject> allSubjects = logic.GetAllSubjects();
+            bool assertion = true;
+            if (logic.Length()!=0)
+            {
+                Subject subjectTest=allSubjects.ElementAt(0);
+                assertion = subjectTest.Code.Equals(testCode);
+            }
+            Assert.IsFalse(assertion);
+
+        }
+
+        
     }
 }
