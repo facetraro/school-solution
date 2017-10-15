@@ -29,13 +29,11 @@ namespace Logic
             Singleton repository = Singleton.Instance;
             return repository.Subjects;
         }
-
         private bool CanIAdd(Object anObject)
         {
             SubjectValidator validator = new SubjectValidator();
             return validator.IsValid(anObject) && !Exists(anObject);
         }
-        
         public void AddNewSubject(string name)
         {
             Subject newSubject = new Subject();
@@ -66,10 +64,16 @@ namespace Logic
             Subject newSubject = anObject as Subject;
             theRepository.Subjects.Remove(newSubject);
         }
+        private bool ModifyValidation(Object oldObject, Object anObject)
+        {
+            bool sameCode = anObject.Equals(oldObject);
+            bool nonExists = !Exists(anObject);
+            return (nonExists || sameCode);
+        }
         private bool CanIModifySubject(Object anObject, Object oldObject)
         {
             SubjectValidator validator = new SubjectValidator();
-            return validator.IsValid(anObject) && (!Exists(anObject) || anObject.Equals(oldObject));
+            return (validator.IsValid(anObject) && ModifyValidation(oldObject, anObject));
         }
         private bool CanIModify(Object oldObject, Object newObject)
         {
@@ -87,7 +91,6 @@ namespace Logic
         {
             Singleton theRepository = Singleton.Instance;
             return theRepository.Subjects.Count;
-
         }
         public void Empty()
         {
