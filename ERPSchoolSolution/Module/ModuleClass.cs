@@ -8,8 +8,8 @@ namespace Module
 {
     public class ModuleClass
     {
-        private string Nombre;
-        private string Descripcion;
-
+        private string name;
+        private string description;
+        private List<Tuple<string,Action>> actions;
     }
 }

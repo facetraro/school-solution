@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Module;
 
 namespace ERPSchoolUI
 {
@@ -30,6 +31,13 @@ namespace ERPSchoolUI
             mainPanel.Controls.Clear();
             SubjectMenu backSubjectMenu = new SubjectMenu(mainPanel);
             mainPanel.Controls.Add(backSubjectMenu);
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            string name = textName.Text;
+            SubjectModule module = new SubjectModule();
+            module.AddNewSubject(name);
         }
     }
 }
