@@ -31,10 +31,18 @@ namespace Logic
             Singleton theRepository = Singleton.Instance;
             theRepository.Students.Remove(toDelete);
         }
-        private bool CanIModify(Object anObject, Object anotherObject)
+        private bool ModifyValidation(Object anObject, Object anotherObject)
         {
             StudentValidator validator = new StudentValidator();
-            return (Exists(anObject) && validator.IsValid(anotherObject) && (!Exists(anotherObject)||anObject.Equals(anotherObject)));
+            bool domainValidation = validator.IsValid(anotherObject);
+            bool nonExists = !Exists(anotherObject);
+            bool sameId = anObject.Equals(anotherObject);
+            return domainValidation && (nonExists || sameId);
+        }
+        private bool CanIModify(Object anObject, Object anotherObject)
+        {
+
+            return (Exists(anObject) && ModifyValidation(anObject, anotherObject));
         }
         public void Modify(Object anObject, Object anotherObject)
         {
@@ -61,7 +69,7 @@ namespace Logic
             return theRepository.Students.Count;
         }
         public bool IsEmpty()
-        { 
+        {
             return Length() == 0;
         }
 
