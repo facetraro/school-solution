@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InvalidObjectAddIntoRouteSystemException.cs" />
+    <Compile Include="NoSubjectInSystemException.cs" />
     <Compile Include="NoSchoolVanInSystemException.cs" />
     <Compile Include="NoStudentsInSystemException.cs" />
     <Compile Include="ObjectIsNotSubjectException.cs" />

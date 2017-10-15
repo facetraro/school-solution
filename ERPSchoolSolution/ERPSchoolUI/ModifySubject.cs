@@ -21,8 +21,15 @@ namespace ERPSchoolUI
             InitializeComponent();
             this.mainPanel = mainPanel;
             this.selectedObject = selectedObject;
-            Load();
-        }      
+            try
+            {
+                Load();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void Load()
         {
             SubjectModule module = new SubjectModule();
@@ -38,7 +45,16 @@ namespace ERPSchoolUI
         private void saveButton_Click(object sender, EventArgs e)
         {
             SubjectModule module = new SubjectModule();
-            module.ModifySubject(selectedObject, textName, textCode);
+            try
+            {
+                module.ModifySubject(selectedObject, textName, textCode);
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

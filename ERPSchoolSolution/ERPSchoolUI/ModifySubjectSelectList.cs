@@ -17,8 +17,19 @@ namespace ERPSchoolUI
         public ModifySubjectSelectList(Panel mainPanel)
         {
             InitializeComponent();
-            this.mainPanel = mainPanel;
-            LoadSubjects();
+            try
+            {
+                LoadSubjects();
+                this.mainPanel = mainPanel;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                UserControl theSubjectMenu = new SubjectMenu(mainPanel);
+                mainPanel.Controls.Add(theSubjectMenu);
+            }
+            
         }
         private void LoadSubjects()
         {

@@ -20,52 +20,42 @@ namespace Module
         public void LoadAllSubjects(ListBox list)
         {
             SubjectLogic logic = new SubjectLogic();
-            List<Subject> allObjects = logic.GetAllSubjects();
-            foreach (var item in allObjects)
+            List<Subject> allObjects = new List<Subject>();
+            allObjects = logic.GetAllSubjects();
+            if (allObjects.Count == 0)
+            {
+                throw new NoSubjectInSystemException("No hay Materias ingresadas en el sistema");
+            }
+            foreach (Subject item in allObjects)
             {
                 list.Items.Add(item);
             }
+
         }
 
         public void LoadFields(object selectedObject, TextBox textName, TextBox textCode)
         {
-            try
+            if (!(selectedObject is Subject))
             {
-                if (!(selectedObject is Subject))
-                {
-                    throw new ObjectIsNotSubjectException("Se esperaba un objeto del tipo [Subject]");
-                }
-                Subject theSubject = selectedObject as Subject;
-                textName.Text = theSubject.Name;
-                textCode.Text = theSubject.Code;
+                throw new ObjectIsNotSubjectException("Se esperaba un objeto del tipo [Subject]");
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            Subject theSubject = selectedObject as Subject;
+            textName.Text = theSubject.Name;
+            textCode.Text = theSubject.Code;
         }
 
         public void ModifySubject(object selectedObject, TextBox textName, TextBox textCode)
         {
-
-            try
+            if (!(selectedObject is Subject))
             {
-                if (!(selectedObject is Subject))
-                {
-                    throw new ObjectIsNotSubjectException("Se esperaba un objeto del tipo [Subject]");
-                }
-                Subject oldSubject = selectedObject as Subject;
-                SubjectLogic logic = new SubjectLogic();
-                Subject newSubject = new Subject();
-                newSubject.Name = textName.Text;
-                newSubject.Code = textCode.Text;
-                logic.Modify(oldSubject,newSubject);
+                throw new ObjectIsNotSubjectException("Se esperaba un objeto del tipo [Subject]");
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            Subject oldSubject = selectedObject as Subject;
+            SubjectLogic logic = new SubjectLogic();
+            Subject newSubject = new Subject();
+            newSubject.Name = textName.Text;
+            newSubject.Code = textCode.Text;
+            logic.Modify(oldSubject, newSubject);
         }
     }
 }
