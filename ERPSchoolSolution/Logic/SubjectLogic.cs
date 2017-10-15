@@ -9,16 +9,20 @@ namespace Logic
 {
     public class SubjectLogic
     {
+        public bool IsEmpty()
+        {
+            return this.Length() == 0;
+        }
         private string GenerateNewCode()
         {
             string posibleChars = "0123456789abcdefghijlkmnopqrstuvwxyz";
-            string generatedCode = "";
-            Random rnd = new Random();
+            string code = "";
+            Random random = new Random();
             for (int i = 0; i < 5; i++)
             {
-                generatedCode = generatedCode + posibleChars.ElementAt(rnd.Next(1, 34));
+                code = code + posibleChars.ElementAt(random.Next(1, 34));
             }
-            return generatedCode;
+            return code;
         }
         public List<Subject> GetAllSubjects()
         {

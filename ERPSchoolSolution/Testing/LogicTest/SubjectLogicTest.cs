@@ -156,15 +156,12 @@ namespace Testing.LogicTest
             logic.AddNewSubject("testName");
             List<Subject> allSubjects = logic.GetAllSubjects();
             bool assertion = true;
-            if (logic.Length()!=0)
+            if (!logic.IsEmpty())
             {
-                Subject subjectTest=allSubjects.ElementAt(0);
+                Subject subjectTest = allSubjects.ElementAt(0);
                 assertion = subjectTest.Code.Equals(testCode);
             }
             Assert.IsFalse(assertion);
-
         }
-
-        
     }
 }
