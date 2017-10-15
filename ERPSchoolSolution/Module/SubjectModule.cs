@@ -57,5 +57,15 @@ namespace Module
             newSubject.Code = textCode.Text;
             logic.Modify(oldSubject, newSubject);
         }
+        public void RemoveSubject(object selectedObject)
+        {
+            if (!(selectedObject is Subject))
+            {
+                throw new ObjectIsNotSubjectException("Se esperaba un objeto del tipo [Subject]");
+            }
+            Subject toDelete = selectedObject as Subject;
+            SubjectLogic logic = new SubjectLogic();
+            logic.Remove(toDelete);
+        }
     }
 }

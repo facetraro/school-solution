@@ -48,9 +48,8 @@ namespace ERPSchoolUI
             try
             {
                 module.ModifySubject(selectedObject, textName, textCode);
-
+                MessageBox.Show("Materias modificada con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
