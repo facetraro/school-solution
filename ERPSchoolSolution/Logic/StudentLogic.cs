@@ -54,7 +54,13 @@ namespace Logic
       
         public int GetNextIdFree()
         {
-            return 1;
+            List<Student> list = GetAllStudents();
+            int biggestSoFar = 0;
+            foreach (Student item in list)
+            {
+                if (item.Id > biggestSoFar) biggestSoFar = item.Id;
+            }
+            return (biggestSoFar+1);
         }
         public void Empty()
         {
