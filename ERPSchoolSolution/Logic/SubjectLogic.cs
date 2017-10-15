@@ -9,15 +9,38 @@ namespace Logic
 {
     public class SubjectLogic
     {
+        private string GenerateNewCode()
+        {
+            string posibleChars = "0123456789abcdefghijlkmnopqrstuvwxyz";
+            string generatedCode = "";
+            Random rnd = new Random();
+            for (int i = 0; i < 5; i++)
+            {
+                generatedCode = generatedCode + posibleChars.ElementAt(rnd.Next(1, 34));
+            }
+            return generatedCode;
+        }
+        public List<Subject> GetAllSubjects()
+        {
+            Singleton repository = Singleton.Instance;
+            return repository.Subjects;
+        }
+
         private bool CanIAdd(Object anObject)
         {
             SubjectValidator validator = new SubjectValidator();
             return validator.IsValid(anObject) && !Exists(anObject);
         }
-
+        
+        public void AddNewSubject(string name)
+        {
+            Subject newSubject = new Subject();
+            newSubject.Code = GenerateNewCode();
+            newSubject.Name = name;
+            this.Add(newSubject);
+        }
         public void Add(Object anObject)
         {
-
             if (CanIAdd(anObject)){
                 {
                     Singleton theRepository = Singleton.Instance;
