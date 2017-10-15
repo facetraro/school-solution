@@ -163,5 +163,24 @@ namespace Testing.LogicTest
             }
             Assert.IsFalse(assertion);
         }
+        [TestMethod]
+        public void CanIModifySubject()
+        {
+            ClearRepository();
+            Subject oldSubject = testSubject();
+            Subject newSubject = testSubject();
+            newSubject.Name = "aa";
+            SubjectLogic logic = new SubjectLogic();
+            logic.Add(oldSubject);
+            logic.Modify(oldSubject, newSubject);
+            List<Subject> allSubjects = logic.GetAllSubjects();
+            bool assertion = false;
+            if (logic.IsEmpty())
+            {
+                Subject subjectTest = allSubjects.ElementAt(0);
+                assertion = subjectTest.Name.Equals("aa");
+            }
+            Assert.IsTrue(assertion);
+        }
     }
 }
