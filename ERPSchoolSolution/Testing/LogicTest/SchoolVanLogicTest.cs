@@ -381,6 +381,26 @@ namespace Testing.LogicTest
             List<Route> obtainRoutes = schoolVanLogic.GetBestRoutes();
 
             Assert.IsTrue(obtainRoutes.SequenceEqual(expectedRoutes));
-        } 
+        }
+        [TestMethod]
+        public void GetFirstNextIdFree()
+        {
+            SetUp();
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            int expectedValue = 1;
+            Assert.IsTrue(testLogic.GetNextIdFree().Equals(expectedValue));
+        }
+        [TestMethod]
+        public void GetNextIdFreeSuccess()
+        {
+            SetUp();
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            SchoolVan newSchoolVan = new SchoolVan();
+            newSchoolVan.Id = 1;
+            newSchoolVan.Capacity = 2;
+            testLogic.Add(newSchoolVan);
+            int expectedValue = 2;
+            Assert.IsTrue(testLogic.GetNextIdFree().Equals(expectedValue));
+        }
     }
 }

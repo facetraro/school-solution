@@ -52,7 +52,6 @@
             this.label5.Size = new System.Drawing.Size(234, 29);
             this.label5.TabIndex = 41;
             this.label5.Text = "Gestionar camioneta";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // listSchoolVans
             // 

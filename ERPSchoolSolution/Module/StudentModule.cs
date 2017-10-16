@@ -105,7 +105,7 @@ namespace Module
         {
             if (!(selectedObject is Student))
             {
-                throw new ObjectIsNotSubjectException("Se esperaba un objeto del tipo [Student]");
+                throw new WrongObjectException("Se esperaba un objeto del tipo [Student]");
             }
             Student toDelete = selectedObject as Student;
             StudentLogic logic = new StudentLogic();

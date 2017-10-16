@@ -47,5 +47,9 @@ namespace Domain
             }
             return (this.Id == theSchoolVan.Id);
         }
+        public override string ToString()
+        {
+            return "Camioneta: " + id + " [Capacidad " + capacity + "]";
+        }
     }
 }
