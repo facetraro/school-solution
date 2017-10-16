@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Module;
 
 namespace ERPSchoolUI
 {
@@ -59,7 +60,9 @@ namespace ERPSchoolUI
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            
+            SchoolVanModule module = new SchoolVanModule();
+            module.AddNewSchoolVan((int)numericMaxCapacity.Value);
+            MessageBox.Show("Camioneta ingresada con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
