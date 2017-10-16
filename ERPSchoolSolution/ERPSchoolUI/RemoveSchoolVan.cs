@@ -22,7 +22,7 @@ namespace ERPSchoolUI
             InitializeComponent();
             try
             {
-                LoadStudents();
+                Load();
                 this.mainPanel = mainPanel;
 
             }
@@ -43,7 +43,7 @@ namespace ERPSchoolUI
             }
             return true;
         }
-        private void LoadStudents()
+        private void Load()
         {
             SchoolVanModule module = new SchoolVanModule();
             module.LoadAllSchoolVans(listSchoolVan);

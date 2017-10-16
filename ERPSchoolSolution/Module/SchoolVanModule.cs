@@ -59,6 +59,20 @@ namespace Module
             newSchoolVan.Capacity = (int)numericCapacity.Value;
             logic.Modify(oldSchoolVan, newSchoolVan);
         }
+
+        public void LoadRoutesBySchoolVan(object selectedItem, ListBox list)
+        {
+            SchoolVanLogic logic = new SchoolVanLogic();
+            List<Route> routes = logic.GetBestRoutes();
+            foreach (Route item in routes)
+            {
+                if (item.TheSchoolVan.Equals(selectedItem))
+                {
+                    list.Items.Add(item.ToStringRoute());
+                }
+            }
+        }
+
         public void RemoveSchoolVan(object selectedObject)
         {
             if (!(selectedObject is SchoolVan))
