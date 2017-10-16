@@ -103,5 +103,19 @@ namespace Testing
 
             Assert.IsTrue(newRoute.Equals(anotherEqualsRoute));
         }
+
+        [TestMethod]
+        public void toStringRoute()
+        {
+            
+            Route aRoute = new Route();
+            Coordinate newCoordinate = new Coordinate();
+            newCoordinate.X = 12;
+            newCoordinate.Y = 1;
+            aRoute.Add(newCoordinate);
+            string ruta = aRoute.ToStringRoute();
+            Assert.IsTrue(ruta.Equals("Ruta Camioneta: [12,1]"));
+
+        }
     }
 }
