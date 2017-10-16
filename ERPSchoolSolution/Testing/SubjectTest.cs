@@ -1,6 +1,7 @@
 ﻿using System;
 using Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Exceptions;
 
 namespace Testing
 {
@@ -29,12 +30,13 @@ namespace Testing
             Assert.IsFalse(aSubject.Equals(anotherSubject));
         }
         [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
         public void SubjectCodeNotEmpty()
         {
             Subject aSubject = new Subject();
             aSubject.Code = null;
             SubjectValidator validator = new SubjectValidator();
-            Assert.IsFalse(validator.IsValid(aSubject));
+            validator.IsValid(aSubject);
         }
         [TestMethod]
         public void SubjectConstructorSuccess()

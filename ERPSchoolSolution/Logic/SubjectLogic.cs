@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain;
 using Repository;
+using Exceptions;
+
 namespace Logic
 {
     public class SubjectLogic
@@ -32,7 +34,12 @@ namespace Logic
         private bool CanIAdd(Object anObject)
         {
             SubjectValidator validator = new SubjectValidator();
-            return validator.IsValid(anObject) && !Exists(anObject);
+            bool nonExists = !Exists(anObject);
+            if (!nonExists)
+            {
+                throw new SubjectAlreadyExistsException("La materia ya esta ingresada en el sistema.");
+            }
+            return validator.IsValid(anObject) && nonExists;
         }
         public void AddNewSubject(string name)
         {
@@ -68,6 +75,10 @@ namespace Logic
         {
             bool sameCode = anObject.Equals(oldObject);
             bool nonExists = !Exists(anObject);
+            if (!nonExists)
+            {
+                throw new SubjectAlreadyExistsException("La materia ya esta ingresada en el sistema.");
+            }
             return (nonExists || sameCode);
         }
         private bool CanIModifySubject(Object anObject, Object oldObject)
