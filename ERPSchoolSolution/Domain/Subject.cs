@@ -16,6 +16,8 @@ namespace Domain
         {
             this.Code = "";
             this.Name = "";
+            this.Students = new List<Student>();
+            this.Teachers = new List<Teacher>();
         }
         public override bool Equals(object aSubject)
         {
