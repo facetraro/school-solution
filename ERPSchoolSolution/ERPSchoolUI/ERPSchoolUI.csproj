@@ -249,7 +249,13 @@
     <EmbeddedResource Include="ModifyTeacherSelectList.resx">
       <DependentUpon>ModifyTeacherSelectList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrincipalWindow.ii.resx">
+      <DependentUpon>PrincipalWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrincipalWindow.resx">
+      <DependentUpon>PrincipalWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrincipalWindow.yo.resx">
       <DependentUpon>PrincipalWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

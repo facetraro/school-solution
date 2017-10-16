@@ -39,87 +39,59 @@
             // 
             // subjectManagement
             // 
-            this.subjectManagement.Location = new System.Drawing.Point(101, 161);
-            this.subjectManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.subjectManagement, "subjectManagement");
             this.subjectManagement.Name = "subjectManagement";
-            this.subjectManagement.Size = new System.Drawing.Size(157, 60);
-            this.subjectManagement.TabIndex = 1;
-            this.subjectManagement.Text = "Gestión Materias";
             this.subjectManagement.UseVisualStyleBackColor = true;
             this.subjectManagement.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // studentManagement
             // 
-            this.studentManagement.Location = new System.Drawing.Point(101, 298);
-            this.studentManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.studentManagement, "studentManagement");
             this.studentManagement.Name = "studentManagement";
-            this.studentManagement.Size = new System.Drawing.Size(157, 60);
-            this.studentManagement.TabIndex = 2;
-            this.studentManagement.Text = "Gestión Alumnos";
             this.studentManagement.UseVisualStyleBackColor = true;
             this.studentManagement.Click += new System.EventHandler(this.button2_Click);
             // 
             // teacherManagement
             // 
-            this.teacherManagement.Location = new System.Drawing.Point(101, 433);
-            this.teacherManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.teacherManagement, "teacherManagement");
             this.teacherManagement.Name = "teacherManagement";
-            this.teacherManagement.Size = new System.Drawing.Size(157, 60);
-            this.teacherManagement.TabIndex = 3;
-            this.teacherManagement.Text = "Gestión Docentes";
             this.teacherManagement.UseVisualStyleBackColor = true;
             this.teacherManagement.Click += new System.EventHandler(this.teacherManagement_Click);
             // 
             // schoolVansManagement
             // 
-            this.schoolVansManagement.Location = new System.Drawing.Point(101, 564);
-            this.schoolVansManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.schoolVansManagement, "schoolVansManagement");
             this.schoolVansManagement.Name = "schoolVansManagement";
-            this.schoolVansManagement.Size = new System.Drawing.Size(157, 60);
-            this.schoolVansManagement.TabIndex = 4;
-            this.schoolVansManagement.Text = "Gestión Camionetas";
             this.schoolVansManagement.UseVisualStyleBackColor = true;
             this.schoolVansManagement.Click += new System.EventHandler(this.button4_Click);
             // 
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.mainPanel.Location = new System.Drawing.Point(381, 117);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.mainPanel, "mainPanel");
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(637, 630);
-            this.mainPanel.TabIndex = 5;
             // 
             // buttonTestData
             // 
-            this.buttonTestData.Location = new System.Drawing.Point(101, 687);
-            this.buttonTestData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            resources.ApplyResources(this.buttonTestData, "buttonTestData");
             this.buttonTestData.Name = "buttonTestData";
-            this.buttonTestData.Size = new System.Drawing.Size(157, 60);
-            this.buttonTestData.TabIndex = 6;
-            this.buttonTestData.Text = "Generar Datos de Prueba";
             this.buttonTestData.UseVisualStyleBackColor = true;
             this.buttonTestData.Click += new System.EventHandler(this.buttonTestData_Click);
             // 
             // PrincipalWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoSize = true;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1051, 774);
             this.Controls.Add(this.buttonTestData);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.schoolVansManagement);
             this.Controls.Add(this.teacherManagement);
             this.Controls.Add(this.studentManagement);
             this.Controls.Add(this.subjectManagement);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "PrincipalWindow";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sistema de Gestion de Colegios";
             this.Load += new System.EventHandler(this.PrincipalWindow_Load);
             this.ResumeLayout(false);
 
