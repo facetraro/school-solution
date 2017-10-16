@@ -36,7 +36,7 @@ namespace Module
         {
             if (!(selectedObject is Subject))
             {
-                throw new ObjectIsNotSubjectException("Se esperaba un objeto del tipo [Subject]");
+                throw new WrongObjectException("Se esperaba un objeto del tipo [Subject]");
             }
             Subject theSubject = selectedObject as Subject;
             textName.Text = theSubject.Name;
@@ -47,7 +47,7 @@ namespace Module
         {
             if (!(selectedObject is Subject))
             {
-                throw new ObjectIsNotSubjectException("Se esperaba un objeto del tipo [Subject]");
+                throw new WrongObjectException("Se esperaba un objeto del tipo [Subject]");
             }
             Subject oldSubject = selectedObject as Subject;
             SubjectLogic logic = new SubjectLogic();
@@ -60,7 +60,7 @@ namespace Module
         {
             if (!(selectedObject is Subject))
             {
-                throw new ObjectIsNotSubjectException("Se esperaba un objeto del tipo [Subject]");
+                throw new WrongObjectException("Se esperaba un objeto del tipo [Subject]");
             }
             Subject toDelete = selectedObject as Subject;
             SubjectLogic logic = new SubjectLogic();

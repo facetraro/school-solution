@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Exceptions
 {
-    public class ObjectIsNotSubjectException : Exception
+    public class WrongObjectException : Exception
     {
-        public ObjectIsNotSubjectException(string message) : base(message)
+        public WrongObjectException(string message) : base(message)
         {
         }
     }
