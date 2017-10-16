@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Module;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,6 +54,21 @@ namespace ERPSchoolUI
             mainPanel.Controls.Clear();
             TeacherMenu theTeacherMenu = new TeacherMenu(mainPanel);
             mainPanel.Controls.Add(theTeacherMenu);
+        }
+
+        private void buttonTestData_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddTestData newTestData = new AddTestData();
+                newTestData.AddTestDataToSystem();
+                MessageBox.Show("Los Datos de Prueba se cargaron en el sistema", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                buttonTestData.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

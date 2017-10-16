@@ -9,5 +9,13 @@ namespace Domain
     public class Teacher : Person
     {
         public List<Subject> Subjects { get; set; }
+
+        public Teacher()
+        {
+            Id = 0;
+            Name = "defaultname";
+            LastName = "defaultlastname";
+            Subjects = new List<Subject>();
+        }
     }
 }
