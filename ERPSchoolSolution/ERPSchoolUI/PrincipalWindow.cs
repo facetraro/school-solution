@@ -16,6 +16,7 @@ namespace ERPSchoolUI
         public PrincipalWindow()
         {
             InitializeComponent();
+               
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,6 +70,12 @@ namespace ERPSchoolUI
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void PrincipalWindow_Load(object sender, EventArgs e)
+        {
+            this.AutoScaleDimensions = new System.Drawing.SizeF(100F, 110F);
+            this.PerformAutoScale();
         }
     }
 }
