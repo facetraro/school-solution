@@ -390,5 +390,17 @@ namespace Testing.LogicTest
             int expectedValue = 1;
             Assert.IsTrue(testLogic.GetNextIdFree().Equals(expectedValue));
         }
+        [TestMethod]
+        public void GetNextIdFreeSuccess()
+        {
+            SetUp();
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            SchoolVan newSchoolVan = new SchoolVan();
+            newSchoolVan.Id = 1;
+            newSchoolVan.Capacity = 2;
+            testLogic.Add(newSchoolVan);
+            int expectedValue = 2;
+            Assert.IsTrue(testLogic.GetNextIdFree().Equals(expectedValue));
+        }
     }
 }
