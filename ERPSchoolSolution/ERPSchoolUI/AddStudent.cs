@@ -22,7 +22,16 @@ namespace ERPSchoolUI
         public AddStudent(Panel mainPanel)
         {
             InitializeComponent();
-            LoadForm();
+            try
+            {
+                LoadForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                UserControl theStudentMenu = new StudentMenu(mainPanel);
+                mainPanel.Controls.Add(theStudentMenu);
+            }
             this.mainPanel = mainPanel;
 
         }
@@ -95,39 +104,39 @@ namespace ERPSchoolUI
             module.AddNewStudent(textNameStudent.Text, textLastNameStudent.Text, (int)numericCi.Value, (int)numericX.Value, (int)numericY.Value, subjects);
             MessageBox.Show("Usuario ingresado con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-    private bool IsListSelected(ListBox list)
-    {
-        int selectedIndex = list.SelectedIndex;
-        if (selectedIndex == -1)
+        private bool IsListSelected(ListBox list)
         {
-            MessageBox.Show("No se ha seleccionado ninguna Materia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return false;
+            int selectedIndex = list.SelectedIndex;
+            if (selectedIndex == -1)
+            {
+                MessageBox.Show("No se ha seleccionado ninguna Materia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
-        return true;
-    }
-    private void addSubject_Click(object sender, EventArgs e)
-    {
-        if (IsListSelected(listSubjects))
+        private void addSubject_Click(object sender, EventArgs e)
         {
-            Object selected = (Object)listSubjects.SelectedItem;
-            listSubjects.Items.Remove(selected);
-            listSubjectsSelected.Items.Add(selected);
+            if (IsListSelected(listSubjects))
+            {
+                Object selected = (Object)listSubjects.SelectedItem;
+                listSubjects.Items.Remove(selected);
+                listSubjectsSelected.Items.Add(selected);
+            }
         }
-    }
 
-    private void removeSubject_Click(object sender, EventArgs e)
-    {
-        if (IsListSelected(listSubjectsSelected))
+        private void removeSubject_Click(object sender, EventArgs e)
         {
-            Object selected = (Object)listSubjectsSelected.SelectedItem;
-            listSubjectsSelected.Items.Remove(selected);
-            listSubjects.Items.Add(selected);
+            if (IsListSelected(listSubjectsSelected))
+            {
+                Object selected = (Object)listSubjectsSelected.SelectedItem;
+                listSubjectsSelected.Items.Remove(selected);
+                listSubjects.Items.Add(selected);
+            }
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
-
-    private void label9_Click(object sender, EventArgs e)
-    {
-
-    }
-}
 }

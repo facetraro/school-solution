@@ -67,6 +67,10 @@ namespace Domain
                 this.subjects = value;
             }
         }
+        public override string ToString()
+        {
+            return "Alumno: " + Name + " " + LastName + " [" + StudentNumber + "]";
+        }
         public bool IsInscriptedSubject(Subject aSubject)
         {
             return subjects.Contains(aSubject);

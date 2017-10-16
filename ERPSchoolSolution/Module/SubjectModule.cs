@@ -30,7 +30,6 @@ namespace Module
             {
                 list.Items.Add(item);
             }
-
         }
 
         public void LoadFields(object selectedObject, TextBox textName, TextBox textCode)
