@@ -56,7 +56,13 @@ namespace Testing
             Assert.IsTrue(aSubject.ToString().Equals("Materia: test [123]"));
 
         }
-
+        [TestMethod]
+        public void CompareSubjectNull()
+        {
+            int aInt = 3;
+            Subject anotherSubject = new Subject();
+            Assert.IsFalse(anotherSubject.Equals(aInt));
+        }
 
     }
 }
