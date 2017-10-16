@@ -19,6 +19,12 @@ namespace Logic
             SchoolVanValidator validator = new SchoolVanValidator();
             return validator.IsValid(anObject) && !Exists(anObject);
         }
+
+        public int GetNextIdFree()
+        {
+            return 1;
+        }
+
         public void Add(Object anObject)
         {
             if (CanIAdd(anObject))
