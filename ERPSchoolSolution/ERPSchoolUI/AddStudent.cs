@@ -101,8 +101,18 @@ namespace ERPSchoolUI
             {
                 subjects.Add(item);
             }
-            module.AddNewStudent(textNameStudent.Text, textLastNameStudent.Text, (int)numericCi.Value, (int)numericX.Value, (int)numericY.Value, subjects);
-            MessageBox.Show("Alumno ingresado con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                module.AddNewStudent(textNameStudent.Text, textLastNameStudent.Text, (int)numericCi.Value, (int)numericX.Value, (int)numericY.Value, subjects);
+                MessageBox.Show("Alumno ingresado con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mainPanel.Controls.Clear();
+                StudentMenu backMenu = new StudentMenu(mainPanel);
+                mainPanel.Controls.Add(backMenu);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private bool IsListSelected(ListBox list)
         {

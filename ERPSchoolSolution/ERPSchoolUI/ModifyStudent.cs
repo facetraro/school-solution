@@ -62,6 +62,9 @@ namespace ERPSchoolUI
             {
                 module.ModifyStudent(selectedObject, textNameStudent.Text, textLastNameStudent.Text, (int)numericCi.Value, (int)numericX.Value, (int)numericY.Value, subjects);
                 MessageBox.Show("Alumno modificado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mainPanel.Controls.Clear();
+                StudentMenu backStudentMenu = new StudentMenu(mainPanel);
+                mainPanel.Controls.Add(backStudentMenu);
             }
             catch (Exception ex)
             {
