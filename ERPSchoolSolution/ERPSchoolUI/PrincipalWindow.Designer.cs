@@ -105,6 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1051, 774);
             this.Controls.Add(this.buttonTestData);
@@ -118,7 +119,7 @@
             this.MaximizeBox = false;
             this.Name = "PrincipalWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Sistema de Gestion de Colegios";
             this.Load += new System.EventHandler(this.PrincipalWindow_Load);
             this.ResumeLayout(false);
 
