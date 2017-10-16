@@ -19,10 +19,15 @@ namespace Logic
             SchoolVanValidator validator = new SchoolVanValidator();
             return validator.IsValid(anObject) && !Exists(anObject);
         }
-
         public int GetNextIdFree()
         {
-            return 1;
+            List<SchoolVan> list = GetSchoolVansSortedByCapacity();
+            int biggestSoFar = 0;
+            foreach (SchoolVan item in list)
+            {
+                if (item.Id > biggestSoFar) biggestSoFar = item.Id;
+            }
+            return biggestSoFar+1;
         }
 
         public void Add(Object anObject)
