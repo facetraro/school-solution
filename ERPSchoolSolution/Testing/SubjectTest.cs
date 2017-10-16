@@ -46,16 +46,17 @@ namespace Testing
             aSubject.Code = testCode;
             aSubject.Name = testName;
             Student aStudent = new Student();
-            aStudent.Id = 123;
-            aStudent.StudentNumber = 123;
+            int testId = 123;
+            aStudent.StudentNumber = testId;
             Teacher aTeacher = new Teacher();
-            aTeacher.Id = 1234;
+            int anotherTestId = 1234;
+            aTeacher.Id = anotherTestId;
             aSubject.Students.Add(aStudent);
             aSubject.Teachers.Add(aTeacher);
-            Assert.IsTrue(aSubject.Teachers.ElementAt(0).Equals(aTeacher));
-            Assert.IsTrue(aSubject.Students.ElementAt(0).Equals(aStudent));
             Assert.IsTrue(aSubject.Code.Equals(testCode));
             Assert.IsTrue(aSubject.Name.Equals(testName));
+            Assert.IsTrue(aSubject.Teachers.ElementAt(0).Equals(aTeacher));
+            Assert.IsTrue(aSubject.Students.ElementAt(0).Equals(aStudent));
         }
         [TestMethod]
         public void toStringSubject()
