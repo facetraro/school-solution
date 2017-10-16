@@ -27,5 +27,10 @@ namespace ERPSchoolUI
             SchoolVanMenu backSchoolVanMenu = new SchoolVanMenu(mainPanel);
             mainPanel.Controls.Add(backSchoolVanMenu);
         }
+
+        private void confirmRemoveButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

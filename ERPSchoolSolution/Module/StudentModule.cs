@@ -55,6 +55,15 @@ namespace Module
             }
         }
 
+        public void LoadSubjectsByStudents(Object anObject, ListBox listSubjects)
+        {
+            Student student = anObject as Student;
+            foreach (Subject item in student.Subjects)
+            {
+                listSubjects.Items.Add(item);
+            }
+        }
+
         public void ModifyStudent(object selectedObject, string name, string lastName, int ci, int coordinateX, int coordinateY, List<Object> subjects)
         {
             StudentLogic logic = new StudentLogic();

@@ -43,9 +43,10 @@
             // Docen
             // 
             this.Docen.AutoSize = true;
-            this.Docen.Location = new System.Drawing.Point(369, 160);
+            this.Docen.Location = new System.Drawing.Point(277, 130);
+            this.Docen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Docen.Name = "Docen";
-            this.Docen.Size = new System.Drawing.Size(151, 17);
+            this.Docen.Size = new System.Drawing.Size(112, 13);
             this.Docen.TabIndex = 72;
             this.Docen.Text = "Camionetas a eliminar:";
             this.Docen.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -53,27 +54,30 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(102, 160);
+            this.label8.Location = new System.Drawing.Point(76, 130);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(150, 17);
+            this.label8.Size = new System.Drawing.Size(113, 13);
             this.label8.TabIndex = 71;
             this.label8.Text = "Todas las camionetas:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // unselectSchoolVan
             // 
-            this.unselectSchoolVan.Location = new System.Drawing.Point(279, 297);
+            this.unselectSchoolVan.Location = new System.Drawing.Point(209, 241);
+            this.unselectSchoolVan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.unselectSchoolVan.Name = "unselectSchoolVan";
-            this.unselectSchoolVan.Size = new System.Drawing.Size(52, 23);
+            this.unselectSchoolVan.Size = new System.Drawing.Size(39, 19);
             this.unselectSchoolVan.TabIndex = 70;
             this.unselectSchoolVan.Text = "<-";
             this.unselectSchoolVan.UseVisualStyleBackColor = true;
             // 
             // selectSchoolVan
             // 
-            this.selectSchoolVan.Location = new System.Drawing.Point(279, 230);
+            this.selectSchoolVan.Location = new System.Drawing.Point(209, 187);
+            this.selectSchoolVan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.selectSchoolVan.Name = "selectSchoolVan";
-            this.selectSchoolVan.Size = new System.Drawing.Size(52, 23);
+            this.selectSchoolVan.Size = new System.Drawing.Size(39, 19);
             this.selectSchoolVan.TabIndex = 69;
             this.selectSchoolVan.Text = "->";
             this.selectSchoolVan.UseVisualStyleBackColor = true;
@@ -81,29 +85,30 @@
             // listSchoolVansSelected
             // 
             this.listSchoolVansSelected.FormattingEnabled = true;
-            this.listSchoolVansSelected.ItemHeight = 16;
-            this.listSchoolVansSelected.Location = new System.Drawing.Point(350, 186);
+            this.listSchoolVansSelected.Location = new System.Drawing.Point(262, 151);
+            this.listSchoolVansSelected.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listSchoolVansSelected.Name = "listSchoolVansSelected";
-            this.listSchoolVansSelected.Size = new System.Drawing.Size(181, 196);
+            this.listSchoolVansSelected.Size = new System.Drawing.Size(137, 160);
             this.listSchoolVansSelected.TabIndex = 68;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(218, 51);
+            this.label5.Location = new System.Drawing.Point(164, 41);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(223, 29);
+            this.label5.Size = new System.Drawing.Size(173, 24);
             this.label5.TabIndex = 67;
             this.label5.Text = "Eliminar Camioneta";
             // 
             // listSchoolVan
             // 
             this.listSchoolVan.FormattingEnabled = true;
-            this.listSchoolVan.ItemHeight = 16;
-            this.listSchoolVan.Location = new System.Drawing.Point(83, 186);
+            this.listSchoolVan.Location = new System.Drawing.Point(62, 151);
+            this.listSchoolVan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listSchoolVan.Name = "listSchoolVan";
-            this.listSchoolVan.Size = new System.Drawing.Size(181, 196);
+            this.listSchoolVan.Size = new System.Drawing.Size(137, 160);
             this.listSchoolVan.TabIndex = 66;
             // 
             // backButton
@@ -116,25 +121,28 @@
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton.ForeColor = System.Drawing.Color.Transparent;
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(41, 33);
+            this.backButton.Location = new System.Drawing.Point(31, 27);
+            this.backButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(71, 72);
+            this.backButton.Size = new System.Drawing.Size(53, 58);
             this.backButton.TabIndex = 73;
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // confirmRemoveButton
             // 
-            this.confirmRemoveButton.Location = new System.Drawing.Point(478, 568);
+            this.confirmRemoveButton.Location = new System.Drawing.Point(358, 462);
+            this.confirmRemoveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.confirmRemoveButton.Name = "confirmRemoveButton";
-            this.confirmRemoveButton.Size = new System.Drawing.Size(105, 36);
+            this.confirmRemoveButton.Size = new System.Drawing.Size(79, 29);
             this.confirmRemoveButton.TabIndex = 74;
             this.confirmRemoveButton.Text = "Confirmar";
             this.confirmRemoveButton.UseVisualStyleBackColor = true;
+            this.confirmRemoveButton.Click += new System.EventHandler(this.confirmRemoveButton_Click);
             // 
             // RemoveSchoolVan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.confirmRemoveButton);
             this.Controls.Add(this.backButton);
@@ -145,8 +153,9 @@
             this.Controls.Add(this.listSchoolVansSelected);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listSchoolVan);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RemoveSchoolVan";
-            this.Size = new System.Drawing.Size(637, 630);
+            this.Size = new System.Drawing.Size(478, 512);
             this.ResumeLayout(false);
             this.PerformLayout();
 
