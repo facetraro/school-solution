@@ -102,7 +102,7 @@ namespace ERPSchoolUI
                 subjects.Add(item);
             }
             module.AddNewStudent(textNameStudent.Text, textLastNameStudent.Text, (int)numericCi.Value, (int)numericX.Value, (int)numericY.Value, subjects);
-            MessageBox.Show("Usuario ingresado con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Alumno ingresado con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private bool IsListSelected(ListBox list)
         {
