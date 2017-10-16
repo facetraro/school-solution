@@ -387,7 +387,8 @@ namespace Testing.LogicTest
         {
             SetUp();
             SchoolVanLogic testLogic = new SchoolVanLogic();
-            Assert.IsTrue(testLogic.GetNextIdFree().Equals(1));
+            int expectedValue = 1;
+            Assert.IsTrue(testLogic.GetNextIdFree().Equals(expectedValue));
         }
     }
 }
