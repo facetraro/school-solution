@@ -17,5 +17,9 @@ namespace Domain
             LastName = "defaultlastname";
             Subjects = new List<Subject>();
         }
+        public override string ToString()
+        {
+            return "Teacher: " + Name + " " + LastName + " [" + Id + "]";
+        }
     }
 }

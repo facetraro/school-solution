@@ -74,14 +74,14 @@ namespace Module
 
         public void LoadAllTeacher(ListBox list)
         {
-            StudentLogic logic = new StudentLogic();
-            List<Student> allObjects = new List<Student>();
-            allObjects = logic.GetAllStudents();
+            TeacherLogic logic = new TeacherLogic();
+            List<Teacher> allObjects = new List<Teacher>();
+            allObjects = logic.GetAllTeachers();
             if (allObjects.Count == 0)
             {
                 throw new NoTeachersInSystemException("No hay profesores ingresados en el sistema");
             }
-            foreach (Student item in allObjects)
+            foreach (Teacher item in allObjects)
             {
                 list.Items.Add(item);
             }

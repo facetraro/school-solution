@@ -7,23 +7,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Module;
 
 namespace ERPSchoolUI
 {
     public partial class ModifyTeacherSelectList : UserControl
     {
         private Panel mainPanel;
+        private void LoeadTeachers()
+        {
+            TeacherModule module = new TeacherModule();
+            module.LoadAllTeacher(listTeachers);
+        }
         public ModifyTeacherSelectList(Panel mainPanel)
         {
             InitializeComponent();
-            this.mainPanel = mainPanel;
+            try
+            {
+                LoeadTeachers();
+                this.mainPanel = mainPanel;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                UserControl theStudentMenu = new StudentMenu(mainPanel);
+                mainPanel.Controls.Add(theStudentMenu);
+            }
+        }
+        private bool IsListSelected()
+        {
+            int selectedIndex = listTeachers.SelectedIndex;
+            if (selectedIndex == -1)
+            {
+                MessageBox.Show("No se ha seleccionado ningun profesor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            mainPanel.Controls.Clear();
-            ModifyTeacher modifyTeacher = new ModifyTeacher(mainPanel);
-            mainPanel.Controls.Add(modifyTeacher);
+            if (IsListSelected())
+            {
+                mainPanel.Controls.Clear();
+                ModifyTeacher modifyATeacher = new ModifyTeacher(mainPanel, listTeachers.SelectedItem);
+                mainPanel.Controls.Add(modifyATeacher);
+            }
         }
     }
 }
