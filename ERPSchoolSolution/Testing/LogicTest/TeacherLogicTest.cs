@@ -181,7 +181,8 @@ namespace Testing.LogicTest
         {
             SetUp();
             TeacherLogic logic = new TeacherLogic();
-            Assert.IsTrue(logic.GetNextIdFree().Equals(1));
+            int expectedValue = 1;
+            Assert.IsTrue(logic.GetNextIdFree().Equals(expectedValue));
 
         }
     }
