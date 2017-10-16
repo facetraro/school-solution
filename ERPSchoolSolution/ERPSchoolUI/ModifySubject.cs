@@ -48,6 +48,9 @@ namespace ERPSchoolUI
             {
                 module.ModifySubject(selectedObject, textName, textCode);
                 MessageBox.Show("Materia modificada con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mainPanel.Controls.Clear();
+                SubjectMenu backSubjectMenu = new SubjectMenu(mainPanel);
+                mainPanel.Controls.Add(backSubjectMenu);
             }
             catch (Exception ex)
             {

@@ -75,7 +75,7 @@ namespace Logic
         {
             bool sameCode = anObject.Equals(oldObject);
             bool nonExists = !Exists(anObject);
-            if (!nonExists)
+            if (!(nonExists || sameCode))
             {
                 throw new SubjectAlreadyExistsException("La materia ya esta ingresada en el sistema.");
             }
