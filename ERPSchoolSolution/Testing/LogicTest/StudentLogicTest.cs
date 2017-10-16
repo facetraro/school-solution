@@ -3,6 +3,7 @@ using Domain;
 using Logic;
 using System.Collections.Generic;
 using System.Linq;
+using Exceptions;
 
 namespace Testing.LogicTest
 {
@@ -11,9 +12,14 @@ namespace Testing.LogicTest
     {
         private Student TestStudent()
         {
+            Subject newSubject = new Subject();
+            newSubject.Code = "aaa";
+            newSubject.Name = "test"; ;
             Student testStudent = new Student();
-            testStudent.Id = 54;
-            testStudent.Ci = 47642349;
+            testStudent.Subjects.Add(newSubject);
+            testStudent.Ci = 47803333;
+            testStudent.Id = 123;
+            testStudent.StudentNumber = 123;
             testStudent.Name = "TestName";
             testStudent.LastName = "TestLastName";
             return testStudent;
@@ -37,6 +43,7 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Exists(newStudent));
         }
         [TestMethod]
+        [ExpectedException(typeof(Exceptions.InvalidCiException))]
         public void AddStudentFail()
         {
             SetUp();
@@ -48,6 +55,7 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Length() == expectedStudentListLength);
         }
         [TestMethod]
+        [ExpectedException(typeof(Exceptions.InvalidCiException))]
         public void AddStudentLengthSuccess()
         {
             SetUp();
@@ -55,6 +63,7 @@ namespace Testing.LogicTest
             Student newStudent = TestStudent();
             Student anotherStudent = TestStudent();
             anotherStudent.Id = 2;
+            anotherStudent.Ci = newStudent.Ci+2;
             testLogic.Add(newStudent);
             testLogic.Add(newStudent); ;
             testLogic.Add(anotherStudent);
@@ -62,6 +71,7 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Length() == expectedStudentListLength);
         }
         [TestMethod]
+        [ExpectedException(typeof(Exceptions.InvalidObjectAddIntoStudentException))]
         public void AddDifferentObjectStudentFail()
         {
             SetUp();
@@ -90,10 +100,16 @@ namespace Testing.LogicTest
             StudentLogic testLogic = new StudentLogic();
             Student newStudent = TestStudent();
             Student anotherStudent = TestStudent();
-            anotherStudent.Id = 3;
+            anotherStudent.StudentNumber = 3;
             testLogic.Add(newStudent);
             testLogic.Modify(newStudent, anotherStudent);
-            Assert.IsFalse(testLogic.Exists(newStudent));
+            List<Student> list = testLogic.GetAllStudents();
+            bool validation = true;
+            if (list.Count != 0)
+            {
+                validation = (list.ElementAt(0).StudentNumber == newStudent.StudentNumber);
+            }
+            Assert.IsFalse(validation);
         }
         [TestMethod]
         public void ModifyStudentCheckUpdateSuccess()
@@ -102,12 +118,19 @@ namespace Testing.LogicTest
             StudentLogic testLogic = new StudentLogic();
             Student newStudent = TestStudent();
             Student anotherStudent = TestStudent();
-            anotherStudent.Id = 3;
+            anotherStudent.StudentNumber = 3;
             testLogic.Add(newStudent);
             testLogic.Modify(newStudent, anotherStudent);
-            Assert.IsTrue(testLogic.Exists(anotherStudent));
+            List<Student> list = testLogic.GetAllStudents();
+            bool validation = false;
+            if (list.Count != 0)
+            {
+                validation = (list.ElementAt(0).StudentNumber == anotherStudent.StudentNumber);
+            }
+            Assert.IsTrue(validation);
         }
         [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
         public void ModifyStudentFail()
         {
             SetUp();
@@ -132,6 +155,7 @@ namespace Testing.LogicTest
             Assert.IsFalse(testLogic.Exists(anotherStudent));
         }
         [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
         public void ModifyStudentFailCheckOldStudent()
         {
             SetUp();
@@ -145,6 +169,7 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Exists(newStudent));
         }
         [TestMethod]
+        [ExpectedException(typeof(StudentAlreadyExistsException))]
         public void ModifyStudentWithTheSameId()
         {
             SetUp();
@@ -152,6 +177,7 @@ namespace Testing.LogicTest
             Student newStudent = TestStudent();
             Student anotherStudent = TestStudent();
             anotherStudent.Name = "new Name";
+            anotherStudent.Ci = 46546549;
             testLogic.Add(newStudent);
             testLogic.Add(anotherStudent);
             testLogic.Modify(newStudent, anotherStudent);

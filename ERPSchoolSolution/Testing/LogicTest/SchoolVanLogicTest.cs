@@ -31,8 +31,12 @@ namespace Testing.LogicTest
         }
         private Student TestStudent(int id)
         {
+            Subject newSubject = new Subject();
+            newSubject.Code = "aaa";
+            newSubject.Name = "test"; ;
             Student testStudent = new Student();
-            testStudent.Ci = 47803333;
+            testStudent.Subjects.Add(newSubject);
+            testStudent.Ci = 47803333+id;
             testStudent.Id = id;
             testStudent.Name = "TestName";
             testStudent.LastName = "TestLastName";
@@ -223,11 +227,7 @@ namespace Testing.LogicTest
             NoStudentsInSystemException expectedExcetpion = new NoStudentsInSystemException("No Students in the system");
             StudentLogic testLogic = new StudentLogic();
             SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
-            Student newStudent = new Student();
-            newStudent.Ci = 47803333;
-            newStudent.Id = 1;
-            newStudent.Name = "TestName";
-            newStudent.LastName = "TestLastName";
+            Student newStudent = TestStudent(1);
             testLogic.Add(newStudent);
             schoolVanLogic.GetBestRoutes();
         }
@@ -237,11 +237,7 @@ namespace Testing.LogicTest
             SetUp();
             StudentLogic testLogic = new StudentLogic();
             SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
-            Student newStudent = new Student();
-            newStudent.Ci = 47803333;
-            newStudent.Id = 1;
-            newStudent.Name = "TestName";
-            newStudent.LastName = "TestLastName";
+            Student newStudent = TestStudent(1);
             testLogic.Add(newStudent);
             SchoolVanLogic logic = new SchoolVanLogic();
             SchoolVan newSchoolVan = new SchoolVan();

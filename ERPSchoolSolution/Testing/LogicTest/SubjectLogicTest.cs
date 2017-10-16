@@ -48,7 +48,7 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Length() == expectedLength);
         }
         [TestMethod]
-        [ExpectedException(typeof(SubjectAlreadyExistsException))]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
         public void AddSubjectFailLength()
         {
             ClearRepository();
@@ -104,7 +104,7 @@ namespace Testing.LogicTest
         {
             ClearRepository();
             Subject newSubject = testSubject();
-            Subject editedSubject = new Subject();
+            Subject editedSubject = testSubject();
             SubjectLogic testLogic = new SubjectLogic();
             string testCode = "5";
             editedSubject.Code = testCode;
@@ -117,7 +117,7 @@ namespace Testing.LogicTest
         {
             ClearRepository();
             Subject newSubject = testSubject();
-            Subject editedSubject = new Subject();
+            Subject editedSubject = testSubject();
             SubjectLogic testLogic = new SubjectLogic();
             string testCode = "3";
             editedSubject.Code = testCode;
@@ -168,7 +168,6 @@ namespace Testing.LogicTest
             Assert.IsFalse(assertion);
         }
         [TestMethod]
-        [ExpectedException(typeof(SubjectAlreadyExistsException))]
         public void CanIModifySubject()
         {
             ClearRepository();
