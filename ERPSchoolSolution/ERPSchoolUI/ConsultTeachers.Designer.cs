@@ -31,48 +31,38 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultTeachers));
             this.listSubjects = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.listTeachers = new System.Windows.Forms.ListBox();
             this.backButton = new System.Windows.Forms.Button();
+            this.buttonLookSubjects = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listSubjects
             // 
             this.listSubjects.FormattingEnabled = true;
-            this.listSubjects.ItemHeight = 16;
-            this.listSubjects.Location = new System.Drawing.Point(207, 452);
+            this.listSubjects.Location = new System.Drawing.Point(83, 377);
+            this.listSubjects.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listSubjects.Name = "listSubjects";
-            this.listSubjects.Size = new System.Drawing.Size(245, 116);
+            this.listSubjects.Size = new System.Drawing.Size(314, 95);
             this.listSubjects.TabIndex = 39;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(202, 38);
+            this.label5.Location = new System.Drawing.Point(152, 31);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(233, 29);
+            this.label5.Size = new System.Drawing.Size(181, 24);
             this.label5.TabIndex = 36;
             this.label5.Text = "Listado de Docentes";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(241, 417);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 20);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "Materias que dicta: ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // listTeachers
             // 
             this.listTeachers.FormattingEnabled = true;
-            this.listTeachers.ItemHeight = 16;
-            this.listTeachers.Location = new System.Drawing.Point(111, 112);
+            this.listTeachers.Location = new System.Drawing.Point(83, 91);
+            this.listTeachers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listTeachers.Name = "listTeachers";
-            this.listTeachers.Size = new System.Drawing.Size(417, 276);
+            this.listTeachers.Size = new System.Drawing.Size(314, 225);
             this.listTeachers.TabIndex = 40;
             // 
             // backButton
@@ -85,24 +75,36 @@
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton.ForeColor = System.Drawing.Color.Transparent;
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(35, 20);
+            this.backButton.Location = new System.Drawing.Point(26, 16);
+            this.backButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(71, 72);
+            this.backButton.Size = new System.Drawing.Size(53, 58);
             this.backButton.TabIndex = 41;
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
+            // buttonLookSubjects
+            // 
+            this.buttonLookSubjects.Location = new System.Drawing.Point(197, 334);
+            this.buttonLookSubjects.Name = "buttonLookSubjects";
+            this.buttonLookSubjects.Size = new System.Drawing.Size(75, 23);
+            this.buttonLookSubjects.TabIndex = 47;
+            this.buttonLookSubjects.Text = "Ver Materias";
+            this.buttonLookSubjects.UseVisualStyleBackColor = true;
+            this.buttonLookSubjects.Click += new System.EventHandler(this.buttonLookSubjects_Click);
+            // 
             // ConsultTeachers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonLookSubjects);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.listTeachers);
             this.Controls.Add(this.listSubjects);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ConsultTeachers";
-            this.Size = new System.Drawing.Size(637, 630);
+            this.Size = new System.Drawing.Size(478, 512);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,8 +114,8 @@
 
         private System.Windows.Forms.ListBox listSubjects;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listTeachers;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button buttonLookSubjects;
     }
 }

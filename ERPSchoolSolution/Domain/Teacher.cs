@@ -19,7 +19,7 @@ namespace Domain
         }
         public override string ToString()
         {
-            return "Teacher: " + Name + " " + LastName + " [" + Id + "]";
+            return "Profesor: " + Name + " " + LastName + " [" + Id + "]";
         }
     }
 }
