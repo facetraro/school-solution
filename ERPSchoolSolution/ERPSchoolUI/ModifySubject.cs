@@ -15,7 +15,6 @@ namespace ERPSchoolUI
     {
         private Panel mainPanel;
         private Object selectedObject;
-
         public ModifySubject(Panel mainPanel, Object selectedObject)
         {
             InitializeComponent();
@@ -48,7 +47,7 @@ namespace ERPSchoolUI
             try
             {
                 module.ModifySubject(selectedObject, textName, textCode);
-                MessageBox.Show("Materias modificada con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Materia modificada con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
