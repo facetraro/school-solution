@@ -65,5 +65,18 @@ namespace Testing
             int testInt = 5;
             Assert.IsFalse(validator.IsValid(testInt));
         }
+
+        [TestMethod]
+        public void toStringSubject()
+        {
+            Teacher aTeacher = new Teacher();
+            aTeacher.Name = "Juan";
+            aTeacher.LastName = "Perez";
+            aTeacher.Id = 123;
+            Assert.IsTrue(aTeacher.ToString().Equals("Profesor: Juan Perez [123]"));
+
+        }
     }
+
 }
+
