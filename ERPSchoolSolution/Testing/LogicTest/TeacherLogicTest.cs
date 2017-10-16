@@ -176,5 +176,13 @@ namespace Testing.LogicTest
             }
             Assert.IsTrue(assertion);
         }
+        [TestMethod]
+        public void GetFirstNextStudentId()
+        {
+            SetUp();
+            TeacherLogic logic = new TeacherLogic();
+            Assert.IsTrue(logic.GetNextIdFree().Equals(1));
+
+        }
     }
 }
