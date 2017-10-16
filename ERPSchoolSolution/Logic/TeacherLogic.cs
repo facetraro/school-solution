@@ -80,16 +80,20 @@ namespace Logic
             Singleton theRepository = Singleton.Instance;
             return theRepository.Teachers;
         }
-    
-        public int GetNextIdFree()
+
+        private int GetBiggestIdTeacher(List<Teacher> list)
         {
-            List<Teacher> list = GetAllTeachers();
             int biggestSoFar = 0;
             foreach (Teacher item in list)
             {
                 if (item.Id > biggestSoFar) biggestSoFar = item.Id;
             }
-            return biggestSoFar+1;
+            return biggestSoFar;
+        }
+        public int GetNextIdFree()
+        {
+            List<Teacher> list = GetAllTeachers();
+            return (GetBiggestIdTeacher(list) + 1);
         }
     }
 }
