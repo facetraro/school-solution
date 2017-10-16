@@ -71,5 +71,15 @@ namespace Testing
             SchoolVanValidator validator = new SchoolVanValidator();
             Assert.IsFalse(validator.IsValid(aVan));
         }
+
+        [TestMethod]
+        public void toStringSubject()
+        {
+            SchoolVan aSchoolVan = new SchoolVan();
+            aSchoolVan.Id = 123;
+            aSchoolVan.Capacity = 10;
+            Assert.IsTrue(aSchoolVan.ToString().Equals("Camioneta: 123 [Capacidad 10]"));
+
+        }
     }
 }
