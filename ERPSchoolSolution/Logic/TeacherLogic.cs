@@ -80,5 +80,10 @@ namespace Logic
             Singleton theRepository = Singleton.Instance;
             return theRepository.Teachers;
         }
+    
+        public int GetNextIdFree()
+        {
+            return 1;
+        }
     }
 }
