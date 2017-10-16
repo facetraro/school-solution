@@ -65,28 +65,30 @@
             // unselectSchoolVan
             // 
             this.unselectSchoolVan.Location = new System.Drawing.Point(209, 241);
-            this.unselectSchoolVan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.unselectSchoolVan.Margin = new System.Windows.Forms.Padding(2);
             this.unselectSchoolVan.Name = "unselectSchoolVan";
             this.unselectSchoolVan.Size = new System.Drawing.Size(39, 19);
             this.unselectSchoolVan.TabIndex = 70;
             this.unselectSchoolVan.Text = "<-";
             this.unselectSchoolVan.UseVisualStyleBackColor = true;
+            this.unselectSchoolVan.Click += new System.EventHandler(this.unselectSchoolVan_Click);
             // 
             // selectSchoolVan
             // 
             this.selectSchoolVan.Location = new System.Drawing.Point(209, 187);
-            this.selectSchoolVan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.selectSchoolVan.Margin = new System.Windows.Forms.Padding(2);
             this.selectSchoolVan.Name = "selectSchoolVan";
             this.selectSchoolVan.Size = new System.Drawing.Size(39, 19);
             this.selectSchoolVan.TabIndex = 69;
             this.selectSchoolVan.Text = "->";
             this.selectSchoolVan.UseVisualStyleBackColor = true;
+            this.selectSchoolVan.Click += new System.EventHandler(this.selectSchoolVan_Click);
             // 
             // listSchoolVansSelected
             // 
             this.listSchoolVansSelected.FormattingEnabled = true;
             this.listSchoolVansSelected.Location = new System.Drawing.Point(262, 151);
-            this.listSchoolVansSelected.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listSchoolVansSelected.Margin = new System.Windows.Forms.Padding(2);
             this.listSchoolVansSelected.Name = "listSchoolVansSelected";
             this.listSchoolVansSelected.Size = new System.Drawing.Size(137, 160);
             this.listSchoolVansSelected.TabIndex = 68;
@@ -106,7 +108,7 @@
             // 
             this.listSchoolVan.FormattingEnabled = true;
             this.listSchoolVan.Location = new System.Drawing.Point(62, 151);
-            this.listSchoolVan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listSchoolVan.Margin = new System.Windows.Forms.Padding(2);
             this.listSchoolVan.Name = "listSchoolVan";
             this.listSchoolVan.Size = new System.Drawing.Size(137, 160);
             this.listSchoolVan.TabIndex = 66;
@@ -122,7 +124,7 @@
             this.backButton.ForeColor = System.Drawing.Color.Transparent;
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
             this.backButton.Location = new System.Drawing.Point(31, 27);
-            this.backButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.backButton.Margin = new System.Windows.Forms.Padding(2);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(53, 58);
             this.backButton.TabIndex = 73;
@@ -132,7 +134,7 @@
             // confirmRemoveButton
             // 
             this.confirmRemoveButton.Location = new System.Drawing.Point(358, 462);
-            this.confirmRemoveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.confirmRemoveButton.Margin = new System.Windows.Forms.Padding(2);
             this.confirmRemoveButton.Name = "confirmRemoveButton";
             this.confirmRemoveButton.Size = new System.Drawing.Size(79, 29);
             this.confirmRemoveButton.TabIndex = 74;
@@ -153,7 +155,7 @@
             this.Controls.Add(this.listSchoolVansSelected);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listSchoolVan);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RemoveSchoolVan";
             this.Size = new System.Drawing.Size(478, 512);
             this.ResumeLayout(false);
