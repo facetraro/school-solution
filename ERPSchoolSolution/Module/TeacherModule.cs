@@ -86,14 +86,14 @@ namespace Module
                 list.Items.Add(item);
             }
         }
-        public void RemoveStudent(object selectedObject)
+        public void RemoveTeacher(object selectedObject)
         {
-            if (!(selectedObject is Student))
+            if (!(selectedObject is Teacher))
             {
                 throw new ObjectIsNotSubjectException("Se esperaba un objeto del tipo [Teacher]");
             }
-            Student toDelete = selectedObject as Student;
-            StudentLogic logic = new StudentLogic();
+            Teacher toDelete = selectedObject as Teacher;
+            TeacherLogic logic = new TeacherLogic();
             logic.Remove(toDelete);
         }
     }
