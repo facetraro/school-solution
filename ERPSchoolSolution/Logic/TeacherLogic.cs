@@ -53,7 +53,6 @@ namespace Logic
             bool sameId = anObject.Equals(anotherObject);
             return domainValidation && (nonExists || sameId);
         }
-
         private bool CanIModify(Object anObject, Object anotherObject)
         {
             return (this.Exists(anObject) && ModifyValidation(anObject, anotherObject));
@@ -76,7 +75,6 @@ namespace Logic
             Singleton theRepository = Singleton.Instance;
             theRepository.Teachers = new List<Teacher>();
         }
-
         public List<Teacher> GetAllTeachers()
         {
             Singleton theRepository = Singleton.Instance;

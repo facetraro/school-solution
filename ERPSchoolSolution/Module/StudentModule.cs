@@ -91,7 +91,16 @@ namespace Module
             {
                 list.Items.Add(item);
             }
-
+        }
+        public void RemoveStudent(object selectedObject)
+        {
+            if (!(selectedObject is Student))
+            {
+                throw new ObjectIsNotSubjectException("Se esperaba un objeto del tipo [Student]");
+            }
+            Student toDelete = selectedObject as Student;
+            StudentLogic logic = new StudentLogic();
+            logic.Remove(toDelete);
         }
     }
 }
