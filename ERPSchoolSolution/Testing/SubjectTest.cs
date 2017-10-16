@@ -47,6 +47,16 @@ namespace Testing
             Assert.IsTrue(aSubject.Code.Equals(testCode));
             Assert.IsTrue(aSubject.Name.Equals(testName));
         }
+        [TestMethod]
+        public void toStringSubject()
+        {
+            Subject aSubject = new Subject();
+            aSubject.Code = "123";
+            aSubject.Name = "test";
+            Assert.IsTrue(aSubject.ToString().Equals("Materia: test [123]"));
+
+        }
+
 
     }
 }
