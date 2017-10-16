@@ -29,5 +29,14 @@ namespace Testing
             Assert.IsTrue(aPerson.Name.Equals(testName));
             Assert.IsTrue(aPerson.LastName.Equals(testLastName));
         }
+
+        [TestMethod]
+        public void ComparePersonFail()
+        {
+            int aint = 2;
+            Person anotherPerson = new Person();
+            anotherPerson.Id = 123;
+            Assert.IsFalse(anotherPerson.Equals(aint));
+        }
     }
 }

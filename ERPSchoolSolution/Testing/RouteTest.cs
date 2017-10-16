@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
 using Exceptions;
+using System.Collections.Generic;
 
 namespace Testing
 {
@@ -25,7 +26,7 @@ namespace Testing
             newRoute.Add(newCoordinate);
             Student newStudent = TestStudent();
             newRoute.Add(newStudent);
-            Assert.IsTrue(newRoute.Length()==2);
+            Assert.IsTrue(newRoute.Length() == 2);
         }
         [ExpectedException(typeof(InvalidObjectAddIntoRouteSystemException))]
         [TestMethod]
@@ -107,7 +108,7 @@ namespace Testing
         [TestMethod]
         public void toStringRoute()
         {
-            
+
             Route aRoute = new Route();
             Coordinate newCoordinate = new Coordinate();
             newCoordinate.X = 12;
@@ -115,6 +116,21 @@ namespace Testing
             aRoute.Add(newCoordinate);
             string ruta = aRoute.ToStringRoute();
             Assert.IsTrue(ruta.Equals("Ruta Camioneta: [12,1]"));
+
+        }
+        [TestMethod]
+        public void AreEqualsSuccess()
+        {
+            SchoolVan aSchoolVan = new SchoolVan();
+            SchoolVan anotherSchoolVan = new SchoolVan();
+            aSchoolVan.Id = 1;
+            anotherSchoolVan.Id = 1;
+            List<Route> aListRoute = new List<Route>();
+            Route aNewRoute = new Route();
+            int expectedLength = 1;
+            aListRoute.Add(aNewRoute);
+
+            Assert.IsTrue(aSchoolVan.Equals(anotherSchoolVan) && aListRoute.Count == expectedLength);
 
         }
     }
