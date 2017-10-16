@@ -37,8 +37,15 @@ namespace ERPSchoolUI
         {
             string name = textName.Text;
             SubjectModule module = new SubjectModule();
-            module.AddNewSubject(name);
-            MessageBox.Show("Materias ingresada con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                module.AddNewSubject(name);
+                MessageBox.Show("Materia ingresada con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }           
         }
     }
 }

@@ -9,6 +9,14 @@ namespace Domain
 {
     public class SubjectValidator : IValidator
     {
+        private bool IsNameValid(Subject theSubject)
+        {
+            if (theSubject.Name != null && theSubject.Name != "")
+            {
+                return true;
+            }
+            throw new EmptyOrNullValueException("El nombre ingresado es vacio");
+        }
         public bool IsCodeValid(Subject theSubject)
         {
             if(theSubject.Code != null && theSubject.Code != "")
@@ -23,9 +31,8 @@ namespace Domain
             if ((System.Object)theSubject == null)
             {
                 throw new InvalidObjectAddIntoSubjectsException("Se esperaba un objeto del tipo [Subject]");
-                return false;
             }
-            return IsCodeValid(theSubject);
+            return IsCodeValid(theSubject) && IsNameValid(theSubject);
         }        
     }
 }
