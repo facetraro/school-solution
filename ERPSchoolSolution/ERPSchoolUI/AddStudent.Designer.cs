@@ -104,7 +104,7 @@
             this.listSubjects.Location = new System.Drawing.Point(72, 390);
             this.listSubjects.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listSubjects.Name = "listSubjects";
-            this.listSubjects.Size = new System.Drawing.Size(181, 180);
+            this.listSubjects.Size = new System.Drawing.Size(181, 148);
             this.listSubjects.TabIndex = 21;
             // 
             // label3
@@ -154,7 +154,7 @@
             this.listSubjectsSelected.Location = new System.Drawing.Point(363, 390);
             this.listSubjectsSelected.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listSubjectsSelected.Name = "listSubjectsSelected";
-            this.listSubjectsSelected.Size = new System.Drawing.Size(181, 180);
+            this.listSubjectsSelected.Size = new System.Drawing.Size(181, 148);
             this.listSubjectsSelected.TabIndex = 29;
             // 
             // label7
@@ -220,7 +220,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(500, 576);
+            this.saveButton.Location = new System.Drawing.Point(475, 558);
             this.saveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(105, 36);
@@ -260,7 +260,7 @@
             // numericY
             // 
             this.numericY.Location = new System.Drawing.Point(445, 306);
-            this.numericY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericY.Margin = new System.Windows.Forms.Padding(4);
             this.numericY.Minimum = new decimal(new int[] {
             100,
             0,
@@ -273,7 +273,7 @@
             // numericX
             // 
             this.numericX.Location = new System.Drawing.Point(325, 306);
-            this.numericX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericX.Margin = new System.Windows.Forms.Padding(4);
             this.numericX.Minimum = new decimal(new int[] {
             100,
             0,
@@ -295,7 +295,7 @@
             // numericCi
             // 
             this.numericCi.Location = new System.Drawing.Point(277, 160);
-            this.numericCi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericCi.Margin = new System.Windows.Forms.Padding(4);
             this.numericCi.Maximum = new decimal(new int[] {
             999999999,
             0,

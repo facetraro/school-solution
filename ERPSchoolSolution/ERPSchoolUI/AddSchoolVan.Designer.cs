@@ -42,10 +42,9 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(88, 173);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(117, 213);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 13);
+            this.label6.Size = new System.Drawing.Size(134, 17);
             this.label6.TabIndex = 32;
             this.label6.Text = "Capacidad maxima: ";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -54,41 +53,39 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(153, 33);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(204, 41);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(210, 24);
+            this.label5.Size = new System.Drawing.Size(266, 29);
             this.label5.TabIndex = 31;
             this.label5.Text = "Agregar una Camioneta";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textIdSchoolVan
             // 
-            this.textIdSchoolVan.Location = new System.Drawing.Point(224, 115);
-            this.textIdSchoolVan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textIdSchoolVan.Location = new System.Drawing.Point(299, 142);
+            this.textIdSchoolVan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textIdSchoolVan.Name = "textIdSchoolVan";
             this.textIdSchoolVan.ReadOnly = true;
-            this.textIdSchoolVan.Size = new System.Drawing.Size(127, 20);
+            this.textIdSchoolVan.Size = new System.Drawing.Size(168, 22);
             this.textIdSchoolVan.TabIndex = 30;
             this.textIdSchoolVan.TextChanged += new System.EventHandler(this.textStudentNumber_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(115, 115);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(153, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(98, 17);
             this.label2.TabIndex = 29;
             this.label2.Text = "Id Camioneta: ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // numericMaxCapacity
             // 
-            this.numericMaxCapacity.Location = new System.Drawing.Point(224, 171);
-            this.numericMaxCapacity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericMaxCapacity.Location = new System.Drawing.Point(299, 210);
+            this.numericMaxCapacity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericMaxCapacity.Name = "numericMaxCapacity";
-            this.numericMaxCapacity.Size = new System.Drawing.Size(127, 20);
+            this.numericMaxCapacity.Size = new System.Drawing.Size(169, 22);
             this.numericMaxCapacity.TabIndex = 34;
             // 
             // backButton
@@ -101,20 +98,20 @@
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton.ForeColor = System.Drawing.Color.Transparent;
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(23, 19);
-            this.backButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.backButton.Location = new System.Drawing.Point(31, 23);
+            this.backButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(53, 58);
+            this.backButton.Size = new System.Drawing.Size(84, 76);
             this.backButton.TabIndex = 35;
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(370, 464);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveButton.Location = new System.Drawing.Point(468, 546);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(79, 29);
+            this.saveButton.Size = new System.Drawing.Size(105, 36);
             this.saveButton.TabIndex = 36;
             this.saveButton.Text = "Guardar";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -122,7 +119,7 @@
             // 
             // AddSchoolVan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.backButton);
@@ -131,9 +128,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textIdSchoolVan);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddSchoolVan";
-            this.Size = new System.Drawing.Size(478, 512);
+            this.Size = new System.Drawing.Size(637, 630);
             this.Load += new System.EventHandler(this.AddSchoolVan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericMaxCapacity)).EndInit();
             this.ResumeLayout(false);

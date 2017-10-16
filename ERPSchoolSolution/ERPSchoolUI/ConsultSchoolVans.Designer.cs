@@ -75,7 +75,7 @@
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
             this.backButton.Location = new System.Drawing.Point(28, 33);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(71, 72);
+            this.backButton.Size = new System.Drawing.Size(81, 81);
             this.backButton.TabIndex = 37;
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);

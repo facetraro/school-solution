@@ -40,7 +40,7 @@
             this.listSubjects.ItemHeight = 16;
             this.listSubjects.Location = new System.Drawing.Point(186, 163);
             this.listSubjects.Name = "listSubjects";
-            this.listSubjects.Size = new System.Drawing.Size(265, 388);
+            this.listSubjects.Size = new System.Drawing.Size(265, 340);
             this.listSubjects.TabIndex = 0;
             // 
             // label5
@@ -64,7 +64,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(502, 575);
+            this.button1.Location = new System.Drawing.Point(483, 556);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 32);
             this.button1.TabIndex = 34;

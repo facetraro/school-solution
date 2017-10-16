@@ -59,12 +59,12 @@
             this.listSchoolVans.ItemHeight = 16;
             this.listSchoolVans.Location = new System.Drawing.Point(190, 168);
             this.listSchoolVans.Name = "listSchoolVans";
-            this.listSchoolVans.Size = new System.Drawing.Size(265, 388);
+            this.listSchoolVans.Size = new System.Drawing.Size(265, 356);
             this.listSchoolVans.TabIndex = 40;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(505, 575);
+            this.button1.Location = new System.Drawing.Point(487, 557);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 32);
             this.button1.TabIndex = 43;
