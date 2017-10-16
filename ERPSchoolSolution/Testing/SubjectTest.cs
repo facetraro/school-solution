@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -44,6 +45,15 @@ namespace Testing
             Subject aSubject = new Subject();
             aSubject.Code = testCode;
             aSubject.Name = testName;
+            Student aStudent = new Student();
+            aStudent.Id = 123;
+            aStudent.StudentNumber = 123;
+            Teacher aTeacher = new Teacher();
+            aTeacher.Id = 1234;
+            aSubject.Students.Add(aStudent);
+            aSubject.Teachers.Add(aTeacher);
+            Assert.IsTrue(aSubject.Teachers.ElementAt(0).Equals(aTeacher));
+            Assert.IsTrue(aSubject.Students.ElementAt(0).Equals(aStudent));
             Assert.IsTrue(aSubject.Code.Equals(testCode));
             Assert.IsTrue(aSubject.Name.Equals(testName));
         }
