@@ -48,7 +48,6 @@
             this.label6.Size = new System.Drawing.Size(102, 13);
             this.label6.TabIndex = 32;
             this.label6.Text = "Capacidad maxima: ";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -60,7 +59,6 @@
             this.label5.Size = new System.Drawing.Size(210, 24);
             this.label5.TabIndex = 31;
             this.label5.Text = "Agregar una Camioneta";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textIdSchoolVan
             // 
@@ -70,7 +68,6 @@
             this.textIdSchoolVan.ReadOnly = true;
             this.textIdSchoolVan.Size = new System.Drawing.Size(127, 20);
             this.textIdSchoolVan.TabIndex = 30;
-            this.textIdSchoolVan.TextChanged += new System.EventHandler(this.textStudentNumber_TextChanged);
             // 
             // label2
             // 
@@ -81,7 +78,6 @@
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 29;
             this.label2.Text = "Id Camioneta: ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // numericMaxCapacity
             // 
@@ -134,7 +130,6 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddSchoolVan";
             this.Size = new System.Drawing.Size(478, 512);
-            this.Load += new System.EventHandler(this.AddSchoolVan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericMaxCapacity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

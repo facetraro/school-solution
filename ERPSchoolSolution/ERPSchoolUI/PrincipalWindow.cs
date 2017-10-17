@@ -16,17 +16,6 @@ namespace ERPSchoolUI
         public PrincipalWindow()
         {
             InitializeComponent();
-               
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -65,6 +54,7 @@ namespace ERPSchoolUI
                 newTestData.AddTestDataToSystem();
                 MessageBox.Show("Los Datos de Prueba se cargaron en el sistema", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 buttonTestData.Enabled = false;
+                mainPanel.Controls.Clear();
             }
             catch (Exception ex)
             {

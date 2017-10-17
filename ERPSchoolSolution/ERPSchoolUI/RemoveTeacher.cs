@@ -14,7 +14,6 @@ namespace ERPSchoolUI
     public partial class RemoveTeacher : UserControl
     {
         private Panel mainPanel;
-
         public RemoveTeacher(Panel mainPanel)
         {
             InitializeComponent();
@@ -45,16 +44,6 @@ namespace ERPSchoolUI
             TeacherModule module = new TeacherModule();
             module.LoadAllTeacher(listTeachers);
         }
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void backButton_Click(object sender, EventArgs e)
         {
             mainPanel.Controls.Clear();
@@ -81,7 +70,6 @@ namespace ERPSchoolUI
                 MessageBox.Show("No se ha seleccionado ningun Profesor para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void selectTeacher_Click(object sender, EventArgs e)
         {
 
@@ -92,7 +80,6 @@ namespace ERPSchoolUI
                 listTeachersSelected.Items.Add(selected);
             }
         }
-
         private void unselectTeacher_Click(object sender, EventArgs e)
         {
             if (IsListSelected(listTeachersSelected))

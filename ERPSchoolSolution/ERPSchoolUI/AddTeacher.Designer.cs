@@ -115,7 +115,6 @@
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Nombre: ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textLastNameTeacher
             // 
@@ -124,7 +123,6 @@
             this.textLastNameTeacher.Name = "textLastNameTeacher";
             this.textLastNameTeacher.Size = new System.Drawing.Size(168, 20);
             this.textLastNameTeacher.TabIndex = 17;
-            this.textLastNameTeacher.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label4
             // 
@@ -135,7 +133,6 @@
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 16;
             this.label4.Text = "Apellido:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // listSubjectsSelected
             // 

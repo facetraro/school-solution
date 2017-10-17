@@ -33,7 +33,6 @@ namespace ERPSchoolUI
                 mainPanel.Controls.Add(theStudentMenu);
             }
             this.mainPanel = mainPanel;
-
         }
 
         private void backButton_Click(object sender, EventArgs e)
