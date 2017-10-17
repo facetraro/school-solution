@@ -49,6 +49,9 @@ namespace ERPSchoolUI
             {
                 module.ModifySchoolVan(selectedObject, textIdSchoolVan, numericMaxCapacity);
                 MessageBox.Show("Camioneta modificada con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mainPanel.Controls.Clear();
+                SchoolVanMenu backMenu = new SchoolVanMenu(mainPanel);
+                mainPanel.Controls.Add(backMenu);
             }
             catch (Exception ex)
             {

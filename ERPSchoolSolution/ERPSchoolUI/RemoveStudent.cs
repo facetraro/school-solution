@@ -63,7 +63,10 @@ namespace ERPSchoolUI
                     StudentModule module = new StudentModule();
                     module.RemoveStudent(item);
                 }
-                MessageBox.Show("Alumnos Eliminados con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Alumno(s) Eliminado(s) con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mainPanel.Controls.Clear();
+                StudentMenu backMenu = new StudentMenu(mainPanel);
+                mainPanel.Controls.Add(backMenu);
             }
             else
             {

@@ -71,11 +71,11 @@ namespace ERPSchoolUI
                     TeacherModule module = new TeacherModule();
                     module.RemoveTeacher(item);
                 }
-                MessageBox.Show("Profesores Eliminados con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Profesore(s) Eliminado(s) con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("No se han seleccionado Profesores para borrar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se ha seleccionado ningun Profesor para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

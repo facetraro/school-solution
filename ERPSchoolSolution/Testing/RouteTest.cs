@@ -111,7 +111,6 @@ namespace Testing
         [TestMethod]
         public void toStringRoute()
         {
-
             Route aRoute = new Route();
             Coordinate newCoordinate = new Coordinate();
             Coordinate newCoordinateStudent = new Coordinate();
