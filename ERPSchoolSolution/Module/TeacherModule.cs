@@ -32,11 +32,12 @@ namespace Module
             logic.Add(newTeacher);
         }
 
-        public void LoadFields(Object anObject, TextBox textName, TextBox textLastName, ListBox list, ListBox listOtherSubject)
+        public void LoadFields(Object anObject, TextBox textName, TextBox textCode, TextBox textLastName, ListBox list, ListBox listOtherSubject)
         {
             Teacher teacher = anObject as Teacher;
             textName.Text = teacher.Name;
             textLastName.Text = teacher.LastName;
+            textCode.Text = teacher.Id+"";
             SubjectLogic logic = new SubjectLogic();
             List<Subject> allSubjects = logic.GetAllSubjects();
             foreach (Subject item in allSubjects)

@@ -27,8 +27,8 @@ namespace ERPSchoolUI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                UserControl theSubjectMenu = new SubjectMenu(mainPanel);
-                mainPanel.Controls.Add(theSubjectMenu);
+                TeacherMenu backMenu = new TeacherMenu(mainPanel);
+                mainPanel.Controls.Add(backMenu);
             }
         }
 

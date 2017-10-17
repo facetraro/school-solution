@@ -30,8 +30,8 @@ namespace ERPSchoolUI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                UserControl theStudentMenu = new StudentMenu(mainPanel);
-                mainPanel.Controls.Add(theStudentMenu);
+                UserControl backMenu = new TeacherMenu(mainPanel);
+                mainPanel.Controls.Add(backMenu);
             }
         }
         private bool IsListSelected()

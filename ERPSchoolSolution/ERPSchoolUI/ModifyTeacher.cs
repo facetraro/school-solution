@@ -37,7 +37,7 @@ namespace ERPSchoolUI
             TeacherModule module = new TeacherModule();
             try
             {
-                module.LoadFields(anObject, textNameTeacher, textLastNameTeacher, listSubjectsSelected, listSubjects);
+                module.LoadFields(anObject, textNameTeacher, textCode, textLastNameTeacher, listSubjectsSelected, listSubjects);
             }
             catch (Exception ex)
             {
