@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Module
 {
-    public class SchoolVanModule
+    public class SchoolVanModule : ModuleClass
     {
         public void AddNewSchoolVan(int capacity)
         {
