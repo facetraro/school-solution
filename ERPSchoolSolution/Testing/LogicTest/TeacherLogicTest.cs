@@ -203,5 +203,32 @@ namespace Testing.LogicTest
             int expectedValue = 2;
             Assert.IsTrue(logic.GetNextIdFree().Equals(expectedValue));
         }
+        [ExpectedException(typeof(TeacherAlreadyExistsException))]
+        [TestMethod]
+        public void ModifyTeacherTeacherAlreadyExists()
+        {
+            SetUp();
+            TeacherLogic testLogic = new TeacherLogic();
+            Teacher newTeacher = TeacherTest();
+            Teacher updateTeacher = TeacherTest();
+            Teacher anotherTeacher = TeacherTest();
+            anotherTeacher.Id = 555;
+            testLogic.Add(newTeacher);
+            testLogic.Add(anotherTeacher);
+            testLogic.Modify(anotherTeacher, updateTeacher);
+            Assert.IsTrue(testLogic.Exists(newTeacher));
+        }
+        [TestMethod]
+        public void LengthSuccess()
+        {
+            SetUp();
+            TeacherLogic testLogic = new TeacherLogic();
+            Teacher newTeacher = TeacherTest();
+            Teacher anotherTeacher = TeacherTest();
+            anotherTeacher.Id = 555;
+            testLogic.Add(newTeacher);
+            testLogic.Add(anotherTeacher);
+            Assert.IsTrue(testLogic.Length()==2);
+        }
     }
 }

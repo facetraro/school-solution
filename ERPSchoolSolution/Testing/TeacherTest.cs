@@ -61,6 +61,38 @@ namespace Testing
             Assert.IsFalse(validator.IsValid(aTeacher));
         }
         [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
+        public void IsValidTeacherLastNameFail()
+        {
+            int idTest = 123;
+            string nameTest = "Juan";
+            string lastNameTest = "";
+            Teacher aTeacher = new Teacher();
+            aTeacher.Id = idTest;
+            aTeacher.Name = nameTest;
+            aTeacher.LastName = lastNameTest;
+            List<Subject> subjects = new List<Subject>();
+            aTeacher.Subjects = subjects;
+            TeacherValidator validator = new TeacherValidator();
+            Assert.IsFalse(validator.IsValid(aTeacher));
+        }
+        [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
+        public void IsValidTeacherNameFail()
+        {
+            int idTest = 123;
+            string nameTest = "";
+            string lastNameTest = "Rodriguez";
+            Teacher aTeacher = new Teacher();
+            aTeacher.Id = idTest;
+            aTeacher.Name = nameTest;
+            aTeacher.LastName = lastNameTest;
+            List<Subject> subjects = new List<Subject>();
+            aTeacher.Subjects = subjects;
+            TeacherValidator validator = new TeacherValidator();
+            Assert.IsFalse(validator.IsValid(aTeacher));
+        }
+        [TestMethod]
         [ExpectedException(typeof(InvalidObjectAddIntoTeacherException))]
         public void IsValidDifferentObjectFail()
         {

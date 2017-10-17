@@ -49,7 +49,12 @@ namespace Domain
             {
                 throw new InvalidObjectAddIntoStudentException("Se esperaba un objeto del tipo [Subject]");
             }
-            return IsCiValid(theStudent) && IsNameValid(theStudent) && IsLastNameValid(theStudent) && HasSubjects(theStudent);
+            bool ciValidation = IsCiValid(theStudent);
+            bool nameValidation = IsNameValid(theStudent);
+            bool lastNameValidation = IsLastNameValid(theStudent);
+            bool subjectsValidation = HasSubjects(theStudent);
+            bool validation = ciValidation && nameValidation && lastNameValidation && subjectsValidation;
+            return validation;
         }
     }
 }

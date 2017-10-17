@@ -135,5 +135,49 @@ namespace Testing
             aSubject.LastName = "lastNameTest";
             Assert.IsTrue(aSubject.ToString().Equals("Alumno: testName lastNameTest [123]"));
         }
+        [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
+        public void IsValidInvalidLastName()
+        {
+            Student aStudent = new Student();
+            int intTest = 47801236;
+            string testStrings = "thisIsATest";
+            aStudent.Id = intTest;
+            aStudent.Name = testStrings;
+            aStudent.LastName = "";
+            Coordinate aCoordinate = new Coordinate();
+            aCoordinate.X = intTest;
+            aCoordinate.Y = intTest;
+            aStudent.Coordinates = aCoordinate;
+            aStudent.Ci = intTest;
+            aStudent.StudentNumber = intTest;
+            List<Subject> subjectList = new List<Subject>();
+            Subject newSubject = new Subject();
+            subjectList.Add(newSubject);
+            aStudent.Subjects = subjectList;
+            StudentValidator validator = new StudentValidator();
+            Assert.IsFalse(validator.IsValid(aStudent));
+        }
+        [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
+        public void IsValidInvalidSubjects()
+        {
+            Student aStudent = new Student();
+            int intTest = 47801236;
+            string testStrings = "thisIsATest";
+            aStudent.Id = intTest;
+            aStudent.Name = testStrings;
+            aStudent.LastName = testStrings;
+            Coordinate aCoordinate = new Coordinate();
+            aCoordinate.X = intTest;
+            aCoordinate.Y = intTest;
+            aStudent.Coordinates = aCoordinate;
+            aStudent.Ci = intTest;
+            aStudent.StudentNumber = intTest;
+            List<Subject> subjectList = new List<Subject>();
+            aStudent.Subjects = subjectList;
+            StudentValidator validator = new StudentValidator();
+            Assert.IsFalse(validator.IsValid(aStudent));
+        }
     }
 }

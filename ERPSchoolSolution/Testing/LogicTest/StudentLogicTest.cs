@@ -191,6 +191,22 @@ namespace Testing.LogicTest
             Assert.IsTrue(assertion);
         }
         [TestMethod]
+        [ExpectedException(typeof(InvalidCiException))]
+        public void ModifyStudentWithDiferentIdCiExsits()
+        {
+            SetUp();
+            StudentLogic testLogic = new StudentLogic();
+            Student newStudent = TestStudent();
+            Student anotherStudent = TestStudent();
+            anotherStudent.Name = "new Name";
+            anotherStudent.Ci = 46547749;
+            Student updateStudent = newStudent;
+            updateStudent.Ci = 46547749;
+            testLogic.Add(newStudent);
+            testLogic.Add(anotherStudent);
+            testLogic.Modify(newStudent, updateStudent);
+        }
+        [TestMethod]
         public void GetFirstNextStudentId()
         {
             SetUp();

@@ -133,5 +133,52 @@ namespace Testing
             Assert.IsTrue(aSchoolVan.Equals(anotherSchoolVan) && aListRoute.Count == expectedLength);
 
         }
+        [TestMethod]
+        public void RoutesEqualsFail()
+        {
+            Route newRoute = new Route();
+            Coordinate newCoordinate = new Coordinate();
+            newCoordinate.X = 5;
+            newRoute.Add(newCoordinate);
+            Student newStudent = new Student();
+            newStudent.Id = 4;
+            newRoute.Add(newStudent);
+
+            Route anotherEqualsRoute = new Route();
+            Coordinate anotherEqualsCoordinate = new Coordinate();
+            anotherEqualsCoordinate.X = 6;
+            anotherEqualsRoute.Add(anotherEqualsCoordinate);
+            Student anotherEqualsStudent = new Student();
+            anotherEqualsStudent.Id = 5;
+            anotherEqualsRoute.Add(anotherEqualsStudent);
+
+            Assert.IsFalse(newRoute.Equals(anotherEqualsRoute));
+        }
+        [TestMethod]
+        public void RoutesEqualsDifferentObjectCompare()
+        {
+            Route newRoute = new Route();
+            Coordinate newCoordinate = new Coordinate();
+            newCoordinate.X = 5;
+            newRoute.Add(newCoordinate);
+
+            Route anotherEqualsRoute = new Route();
+            Student anotherEqualsStudent = new Student();
+            anotherEqualsStudent.Id = 5;
+            anotherEqualsRoute.Add(anotherEqualsStudent);
+
+            Assert.IsFalse(newRoute.Equals(anotherEqualsRoute));
+        }
+        [TestMethod]
+        public void RoutesSetEquals()
+        {
+            Route newRoute = new Route();
+            Coordinate newCoordinate = new Coordinate();
+            newCoordinate.X = 5;
+            newRoute.Add(newCoordinate);
+            Route anotherEqualsRoute = new Route();
+            anotherEqualsRoute.TheRoute = newRoute.TheRoute;
+            Assert.IsTrue(newRoute.Equals(anotherEqualsRoute));
+        }
     }
 }

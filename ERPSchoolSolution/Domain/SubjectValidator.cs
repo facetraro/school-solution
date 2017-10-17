@@ -11,7 +11,7 @@ namespace Domain
     {
         private bool IsNameValid(Subject theSubject)
         {
-            if (theSubject.Name != null && theSubject.Name != "")
+            if (theSubject.Name != "")
             {
                 return true;
             }
@@ -19,7 +19,7 @@ namespace Domain
         }
         public bool IsCodeValid(Subject theSubject)
         {
-            if(theSubject.Code != null && theSubject.Code != "")
+            if (theSubject.Code != null && theSubject.Code != "")
             {
                 return true;
             }
@@ -32,7 +32,10 @@ namespace Domain
             {
                 throw new InvalidObjectAddIntoSubjectsException("Se esperaba un objeto del tipo [Subject]");
             }
-            return IsCodeValid(theSubject) && IsNameValid(theSubject);
-        }        
+            bool codeValidation = IsCodeValid(theSubject);
+            bool nameValidation = IsNameValid(theSubject);
+            bool validation = codeValidation && nameValidation;
+            return validation;
+        }
     }
 }

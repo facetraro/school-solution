@@ -42,7 +42,11 @@ namespace Domain
             {
                 throw new InvalidObjectAddIntoTeacherException("Se esperaba un objeto del tipo [Teacher]");
             }
-            return (IsIdValid(theTeacher) && IsNameValid(theTeacher) && IsLastNameValid(theTeacher));
+            bool idValidation = IsIdValid(theTeacher);
+            bool nameValidation = IsNameValid(theTeacher);
+            bool lastNameValidation = IsLastNameValid(theTeacher);
+            bool validation = idValidation && nameValidation && lastNameValidation;
+            return validation;
         }
     }
 }

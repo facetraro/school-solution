@@ -164,7 +164,11 @@ namespace Domain
         }
         private bool AreEquals(Route theRoute)
         {
-            return (theRoute.theSchoolVan.Equals(this.theSchoolVan) && this.Length() == theRoute.Length() && IsTheSameRoute(theRoute.theRoute));
+            bool sameSchoolVan = theRoute.theSchoolVan.Equals(this.theSchoolVan);
+            bool sameLength = this.Length() == theRoute.Length();
+            bool sameRoute = IsTheSameRoute(theRoute.theRoute);
+            bool validation = sameSchoolVan && sameLength && sameRoute;
+            return validation;
         }
         public override bool Equals(object aRoute)
         {

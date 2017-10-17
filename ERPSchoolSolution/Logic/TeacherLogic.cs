@@ -25,10 +25,10 @@ namespace Logic
                 if (this.Exists(anObject))
                 {
                     throw new TeacherAlreadyExistsException("El id ingresado ya esta en el sistema");
+                    return false;
                 }
-                return true;
             }
-            return false;
+            return true;
         }
         public void Add(Object anObject)
         {
@@ -60,7 +60,9 @@ namespace Logic
             {
                 throw new TeacherAlreadyExistsException("El id ingresado ya esta en el sistema");
             }
-            return domainValidation && (nonExists || sameId);
+            bool repositoryValidation = (nonExists || sameId);
+            bool validation = domainValidation && repositoryValidation;
+            return validation;
         }
         private bool CanIModify(Object anObject, Object anotherObject)
         {

@@ -30,7 +30,9 @@ namespace Domain
         }
         private bool AllAtributesAreValid(SchoolVan theSchoolVan)
         {
-            return ValidCapacity(theSchoolVan) && ValidId(theSchoolVan);
+            bool capacityValidation = ValidCapacity(theSchoolVan);
+            bool idValidation = ValidId(theSchoolVan);
+            return (capacityValidation && idValidation);
         }
         public bool IsValid(object anObject)
         {
