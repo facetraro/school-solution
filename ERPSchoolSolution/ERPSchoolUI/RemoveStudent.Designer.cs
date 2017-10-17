@@ -43,9 +43,10 @@
             // Docen
             // 
             this.Docen.AutoSize = true;
-            this.Docen.Location = new System.Drawing.Point(371, 176);
+            this.Docen.Location = new System.Drawing.Point(278, 143);
+            this.Docen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Docen.Name = "Docen";
-            this.Docen.Size = new System.Drawing.Size(155, 17);
+            this.Docen.Size = new System.Drawing.Size(115, 13);
             this.Docen.TabIndex = 72;
             this.Docen.Text = "Estudiantes a eliminar: ";
             this.Docen.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -53,19 +54,20 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(101, 176);
+            this.label8.Location = new System.Drawing.Point(76, 143);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(155, 17);
+            this.label8.Size = new System.Drawing.Size(116, 13);
             this.label8.TabIndex = 71;
             this.label8.Text = "Todos los estudiantes: ";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // unselectStudent
             // 
-            this.unselectStudent.Location = new System.Drawing.Point(283, 313);
-            this.unselectStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.unselectStudent.Location = new System.Drawing.Point(212, 254);
+            this.unselectStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.unselectStudent.Name = "unselectStudent";
-            this.unselectStudent.Size = new System.Drawing.Size(52, 23);
+            this.unselectStudent.Size = new System.Drawing.Size(39, 19);
             this.unselectStudent.TabIndex = 70;
             this.unselectStudent.Text = "<-";
             this.unselectStudent.UseVisualStyleBackColor = true;
@@ -73,10 +75,10 @@
             // 
             // selectStudent
             // 
-            this.selectStudent.Location = new System.Drawing.Point(283, 246);
-            this.selectStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.selectStudent.Location = new System.Drawing.Point(212, 200);
+            this.selectStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.selectStudent.Name = "selectStudent";
-            this.selectStudent.Size = new System.Drawing.Size(52, 23);
+            this.selectStudent.Size = new System.Drawing.Size(39, 19);
             this.selectStudent.TabIndex = 69;
             this.selectStudent.Text = "->";
             this.selectStudent.UseVisualStyleBackColor = true;
@@ -85,31 +87,30 @@
             // listStudentsSelected
             // 
             this.listStudentsSelected.FormattingEnabled = true;
-            this.listStudentsSelected.ItemHeight = 16;
-            this.listStudentsSelected.Location = new System.Drawing.Point(355, 202);
-            this.listStudentsSelected.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listStudentsSelected.Location = new System.Drawing.Point(266, 164);
+            this.listStudentsSelected.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listStudentsSelected.Name = "listStudentsSelected";
-            this.listStudentsSelected.Size = new System.Drawing.Size(181, 196);
+            this.listStudentsSelected.Size = new System.Drawing.Size(137, 160);
             this.listStudentsSelected.TabIndex = 68;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(221, 49);
+            this.label5.Location = new System.Drawing.Point(166, 40);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(188, 29);
+            this.label5.Size = new System.Drawing.Size(149, 24);
             this.label5.TabIndex = 67;
             this.label5.Text = "Eliminar Alumno";
             // 
             // listStudents
             // 
             this.listStudents.FormattingEnabled = true;
-            this.listStudents.ItemHeight = 16;
-            this.listStudents.Location = new System.Drawing.Point(87, 202);
-            this.listStudents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listStudents.Location = new System.Drawing.Point(65, 164);
+            this.listStudents.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listStudents.Name = "listStudents";
-            this.listStudents.Size = new System.Drawing.Size(181, 196);
+            this.listStudents.Size = new System.Drawing.Size(137, 160);
             this.listStudents.TabIndex = 66;
             // 
             // backButton
@@ -122,20 +123,20 @@
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton.ForeColor = System.Drawing.Color.Transparent;
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(37, 31);
-            this.backButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.backButton.Location = new System.Drawing.Point(22, 21);
+            this.backButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(84, 80);
+            this.backButton.Size = new System.Drawing.Size(70, 69);
             this.backButton.TabIndex = 73;
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // confirmRemoveButton
             // 
-            this.confirmRemoveButton.Location = new System.Drawing.Point(457, 540);
-            this.confirmRemoveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.confirmRemoveButton.Location = new System.Drawing.Point(343, 439);
+            this.confirmRemoveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.confirmRemoveButton.Name = "confirmRemoveButton";
-            this.confirmRemoveButton.Size = new System.Drawing.Size(105, 36);
+            this.confirmRemoveButton.Size = new System.Drawing.Size(79, 29);
             this.confirmRemoveButton.TabIndex = 75;
             this.confirmRemoveButton.Text = "Confirmar";
             this.confirmRemoveButton.UseVisualStyleBackColor = true;
@@ -143,7 +144,7 @@
             // 
             // RemoveStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.confirmRemoveButton);
             this.Controls.Add(this.backButton);
@@ -154,9 +155,9 @@
             this.Controls.Add(this.listStudentsSelected);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listStudents);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RemoveStudent";
-            this.Size = new System.Drawing.Size(637, 630);
+            this.Size = new System.Drawing.Size(478, 512);
             this.ResumeLayout(false);
             this.PerformLayout();
 

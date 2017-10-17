@@ -72,6 +72,9 @@ namespace ERPSchoolUI
                     module.RemoveTeacher(item);
                 }
                 MessageBox.Show("Profesore(s) Eliminado(s) con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mainPanel.Controls.Clear();
+                TeacherMenu backMenu = new TeacherMenu(mainPanel);
+                mainPanel.Controls.Add(backMenu);
             }
             else
             {

@@ -39,27 +39,29 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(189, 51);
+            this.label5.Location = new System.Drawing.Point(142, 41);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(259, 29);
+            this.label5.Size = new System.Drawing.Size(200, 24);
             this.label5.TabIndex = 30;
             this.label5.Text = "Listado de Camionetas";
             // 
             // listSchoolVans
             // 
             this.listSchoolVans.FormattingEnabled = true;
-            this.listSchoolVans.ItemHeight = 16;
-            this.listSchoolVans.Location = new System.Drawing.Point(185, 156);
+            this.listSchoolVans.Location = new System.Drawing.Point(139, 127);
+            this.listSchoolVans.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listSchoolVans.Name = "listSchoolVans";
-            this.listSchoolVans.Size = new System.Drawing.Size(290, 340);
+            this.listSchoolVans.Size = new System.Drawing.Size(218, 277);
             this.listSchoolVans.TabIndex = 31;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(239, 122);
+            this.label1.Location = new System.Drawing.Point(179, 99);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 17);
+            this.label1.Size = new System.Drawing.Size(129, 13);
             this.label1.TabIndex = 32;
             this.label1.Text = "Camionetas a disposición:";
             // 
@@ -73,23 +75,25 @@
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton.ForeColor = System.Drawing.Color.Transparent;
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(28, 33);
+            this.backButton.Location = new System.Drawing.Point(21, 27);
+            this.backButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(81, 81);
+            this.backButton.Size = new System.Drawing.Size(77, 85);
             this.backButton.TabIndex = 37;
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // ConsultSchoolVans
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listSchoolVans);
             this.Controls.Add(this.label5);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ConsultSchoolVans";
-            this.Size = new System.Drawing.Size(637, 630);
+            this.Size = new System.Drawing.Size(478, 512);
             this.ResumeLayout(false);
             this.PerformLayout();
 

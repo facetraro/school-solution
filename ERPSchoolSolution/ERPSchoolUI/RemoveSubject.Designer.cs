@@ -43,9 +43,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(372, 176);
+            this.label7.Location = new System.Drawing.Point(279, 143);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(135, 17);
+            this.label7.Size = new System.Drawing.Size(100, 13);
             this.label7.TabIndex = 57;
             this.label7.Text = "Materias a eliminar: ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -53,19 +54,20 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(120, 176);
+            this.label8.Location = new System.Drawing.Point(90, 143);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 17);
+            this.label8.Size = new System.Drawing.Size(84, 13);
             this.label8.TabIndex = 56;
             this.label8.Text = "Materias totales:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(279, 313);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(209, 254);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 23);
+            this.button1.Size = new System.Drawing.Size(39, 19);
             this.button1.TabIndex = 55;
             this.button1.Text = "<-";
             this.button1.UseVisualStyleBackColor = true;
@@ -73,10 +75,10 @@
             // 
             // addSubject
             // 
-            this.addSubject.Location = new System.Drawing.Point(279, 246);
-            this.addSubject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.addSubject.Location = new System.Drawing.Point(209, 200);
+            this.addSubject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addSubject.Name = "addSubject";
-            this.addSubject.Size = new System.Drawing.Size(52, 23);
+            this.addSubject.Size = new System.Drawing.Size(39, 19);
             this.addSubject.TabIndex = 54;
             this.addSubject.Text = "->";
             this.addSubject.UseVisualStyleBackColor = true;
@@ -85,31 +87,30 @@
             // listSubjectsSelected
             // 
             this.listSubjectsSelected.FormattingEnabled = true;
-            this.listSubjectsSelected.ItemHeight = 16;
-            this.listSubjectsSelected.Location = new System.Drawing.Point(349, 202);
-            this.listSubjectsSelected.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listSubjectsSelected.Location = new System.Drawing.Point(262, 164);
+            this.listSubjectsSelected.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listSubjectsSelected.Name = "listSubjectsSelected";
-            this.listSubjectsSelected.Size = new System.Drawing.Size(181, 196);
+            this.listSubjectsSelected.Size = new System.Drawing.Size(137, 160);
             this.listSubjectsSelected.TabIndex = 53;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(217, 49);
+            this.label5.Location = new System.Drawing.Point(163, 40);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(187, 29);
+            this.label5.Size = new System.Drawing.Size(144, 24);
             this.label5.TabIndex = 52;
             this.label5.Text = "Eliminar Materia";
             // 
             // listSubjects
             // 
             this.listSubjects.FormattingEnabled = true;
-            this.listSubjects.ItemHeight = 16;
-            this.listSubjects.Location = new System.Drawing.Point(83, 202);
-            this.listSubjects.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listSubjects.Location = new System.Drawing.Point(62, 164);
+            this.listSubjects.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listSubjects.Name = "listSubjects";
-            this.listSubjects.Size = new System.Drawing.Size(181, 196);
+            this.listSubjects.Size = new System.Drawing.Size(137, 160);
             this.listSubjects.TabIndex = 51;
             // 
             // backButton
@@ -122,20 +123,20 @@
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton.ForeColor = System.Drawing.Color.Transparent;
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(33, 31);
-            this.backButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.backButton.Location = new System.Drawing.Point(18, 16);
+            this.backButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(78, 78);
+            this.backButton.Size = new System.Drawing.Size(73, 74);
             this.backButton.TabIndex = 58;
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // confirmRemoveButton
             // 
-            this.confirmRemoveButton.Location = new System.Drawing.Point(460, 544);
-            this.confirmRemoveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.confirmRemoveButton.Location = new System.Drawing.Point(345, 442);
+            this.confirmRemoveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.confirmRemoveButton.Name = "confirmRemoveButton";
-            this.confirmRemoveButton.Size = new System.Drawing.Size(105, 36);
+            this.confirmRemoveButton.Size = new System.Drawing.Size(79, 29);
             this.confirmRemoveButton.TabIndex = 75;
             this.confirmRemoveButton.Text = "Confirmar";
             this.confirmRemoveButton.UseVisualStyleBackColor = true;
@@ -143,7 +144,7 @@
             // 
             // RemoveSubject
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.confirmRemoveButton);
             this.Controls.Add(this.backButton);
@@ -154,9 +155,9 @@
             this.Controls.Add(this.listSubjectsSelected);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listSubjects);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RemoveSubject";
-            this.Size = new System.Drawing.Size(637, 630);
+            this.Size = new System.Drawing.Size(478, 512);
             this.ResumeLayout(false);
             this.PerformLayout();
 
