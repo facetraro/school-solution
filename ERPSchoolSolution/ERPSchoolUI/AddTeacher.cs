@@ -67,6 +67,9 @@ namespace ERPSchoolUI
             }
             module.AddNewTeacher(textNameTeacher.Text, textLastNameTeacher.Text, subjects);
             MessageBox.Show("Profesor ingresado con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            mainPanel.Controls.Clear();
+            TeacherMenu backMenu = new TeacherMenu(mainPanel);
+            mainPanel.Controls.Add(backMenu);
         }
         private bool IsListSelected(ListBox list)
         {

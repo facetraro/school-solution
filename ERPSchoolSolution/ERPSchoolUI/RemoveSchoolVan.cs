@@ -65,6 +65,9 @@ namespace ERPSchoolUI
                     module.RemoveSchoolVan(item);
                 }
                 MessageBox.Show("Camioneta(s) Eliminada(s) con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mainPanel.Controls.Clear();
+                SchoolVanMenu backMenu = new SchoolVanMenu(mainPanel);
+                mainPanel.Controls.Add(backMenu);
             }
             else
             {

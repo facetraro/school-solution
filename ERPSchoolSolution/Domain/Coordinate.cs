@@ -65,5 +65,10 @@ namespace Domain
         {
             return "[" + this.X + "," + this.Y + "]";
         }
+
+        public string PrintToRoute()
+        {
+            return ("Escuela "+ PrintCoordinate());
+        }
     }
 }

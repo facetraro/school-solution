@@ -41,18 +41,19 @@
             // 
             // numericMaxCapacity
             // 
-            this.numericMaxCapacity.Location = new System.Drawing.Point(293, 198);
-            this.numericMaxCapacity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numericMaxCapacity.Location = new System.Drawing.Point(220, 161);
+            this.numericMaxCapacity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericMaxCapacity.Name = "numericMaxCapacity";
-            this.numericMaxCapacity.Size = new System.Drawing.Size(120, 22);
+            this.numericMaxCapacity.Size = new System.Drawing.Size(90, 20);
             this.numericMaxCapacity.TabIndex = 39;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(112, 199);
+            this.label6.Location = new System.Drawing.Point(84, 162);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 17);
+            this.label6.Size = new System.Drawing.Size(102, 13);
             this.label6.TabIndex = 38;
             this.label6.Text = "Capacidad maxima: ";
             // 
@@ -60,27 +61,29 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(195, 46);
+            this.label5.Location = new System.Drawing.Point(146, 37);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(234, 29);
+            this.label5.Size = new System.Drawing.Size(181, 24);
             this.label5.TabIndex = 37;
             this.label5.Text = "Modificar Camioneta";
             // 
             // textIdSchoolVan
             // 
-            this.textIdSchoolVan.Location = new System.Drawing.Point(293, 128);
-            this.textIdSchoolVan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textIdSchoolVan.Location = new System.Drawing.Point(220, 104);
+            this.textIdSchoolVan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textIdSchoolVan.Name = "textIdSchoolVan";
             this.textIdSchoolVan.ReadOnly = true;
-            this.textIdSchoolVan.Size = new System.Drawing.Size(168, 22);
+            this.textIdSchoolVan.Size = new System.Drawing.Size(127, 20);
             this.textIdSchoolVan.TabIndex = 36;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(148, 128);
+            this.label2.Location = new System.Drawing.Point(111, 104);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 17);
+            this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 35;
             this.label2.Text = "Id Camioneta: ";
             // 
@@ -94,20 +97,20 @@
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton.ForeColor = System.Drawing.Color.Transparent;
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(37, 27);
-            this.backButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.backButton.Location = new System.Drawing.Point(28, 22);
+            this.backButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(80, 78);
+            this.backButton.Size = new System.Drawing.Size(70, 67);
             this.backButton.TabIndex = 40;
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(455, 543);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.saveButton.Location = new System.Drawing.Point(341, 441);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(105, 36);
+            this.saveButton.Size = new System.Drawing.Size(79, 29);
             this.saveButton.TabIndex = 41;
             this.saveButton.Text = "Guardar";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -115,7 +118,7 @@
             // 
             // ModifySchoolVan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.backButton);
@@ -124,9 +127,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textIdSchoolVan);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ModifySchoolVan";
-            this.Size = new System.Drawing.Size(637, 630);
+            this.Size = new System.Drawing.Size(478, 512);
             ((System.ComponentModel.ISupportInitialize)(this.numericMaxCapacity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

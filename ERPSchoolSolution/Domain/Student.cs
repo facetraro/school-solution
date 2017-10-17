@@ -75,5 +75,10 @@ namespace Domain
         {
             return subjects.Contains(aSubject);
         }
+
+        public string PrintToRoute()
+        {
+           return (this.Name + " " + GetCoordinates().PrintCoordinate());
+        }
     }
 }

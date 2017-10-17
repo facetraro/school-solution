@@ -12,6 +12,11 @@ namespace Module
 {
     public class StudentModule : ModuleClass
     {
+        public StudentModule()
+        {
+            this.Name = "Gestión Alumno";
+            this.Description = "Sector que pertime gestionar las acciones de Alumno.";
+        }
         public void AddNewStudent(string name, string lastName, int ci, int coordinateX, int coordinateY, List<Object> subjects)
         {
             StudentLogic logic = new StudentLogic();

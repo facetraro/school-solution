@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Module;
 
 namespace ERPSchoolUI
 {
@@ -16,7 +17,14 @@ namespace ERPSchoolUI
         public TeacherMenu(Panel mainPanel)
         {
             InitializeComponent();
+            LoadLabels();
             this.mainPanel = mainPanel;
+        }
+        public void LoadLabels()
+        {
+            TeacherModule module = new TeacherModule();
+            labelTitle.Text = module.Name;
+            labelDescription.Text = module.Description;
         }
 
         private void button1_Click(object sender, EventArgs e)

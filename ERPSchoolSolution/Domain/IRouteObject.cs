@@ -9,5 +9,6 @@ namespace Domain
     public interface IRouteObject
     {
         Coordinate GetCoordinates();
+        string PrintToRoute();
     }
 }

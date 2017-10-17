@@ -63,6 +63,9 @@ namespace ERPSchoolUI
             {
                 module.ModifyTeacher(selectedObject, textNameTeacher.Text, textLastNameTeacher.Text, subjects);
                 MessageBox.Show("Profesor modificado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mainPanel.Controls.Clear();
+                TeacherMenu backMenu = new TeacherMenu(mainPanel);
+                mainPanel.Controls.Add(backMenu);
             }
             catch (Exception ex)
             {

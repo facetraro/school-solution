@@ -111,15 +111,18 @@ namespace Testing
         [TestMethod]
         public void toStringRoute()
         {
-
             Route aRoute = new Route();
             Coordinate newCoordinate = new Coordinate();
-            newCoordinate.X = 12;
-            newCoordinate.Y = 1;
+            Coordinate newCoordinateStudent = new Coordinate();
+            Student newStudent = new Student();
+            newStudent.Name = "Jaime";
+            newCoordinateStudent.X = 10;
+            newCoordinateStudent.Y = 5;
+            newStudent.Coordinates = newCoordinateStudent;
             aRoute.Add(newCoordinate);
+            aRoute.Add(newStudent);
             string ruta = aRoute.ToStringRoute();
-            Assert.IsTrue(ruta.Equals("Ruta Camioneta: [12,1]"));
-
+            Assert.IsTrue(ruta.Equals("Camioneta 0: - Escuela [0,0] - Jaime [10,5]"));
         }
         [TestMethod]
         public void AreEqualsSuccess()
@@ -132,9 +135,7 @@ namespace Testing
             Route aNewRoute = new Route();
             int expectedLength = 1;
             aListRoute.Add(aNewRoute);
-
             Assert.IsTrue(aSchoolVan.Equals(anotherSchoolVan) && aListRoute.Count == expectedLength);
-
         }
         [TestMethod]
         public void RoutesEqualsFail()
