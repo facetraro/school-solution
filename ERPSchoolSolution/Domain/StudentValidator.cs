@@ -9,10 +9,10 @@ namespace Domain
 {
     public class StudentValidator : IValidator
     {
-        private static int min_ci = 9999999;
+        private static int min_ci = 999999;
         private bool IsCiValid(Student aStudent)
         {
-            if(!(aStudent.Ci >= min_ci))
+            if(!(aStudent.Ci > min_ci))
             {
                 throw new InvalidCiException("La Cedula ingresada no es valida");
             }

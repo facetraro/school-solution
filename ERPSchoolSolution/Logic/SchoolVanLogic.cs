@@ -103,7 +103,7 @@ namespace Logic
             bool studentsEmpty = logic.IsEmpty();
             if (studentsEmpty)
             {
-                throw new NoStudentsInSystemException("No Students in the system");
+                throw new NoStudentsInSystemException("No hay estudiantes ingresados en el sistema");
             }
             return studentsEmpty;
         }
@@ -112,7 +112,7 @@ namespace Logic
             bool schoolVanEmpty = this.IsEmpty();
             if (schoolVanEmpty)
             {
-                throw new NoSchoolVanInSystemException("No School Vans in the system");
+                throw new NoSchoolVanInSystemException("No hay camionetas ingresadas en el sistema");
             }
             return schoolVanEmpty;
         }

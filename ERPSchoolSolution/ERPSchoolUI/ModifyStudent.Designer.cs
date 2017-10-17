@@ -52,6 +52,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericCi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericY)).BeginInit();
@@ -82,7 +83,7 @@
             // removeSubject
             // 
             this.removeSubject.Location = new System.Drawing.Point(218, 404);
-            this.removeSubject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.removeSubject.Margin = new System.Windows.Forms.Padding(2);
             this.removeSubject.Name = "removeSubject";
             this.removeSubject.Size = new System.Drawing.Size(39, 19);
             this.removeSubject.TabIndex = 47;
@@ -93,7 +94,7 @@
             // addSubject
             // 
             this.addSubject.Location = new System.Drawing.Point(218, 349);
-            this.addSubject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addSubject.Margin = new System.Windows.Forms.Padding(2);
             this.addSubject.Name = "addSubject";
             this.addSubject.Size = new System.Drawing.Size(39, 19);
             this.addSubject.TabIndex = 46;
@@ -105,7 +106,7 @@
             // 
             this.listSubjectsSelected.FormattingEnabled = true;
             this.listSubjectsSelected.Location = new System.Drawing.Point(271, 314);
-            this.listSubjectsSelected.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listSubjectsSelected.Margin = new System.Windows.Forms.Padding(2);
             this.listSubjectsSelected.Name = "listSubjectsSelected";
             this.listSubjectsSelected.Size = new System.Drawing.Size(137, 121);
             this.listSubjectsSelected.TabIndex = 45;
@@ -123,7 +124,7 @@
             // textLastNameStudent
             // 
             this.textLastNameStudent.Location = new System.Drawing.Point(207, 214);
-            this.textLastNameStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textLastNameStudent.Margin = new System.Windows.Forms.Padding(2);
             this.textLastNameStudent.Name = "textLastNameStudent";
             this.textLastNameStudent.Size = new System.Drawing.Size(168, 20);
             this.textLastNameStudent.TabIndex = 42;
@@ -152,7 +153,7 @@
             // textStudentNumber
             // 
             this.textStudentNumber.Location = new System.Drawing.Point(207, 96);
-            this.textStudentNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textStudentNumber.Margin = new System.Windows.Forms.Padding(2);
             this.textStudentNumber.Name = "textStudentNumber";
             this.textStudentNumber.ReadOnly = true;
             this.textStudentNumber.Size = new System.Drawing.Size(168, 20);
@@ -161,7 +162,7 @@
             // textNameStudent
             // 
             this.textNameStudent.Location = new System.Drawing.Point(207, 176);
-            this.textNameStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textNameStudent.Margin = new System.Windows.Forms.Padding(2);
             this.textNameStudent.Name = "textNameStudent";
             this.textNameStudent.Size = new System.Drawing.Size(168, 20);
             this.textNameStudent.TabIndex = 38;
@@ -170,7 +171,7 @@
             // 
             this.listSubjects.FormattingEnabled = true;
             this.listSubjects.Location = new System.Drawing.Point(70, 314);
-            this.listSubjects.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listSubjects.Margin = new System.Windows.Forms.Padding(2);
             this.listSubjects.Name = "listSubjects";
             this.listSubjects.Size = new System.Drawing.Size(137, 121);
             this.listSubjects.TabIndex = 37;
@@ -217,7 +218,7 @@
             this.backButton.ForeColor = System.Drawing.Color.Transparent;
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
             this.backButton.Location = new System.Drawing.Point(18, 19);
-            this.backButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.backButton.Margin = new System.Windows.Forms.Padding(2);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(69, 69);
             this.backButton.TabIndex = 50;
@@ -227,7 +228,7 @@
             // saveButton
             // 
             this.saveButton.Location = new System.Drawing.Point(349, 452);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(2);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(79, 29);
             this.saveButton.TabIndex = 51;
@@ -239,12 +240,12 @@
             // 
             this.numericCi.Location = new System.Drawing.Point(207, 136);
             this.numericCi.Maximum = new decimal(new int[] {
-            999999999,
-            0,
+            1410065407,
+            2,
             0,
             0});
             this.numericCi.Minimum = new decimal(new int[] {
-            9999999,
+            1000000,
             0,
             0,
             0});
@@ -252,7 +253,7 @@
             this.numericCi.Size = new System.Drawing.Size(168, 20);
             this.numericCi.TabIndex = 57;
             this.numericCi.Value = new decimal(new int[] {
-            9999999,
+            1000000,
             0,
             0,
             0});
@@ -311,10 +312,22 @@
             this.label9.TabIndex = 52;
             this.label9.Text = "Cordenadas:";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(210, 159);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(129, 12);
+            this.label12.TabIndex = 58;
+            this.label12.Text = "*Formato de CI [Ej: 47915349]";
+            // 
             // ModifyStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.numericCi);
             this.Controls.Add(this.numericX);
             this.Controls.Add(this.numericY);
@@ -338,7 +351,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ModifyStudent";
             this.Size = new System.Drawing.Size(478, 512);
             ((System.ComponentModel.ISupportInitialize)(this.numericCi)).EndInit();
@@ -374,5 +387,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label12;
     }
 }
