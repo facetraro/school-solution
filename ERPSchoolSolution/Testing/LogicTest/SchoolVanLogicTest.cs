@@ -62,6 +62,7 @@ namespace Testing.LogicTest
             testLogic.Add(newSchoolVan);
             Assert.IsTrue(testLogic.Exists(newSchoolVan));
         }
+        [ExpectedException(typeof(SchoolVanAlreadyExistsException))]
         [TestMethod]
         public void AddSchoolVanFail()
         {
@@ -75,6 +76,7 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Length() == expectedSchoolVanListLength);
         }
         [TestMethod]
+        [ExpectedException(typeof(InvalidObjectAddIntoSchoolVanException))]
         public void AddSchoolVanDifferentObjectFail()
         {
             SetUp();
@@ -85,6 +87,7 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Length() == expectedSchoolVanListLength);
         }
         [TestMethod]
+        [ExpectedException(typeof(InvalidValueException))]
         public void AddInvalidSchoolVan()
         {
             SetUp();
@@ -175,6 +178,7 @@ namespace Testing.LogicTest
             Assert.IsFalse(testLogic.Exists(editedSchoolVan));
         }
         [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
         public void ModifySchoolVanFailCheckOldSchoolVan()
         {
             SetUp();

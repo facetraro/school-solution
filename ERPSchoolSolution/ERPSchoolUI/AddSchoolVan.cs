@@ -61,8 +61,18 @@ namespace ERPSchoolUI
         private void saveButton_Click(object sender, EventArgs e)
         {
             SchoolVanModule module = new SchoolVanModule();
-            module.AddNewSchoolVan((int)numericMaxCapacity.Value);
-            MessageBox.Show("Camioneta ingresada con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                module.AddNewSchoolVan((int)numericMaxCapacity.Value);
+                MessageBox.Show("Camioneta ingresada con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mainPanel.Controls.Clear();
+                SchoolVanMenu backMenu = new SchoolVanMenu(mainPanel);
+                mainPanel.Controls.Add(backMenu);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

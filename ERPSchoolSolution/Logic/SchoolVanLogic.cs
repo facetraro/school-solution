@@ -17,6 +17,10 @@ namespace Logic
         private bool CanIAdd(Object anObject)
         {
             SchoolVanValidator validator = new SchoolVanValidator();
+            if (Exists(anObject))
+            {
+                throw new SchoolVanAlreadyExistsException("El id ingresado de camioneta ya existe");
+            }
             return validator.IsValid(anObject) && !Exists(anObject);
         }
         private int GetBiggestIdSchoolVan(List<SchoolVan> list)
@@ -60,6 +64,10 @@ namespace Logic
             bool domainValidation = validator.IsValid(anotherObject);
             bool nonExists = !Exists(anotherObject);
             bool sameId = anObject.Equals(anotherObject);
+            if (!(nonExists || sameId))
+            {
+                throw new SchoolVanAlreadyExistsException("El id ingresado de camioneta ya existe");
+            }
             return domainValidation && (nonExists || sameId);
         }
         private bool CanIModify(Object oldObject, Object newObject)
