@@ -36,56 +36,6 @@ namespace ERPSchoolUI
 
         }
 
-        private void AddStudent_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textCIStudent_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textNameStudent_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textLastNameStudent_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textStudentNumber_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void backButton_Click(object sender, EventArgs e)
         {
             mainPanel.Controls.Clear();
@@ -134,9 +84,5 @@ namespace ERPSchoolUI
             }
         }
 
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

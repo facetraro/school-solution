@@ -64,7 +64,6 @@
             this.textLastNameStudent.Name = "textLastNameStudent";
             this.textLastNameStudent.Size = new System.Drawing.Size(223, 22);
             this.textLastNameStudent.TabIndex = 26;
-            this.textLastNameStudent.TextChanged += new System.EventHandler(this.textLastNameStudent_TextChanged);
             // 
             // label4
             // 
@@ -74,7 +73,6 @@
             this.label4.Size = new System.Drawing.Size(133, 17);
             this.label4.TabIndex = 25;
             this.label4.Text = "Apellido Estudiante:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -85,7 +83,6 @@
             this.label5.Size = new System.Drawing.Size(218, 29);
             this.label5.TabIndex = 24;
             this.label5.Text = "Agregar un Alumno";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textStudentNumber
             // 
@@ -95,7 +92,6 @@
             this.textStudentNumber.ReadOnly = true;
             this.textStudentNumber.Size = new System.Drawing.Size(223, 22);
             this.textStudentNumber.TabIndex = 23;
-            this.textStudentNumber.TextChanged += new System.EventHandler(this.textStudentNumber_TextChanged);
             // 
             // listSubjects
             // 
@@ -125,7 +121,6 @@
             this.label2.Size = new System.Drawing.Size(153, 17);
             this.label2.TabIndex = 19;
             this.label2.Text = "Numero de Estudiante:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -135,7 +130,6 @@
             this.label1.Size = new System.Drawing.Size(133, 17);
             this.label1.TabIndex = 18;
             this.label1.Text = "Nombre Estudiante:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label6
             // 
@@ -145,7 +139,6 @@
             this.label6.Size = new System.Drawing.Size(142, 17);
             this.label6.TabIndex = 27;
             this.label6.Text = "Cedula de Identidad: ";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // listSubjectsSelected
             // 
@@ -237,7 +230,6 @@
             this.label9.Size = new System.Drawing.Size(89, 17);
             this.label9.TabIndex = 38;
             this.label9.Text = "Cordenadas:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -290,7 +282,6 @@
             this.textNameStudent.Name = "textNameStudent";
             this.textNameStudent.Size = new System.Drawing.Size(223, 22);
             this.textNameStudent.TabIndex = 22;
-            this.textNameStudent.TextChanged += new System.EventHandler(this.textNameStudent_TextChanged);
             // 
             // numericCi
             // 
@@ -345,7 +336,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddStudent";
             this.Size = new System.Drawing.Size(637, 630);
-            this.Load += new System.EventHandler(this.AddStudent_Load);
+          
             ((System.ComponentModel.ISupportInitialize)(this.numericY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCi)).EndInit();
