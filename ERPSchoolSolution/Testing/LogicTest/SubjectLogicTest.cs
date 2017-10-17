@@ -4,6 +4,7 @@ using Domain;
 using Logic;
 using System.Collections.Generic;
 using System.Linq;
+using Exceptions;
 
 namespace Testing.LogicTest
 {
@@ -34,6 +35,7 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Exists(newSubjectTest));
         }
         [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
         public void AddSubjectFail()
         {
             ClearRepository();
@@ -46,11 +48,12 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Length() == expectedLength);
         }
         [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
         public void AddSubjectFailLength()
         {
             ClearRepository();
             Subject newSubject = new Subject();
-            string testCode = "1";
+            string testCode = "12";
             string anotherTestCode = "12";
             SubjectLogic testLogic = new SubjectLogic();
             newSubject.Code = testCode;
@@ -61,6 +64,7 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Length() == 2);
         }
         [TestMethod]
+        [ExpectedException(typeof(InvalidObjectAddIntoSubjectsException))]
         public void AddSubjectDifferentObjectFail()
         {
             ClearRepository();
@@ -100,7 +104,7 @@ namespace Testing.LogicTest
         {
             ClearRepository();
             Subject newSubject = testSubject();
-            Subject editedSubject = new Subject();
+            Subject editedSubject = testSubject();
             SubjectLogic testLogic = new SubjectLogic();
             string testCode = "5";
             editedSubject.Code = testCode;
@@ -113,7 +117,7 @@ namespace Testing.LogicTest
         {
             ClearRepository();
             Subject newSubject = testSubject();
-            Subject editedSubject = new Subject();
+            Subject editedSubject = testSubject();
             SubjectLogic testLogic = new SubjectLogic();
             string testCode = "3";
             editedSubject.Code = testCode;
@@ -134,6 +138,7 @@ namespace Testing.LogicTest
             Assert.IsFalse(testLogic.Exists(editedSubject));
         }
         [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
         public void ModifySubjectFailOldSubject()
         {
             ClearRepository();
@@ -144,8 +149,7 @@ namespace Testing.LogicTest
             anotherSubject.Code = emptyCode;
             testLogic.Add(newSubject);
             testLogic.Modify(newSubject, anotherSubject);
-            Assert.IsTrue(testLogic.Exists(newSubject));
-
+            testLogic.Exists(newSubject);
         }
         [TestMethod]
         public void GenerateNewCodeSuccess()

@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
 using System.Collections.Generic;
+using Exceptions;
 
 namespace Testing
 {
@@ -11,7 +12,11 @@ namespace Testing
         [TestMethod]
         public void CompareStudentSuccess()
         {
+            Subject newSubject = new Subject();
+            newSubject.Code="test";
+            newSubject.Name = "test";
             Student aStudent = new Student();
+            aStudent.Subjects.Add(newSubject);
             int testId = 123;
             aStudent.Id = testId;
             Student anotherStudent = new Student();
@@ -90,11 +95,14 @@ namespace Testing
             aStudent.Ci = intTest;
             aStudent.StudentNumber = intTest;
             List<Subject> subjectList = new List<Subject>();
+            Subject newSubject = new Subject();
+            subjectList.Add(newSubject);
             aStudent.Subjects = subjectList;
             StudentValidator validator = new StudentValidator();
             Assert.IsTrue(validator.IsValid(aStudent));
         }
         [TestMethod]
+        [ExpectedException(typeof(InvalidCiException))]
         public void IsValidStudentFail()
         {
             Student aStudent = new Student();
@@ -102,6 +110,7 @@ namespace Testing
             Assert.IsFalse(validator.IsValid(aStudent));
         }
         [TestMethod]
+        [ExpectedException(typeof(InvalidCiException))]
         public void IsValidStudentCiFail()
         {
             Student aStudent = new Student();
@@ -110,6 +119,7 @@ namespace Testing
             Assert.IsFalse(validator.IsValid(aStudent));
         }
         [TestMethod]
+        [ExpectedException(typeof(InvalidObjectAddIntoStudentException))]
         public void IsValidDifferentObjectFail()
         {
             StudentValidator validator = new StudentValidator();

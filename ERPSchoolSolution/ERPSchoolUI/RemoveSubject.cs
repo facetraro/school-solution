@@ -52,6 +52,9 @@ namespace ERPSchoolUI
                     module.RemoveSubject(item);
                 }
                 MessageBox.Show("Materias Eliminadas con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mainPanel.Controls.Clear();
+                SubjectMenu backSubjectMenu = new SubjectMenu(mainPanel);
+                mainPanel.Controls.Add(backSubjectMenu);
             }
             else
             {

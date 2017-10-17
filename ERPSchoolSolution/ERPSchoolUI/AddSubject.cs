@@ -21,11 +21,6 @@ namespace ERPSchoolUI
             this.mainPanel = mainPanel;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void backButton_Click(object sender, EventArgs e)
         {
             mainPanel.Controls.Clear();
@@ -37,8 +32,18 @@ namespace ERPSchoolUI
         {
             string name = textName.Text;
             SubjectModule module = new SubjectModule();
-            module.AddNewSubject(name);
-            MessageBox.Show("Materias ingresada con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                module.AddNewSubject(name);
+                MessageBox.Show("Materia ingresada con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mainPanel.Controls.Clear();
+                SubjectMenu backSubjectMenu = new SubjectMenu(mainPanel);
+                mainPanel.Controls.Add(backSubjectMenu);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }           
         }
     }
 }

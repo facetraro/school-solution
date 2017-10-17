@@ -40,12 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SchoolVanAlreadyExistsException.cs" />
+    <Compile Include="InvalidCiException.cs" />
+    <Compile Include="InvalidObjectAddIntoStudentException.cs" />
+    <Compile Include="StudentAlreadyExistsException.cs" />
+    <Compile Include="SubjectAlreadyExistsException.cs" />
+    <Compile Include="InvalidObjectAddIntoSubjectsException.cs" />
     <Compile Include="InvalidObjectAddIntoRouteSystemException.cs" />
     <Compile Include="NoTeachersInSystemException.cs" />
     <Compile Include="NoSubjectInSystemException.cs" />
     <Compile Include="NoSchoolVanInSystemException.cs" />
     <Compile Include="NoStudentsInSystemException.cs" />
     <Compile Include="WrongObjectException.cs" />
+    <Compile Include="EmptyOrNullValueException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

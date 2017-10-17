@@ -82,7 +82,6 @@ namespace Module
             {
                 newStudent.Subjects.Add((Subject)item);
             }
-            newStudent.Id = logic.GetNextIdFree();
             logic.Modify(selectedObject, newStudent);
         }
 
