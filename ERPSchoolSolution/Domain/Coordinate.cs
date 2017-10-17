@@ -8,8 +8,8 @@ namespace Domain
 {
     public class Coordinate : IRouteObject
     {
-        private int x { get; set; }
-        private int y { get; set; }
+        private int x;
+        private int y;
         public Coordinate GetCoordinates()
         {
             return this;

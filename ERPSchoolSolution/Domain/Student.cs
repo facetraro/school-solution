@@ -7,10 +7,10 @@ namespace Domain
 {
     public class Student : Person, IRouteObject
     {
-        private int ci { get; set; }
-        private int studentNumber { get; set; }
-        private Coordinate coordinates { get; set; }
-        private List<Subject> subjects { get; set; }
+        private int ci;
+        private int studentNumber;
+        private Coordinate coordinates;
+        private List<Subject> subjects;
         public Student()
         {
             Id = 0;
