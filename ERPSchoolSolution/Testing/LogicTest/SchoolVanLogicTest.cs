@@ -9,9 +9,8 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Testing.LogicTest
 {
-    [TestClass]
     [ExcludeFromCodeCoverage]
-
+    [TestClass]
     public class SchoolVanLogicTest
     {
         private bool CompareStudentAssignment(List<Tuple<SchoolVan, List<Student>>> a1, List<Tuple<SchoolVan, List<Student>>> a2)
@@ -64,6 +63,15 @@ namespace Testing.LogicTest
             SchoolVanLogic testLogic = new SchoolVanLogic();
             testLogic.Add(newSchoolVan);
             Assert.IsTrue(testLogic.Exists(newSchoolVan));
+        }
+        [TestMethod]
+        public void SchoolVanLengthSuccess()
+        {
+            SetUp();
+            SchoolVan newSchoolVan = new SchoolVan();
+            SchoolVanLogic testLogic = new SchoolVanLogic();
+            testLogic.Add(newSchoolVan);
+            Assert.IsTrue(testLogic.Length()==1);
         }
         [ExpectedException(typeof(SchoolVanAlreadyExistsException))]
         [TestMethod]
