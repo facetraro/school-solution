@@ -40,9 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InvalidObjectAddIntoTeacherException.cs" />
     <Compile Include="SchoolVanAlreadyExistsException.cs" />
     <Compile Include="InvalidCiException.cs" />
     <Compile Include="InvalidObjectAddIntoStudentException.cs" />
+    <Compile Include="TeacherAlreadyExistsException.cs" />
     <Compile Include="StudentAlreadyExistsException.cs" />
     <Compile Include="SubjectAlreadyExistsException.cs" />
     <Compile Include="InvalidObjectAddIntoSubjectsException.cs" />
