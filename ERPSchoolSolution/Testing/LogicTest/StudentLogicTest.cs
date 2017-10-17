@@ -4,10 +4,13 @@ using Logic;
 using System.Collections.Generic;
 using System.Linq;
 using Exceptions;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Testing.LogicTest
 {
     [TestClass]
+    [ExcludeFromCodeCoverage]
+
     public class StudentLogicTest
     {
         private Student TestStudent()

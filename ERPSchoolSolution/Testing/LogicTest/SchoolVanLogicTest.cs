@@ -5,10 +5,13 @@ using Logic;
 using Exceptions;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Testing.LogicTest
 {
     [TestClass]
+    [ExcludeFromCodeCoverage]
+
     public class SchoolVanLogicTest
     {
         private bool CompareStudentAssignment(List<Tuple<SchoolVan, List<Student>>> a1, List<Tuple<SchoolVan, List<Student>>> a2)

@@ -3,10 +3,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
 using System.Collections.Generic;
 using Exceptions;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Testing
 {
     [TestClass]
+    [ExcludeFromCodeCoverage]
+
     public class TeacherTest
     {
         [TestMethod]

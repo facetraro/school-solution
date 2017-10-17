@@ -3,10 +3,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
 using Exceptions;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Testing
 {
     [TestClass]
+    [ExcludeFromCodeCoverage]
+
     public class RouteTest
     {
         private Student TestStudent()

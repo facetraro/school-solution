@@ -1,10 +1,12 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Testing
 {
     [TestClass]
+    [ExcludeFromCodeCoverage]
     public class CoordinateTest
     {
         [TestMethod]

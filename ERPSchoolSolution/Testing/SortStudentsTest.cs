@@ -3,10 +3,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Testing
 {
     [TestClass]
+    [ExcludeFromCodeCoverage]
+
     public class SortStudentsTest
     {
         [TestMethod]

@@ -2,10 +2,13 @@
 using Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Exceptions;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Testing
 {
     [TestClass]
+    [ExcludeFromCodeCoverage]
+
     public class SchoolVanTest
     {
         [TestMethod]

@@ -6,10 +6,13 @@ using Domain;
 using Logic;
 using System.Linq;
 using Exceptions;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Testing.LogicTest
 {
     [TestClass]
+    [ExcludeFromCodeCoverage]
+
     public class TeacherLogicTest
     {
         public void ClearRepository()
