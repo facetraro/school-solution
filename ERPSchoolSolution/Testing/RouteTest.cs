@@ -118,8 +118,7 @@ namespace Testing
             newCoordinate.Y = 1;
             aRoute.Add(newCoordinate);
             string ruta = aRoute.ToStringRoute();
-            Assert.IsTrue(ruta.Equals("Ruta Camioneta: [12,1]"));
-
+            Assert.IsTrue(ruta.Equals("Camioneta 0: [12,1]"));
         }
         [TestMethod]
         public void AreEqualsSuccess()
@@ -132,9 +131,7 @@ namespace Testing
             Route aNewRoute = new Route();
             int expectedLength = 1;
             aListRoute.Add(aNewRoute);
-
             Assert.IsTrue(aSchoolVan.Equals(anotherSchoolVan) && aListRoute.Count == expectedLength);
-
         }
         [TestMethod]
         public void RoutesEqualsFail()
