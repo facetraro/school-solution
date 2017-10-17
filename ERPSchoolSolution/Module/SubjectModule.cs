@@ -12,6 +12,11 @@ namespace Module
 {
     public class SubjectModule : ModuleClass
     {
+        public SubjectModule()
+        {
+            this.Name = "Gestión Materia";
+            this.Description = "Sector que pertime gestionar las acciones de Materia.";
+        }
         public void AddNewSubject(string name)
         {
             SubjectLogic logic = new SubjectLogic();

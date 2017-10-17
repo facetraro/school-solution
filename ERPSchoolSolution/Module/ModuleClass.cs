@@ -10,6 +10,27 @@ namespace Module
     {
         private string name;
         private string description;
-        private List<Tuple<string,Action>> actions;
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+            set
+            {
+                this.name = value;
+            }
+        }
+        public string Description
+        {
+            get
+            {
+                return this.description;
+            }
+            set
+            {
+                this.description = value;
+            }
+        }
     }
 }

@@ -12,6 +12,11 @@ namespace Module
 {
     public class SchoolVanModule : ModuleClass
     {
+        public SchoolVanModule()
+        {
+            this.Name = "Gestión Camioneta";
+            this.Description = "Sector que pertime gestionar las acciones de Camioneta.";
+        }
         public void AddNewSchoolVan(int capacity)
         {
             SchoolVanLogic logic = new SchoolVanLogic();
