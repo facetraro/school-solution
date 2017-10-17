@@ -92,7 +92,7 @@ namespace Domain
         }
         public string ToStringRoute()
         {
-            string stringRoute = "Ruta Camioneta: ";
+            string stringRoute = "Camioneta "+this.TheSchoolVan.Id+": ";
             foreach (IRouteObject anObject in this.theRoute)
             {
                 stringRoute = stringRoute + anObject.GetCoordinates().PrintCoordinate();

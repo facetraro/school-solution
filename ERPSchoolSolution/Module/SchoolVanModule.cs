@@ -60,7 +60,7 @@ namespace Module
             logic.Modify(oldSchoolVan, newSchoolVan);
         }
 
-        public void LoadRoutesBySchoolVan(object selectedItem, ListBox list)
+        public void LoadRoutesBySchoolVan(object selectedItem, RichTextBox list)
         {
             SchoolVanLogic logic = new SchoolVanLogic();
             List<Route> routes = logic.GetBestRoutes();
@@ -68,7 +68,7 @@ namespace Module
             {
                 if (item.TheSchoolVan.Equals(selectedItem))
                 {
-                    list.Items.Add(item.ToStringRoute());
+                    list.Text=item.ToStringRoute();
                 }
             }
         }

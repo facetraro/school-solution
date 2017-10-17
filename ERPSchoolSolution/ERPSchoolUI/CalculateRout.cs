@@ -59,7 +59,8 @@ namespace ERPSchoolUI
                 SchoolVanModule module = new SchoolVanModule();
                 try
                 {
-                    module.LoadRoutesBySchoolVan(listSchoolVans.SelectedItem, listRoutes);
+                    routesBox.Clear();
+                    module.LoadRoutesBySchoolVan(listSchoolVans.SelectedItem, routesBox);
                 }
                 catch (Exception ex)
                 {
