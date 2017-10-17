@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
 using System.Collections.Generic;
+using Exceptions;
 
 namespace Testing
 {
@@ -52,6 +53,7 @@ namespace Testing
             Assert.IsTrue(validator.IsValid(aTeacher));
         }
         [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
         public void IsValidTeacherFail()
         {
             Teacher aTeacher = new Teacher();
@@ -59,6 +61,7 @@ namespace Testing
             Assert.IsFalse(validator.IsValid(aTeacher));
         }
         [TestMethod]
+        [ExpectedException(typeof(InvalidObjectAddIntoTeacherException))]
         public void IsValidDifferentObjectFail()
         {
             TeacherValidator validator = new TeacherValidator();

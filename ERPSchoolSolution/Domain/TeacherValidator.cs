@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,15 +11,27 @@ namespace Domain
     {
         private bool IsIdValid(Teacher aTeacher)
         {
-            return (aTeacher.Id > 0);
+            if (!(aTeacher.Id > 0))
+            {
+                throw new EmptyOrNullValueException("El id debe ser mayor a 0");
+            }
+            return true;
         }
         private bool IsNameValid(Teacher aTeacher)
         {
-            return (aTeacher.Name.Length > 0);
+            if (!(aTeacher.Name.Length > 0))
+            {
+                throw new EmptyOrNullValueException("El nombre ingresado es vacio");
+            }
+            return true;
         }
         private bool IsLastNameValid(Teacher aTeacher)
         {
-            return (aTeacher.LastName.Length > 0);
+            if (!(aTeacher.LastName.Length > 0))
+            {
+                throw new EmptyOrNullValueException("El apellido ingresado es vacio");
+            }
+            return true;
         }
 
         public bool IsValid(Object anObject)
@@ -27,7 +40,7 @@ namespace Domain
 
             if ((System.Object)theTeacher == null)
             {
-                return false;
+                throw new InvalidObjectAddIntoTeacherException("Se esperaba un objeto del tipo [Teacher]");
             }
             return (IsIdValid(theTeacher) && IsNameValid(theTeacher) && IsLastNameValid(theTeacher));
         }

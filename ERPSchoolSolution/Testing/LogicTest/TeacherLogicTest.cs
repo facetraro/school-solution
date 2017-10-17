@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
 using Logic;
 using System.Linq;
+using Exceptions;
 
 namespace Testing.LogicTest
 {
@@ -37,6 +38,7 @@ namespace Testing.LogicTest
             testLogic.Add(newTeacher);
             Assert.IsTrue(testLogic.Exists(newTeacher));
         }
+        [ExpectedException(typeof(TeacherAlreadyExistsException))]
         [TestMethod]
         public void AddTeacherFail()
         {
@@ -48,6 +50,7 @@ namespace Testing.LogicTest
             int expectedTeacherListLength = 1;
             Assert.IsTrue(testLogic.Length() == expectedTeacherListLength);
         }
+        [ExpectedException(typeof(TeacherAlreadyExistsException))]
         [TestMethod]
         public void AddTeacherLengthSuccess()
         {
@@ -63,6 +66,7 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Length() == expectedTeacherListLength);
         }
         [TestMethod]
+        [ExpectedException(typeof(InvalidObjectAddIntoTeacherException))]
         public void AddDifferentObjectTeacherFail()
         {
             SetUp();
@@ -75,6 +79,7 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Length() == expectedTeacherListLength);
         }
         [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
         public void AddInvalidTeacherSuccess()
         {
             SetUp();
@@ -90,6 +95,7 @@ namespace Testing.LogicTest
             SetUp();
             TeacherLogic testLogic = new TeacherLogic();
             Teacher newTeacher = new Teacher();
+            newTeacher.Id = 4;
             newTeacher.Name = "toDelete";
             testLogic.Add(newTeacher);
             testLogic.Remove(newTeacher);
@@ -121,6 +127,7 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Exists(anotherTeacher));
         }
         [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
         public void ModifyTeacherFail()
         {
             SetUp();
@@ -144,6 +151,7 @@ namespace Testing.LogicTest
             testLogic.Modify(newTeacher, anotherTeacher);
             Assert.IsFalse(testLogic.Exists(anotherTeacher));
         }
+        [ExpectedException(typeof(EmptyOrNullValueException))]
         [TestMethod]
         public void ModifyTeacherFailCheckOldTeacher()
         {

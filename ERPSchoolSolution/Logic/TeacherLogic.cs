@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Exceptions;
 using Repository;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,11 @@ namespace Logic
             TeacherValidator validator = new TeacherValidator();
             if (validator.IsValid(anObject))
             {
-                return !this.Exists(anObject);
+                if (this.Exists(anObject))
+                {
+                    throw new TeacherAlreadyExistsException("El id ingresado ya esta en el sistema");
+                }
+                return true;
             }
             return false;
         }
@@ -51,6 +56,10 @@ namespace Logic
             bool domainValidation = validator.IsValid(anotherObject);
             bool nonExists = !Exists(anotherObject);
             bool sameId = anObject.Equals(anotherObject);
+            if (!(nonExists || sameId))
+            {
+                throw new TeacherAlreadyExistsException("El id ingresado ya esta en el sistema");
+            }
             return domainValidation && (nonExists || sameId);
         }
         private bool CanIModify(Object anObject, Object anotherObject)

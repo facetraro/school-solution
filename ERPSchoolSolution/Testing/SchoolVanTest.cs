@@ -1,6 +1,7 @@
 ﻿using System;
 using Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Exceptions;
 
 namespace Testing
 {
@@ -61,6 +62,7 @@ namespace Testing
             Assert.IsTrue(validator.IsValid(aVan));
         }
         [TestMethod]
+        [ExpectedException(typeof(InvalidValueException))]
         public void OutOfBandsSchoolVanCapacity()
         {
             int aId = 1;
@@ -71,7 +73,6 @@ namespace Testing
             SchoolVanValidator validator = new SchoolVanValidator();
             Assert.IsFalse(validator.IsValid(aVan));
         }
-
         [TestMethod]
         public void toStringSubject()
         {
@@ -79,7 +80,6 @@ namespace Testing
             aSchoolVan.Id = 123;
             aSchoolVan.Capacity = 10;
             Assert.IsTrue(aSchoolVan.ToString().Equals("Camioneta: 123 [Capacidad 10]"));
-
         }
     }
 }
