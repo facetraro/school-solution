@@ -38,11 +38,12 @@ namespace Module
             textName.Text = teacher.Name;
             textLastName.Text = teacher.LastName;
             SubjectLogic logic = new SubjectLogic();
-            foreach (Subject item in logic.GetAllSubjects())
+            List<Subject> allSubjects = logic.GetAllSubjects();
+            foreach (Subject item in allSubjects)
             {
                 if (teacher.Subjects.Contains(item))
                 {
-                    list.Items.Add(item);
+                    list.Items.Add(allSubjects.Find(x => x.Code == item.Code));
                 }
                 else
                 {
@@ -54,9 +55,14 @@ namespace Module
         public void LoadSubjectsByTeacher(Object anObject, ListBox listSubjects)
         {
             Teacher teacher = anObject as Teacher;
-            foreach (Subject item in teacher.Subjects)
+            SubjectLogic logic = new SubjectLogic();
+            List<Subject> allSubjects = logic.GetAllSubjects();
+            foreach (Subject item in allSubjects)
             {
-                listSubjects.Items.Add(item);
+                if (teacher.Subjects.Contains(item))
+                {
+                    listSubjects.Items.Add(allSubjects.Find(x => x.Code == item.Code));
+                }   
             }
         }
 

@@ -24,7 +24,7 @@ namespace Domain
         {
             if (aSchoolVan.Id < min_id)
             {
-                throw new EmptyOrNullValueException("El id debe ser mayor a 0");
+                throw new EmptyOrNullValueException("El id debe ser mayor a "+min_id);
             }
             return true;
         }

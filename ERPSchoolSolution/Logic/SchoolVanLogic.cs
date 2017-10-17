@@ -284,11 +284,9 @@ namespace Logic
             if (schoolVansWithMoreStudents >= actualLoop)
             {
                 studentsToSchoolVan = SelectLessStudents(schoolVansWithMoreStudents, actualLoop, studentsPerSchoolVanFloor + 1);
+                return studentsToSchoolVan;
             }
-            else
-            {
-                studentsToSchoolVan = SelectLessStudents(schoolVansWithMoreStudents, actualLoop, studentsPerSchoolVanFloor);
-            }
+            studentsToSchoolVan = SelectLessStudents(schoolVansWithMoreStudents, actualLoop, studentsPerSchoolVanFloor);
             return studentsToSchoolVan;
         }
         private List<Student> SelectStudentsToSchoolVan(int actualLoop, double studentsPerSchoolVan)

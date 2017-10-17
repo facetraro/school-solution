@@ -47,11 +47,12 @@ namespace Module
             numericX.Value = student.Coordinates.X;
             numericY.Value = student.Coordinates.Y;
             SubjectLogic logic = new SubjectLogic();
-            foreach (Subject item in logic.GetAllSubjects())
+            List<Subject> allSubjects = logic.GetAllSubjects();
+            foreach (Subject item in allSubjects)
             {
                 if (student.Subjects.Contains(item))
                 {
-                    list.Items.Add(item);
+                    list.Items.Add(allSubjects.Find(x => x.Code == item.Code));
                 }
                 else
                 {
@@ -63,9 +64,14 @@ namespace Module
         public void LoadSubjectsByStudents(Object anObject, ListBox listSubjects)
         {
             Student student = anObject as Student;
+            SubjectLogic logic = new SubjectLogic();
+            List<Subject> allSubjects = logic.GetAllSubjects();
             foreach (Subject item in student.Subjects)
             {
-                listSubjects.Items.Add(item);
+                if (allSubjects.Contains(item))
+                {
+                    listSubjects.Items.Add(allSubjects.Find(x => x.Code == item.Code));
+                }
             }
         }
 
