@@ -31,15 +31,18 @@ namespace Testing
         public void ActivityConstructorTest()
         {
             Activity anActivity = new Activity();
-            anActivity.Id = 123;
-            anActivity.Name = "testName";
+            int testId = 123;
+            string testName = "testName";
             DateTime activityDate = new DateTime();
+            int costTest = 1000;
+            anActivity.Id = testId;
+            anActivity.Name = testName;
             anActivity.Date = new DateTime();
-            anActivity.Cost = 1000;
-            Assert.IsTrue(anActivity.Id.Equals(123));
-            Assert.IsTrue(anActivity.Name.Equals("testName"));
+            anActivity.Cost = costTest;
+            Assert.IsTrue(anActivity.Id.Equals(testId));
+            Assert.IsTrue(anActivity.Name.Equals(testName));
             Assert.IsTrue(anActivity.Date.Equals(activityDate));
-            Assert.IsTrue(anActivity.Cost.Equals(1000));
+            Assert.IsTrue(anActivity.Cost.Equals(costTest));
         }
     }
 }
