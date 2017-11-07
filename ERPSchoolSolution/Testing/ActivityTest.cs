@@ -60,6 +60,7 @@ namespace Testing
             anActivity.Name = "testName";
             DateTime activityDate = new DateTime();
             anActivity.Date = activityDate;
+            anActivity.Cost = 1000;
             ActivityValidator validator = new ActivityValidator();
             Assert.IsTrue(validator.IsValid(anActivity));
         }
