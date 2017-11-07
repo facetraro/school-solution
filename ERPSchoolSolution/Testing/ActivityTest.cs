@@ -16,5 +16,14 @@ namespace Testing
             anotherActivity.Id = id;
             Assert.IsTrue(anActivity.Equals(anotherActivity));
          }
+        [TestMethod]
+        public void CompareActivityFail()
+        {
+            Activity anActivity = new Activity();
+            anActivity.Id = 123;
+            Activity anotherActivity = new Activity();
+            anotherActivity.Id = 124;
+            Assert.IsFalse(anActivity.Equals(anotherActivity));
+        }
     }
 }
