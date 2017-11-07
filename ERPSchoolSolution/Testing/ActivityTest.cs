@@ -10,11 +10,11 @@ namespace Testing
         public void CompareActivitySuccess()
         {
             Activity anActivity = new Activity();
-            anActivity.Id = 123;
+            int id = 123;
+            anActivity.Id = id;
             Activity anotherActivity = new Activity();
-            anotherActivity.Id = 123;
+            anotherActivity.Id = id;
             Assert.IsTrue(anActivity.Equals(anotherActivity));
-
          }
     }
 }
