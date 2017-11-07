@@ -15,7 +15,7 @@ namespace Testing
             Activity anotherActivity = new Activity();
             anotherActivity.Id = id;
             Assert.IsTrue(anActivity.Equals(anotherActivity));
-         }
+        }
         [TestMethod]
         public void CompareActivityFail()
         {
@@ -67,6 +67,13 @@ namespace Testing
             ActivityValidator validator = new ActivityValidator();
             Assert.IsTrue(validator.IsValid(anActivity));
         }
-
+        [TestMethod]
+        public void IsValidActivityFail()
+        {
+            Activity anActivity = new Activity();
+            Activity anotherActivity = new Activity();
+            ActivityValidator validator = new ActivityValidator();
+            Assert.IsFalse(validator.IsValid(anActivity));
+        }
     }
 }
