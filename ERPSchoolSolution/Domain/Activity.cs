@@ -13,6 +13,13 @@ namespace Domain
         public DateTime Date { get; set; }
         public int Cost { get; set; }
 
+        public Activity()
+        {
+            Id = 0;
+            Name = "defaultname";
+            Date = new DateTime();
+            Cost = 0;
+        }
         public override bool Equals(object anActivity)
         {
             Activity theActivity = anActivity as Activity;

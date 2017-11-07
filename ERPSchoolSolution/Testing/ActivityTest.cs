@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
+using Exceptions;
+
 namespace Testing
 {
     [TestClass]
@@ -68,10 +70,10 @@ namespace Testing
             Assert.IsTrue(validator.IsValid(anActivity));
         }
         [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
         public void IsValidActivityFail()
         {
             Activity anActivity = new Activity();
-            Activity anotherActivity = new Activity();
             ActivityValidator validator = new ActivityValidator();
             Assert.IsFalse(validator.IsValid(anActivity));
         }
