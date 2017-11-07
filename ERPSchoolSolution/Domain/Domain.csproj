@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activity.cs" />
     <Compile Include="Coordinate.cs" />
     <Compile Include="IRouteObject.cs" />
     <Compile Include="IValidator.cs" />
