@@ -20,9 +20,11 @@ namespace Testing
         public void CompareActivityFail()
         {
             Activity anActivity = new Activity();
-            anActivity.Id = 123;
+            int id = 123;
+            int anotherId = 124;
+            anActivity.Id = id;
             Activity anotherActivity = new Activity();
-            anotherActivity.Id = 124;
+            anotherActivity.Id = anotherId;
             Assert.IsFalse(anActivity.Equals(anotherActivity));
         }
     }
