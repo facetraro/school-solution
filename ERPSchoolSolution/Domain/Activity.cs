@@ -16,7 +16,10 @@ namespace Domain
         public override bool Equals(object anActivity)
         {
             Activity theActivity = anActivity as Activity;
-
+            if ((System.Object)theActivity == null)
+            {
+                return false;
+            }
             return (this.Id == theActivity.Id);
         }
     }
