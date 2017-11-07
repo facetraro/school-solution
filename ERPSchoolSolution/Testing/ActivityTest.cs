@@ -81,9 +81,11 @@ namespace Testing
         [ExpectedException(typeof(EmptyOrNullValueException))]
         public void IsValidNameSuccess()
         {
+            string testName = "";
             Activity anActivity = new Activity();
-            anActivity.Name = "";
-            anActivity.Id = 123;
+            anActivity.Name = testName;
+            int testId = 123;
+            anActivity.Id = testId;
             ActivityValidator validator = new ActivityValidator();
             Assert.IsFalse(validator.IsValid(anActivity));
         }
