@@ -16,6 +16,7 @@ namespace Domain
             }
             return true;
         }
+        
         public bool IsValid(Object anObject)
         {
             Activity theActivity = anObject as Activity;
@@ -23,7 +24,8 @@ namespace Domain
             {
                 throw new InvalidObjectAddIntoTeacherException("Se esperaba un objeto del tipo [Activity]");
             }
-            return IsIdValid(theActivity);
+            bool ActivityValidationId = IsIdValid(theActivity);
+            return ActivityValidationId;
         }
     }
 }
