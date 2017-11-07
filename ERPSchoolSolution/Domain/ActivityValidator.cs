@@ -24,7 +24,14 @@ namespace Domain
             }
             return true;
         }
-        
+        private bool IsCostValid(Activity anActivity)
+        {
+            if (!(anActivity.Cost > 0))
+            {
+                throw new EmptyOrNullValueException("El costo ingresado no es valido");
+            }
+            return true;
+        }
         public bool IsValid(Object anObject)
         {
             Activity theActivity = anObject as Activity;
@@ -34,7 +41,8 @@ namespace Domain
             }
             bool ActivityValidationId = IsIdValid(theActivity);
             bool ActivityValidationName = IsNameValid(theActivity);
-            return ActivityValidationId && ActivityValidationName;
+            bool ActivityValidationCost = IsCostValid(theActivity);
+            return ActivityValidationId && ActivityValidationName && ActivityValidationCost;
         }
     }
 }
