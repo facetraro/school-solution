@@ -89,6 +89,15 @@ namespace Testing
             ActivityValidator validator = new ActivityValidator();
             Assert.IsFalse(validator.IsValid(anActivity));
         }
-
+        [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
+        public void IsValidCostSuccess()
+        {
+            Activity anActivity = new Activity();
+            anActivity.Name = "testName";
+            anActivity.Id = 123;
+            ActivityValidator validator = new ActivityValidator();
+            Assert.IsTrue(validator.IsValid(anActivity));
+        }
     }
 }
