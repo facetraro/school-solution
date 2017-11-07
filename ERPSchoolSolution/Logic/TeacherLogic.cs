@@ -15,6 +15,8 @@ namespace Logic
         {
             Singleton theRepository = Singleton.Instance;
             Teacher toAdd = anObject as Teacher;
+            TeacherAccess context = new TeacherAccess();
+            context.Add(toAdd);
             theRepository.Teachers.Add(toAdd);
         }
         private bool CanIAdd(Object anObject)

@@ -36,6 +36,8 @@ namespace Logic
         {
             Singleton theRepository = Singleton.Instance;
             theRepository.Students.Add(toAdd);
+            StudentAccess context = new StudentAccess();
+            context.Add(toAdd);
         }
         public void Add(Object anObject)
         {

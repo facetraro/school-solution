@@ -33,8 +33,8 @@ namespace Module
             StudentLogic studentLogic = new StudentLogic();
 
             Student student1 = new Student();
-            student1.Id = 432;
-            student1.StudentNumber = 432;
+            student1.Id = 1;
+            student1.StudentNumber = 1;
             student1.Name = "Juan";
             student1.LastName = "Rodriguez";
             student1.Ci = 46702345;
@@ -45,8 +45,8 @@ namespace Module
             studentLogic.Add(student1);
 
             Student student2 = new Student();
-            student2.Id = 563;
-            student2.StudentNumber = 563;
+            student2.Id = 2;
+            student2.StudentNumber = 2;
             student2.Name = "Carlos";
             student2.LastName = "Machado";
             student2.Ci = 52848524;
@@ -57,8 +57,8 @@ namespace Module
             studentLogic.Add(student2);
 
             Student student3 = new Student();
-            student3.Id = 78;
-            student3.StudentNumber = 78;
+            student3.Id = 3;
+            student3.StudentNumber = 3;
             student3.Name = "Lucia";
             student3.LastName = "Matteo";
             student3.Ci = 52724524;

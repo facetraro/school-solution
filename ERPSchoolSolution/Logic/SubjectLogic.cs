@@ -48,13 +48,21 @@ namespace Logic
             newSubject.Name = name;
             this.Add(newSubject);
         }
+        public void Insert(Subject aSubject)
+        {
+            SubjectAccess context = new SubjectAccess();
+            context.Add(aSubject);
+        }
         public void Add(Object anObject)
         {
             if (CanIAdd(anObject))
             {
                 {
+
+                  
                     Singleton theRepository = Singleton.Instance;
                     Subject newSubject = anObject as Subject;
+                    Insert(newSubject);
                     theRepository.Subjects.Add(newSubject);
                 }
             }

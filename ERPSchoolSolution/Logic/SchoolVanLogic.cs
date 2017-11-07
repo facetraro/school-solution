@@ -43,6 +43,8 @@ namespace Logic
             {
                 Singleton theRepository = Singleton.Instance;
                 SchoolVan newSchoolVan = anObject as SchoolVan;
+                SchoolVanAccess context = new SchoolVanAccess();
+                context.Add(newSchoolVan);
                 theRepository.SchoolVans.Add(newSchoolVan);
             }
         }
