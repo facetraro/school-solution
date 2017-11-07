@@ -56,11 +56,14 @@ namespace Testing
         public void IsValidActivityIdSuccess()
         {
             Activity anActivity = new Activity();
-            anActivity.Id = 12;
-            anActivity.Name = "testName";
+            int testId = 12;
+            string testName = "testName";
+            int testCost = 1000;
+            anActivity.Id = testId;
+            anActivity.Name = testName;
             DateTime activityDate = new DateTime();
             anActivity.Date = activityDate;
-            anActivity.Cost = 1000;
+            anActivity.Cost = testCost;
             ActivityValidator validator = new ActivityValidator();
             Assert.IsTrue(validator.IsValid(anActivity));
         }
