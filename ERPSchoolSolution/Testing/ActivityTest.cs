@@ -44,5 +44,14 @@ namespace Testing
             Assert.IsTrue(anActivity.Date.Equals(activityDate));
             Assert.IsTrue(anActivity.Cost.Equals(costTest));
         }
+
+        [TestMethod]
+        public void CompareActivityNull()
+        {
+            int aInt = 3;
+            Activity anActivity = new Activity();
+            Assert.IsFalse(anActivity.Equals(aInt));
+        }
+
     }
 }
