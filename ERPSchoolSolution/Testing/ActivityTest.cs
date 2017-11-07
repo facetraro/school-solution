@@ -52,5 +52,17 @@ namespace Testing
             Assert.IsFalse(anActivity.Equals(testInt));
         }
 
+        [TestMethod]
+        public void IsValidActivityIdSuccess()
+        {
+            Activity anActivity = new Activity();
+            anActivity.Id = 12;
+            anActivity.Name = "testName";
+            DateTime activityDate = new DateTime();
+            anActivity.Date = activityDate;
+            ActivityValidator validator = new ActivityValidator();
+            Assert.IsTrue(validator.IsValid(anActivity));
+        }
+
     }
 }
