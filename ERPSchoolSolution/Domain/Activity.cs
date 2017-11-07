@@ -10,9 +10,11 @@ namespace Domain
     {
         public int Id { get; set; }
 
-        public override bool Equals(object aPerson)
+        public override bool Equals(object anActivity)
         {
-            return true;
+            Activity theActivity = anActivity as Activity;
+
+            return (this.Id == theActivity.Id);
         }
     }
 }
