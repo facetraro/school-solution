@@ -16,6 +16,14 @@ namespace Domain
             }
             return true;
         }
+        private bool IsNameValid(Activity anActivity)
+        {
+            if (!(anActivity.Name.Length > 0))
+            {
+                throw new EmptyOrNullValueException("El nombre ingresado no es valido");
+            }
+            return true;
+        }
         
         public bool IsValid(Object anObject)
         {
@@ -25,7 +33,8 @@ namespace Domain
                 throw new InvalidObjectAddIntoTeacherException("Se esperaba un objeto del tipo [Activity]");
             }
             bool ActivityValidationId = IsIdValid(theActivity);
-            return ActivityValidationId;
+            bool ActivityValidationName = IsNameValid(theActivity);
+            return ActivityValidationId && ActivityValidationName;
         }
     }
 }
