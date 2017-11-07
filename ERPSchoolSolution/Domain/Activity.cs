@@ -9,6 +9,9 @@ namespace Domain
     public class Activity
     {
         public int Id { get; set; }
+        public String Name { get; set; }
+        public DateTime Date { get; set; }
+        public int Cost { get; set; }
 
         public override bool Equals(object anActivity)
         {
