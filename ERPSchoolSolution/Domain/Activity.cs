@@ -12,7 +12,7 @@ namespace Domain
         public String Name { get; set; }
         public DateTime Date { get; set; }
         public int Cost { get; set; }
-
+        public List<Student> Participants { get; set; }
         public Activity()
         {
             Id = 0;
