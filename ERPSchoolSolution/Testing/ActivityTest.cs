@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
 using Exceptions;
+using System.Collections.Generic;
 
 namespace Testing
 {
@@ -41,6 +42,9 @@ namespace Testing
             anActivity.Name = testName;
             anActivity.Date = new DateTime();
             anActivity.Cost = costTest;
+            List<Student> theParticipants = new List<Student>();
+            anActivity.Participants = theParticipants;
+            Assert.IsTrue(anActivity.Participants.Equals(theParticipants));
             Assert.IsTrue(anActivity.Id.Equals(testId));
             Assert.IsTrue(anActivity.Name.Equals(testName));
             Assert.IsTrue(anActivity.Date.Equals(activityDate));
