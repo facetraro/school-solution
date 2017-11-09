@@ -49,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ActivityMenu.Designer.cs">
+      <DependentUpon>ActivityMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddActivity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddActivity.Designer.cs">
+      <DependentUpon>AddActivity.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddSchoolVan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,6 +108,18 @@
     </Compile>
     <Compile Include="ConsultTeachers.Designer.cs">
       <DependentUpon>ConsultTeachers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyActivity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModifyActivity.Designer.cs">
+      <DependentUpon>ModifyActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyActivitySelectList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModifyActivitySelectList.Designer.cs">
+      <DependentUpon>ModifyActivitySelectList.cs</DependentUpon>
     </Compile>
     <Compile Include="ModifySchoolVan.cs">
       <SubType>UserControl</SubType>
@@ -153,6 +177,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoveActivity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RemoveActivity.Designer.cs">
+      <DependentUpon>RemoveActivity.cs</DependentUpon>
+    </Compile>
     <Compile Include="RemoveSchoolVan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -201,6 +231,12 @@
     <Compile Include="SchoolVanMenu.Designer.cs">
       <DependentUpon>SchoolVanMenu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActivityMenu.resx">
+      <DependentUpon>ActivityMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddActivity.resx">
+      <DependentUpon>AddActivity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddSchoolVan.resx">
       <DependentUpon>AddSchoolVan.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +260,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultTeachers.resx">
       <DependentUpon>ConsultTeachers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyActivity.resx">
+      <DependentUpon>ModifyActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyActivitySelectList.resx">
+      <DependentUpon>ModifyActivitySelectList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifySchoolVan.resx">
       <DependentUpon>ModifySchoolVan.cs</DependentUpon>
@@ -267,6 +309,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RemoveActivity.resx">
+      <DependentUpon>RemoveActivity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RemoveSchoolVan.resx">
       <DependentUpon>RemoveSchoolVan.cs</DependentUpon>
     </EmbeddedResource>
