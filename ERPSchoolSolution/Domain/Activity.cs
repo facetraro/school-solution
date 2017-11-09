@@ -19,6 +19,7 @@ namespace Domain
             Name = "defaultname";
             Date = new DateTime();
             Cost = 0;
+            Participants = new List<Student>();
         }
         public override bool Equals(object anActivity)
         {
