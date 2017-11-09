@@ -17,14 +17,11 @@ namespace Repository
             {
                 try
                 {
-                    foreach (Subject actualSubject in student.Subjects)
-                    {
-                        context.Subjects.Attach(actualSubject);
-                    }
+                    student.Subjects = GetSubjectListAttached(context, student);
                     context.Students.Add(student);
                     context.SaveChanges();
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
                     throw new StudentPersistanceException("Se ha perdido la conexion con el servidor");
                 }
@@ -88,30 +85,63 @@ namespace Repository
                 throw new StudentPersistanceException("Se ha perdido la conexion con el servidor");
             }
         }
-        public void Modify(Student originalStudent, Student modifiedStudent)
+        /*
+        public void updateSubjects(Student modifiedStudent, List<Subject> list)
         {
             try
             {
                 using (var context = new ContextDB())
                 {
-                    // Paso 2 objetos
-                    context.Students.Attach(originalStudent);
-                    originalStudent.Name = modifiedStudent.Name;
-                    originalStudent.LastName = modifiedStudent.LastName;
-                    originalStudent.Coordinates = modifiedStudent.Coordinates;
-                    originalStudent.Ci = modifiedStudent.Ci;
-                    originalStudent.Subjects = modifiedStudent.Subjects;
-                    context.Entry(originalStudent).State = EntityState.Modified;
-
-                    // Paso 1 objeto
-                    context.Students.Attach(modifiedStudent);
-                    context.Entry(originalStudent).State = EntityState.Modified;
-
+                    Student oldStudent = Get(modifiedStudent.Id);
+                    oldStudent.Subjects = new List<Subject>();
+                    context.Database.ExecuteSqlCommand("DELETE FROM SubjectStudents WHERE Student_Id = " + modifiedStudent.Id);
+                    foreach (Subject actual in list)
+                    {
+                        string query= "INSERT INTO SubjectStudents(Student_Id, Subject_Code) VALUES  (" + modifiedStudent.Id + ", '" + actual.Code + "')";
+                        context.Database.ExecuteSqlCommand(query);
+                    }
                     context.SaveChanges();
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                throw new StudentPersistanceException("Error en la base de datos. Imposible Modificar el Equipo ");
+            }
+        }
+        */
+        private List<Subject> GetSubjectListAttached(ContextDB context, Student modifiedStudent)
+        {
+            List<Subject> listOfSubjects = new List<Subject>();
+            foreach (Subject actualSubject in modifiedStudent.Subjects)
+            {
+                listOfSubjects.Add(context.Subjects.Where(b => b.Code == actualSubject.Code).Include(b => b.Students).FirstOrDefault());
+            }
+            return listOfSubjects;
+        }
+        public void Modify(Student modifiedStudent)
+        {
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    Student oldStudent = Get(modifiedStudent.Id);
+                    context.Students.Attach(oldStudent);
+                    oldStudent.Name = modifiedStudent.Name;
+                    oldStudent.LastName = modifiedStudent.LastName;
+                    oldStudent.StudentNumber = modifiedStudent.StudentNumber;
+                    oldStudent.Coordinates = modifiedStudent.Coordinates;
+                    oldStudent.Ci = modifiedStudent.Ci;
+                    oldStudent.Subjects = modifiedStudent.Subjects;
+                    
+                    oldStudent.Subjects = GetSubjectListAttached(context,modifiedStudent);
+                    context.Entry(oldStudent).State = EntityState.Modified;
+                    context.SaveChanges();
+
+                }
+            }
+            catch (Exception e)
+            {
+
                 throw new StudentPersistanceException("Se ha perdido la conexion con el servidor");
             }
         }

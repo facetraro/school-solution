@@ -2,6 +2,7 @@
 using Exceptions;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,7 @@ namespace Repository
                 }
                 catch (Exception)
                 {
-                    throw new StudentPersistanceException("Materia ya ingresada en el sistema.");
+                    throw new SubjectPersistanceException("Se ha perdido la conexion con el servidor");
                 }
             }
         }
@@ -50,7 +51,82 @@ namespace Repository
             }
             catch (Exception)
             {
-                throw new StudentPersistanceException("Error en la base de datos. Imposible vaciar valores de materia.");
+                throw new SubjectPersistanceException("Se ha perdido la conexion con el servidor");
+            }
+        }
+        public Subject Get(string id)
+        {
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    Subject subjectToFind = context.Subjects.Find(id);
+                    context.Subjects.Include(d => d.Students).ToList();
+                    context.Subjects.Include(d => d.Teachers).ToList();
+                    return subjectToFind;
+                }
+            }
+            catch (Exception)
+            {
+                throw new SubjectPersistanceException("Se ha perdido la conexion con el servidor");
+            }
+        }
+        public List<Subject> GetAllLazyLoading()
+        {
+            List<Subject> allSubjects = new List<Subject>();
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    allSubjects = context.Subjects.ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw new SubjectPersistanceException("Se ha perdido la conexion con el servidor");
+            }
+            return allSubjects;
+        }
+        public List<Subject> GetAll()
+        {
+            List<Subject> lazyLoading = GetAllLazyLoading();
+            List<Subject> allSubjects = new List<Subject>();
+            foreach (Subject item in lazyLoading)
+            {
+                allSubjects.Add(Get(item.Code));
+            }
+            return allSubjects;
+        }
+        public void Remove(Subject subject)
+        {
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    context.Subjects.Attach(subject);
+                    context.Subjects.Remove(subject);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw new SubjectPersistanceException("Se ha perdido la conexion con el servidor");
+            }
+        }
+        public void Modify(Subject modifiedSubject)
+        {
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    context.Subjects.Attach(modifiedSubject);
+                    context.Entry(modifiedSubject).State = EntityState.Modified;
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw new SubjectPersistanceException("Se ha perdido la conexion con el servidor");
             }
         }
     }

@@ -28,8 +28,8 @@ namespace Logic
         }
         public List<Subject> GetAllSubjects()
         {
-            Singleton repository = Singleton.Instance;
-            return repository.Subjects;
+            SubjectAccess context = new SubjectAccess();
+            return context.GetAll();
         }
         private bool CanIAdd(Object anObject)
         {
@@ -58,26 +58,22 @@ namespace Logic
             if (CanIAdd(anObject))
             {
                 {
-
-                  
                     Singleton theRepository = Singleton.Instance;
                     Subject newSubject = anObject as Subject;
                     Insert(newSubject);
-                    theRepository.Subjects.Add(newSubject);
                 }
             }
         }
         public bool Exists(Object anObject)
         {
-            Singleton theRepository = Singleton.Instance;
             Subject newSubject = anObject as Subject;
-            return theRepository.Subjects.Contains(newSubject);
+            return GetAllSubjects().Contains(newSubject);
         }
         public void Remove(Object anObject)
         {
-            Singleton theRepository = Singleton.Instance;
-            Subject newSubject = anObject as Subject;
-            theRepository.Subjects.Remove(newSubject);
+            Subject toDelete = anObject as Subject;
+            SubjectAccess context = new SubjectAccess();
+            context.Remove(toDelete);
         }
         private bool ModifyValidation(Object oldObject, Object anObject)
         {
@@ -102,14 +98,14 @@ namespace Logic
         {
             if (CanIModify(oldObject, newObject))
             {
-                this.Remove(oldObject);
-                this.Add(newObject);
+                SubjectAccess context = new SubjectAccess();
+                Subject newSubject = newObject as Subject;
+                context.Modify(newSubject);
             }
         }
         public int Length()
         {
-            Singleton theRepository = Singleton.Instance;
-            return theRepository.Subjects.Count;
+            return GetAllSubjects().Count;
         }
         public void Empty()
         {

@@ -32,6 +32,17 @@ namespace Logic
             bool validation = domainValidations && IsNewUser(anObject);
             return validation;
         }
+        Student Clone(Student aStudent)
+        {
+            Student clone = new Student();
+            clone.Ci = aStudent.Ci;
+            clone.Coordinates = aStudent.Coordinates;
+            clone.LastName = aStudent.LastName;
+            clone.Name = aStudent.Name;
+            clone.StudentNumber = aStudent.StudentNumber;
+            clone.Subjects = aStudent.Subjects;
+            return clone;
+        }
         private void Insert(Student toAdd)
         {
             StudentAccess context = new StudentAccess();
@@ -92,9 +103,8 @@ namespace Logic
             if (CanIModify(anObject, anotherObject))
             {
                 StudentAccess context = new StudentAccess();
-                Student oldStudent = anObject as Student;
                 Student newStudent = anotherObject as Student;
-                context.Modify(oldStudent,newStudent);
+                context.Modify(newStudent);
             }
         }
         private int GetBiggestIdStudent(List<Student> list)
