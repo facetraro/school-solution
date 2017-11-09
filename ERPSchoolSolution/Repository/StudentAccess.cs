@@ -2,6 +2,7 @@
 using Exceptions;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +26,93 @@ namespace Repository
                 }
                 catch (Exception)
                 {
-                    throw new StudentPersistanceException("Estudiante ya ingresado en el sistema.");
+                    throw new StudentPersistanceException("Se ha perdido la conexion con el servidor");
                 }
+            }
+        }
+        public Student Get(int id)
+        {
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    Student studentToFind = context.Students.Find(id);
+                    context.Students.Include(d => d.Subjects).ToList();
+                    return studentToFind;
+                }
+            }
+            catch (Exception)
+            {
+                throw new StudentPersistanceException("Se ha perdido la conexion con el servidor");
+            }
+        }
+        public List<Student> GetAllLazyLoading()
+        {
+            List<Student> allStudents = new List<Student>();
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    allStudents = context.Students.ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw new StudentPersistanceException("Se ha perdido la conexion con el servidor");
+            }
+            return allStudents;
+        }
+        public List<Student> GetAll()
+        {
+            List<Student> lazyLoading = GetAllLazyLoading();
+            List<Student> allStudents = new List<Student>();
+            foreach (Student item in lazyLoading)
+            {
+                allStudents.Add(Get(item.Id));
+            }
+            return allStudents;
+        }
+        public void Remove(Student student)
+        {
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    context.Students.Attach(student);
+                    context.Students.Remove(student);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw new StudentPersistanceException("Se ha perdido la conexion con el servidor");
+            }
+        }
+        public void Modify(Student originalStudent, Student modifiedStudent)
+        {
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    // Paso 2 objetos
+                    context.Students.Attach(originalStudent);
+                    originalStudent.Name = modifiedStudent.Name;
+                    originalStudent.LastName = modifiedStudent.LastName;
+                    originalStudent.Coordinates = modifiedStudent.Coordinates;
+                    originalStudent.Ci = modifiedStudent.Ci;
+                    originalStudent.Subjects = modifiedStudent.Subjects;
+                    context.Entry(originalStudent).State = EntityState.Modified;
+
+                    // Paso 1 objeto
+                    context.Students.Attach(modifiedStudent);
+                    context.Entry(originalStudent).State = EntityState.Modified;
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw new StudentPersistanceException("Se ha perdido la conexion con el servidor");
             }
         }
         public void Empty()
@@ -46,7 +132,7 @@ namespace Repository
             }
             catch (Exception)
             {
-                throw new StudentPersistanceException("Error en la base de datos. Imposible vaciar valores de estudiante.");
+                throw new StudentPersistanceException("Se ha perdido la conexion con el servidor");
             }
         }
     }

@@ -34,8 +34,6 @@ namespace Logic
         }
         private void Insert(Student toAdd)
         {
-            Singleton theRepository = Singleton.Instance;
-            theRepository.Students.Add(toAdd);
             StudentAccess context = new StudentAccess();
             context.Add(toAdd);
         }
@@ -47,11 +45,15 @@ namespace Logic
                 Insert(toAdd);
             }
         }
+        private void Delete(Student anObject)
+        {
+            StudentAccess context = new StudentAccess();
+            context.Remove(anObject);
+        }
         public void Remove(Object anObject)
         {
             Student toDelete = anObject as Student;
-            Singleton theRepository = Singleton.Instance;
-            theRepository.Students.Remove(toDelete);
+            Delete(toDelete);
         }
         private bool IsTheSameIdWithNewNonExistenCi(Object anObject, Object anotherObject)
         {
@@ -89,8 +91,10 @@ namespace Logic
         {
             if (CanIModify(anObject, anotherObject))
             {
-                Remove(anObject);
-                Add(anotherObject);
+                StudentAccess context = new StudentAccess();
+                Student oldStudent = anObject as Student;
+                Student newStudent = anotherObject as Student;
+                context.Modify(oldStudent,newStudent);
             }
         }
         private int GetBiggestIdStudent(List<Student> list)
@@ -109,8 +113,8 @@ namespace Logic
         }
         public void Empty()
         {
-            Singleton theRepository = Singleton.Instance;
-            theRepository.Students = new List<Student>();
+            StudentAccess context = new StudentAccess();
+            context.Empty();
         }
         public bool Exists(Object anObject)
         {
@@ -125,7 +129,7 @@ namespace Logic
         {
             Singleton theRepository = Singleton.Instance;
             Student toAdd = anObject as Student;
-            List<Student> list = theRepository.Students;
+            List<Student> list = GetAllStudents();
             foreach (Student item in list)
             {
                 if (item.Ci.Equals(toAdd.Ci))
@@ -137,8 +141,7 @@ namespace Logic
         }
         public int Length()
         {
-            Singleton theRepository = Singleton.Instance;
-            return theRepository.Students.Count;
+            return GetAllStudents().Count;
         }
         public bool IsEmpty()
         {
@@ -146,8 +149,8 @@ namespace Logic
         }
         public List<Student> GetAllStudents()
         {
-            Singleton theRepository = Singleton.Instance;
-            return theRepository.Students;
+            StudentAccess context = new StudentAccess();
+            return context.GetAll();
         }
     }
 }
