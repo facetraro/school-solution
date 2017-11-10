@@ -67,5 +67,12 @@ namespace ERPSchoolUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(100F, 110F);
             this.PerformAutoScale();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            ActivityMenu theActivityMenu = new ActivityMenu(mainPanel);
+            mainPanel.Controls.Add(theActivityMenu);
+        }
     }
 }
