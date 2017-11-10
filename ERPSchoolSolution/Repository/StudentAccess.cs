@@ -85,31 +85,7 @@ namespace Repository
                 throw new StudentPersistanceException("Se ha perdido la conexion con el servidor");
             }
         }
-        /*
-        public void updateSubjects(Student modifiedStudent, List<Subject> list)
-        {
-            try
-            {
-                using (var context = new ContextDB())
-                {
-                    Student oldStudent = Get(modifiedStudent.Id);
-                    oldStudent.Subjects = new List<Subject>();
-                    context.Database.ExecuteSqlCommand("DELETE FROM SubjectStudents WHERE Student_Id = " + modifiedStudent.Id);
-                    foreach (Subject actual in list)
-                    {
-                        string query= "INSERT INTO SubjectStudents(Student_Id, Subject_Code) VALUES  (" + modifiedStudent.Id + ", '" + actual.Code + "')";
-                        context.Database.ExecuteSqlCommand(query);
-                    }
-                    context.SaveChanges();
-                }
-            }
-            catch (Exception e)
-            {
-                throw new StudentPersistanceException("Error en la base de datos. Imposible Modificar el Equipo ");
-            }
-        }
-        */
-        private List<Subject> GetSubjectListAttached(ContextDB context, Student modifiedStudent)
+                private List<Subject> GetSubjectListAttached(ContextDB context, Student modifiedStudent)
         {
             List<Subject> listOfSubjects = new List<Subject>();
             foreach (Subject actualSubject in modifiedStudent.Subjects)
