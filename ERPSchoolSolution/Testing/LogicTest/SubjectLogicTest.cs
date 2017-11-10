@@ -87,6 +87,7 @@ namespace Testing.LogicTest
             Assert.IsFalse(testLogic.Exists(newSubject));
         }
         [TestMethod]
+        [ExpectedException(typeof(SubjectPersistanceException))]
         public void DeleteSubjectFail()
         {
             ClearRepository();
@@ -102,17 +103,18 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Exists(newSubject));
         }
         [TestMethod]
-        public void ModifySubjectFail()
+        public void ModifySubjectName()
         {
             ClearRepository();
             Subject newSubject = testSubject();
             Subject editedSubject = testSubject();
             SubjectLogic testLogic = new SubjectLogic();
-            string testCode = "5";
-            editedSubject.Code = testCode;
+            string testName = "5";
+            editedSubject.Name = testName;
             testLogic.Add(newSubject);
             testLogic.Modify(newSubject, editedSubject);
-            Assert.IsFalse(testLogic.Exists(newSubject));
+
+            Assert.IsFalse(testLogic.GetAllSubjects().ElementAt(0).Name == newSubject.Name);
         }
         [TestMethod]
         public void ModifySubjectSuccess()
@@ -121,8 +123,8 @@ namespace Testing.LogicTest
             Subject newSubject = testSubject();
             Subject editedSubject = testSubject();
             SubjectLogic testLogic = new SubjectLogic();
-            string testCode = "3";
-            editedSubject.Code = testCode;
+            string testName = "3";
+            editedSubject.Name = testName;
             testLogic.Add(newSubject);
             testLogic.Modify(newSubject, editedSubject);
             Assert.IsTrue(testLogic.Exists(editedSubject));
