@@ -38,20 +38,13 @@ namespace Testing.LogicTest
             newSubject.Name = "test"; ;
             Student testStudent = new Student();
             testStudent.Subjects.Add(newSubject);
-            testStudent.Ci = 47803333+id;
+            testStudent.Ci = 47803333 + id;
+            testStudent.StudentNumber = 0;
             testStudent.Id = id;
             testStudent.Name = "TestName";
             testStudent.LastName = "TestLastName";
             return testStudent;
         }
-        private void ClearRepository()
-        {
-            SchoolVanLogic testLogic = new SchoolVanLogic();
-            StudentLogic studentLogic = new StudentLogic();
-            testLogic.Empty();
-            studentLogic.Empty();
-        }
-
         [TestMethod]
         public void AddSchoolVanSuccess()
         {
@@ -68,9 +61,8 @@ namespace Testing.LogicTest
             SchoolVan newSchoolVan = new SchoolVan();
             SchoolVanLogic testLogic = new SchoolVanLogic();
             testLogic.Add(newSchoolVan);
-            Assert.IsTrue(testLogic.Length()==1);
+            Assert.IsTrue(testLogic.Length() == 1);
         }
-        [ExpectedException(typeof(SchoolVanAlreadyExistsException))]
         [TestMethod]
         public void AddSchoolVanFail()
         {
@@ -80,7 +72,7 @@ namespace Testing.LogicTest
             testLogic.Add(newSchoolVan);
             SchoolVan anotherNewSchoolVan = new SchoolVan();
             testLogic.Add(anotherNewSchoolVan);
-            int expectedSchoolVanListLength = 1;
+            int expectedSchoolVanListLength = 2;
             Assert.IsTrue(testLogic.Length() == expectedSchoolVanListLength);
         }
         [TestMethod]
@@ -114,6 +106,7 @@ namespace Testing.LogicTest
             Assert.IsFalse(testLogic.Exists(newSchoolVan));
         }
         [TestMethod]
+        [ExpectedException(typeof(InvalidValueException))]
         public void DeleteSchoolDifferentObjectFail()
         {
             SetUp();
@@ -131,10 +124,12 @@ namespace Testing.LogicTest
             SchoolVan newSchoolVan = new SchoolVan();
             SchoolVanLogic testLogic = new SchoolVanLogic();
             testLogic.Add(newSchoolVan);
+            newSchoolVan.Id = testLogic.GetNextIdFree() - 1;
             testLogic.Remove(newSchoolVan);
             Assert.IsFalse(testLogic.Exists(newSchoolVan));
         }
         [TestMethod]
+        [ExpectedException(typeof(SchoolVanPersistanceException))]
         public void DeleteSchoolVanFail()
         {
             SetUp();
@@ -144,6 +139,7 @@ namespace Testing.LogicTest
             anotherSchoolVan.Id = 6;
             SchoolVanLogic testLogic = new SchoolVanLogic();
             testLogic.Add(newSchoolVan);
+            newSchoolVan.Id = testLogic.GetNextIdFree() - 1;
             testLogic.Remove(anotherSchoolVan);
             Assert.IsTrue(testLogic.Exists(newSchoolVan));
         }
@@ -154,10 +150,11 @@ namespace Testing.LogicTest
             SchoolVan schoolVan = new SchoolVan();
             SchoolVanLogic testLogic = new SchoolVanLogic();
             SchoolVan editedSchoolVan = new SchoolVan();
-            editedSchoolVan.Id = 50;
             testLogic.Add(schoolVan);
+            schoolVan.Id = testLogic.GetNextIdFree() - 1;
+            editedSchoolVan.Id = testLogic.GetNextIdFree() - 1;
             testLogic.Modify(schoolVan, editedSchoolVan);
-            Assert.IsFalse(testLogic.Exists(schoolVan));
+            Assert.IsTrue(testLogic.Exists(editedSchoolVan));
         }
         [TestMethod]
         public void ModifySchoolVanSuccess()
@@ -250,15 +247,19 @@ namespace Testing.LogicTest
             StudentLogic testLogic = new StudentLogic();
             SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
             Student newStudent = TestStudent(1);
+            newStudent.Id = testLogic.GetNextIdFree() - 1;
             testLogic.Add(newStudent);
             SchoolVanLogic logic = new SchoolVanLogic();
             SchoolVan newSchoolVan = new SchoolVan();
             logic.Add(newSchoolVan);
+            newSchoolVan.Id = logic.GetNextIdFree() - 1;
             Route expectedRoute = new Route();
+            expectedRoute.TheSchoolVan = newSchoolVan;
             Coordinate schoolCoordinate = new Coordinate();
             expectedRoute.Add(schoolCoordinate);
             expectedRoute.Add(newStudent);
             List<Route> expectedRoutes = new List<Route>();
+
             expectedRoutes.Add(expectedRoute);
             List<Route> obtainRoutes = schoolVanLogic.GetBestRoutes();
             Assert.IsTrue(obtainRoutes.SequenceEqual(expectedRoutes));
@@ -272,12 +273,20 @@ namespace Testing.LogicTest
             SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
             Student newStudent = TestStudent(1);
             testLogic.Add(newStudent);
-            Student anotherStudent = TestStudent(6);
-            testLogic.Add(anotherStudent);
-            Student otherStudent = TestStudent(5);
-            testLogic.Add(otherStudent);
+            newStudent.Id = testLogic.GetNextIdFree() - 1;
+
             Student lastStudent = TestStudent(2);
             testLogic.Add(lastStudent);
+            lastStudent.Id = testLogic.GetNextIdFree() - 1;
+
+            Student otherStudent = TestStudent(5);
+            testLogic.Add(otherStudent);
+            otherStudent.Id = testLogic.GetNextIdFree() - 1;
+
+            Student anotherStudent = TestStudent(6);
+            testLogic.Add(anotherStudent);
+            anotherStudent.Id = testLogic.GetNextIdFree() - 1;
+
             SchoolVanLogic logic = new SchoolVanLogic();
             SchoolVan newSchoolVan = new SchoolVan();
             newSchoolVan.Id = 15;
@@ -309,15 +318,19 @@ namespace Testing.LogicTest
             SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
             Student newStudent = TestStudent(1);
             testLogic.Add(newStudent);
-            Student otherStudent = TestStudent(5);
-            testLogic.Add(otherStudent);
+            newStudent.Id = testLogic.GetNextIdFree() - 1;
             Student lastStudent = TestStudent(2);
             testLogic.Add(lastStudent);
+            lastStudent.Id = testLogic.GetNextIdFree() - 1;
+            Student otherStudent = TestStudent(5);
+            testLogic.Add(otherStudent);
+            otherStudent.Id = testLogic.GetNextIdFree() - 1;
             SchoolVanLogic logic = new SchoolVanLogic();
             SchoolVan newSchoolVan = new SchoolVan();
             newSchoolVan.Id = 15;
             newSchoolVan.Capacity = 10;
             logic.Add(newSchoolVan);
+
             List<Student> firstStudentList = new List<Student>();
             firstStudentList.Add(newStudent);
             firstStudentList.Add(lastStudent);
@@ -344,31 +357,42 @@ namespace Testing.LogicTest
             student1.Coordinates.X = 8;
             student1.Coordinates.Y = 8;
             testLogic.Add(student1);
-            Student student2 = TestStudent(6);
-            student2.Coordinates.X = 9;
-            student2.Coordinates.Y = 9;
-            testLogic.Add(student2);
-            Student student3 = TestStudent(3);
-            student3.Coordinates.X = 1;
-            student3.Coordinates.Y = 1;
-            testLogic.Add(student3);
+            student1.Id = testLogic.GetNextIdFree() - 1;
+
             Student student4 = TestStudent(2);
             student4.Coordinates.X = 5;
             student4.Coordinates.Y = 5;
             testLogic.Add(student4);
+            student4.Id = testLogic.GetNextIdFree() - 1;
+
+            Student student3 = TestStudent(3);
+            student3.Coordinates.X = 1;
+            student3.Coordinates.Y = 1;
+            testLogic.Add(student3);
+            student3.Id = testLogic.GetNextIdFree() - 1;
+
+            Student student2 = TestStudent(6);
+            student2.Coordinates.X = 9;
+            student2.Coordinates.Y = 9;
+            testLogic.Add(student2);
+            student2.Id = testLogic.GetNextIdFree() - 1;
+
             Student student5 = TestStudent(8);
             student5.Coordinates.X = 5;
             student5.Coordinates.Y = 9;
             testLogic.Add(student5);
+            student5.Id = testLogic.GetNextIdFree() - 1;
+
             SchoolVanLogic logic = new SchoolVanLogic();
             SchoolVan newSchoolVan = new SchoolVan();
             newSchoolVan.Capacity = 2;
             logic.Add(newSchoolVan);
+            newSchoolVan.Id = logic.GetNextIdFree() - 1;
             SchoolVan anotherSchoolVan = new SchoolVan();
             anotherSchoolVan.Capacity = 3;
             anotherSchoolVan.Id = 4;
             logic.Add(anotherSchoolVan);
-
+            anotherSchoolVan.Id = logic.GetNextIdFree() - 1;
 
             Route expectedRoute1 = new Route();
             expectedRoute1.TheRoute.Add(new Coordinate());
@@ -407,8 +431,8 @@ namespace Testing.LogicTest
             newSchoolVan.Id = 1;
             newSchoolVan.Capacity = 2;
             testLogic.Add(newSchoolVan);
-            int expectedValue = 2;
-            Assert.IsTrue(testLogic.GetNextIdFree().Equals(expectedValue));
+            int expectedValue = 0;
+            Assert.IsFalse(testLogic.GetNextIdFree().Equals(expectedValue));
         }
     }
 }

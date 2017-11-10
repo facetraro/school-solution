@@ -41,24 +41,37 @@ namespace Logic
         {
             if (CanIAdd(anObject))
             {
-                Singleton theRepository = Singleton.Instance;
                 SchoolVan newSchoolVan = anObject as SchoolVan;
                 SchoolVanAccess context = new SchoolVanAccess();
                 context.Add(newSchoolVan);
-                theRepository.SchoolVans.Add(newSchoolVan);
             }
         }
         public bool Exists(Object anObject)
         {
-            Singleton theRepository = Singleton.Instance;
             SchoolVan newSchoolVan = anObject as SchoolVan;
-            return theRepository.SchoolVans.Contains(newSchoolVan);
+            return GetSchoolVansSortedByCapacity().Contains(newSchoolVan);
         }
         public void Remove(Object anObject)
         {
-            Singleton theRepository = Singleton.Instance;
-            SchoolVan newSchoolVan = anObject as SchoolVan;
-            theRepository.SchoolVans.Remove(newSchoolVan);
+            bool canIDelete = false;
+            SchoolVan toDelete = anObject as SchoolVan;
+            try
+            {
+                SchoolVanValidator validator = new SchoolVanValidator();
+                if (validator.IsValid(toDelete))
+                {
+                    canIDelete = true;
+                }  
+            }
+            catch (Exception)
+            {
+                throw new InvalidValueException("No se puede eliminar un objeto que no sea del tipo SchoolVan");
+            }
+            if (canIDelete)
+            {
+                SchoolVanAccess context = new SchoolVanAccess();
+                context.Remove(toDelete);
+            }
         }
         private bool ModifyValidation(Object anObject, Object anotherObject)
         {
@@ -86,18 +99,12 @@ namespace Logic
         }
         public int Length()
         {
-            Singleton theRepository = Singleton.Instance;
-            return theRepository.SchoolVans.Count;
+            return GetSchoolVansSortedByCapacity().Count;
         }
-        public void Empty()
-        {
-            Singleton theRepository = Singleton.Instance;
-            theRepository.SchoolVans = new List<SchoolVan>();
-        }
+
         public bool IsEmpty()
         {
-            Singleton theRepository = Singleton.Instance;
-            return theRepository.SchoolVans.Count == 0;
+            return Length() == 0;
         }
         private bool IsStudentsEmpty()
         {
@@ -238,18 +245,16 @@ namespace Logic
         }
         public List<SchoolVan> GetSchoolVansSortedByCapacity()
         {
-            Singleton theRepository = Singleton.Instance;
-            List<SchoolVan> allSchoolVans = theRepository.SchoolVans;
+            SchoolVanAccess context = new SchoolVanAccess();
             SortSchoolVans schoolVanSort = new SortSchoolVans();
-            List<SchoolVan> sortedSchoolVans = schoolVanSort.GenerateSortedList(allSchoolVans);
+            List<SchoolVan> sortedSchoolVans = schoolVanSort.GenerateSortedList(context.GetAll());
             return sortedSchoolVans;
         }
         private List<Student> GetStudentsSortedById()
         {
-            Singleton theRepository = Singleton.Instance;
-            List<Student> allStudents = theRepository.Students;
+            StudentAccess context = new StudentAccess();
             SortStudents studentsSort = new SortStudents();
-            List<Student> sortedStudents = studentsSort.GenerateSortedList(allStudents);
+            List<Student> sortedStudents = studentsSort.GenerateSortedList(context.GetAll());
             return sortedStudents;
         }
         private List<Route> FindBestRoutes()
@@ -269,7 +274,6 @@ namespace Logic
         }
         List<Student> SelectLessStudents(int schoolVansWithMoreStudents, int actualLoop, int studentsPerSchoolVanFloor)
         {
-            Singleton theRepository = Singleton.Instance;
             List<Student> sortedStudent = GetStudentsSortedById();
             List<Student> studentsToSchoolVan = new List<Student>();
             for (int i = actualLoop; i < actualLoop + studentsPerSchoolVanFloor; i++)
@@ -293,9 +297,8 @@ namespace Logic
         }
         private List<Student> SelectStudentsToSchoolVan(int actualLoop, double studentsPerSchoolVan)
         {
-            Singleton theRepository = Singleton.Instance;
             List<Student> studentsToSchoolVan;
-            int countAllSchoolVans = theRepository.SchoolVans.Count;
+            int countAllSchoolVans = GetSchoolVansSortedByCapacity().Count;
             double result = studentsPerSchoolVan - Math.Truncate(studentsPerSchoolVan);
             int schoolVansWithMoreStudents = (int)(result * countAllSchoolVans);
 
@@ -312,7 +315,6 @@ namespace Logic
         }
         private double GetStudentsPerSchoolVan()
         {
-            Singleton theRepository = Singleton.Instance;
             List<SchoolVan> sortedSchoolVans = GetSchoolVansSortedByCapacity();
             List<Student> sortedStudent = GetStudentsSortedById();
             double countAllSchoolVans = sortedSchoolVans.Count;
