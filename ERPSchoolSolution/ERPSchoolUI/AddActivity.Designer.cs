@@ -69,7 +69,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(493, 569);
+            this.saveButton.Location = new System.Drawing.Point(473, 567);
             this.saveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(105, 36);
