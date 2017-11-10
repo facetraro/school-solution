@@ -35,6 +35,7 @@
             this.schoolVansManagement = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.buttonTestData = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // subjectManagement
@@ -73,15 +74,24 @@
             // 
             // buttonTestData
             // 
+            this.buttonTestData.BackColor = System.Drawing.Color.CadetBlue;
             resources.ApplyResources(this.buttonTestData, "buttonTestData");
             this.buttonTestData.Name = "buttonTestData";
-            this.buttonTestData.UseVisualStyleBackColor = true;
+            this.buttonTestData.UseVisualStyleBackColor = false;
             this.buttonTestData.Click += new System.EventHandler(this.buttonTestData_Click);
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // PrincipalWindow
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonTestData);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.schoolVansManagement);
@@ -105,5 +115,6 @@
         private System.Windows.Forms.Button schoolVansManagement;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Button buttonTestData;
+        private System.Windows.Forms.Button button1;
     }
 }
