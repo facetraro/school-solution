@@ -11,46 +11,43 @@ namespace Logic
 {
     public class TeacherLogic : IAddRemoveModify
     {
-        public void Insert(Object anObject)
+        public void Insert(Teacher toAdd)
         {
-            Singleton theRepository = Singleton.Instance;
-            Teacher toAdd = anObject as Teacher;
             TeacherAccess context = new TeacherAccess();
             context.Add(toAdd);
-            theRepository.Teachers.Add(toAdd);
         }
         private bool CanIAdd(Object anObject)
         {
             TeacherValidator validator = new TeacherValidator();
-            if (validator.IsValid(anObject))
-            {
-                if (this.Exists(anObject))
-                {
-                    throw new TeacherAlreadyExistsException("El id ingresado ya esta en el sistema");
-                    return false;
-                }
-            }
-            return true;
+            bool domainValidations = validator.IsValid(anObject);
+            bool validation = domainValidations;
+            return validation;
         }
         public void Add(Object anObject)
         {
             if (CanIAdd(anObject))
             {
-                Insert(anObject);
+                Teacher aTeacher = anObject as Teacher;
+                Insert(aTeacher);
             }
         }
 
         public bool Exists(Object anObject)
         {
-            Singleton theRepository = Singleton.Instance;
+            TeacherAccess context = new TeacherAccess();
             Teacher lookUp = anObject as Teacher;
-            return theRepository.Teachers.Contains(lookUp);
+            bool exists = GetAllTeachers().Contains(lookUp);
+            return exists;
+        }
+        private void Delete(Teacher anObject)
+        {
+            TeacherAccess context = new TeacherAccess();
+            context.Remove(anObject);
         }
         public void Remove(Object anObject)
         {
-            Singleton theRepository = Singleton.Instance;
-            Teacher toRemove = anObject as Teacher;
-            theRepository.Teachers.Remove(toRemove);
+            Teacher toDelete = anObject as Teacher;
+            Delete(toDelete);
         }
         private bool ModifyValidation(Object anObject, Object anotherObject)
         {
@@ -72,16 +69,16 @@ namespace Logic
         }
         public void Modify(Object anObject, Object anotherObject)
         {
-            if (this.CanIModify(anObject, anotherObject))
+            if (CanIModify(anObject, anotherObject))
             {
-                Remove(anObject);
-                Add(anotherObject);
+                TeacherAccess context = new TeacherAccess();
+                Teacher newTeacher = anotherObject as Teacher;
+                context.Modify(newTeacher);
             }
         }
         public int Length()
         {
-            Singleton theRepository = Singleton.Instance;
-            return theRepository.Teachers.Count;
+            return GetAllTeachers().Count;
         }
         public void Empty()
         {
@@ -90,8 +87,8 @@ namespace Logic
         }
         public List<Teacher> GetAllTeachers()
         {
-            Singleton theRepository = Singleton.Instance;
-            return theRepository.Teachers;
+            TeacherAccess context = new TeacherAccess();
+            return context.GetAll();
         }
 
         private int GetBiggestIdTeacher(List<Teacher> list)
