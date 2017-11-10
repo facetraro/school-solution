@@ -11,7 +11,7 @@ namespace Testing.LogicTest
 {
     [ExcludeFromCodeCoverage]
     [TestClass]
-    public class SchoolVanLogicTest
+    public class SchoolVanLogicTest : SetUpLogic
     {
         private bool CompareStudentAssignment(List<Tuple<SchoolVan, List<Student>>> a1, List<Tuple<SchoolVan, List<Student>>> a2)
         {
@@ -51,10 +51,7 @@ namespace Testing.LogicTest
             testLogic.Empty();
             studentLogic.Empty();
         }
-        private void SetUp()
-        {
-            ClearRepository();
-        }
+
         [TestMethod]
         public void AddSchoolVanSuccess()
         {

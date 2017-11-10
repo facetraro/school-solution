@@ -13,17 +13,8 @@ namespace Testing.LogicTest
     [TestClass]
     [ExcludeFromCodeCoverage]
 
-    public class TeacherLogicTest
+    public class TeacherLogicTest : SetUpLogic
     {
-        public void ClearRepository()
-        {
-            TeacherLogic testLogic = new TeacherLogic();
-            testLogic.Empty();
-        }
-        public void SetUp()
-        {
-            ClearRepository();
-        }
         Teacher TeacherTest()
         {
             Teacher teacherTest = new Teacher();

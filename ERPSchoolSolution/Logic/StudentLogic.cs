@@ -131,7 +131,7 @@ namespace Logic
             Singleton theRepository = Singleton.Instance;
             Student lookUp = anObject as Student;
             bool ciValidation = IsCiAlreadyUsed(anObject);
-            bool studentNumberValidation = theRepository.Students.Contains(lookUp);
+            bool studentNumberValidation = GetAllStudents().Contains(lookUp);
             bool validation = ciValidation || studentNumberValidation;
             return validation;
         }

@@ -12,12 +12,11 @@ namespace Testing.LogicTest
     [TestClass]
     [ExcludeFromCodeCoverage]
 
-    public class SubjectLogicTest
+    public class SubjectLogicTest : SetUpLogic
     {
         public void ClearRepository()
         {
-            SubjectLogic testLogic = new SubjectLogic();
-            testLogic.Empty();
+            SetUp();
         }
         private Subject testSubject()
         {

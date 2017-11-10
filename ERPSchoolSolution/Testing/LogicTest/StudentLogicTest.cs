@@ -11,7 +11,7 @@ namespace Testing.LogicTest
     [TestClass]
     [ExcludeFromCodeCoverage]
 
-    public class StudentLogicTest
+    public class StudentLogicTest : SetUpLogic
     {
         private Student TestStudent()
         {
@@ -26,15 +26,6 @@ namespace Testing.LogicTest
             testStudent.Name = "TestName";
             testStudent.LastName = "TestLastName";
             return testStudent;
-        }
-        public void ClearRepository()
-        {
-            StudentLogic testLogic = new StudentLogic();
-            testLogic.Empty();
-        }
-        public void SetUp()
-        {
-            ClearRepository();
         }
         [TestMethod]
         public void AddStudentSuccess()
@@ -103,32 +94,15 @@ namespace Testing.LogicTest
             StudentLogic testLogic = new StudentLogic();
             Student newStudent = TestStudent();
             Student anotherStudent = TestStudent();
-            anotherStudent.StudentNumber = 3;
+            anotherStudent.LastName = "newLastName";
             testLogic.Add(newStudent);
-            testLogic.Modify(newStudent, anotherStudent);
-            List<Student> list = testLogic.GetAllStudents();
-            bool validation = true;
-            if (list.Count != 0)
-            {
-                validation = (list.ElementAt(0).StudentNumber == newStudent.StudentNumber);
-            }
-            Assert.IsFalse(validation);
-        }
-        [TestMethod]
-        public void ModifyStudentCheckUpdateSuccess()
-        {
-            SetUp();
-            StudentLogic testLogic = new StudentLogic();
-            Student newStudent = TestStudent();
-            Student anotherStudent = TestStudent();
-            anotherStudent.StudentNumber = 3;
-            testLogic.Add(newStudent);
+            anotherStudent.Id=testLogic.GetNextIdFree()-1;
             testLogic.Modify(newStudent, anotherStudent);
             List<Student> list = testLogic.GetAllStudents();
             bool validation = false;
             if (list.Count != 0)
             {
-                validation = (list.ElementAt(0).StudentNumber == anotherStudent.StudentNumber);
+                validation = (list.ElementAt(0).LastName == anotherStudent.LastName);
             }
             Assert.IsTrue(validation);
         }
@@ -226,8 +200,8 @@ namespace Testing.LogicTest
             Student newStudent = TestStudent();
             newStudent.Id = 1;
             logic.Add(newStudent);
-            int expectedValue = 2;
-            Assert.IsTrue(logic.GetNextIdFree().Equals(expectedValue));
+            int expectedValue = 0;
+            Assert.IsFalse(logic.GetNextIdFree().Equals(expectedValue));
         }
     }
 }
