@@ -8,9 +8,23 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class SchoolVanAccess
+    public class SchoolVanAccess : IDBAccess
     {
-        public void Add(SchoolVan schoolVan)
+        public void Add(object anObject)
+        {
+            SchoolVan schoolVan = anObject as SchoolVan;
+            AddSchoolVan(schoolVan);
+        }
+        public void Modify(object modifiedObject)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(object anObject)
+        {
+            throw new NotImplementedException();
+        }
+        private void AddSchoolVan(SchoolVan schoolVan)
         {
             using (var context = new ContextDB())
             {

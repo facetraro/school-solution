@@ -55,7 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CleanDB.cs" />
     <Compile Include="ContextDB.cs" />
+    <Compile Include="IDBAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SchoolVanAccess.cs" />
     <Compile Include="Singleton.cs" />

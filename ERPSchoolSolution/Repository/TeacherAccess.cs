@@ -8,9 +8,22 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class TeacherAccess
+    public class TeacherAccess : IDBAccess
     {
-        public void Add(Teacher teacher)
+        public void Add(object anObject)
+        {
+            throw new NotImplementedException();
+        }
+        public void Modify(object anObject)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(object anObject)
+        {
+            throw new NotImplementedException();
+        }
+        public void AddTeacher(Teacher teacher)
         {
             using (var context = new ContextDB())
             {
@@ -49,5 +62,7 @@ namespace Repository
                 throw new StudentPersistanceException("Error en la base de datos. Imposible vaciar valores de Docente.");
             }
         }
+
+       
     }
 }

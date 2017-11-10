@@ -9,9 +9,26 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class StudentAccess
+    public class StudentAccess : IDBAccess
     {
-        public void Add(Student student)
+        public void Add(object anObject)
+        {
+            Student student = anObject as Student;
+            AddStudent(student);
+        }
+
+        public void Remove(object anObject)
+        {
+            Student student = anObject as Student;
+            RemoveStudent(student);
+        }
+
+        public void Modify(object modifiedObject)
+        {
+            Student student = modifiedObject as Student;
+            ModifyStudent(student);
+        }
+        private void AddStudent(Student student)
         {
             using (var context = new ContextDB())
             {
@@ -69,7 +86,7 @@ namespace Repository
             }
             return allStudents;
         }
-        public void Remove(Student student)
+        private void RemoveStudent(Student student)
         {
             try
             {
@@ -85,7 +102,7 @@ namespace Repository
                 throw new StudentPersistanceException("Se ha perdido la conexion con el servidor");
             }
         }
-                private List<Subject> GetSubjectListAttached(ContextDB context, Student modifiedStudent)
+        private List<Subject> GetSubjectListAttached(ContextDB context, Student modifiedStudent)
         {
             List<Subject> listOfSubjects = new List<Subject>();
             foreach (Subject actualSubject in modifiedStudent.Subjects)
@@ -94,7 +111,7 @@ namespace Repository
             }
             return listOfSubjects;
         }
-        public void Modify(Student modifiedStudent)
+        private void ModifyStudent(Student modifiedStudent)
         {
             try
             {
@@ -108,16 +125,13 @@ namespace Repository
                     oldStudent.Coordinates = modifiedStudent.Coordinates;
                     oldStudent.Ci = modifiedStudent.Ci;
                     oldStudent.Subjects = modifiedStudent.Subjects;
-                    
-                    oldStudent.Subjects = GetSubjectListAttached(context,modifiedStudent);
+                    oldStudent.Subjects = GetSubjectListAttached(context, modifiedStudent);
                     context.Entry(oldStudent).State = EntityState.Modified;
                     context.SaveChanges();
-
                 }
             }
             catch (Exception e)
             {
-
                 throw new StudentPersistanceException("Se ha perdido la conexion con el servidor");
             }
         }

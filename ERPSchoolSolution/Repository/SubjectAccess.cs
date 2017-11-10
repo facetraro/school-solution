@@ -9,9 +9,25 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class SubjectAccess
+    public class SubjectAccess : IDBAccess
     {
-        public void Add(Subject subject)
+        public void Add(object anObject)
+        {
+            Subject subject = anObject as Subject;
+            AddSubject(subject);
+        }
+
+        public void Remove(object anObject)
+        {
+            Subject subject = anObject as Subject;
+            RemoveSubject(subject);
+        }
+        public void Modify(object modifiedObject)
+        {
+            Subject subject = modifiedObject as Subject;
+            ModifySubject(subject);
+        }
+        public void AddSubject(Subject subject)
         {
             using (var context = new ContextDB())
             {
@@ -97,7 +113,7 @@ namespace Repository
             }
             return allSubjects;
         }
-        public void Remove(Subject subject)
+        public void RemoveSubject(Subject subject)
         {
             try
             {
@@ -113,7 +129,7 @@ namespace Repository
                 throw new SubjectPersistanceException("Se ha perdido la conexion con el servidor");
             }
         }
-        public void Modify(Subject modifiedSubject)
+        public void ModifySubject(Subject modifiedSubject)
         {
             try
             {
