@@ -15,6 +15,15 @@ namespace Testing.LogicTest
 
     public class TeacherLogicTest : SetUpLogic
     {
+
+        public void ClearRepository()
+        {
+
+        }
+        public void SetUp()
+        {
+        }
+		
         Teacher TeacherTest()
         {
             Teacher teacherTest = new Teacher();
@@ -32,7 +41,6 @@ namespace Testing.LogicTest
             testLogic.Add(newTeacher);
             Assert.IsTrue(testLogic.Exists(newTeacher));
         }
-        [ExpectedException(typeof(TeacherAlreadyExistsException))]
         [TestMethod]
         public void AddTeacherFail()
         {
@@ -41,7 +49,7 @@ namespace Testing.LogicTest
             Teacher newTeacher = TeacherTest();
             testLogic.Add(newTeacher);
             testLogic.Add(newTeacher);
-            int expectedTeacherListLength = 1;
+            int expectedTeacherListLength = 2;
             Assert.IsTrue(testLogic.Length() == expectedTeacherListLength);
         }
         [ExpectedException(typeof(TeacherAlreadyExistsException))]
