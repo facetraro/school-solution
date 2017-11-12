@@ -13,16 +13,18 @@ namespace Repository
     {
         public void Add(object anObject)
         {
-            throw new NotImplementedException();
+            Teacher teacher = anObject as Teacher;
+            AddTeacher(teacher);
         }
-        public void Modify(object anObject)
+        public void Modify(object modifiedObject)
         {
-            throw new NotImplementedException();
+            Teacher teacher = modifiedObject as Teacher;
+            ModifyTeacher(teacher);
         }
-
-        public void Remove(object anObject)
+        public void Remove(object modifiedObject)
         {
-            throw new NotImplementedException();
+            Teacher teacher = modifiedObject as Teacher;
+            RemoveTeacher(teacher);
         }
         public void AddTeacher(Teacher teacher)
         {
@@ -51,7 +53,7 @@ namespace Repository
             }
             return listOfSubjects;
         }
-        public void Remove(Teacher teacher)
+        public void RemoveTeacher(Teacher teacher)
         {
             try
             {
@@ -120,8 +122,8 @@ namespace Repository
                     List<Teacher> teachers = context.Teachers.ToList();
                     foreach (Teacher actual in teachers)
                     {
-                        Student toDelete = context.Students.Find(actual.Id);
-                        context.Students.Remove(toDelete);
+                        Teacher toDelete = context.Teachers.Find(actual.Id);
+                        context.Teachers.Remove(toDelete);
                     }
                     context.SaveChanges();
                 }
@@ -132,7 +134,7 @@ namespace Repository
             }
         }
 
-        public void Modify(Teacher modifiedTeacher)
+        public void ModifyTeacher(Teacher modifiedTeacher)
         {
             try
             {

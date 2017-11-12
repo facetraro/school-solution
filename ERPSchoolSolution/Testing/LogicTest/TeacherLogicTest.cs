@@ -14,16 +14,7 @@ namespace Testing.LogicTest
     [ExcludeFromCodeCoverage]
 
     public class TeacherLogicTest : SetUpLogic
-    {
-
-        public void ClearRepository()
-        {
-
-        }
-        public void SetUp()
-        {
-        }
-		
+    {	
         Teacher TeacherTest()
         {
             Teacher teacherTest = new Teacher();
@@ -52,7 +43,6 @@ namespace Testing.LogicTest
             int expectedTeacherListLength = 2;
             Assert.IsTrue(testLogic.Length() == expectedTeacherListLength);
         }
-        [ExpectedException(typeof(TeacherAlreadyExistsException))]
         [TestMethod]
         public void AddTeacherLengthSuccess()
         {
@@ -64,7 +54,7 @@ namespace Testing.LogicTest
             testLogic.Add(newTeacher);
             testLogic.Add(newTeacher); ;
             testLogic.Add(anotherTeacher);
-            int expectedTeacherListLength = 2;
+            int expectedTeacherListLength = 3;
             Assert.IsTrue(testLogic.Length() == expectedTeacherListLength);
         }
         [TestMethod]
@@ -199,13 +189,14 @@ namespace Testing.LogicTest
         {
             SetUp();
             TeacherLogic logic = new TeacherLogic();
+            int valor = logic.GetNextIdFree();
             Teacher newTeacher = TeacherTest();
             newTeacher.Id = 1;
             logic.Add(newTeacher);
-            int expectedValue = 2;
-            Assert.IsTrue(logic.GetNextIdFree().Equals(expectedValue));
+            
+            int expectedValue = logic.GetNextIdFree() -1;
+            Assert.IsTrue(valor.Equals(expectedValue));
         }
-        [ExpectedException(typeof(TeacherAlreadyExistsException))]
         [TestMethod]
         public void ModifyTeacherTeacherAlreadyExists()
         {
