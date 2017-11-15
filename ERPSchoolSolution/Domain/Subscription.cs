@@ -21,7 +21,7 @@ namespace Domain
         {
             bool dateValidation = IsTheSameDate(anotherPayment.Date);
             bool studentValidation = this.Student.Equals(anotherPayment.Student);
-            return studentValidation && dateValidation;
+            return studentValidation && dateValidation && this.Amount==anotherPayment.Amount;
         }
     }
 }
