@@ -14,7 +14,7 @@ namespace Domain
         public bool IsTheSameSubscription(Subscription anotherPayment)
         {
             bool studentValidation = this.Student.Equals(anotherPayment.Student);
-            return studentValidation;
+            return studentValidation && this.Date.Year==anotherPayment.Date.Year;
         }
     }
 }
