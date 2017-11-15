@@ -11,11 +11,17 @@ namespace Domain
         public DateTime Date;
         public int Amount;
 
+        private bool IsTheSameDate(DateTime anotherDate)
+        {
+            bool yearValidation = this.Date.Year == anotherDate.Year;
+            bool monthValidation = this.Date.Month == anotherDate.Month;
+            return yearValidation && monthValidation;
+        }
         public bool IsTheSameSubscription(Subscription anotherPayment)
         {
-            bool yearValidation = this.Date.Year == anotherPayment.Date.Year;
+            bool dateValidation = IsTheSameDate(anotherPayment.Date);
             bool studentValidation = this.Student.Equals(anotherPayment.Student);
-            return studentValidation && yearValidation && this.Date.Month == anotherPayment.Date.Month;
+            return studentValidation && dateValidation;
         }
     }
 }
