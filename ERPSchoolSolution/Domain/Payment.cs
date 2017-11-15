@@ -13,8 +13,8 @@ namespace Domain
         public int Amount;
         public override bool Equals(object anotherObject)
         {
-            Payment p = anotherObject as Payment;
-            return this.Id.Equals(p.Id);
+            Payment anotherPayment = anotherObject as Payment;
+            return this.Id.Equals(anotherPayment.Id);
         }
     }
 }
