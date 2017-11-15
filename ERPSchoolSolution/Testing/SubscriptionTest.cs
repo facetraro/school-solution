@@ -12,15 +12,20 @@ namespace Testing
         [TestMethod]
         public void SubscriptionConstructor()
         {
+            DateTime newDate = new DateTime();
+            int newAmount = 40;
+            int newId = 1;
+            Student newStudent = new Student();
             Subscription aPayment = new Subscription();
-            aPayment.Id = 1;
-            aPayment.Student = new Student();
-            aPayment.Amount = 40;
-            aPayment.Date = new DateTime();
-            Assert.IsTrue(aPayment.Id.Equals(1));
-            Assert.IsTrue(aPayment.Student.Equals(new Student()));
-            Assert.IsTrue(aPayment.Amount.Equals(40));
-            Assert.IsTrue(aPayment.Date.Equals(new DateTime()));
+            aPayment.Id = newId;
+            aPayment.Student = newStudent;
+            aPayment.Amount = newAmount;
+            aPayment.Date = newDate;
+            Assert.IsTrue(aPayment.Id.Equals(newId));
+            Assert.IsTrue(aPayment.Student.Equals(newStudent));
+            Assert.IsTrue(aPayment.Amount.Equals(newAmount));
+            Assert.IsTrue(aPayment.Date.Equals(newDate));
         }
+
     }
 }
