@@ -9,6 +9,19 @@ namespace Testing
     [ExcludeFromCodeCoverage]
     public class SubscriptionTest
     {
+        private Subscription TestSubscription()
+        {
+            int newAmount = 40;
+            int newId = 1;
+            Student newStudent = new Student();
+            Subscription aPayment = new Subscription();
+            DateTime newDate = new DateTime();
+            aPayment.Id = newId;
+            aPayment.Student = newStudent;
+            aPayment.Amount = newAmount;
+            aPayment.Date = newDate;
+            return aPayment;
+        }
         [TestMethod]
         public void SubscriptionConstructor()
         {
@@ -29,20 +42,8 @@ namespace Testing
         [TestMethod]
         public void IsTheSameSubscriptionSuccess()
         {
-            DateTime newDate = new DateTime();
-            int newAmount = 40;
-            int newId = 1;
-            Student newStudent = new Student();
-            Subscription aPayment = new Subscription();
-            aPayment.Id = newId;
-            aPayment.Student = newStudent;
-            aPayment.Amount = newAmount;
-            aPayment.Date = newDate;
-            Subscription anotherPayment = new Subscription();
-            anotherPayment.Id = newId;
-            anotherPayment.Student = newStudent;
-            anotherPayment.Amount = newAmount;
-            anotherPayment.Date = newDate;
+            Subscription aPayment = TestSubscription();
+            Subscription anotherPayment = TestSubscription();
             Assert.IsTrue(aPayment.IsTheSameSubscription(anotherPayment));
         }
 
