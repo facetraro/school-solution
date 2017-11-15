@@ -35,5 +35,26 @@ namespace Testing
             anotherPayment.Amount = 40;
             Assert.IsFalse(aPayment.Equals(anotherPayment));
         }
+        [TestMethod]
+        public void PaymentConstructor()
+        {
+            Payment aPayment = new Payment();
+            aPayment.Id = 1;
+            aPayment.Student = new Student();
+            aPayment.Amount = 40;
+            Assert.IsTrue(aPayment.Id.Equals(1));
+            Assert.IsTrue(aPayment.Student.Equals(new Student()));
+            Assert.IsTrue(aPayment.Amount.Equals(40));
+        }
+        [TestMethod]
+        public void CompareDifferentObject()
+        {
+            Payment aPayment = new Payment();
+            aPayment.Id = 1;
+            aPayment.Student = new Student();
+            aPayment.Amount = 40;
+            int a = 5;
+            Assert.IsFalse(aPayment.Equals(a));
+        }
     }
 }
