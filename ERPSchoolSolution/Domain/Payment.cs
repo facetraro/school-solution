@@ -14,7 +14,11 @@ namespace Domain
         public override bool Equals(object anotherObject)
         {
             Payment anotherPayment = anotherObject as Payment;
-            return this.Id.Equals(anotherPayment.Id);
+            if (anotherPayment == null)
+            {
+                return false;
+            }
+            return (this.Id == anotherPayment.Id);
         }
     }
 }
