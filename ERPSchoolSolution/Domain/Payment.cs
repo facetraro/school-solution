@@ -11,9 +11,10 @@ namespace Domain
         public int Id;
         public Student Student;
         public int Amount;
-        public override bool Equals(object anotherPayment)
+        public override bool Equals(object anotherObject)
         {
-            return true;
+            Payment p = anotherObject as Payment;
+            return this.Id.Equals(p.Id);
         }
     }
 }
