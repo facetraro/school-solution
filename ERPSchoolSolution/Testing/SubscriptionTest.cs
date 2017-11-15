@@ -76,5 +76,14 @@ namespace Testing
             anotherPayment.Date = anotherDate;
             Assert.IsFalse(aPayment.IsTheSameSubscription(anotherPayment));
         }
+        [TestMethod]
+        public void IsTheSameSubscriptionFailAmount()
+        {
+            Subscription aPayment = TestSubscription();
+            Subscription anotherPayment = TestSubscription();
+            int anotherAmount = 4239;
+            anotherPayment.Amount = anotherAmount;
+            Assert.IsFalse(aPayment.IsTheSameSubscription(anotherPayment));
+        }
     }
 }
