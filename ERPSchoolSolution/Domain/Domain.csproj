@@ -51,6 +51,7 @@
     <Compile Include="Coordinate.cs" />
     <Compile Include="IRouteObject.cs" />
     <Compile Include="IValidator.cs" />
+    <Compile Include="Payment.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Route.cs" />
     <Compile Include="SortStudentById.cs" />

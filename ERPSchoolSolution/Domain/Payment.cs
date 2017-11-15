@@ -11,5 +11,9 @@ namespace Domain
         public int Id;
         public Student Student;
         public int Amount;
+        public override bool Equals(object aPerson)
+        {
+            return true;
+        }
     }
 }
