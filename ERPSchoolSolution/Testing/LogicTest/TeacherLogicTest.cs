@@ -102,8 +102,10 @@ namespace Testing.LogicTest
             Teacher anotherTeacher = TeacherTest();
             anotherTeacher.Id = 99;
             testLogic.Add(newTeacher);
+            newTeacher.Id = testLogic.GetNextIdFree() - 1;
+            anotherTeacher.Id = testLogic.GetNextIdFree() - 1;
             testLogic.Modify(newTeacher, anotherTeacher);
-            Assert.IsFalse(testLogic.Exists(newTeacher));
+            Assert.IsTrue(testLogic.Exists(newTeacher));
         }
         [TestMethod]
         public void ModifyTeacherCheckUpdateSuccess()
@@ -115,8 +117,16 @@ namespace Testing.LogicTest
             int differentId = 99;
             anotherTeacher.Id = differentId;
             testLogic.Add(newTeacher);
+            anotherTeacher.Id = testLogic.GetNextIdFree() - 1;
             testLogic.Modify(newTeacher, anotherTeacher);
-            Assert.IsTrue(testLogic.Exists(anotherTeacher));
+            List<Teacher> list = testLogic.GetAllTeachers();
+            bool validation = false;
+            if (list.Count != 0)
+            {
+                validation = (list.ElementAt(0).LastName == anotherTeacher.LastName);
+            }
+            Assert.IsTrue(validation);
+       
         }
         [TestMethod]
         [ExpectedException(typeof(EmptyOrNullValueException))]
@@ -158,15 +168,17 @@ namespace Testing.LogicTest
             Assert.IsTrue(testLogic.Exists(newTeacher));
         }
         [TestMethod]
+        [ExpectedException(typeof(TeacherAlreadyExistsException))]
         public void ModifyTeacherWithTheSameId()
         {
             SetUp();
             TeacherLogic testLogic = new TeacherLogic();
-            Teacher teacher = TeacherTest();
-            Teacher updateTeacher = TeacherTest();
-            updateTeacher.Name = "new Name";
-            testLogic.Add(teacher);
-            testLogic.Modify(teacher, updateTeacher);
+            Teacher newTeacher = TeacherTest();
+            Teacher anotherTeacher = TeacherTest();
+            anotherTeacher.Name = "new Name";
+            testLogic.Add(newTeacher);
+            testLogic.Add(anotherTeacher);
+            testLogic.Modify(newTeacher, anotherTeacher);
             List<Teacher> list = testLogic.GetAllTeachers();
             bool assertion = false;
             if (list.Count != 0)
@@ -189,27 +201,36 @@ namespace Testing.LogicTest
         {
             SetUp();
             TeacherLogic logic = new TeacherLogic();
-            int valor = logic.GetNextIdFree();
+            int expectedValue = 0;
             Teacher newTeacher = TeacherTest();
             newTeacher.Id = 1;
             logic.Add(newTeacher);
-            
-            int expectedValue = logic.GetNextIdFree() -1;
-            Assert.IsTrue(valor.Equals(expectedValue));
+            int obtainedValue = logic.GetNextIdFree();
+            Assert.IsFalse(obtainedValue.Equals(expectedValue));
+
         }
         [TestMethod]
+        [ExpectedException(typeof(TeacherAlreadyExistsException))]
         public void ModifyTeacherTeacherAlreadyExists()
         {
             SetUp();
             TeacherLogic testLogic = new TeacherLogic();
             Teacher newTeacher = TeacherTest();
             Teacher updateTeacher = TeacherTest();
-            Teacher anotherTeacher = TeacherTest();
-            anotherTeacher.Id = 555;
+            newTeacher.Id = 555;
+            newTeacher.Name = "new Name";
+
             testLogic.Add(newTeacher);
-            testLogic.Add(anotherTeacher);
-            testLogic.Modify(anotherTeacher, updateTeacher);
-            Assert.IsTrue(testLogic.Exists(newTeacher));
+            testLogic.Add(updateTeacher);
+            testLogic.Modify(newTeacher, updateTeacher);
+            List<Teacher> list = testLogic.GetAllTeachers();
+            bool assertion = false;
+            if (list.Count != 0)
+            {
+                Teacher testTeacher = list.ElementAt(0);
+                assertion = testTeacher.Name.Equals("new Name");
+            }
+            Assert.IsTrue(assertion);
         }
         [TestMethod]
         public void LengthSuccess()

@@ -57,6 +57,11 @@ namespace Logic
             bool sameId = anObject.Equals(anotherObject);
             Teacher aTeacher = anObject as Teacher;
             Teacher anotherTeacher = anotherObject as Teacher;
+            if (!(nonExists || sameId))
+            {
+                throw new TeacherAlreadyExistsException("El numero profesor ya esta ingresado en el sistema");
+            }
+
             return domainValidation && (nonExists || sameId);
         }
         private bool CanIModify(Object anObject, Object anotherObject)
