@@ -47,14 +47,14 @@ namespace Testing
             Assert.IsTrue(aPayment.Amount.Equals(40));
         }
         [TestMethod]
-        public void CompareDifferentObject()
+        public void CompareDifferentObjectPayment()
         {
             Payment aPayment = new Payment();
             aPayment.Id = 1;
             aPayment.Student = new Student();
             aPayment.Amount = 40;
-            int a = 5;
-            Assert.IsFalse(aPayment.Equals(a));
+            int anotherObject = 5;
+            Assert.IsFalse(aPayment.Equals(anotherObject));
         }
     }
 }
