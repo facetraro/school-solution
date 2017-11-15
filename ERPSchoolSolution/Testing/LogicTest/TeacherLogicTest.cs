@@ -14,7 +14,6 @@ namespace Testing.LogicTest
     [ExcludeFromCodeCoverage]
 
     public class TeacherLogicTest : SetUpLogic
-
     {	
         Teacher TeacherTest()
         {
@@ -208,6 +207,7 @@ namespace Testing.LogicTest
             logic.Add(newTeacher);
             int obtainedValue = logic.GetNextIdFree();
             Assert.IsFalse(obtainedValue.Equals(expectedValue));
+
         }
         [TestMethod]
         [ExpectedException(typeof(TeacherAlreadyExistsException))]

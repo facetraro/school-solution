@@ -61,6 +61,7 @@ namespace Logic
             {
                 throw new TeacherAlreadyExistsException("El numero profesor ya esta ingresado en el sistema");
             }
+
             return domainValidation && (nonExists || sameId);
         }
         private bool CanIModify(Object anObject, Object anotherObject)
