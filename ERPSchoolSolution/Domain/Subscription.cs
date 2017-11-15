@@ -9,6 +9,7 @@ namespace Domain
     public class Subscription : Payment
     {
         public DateTime Date;
+        public int Amount;
 
         public bool IsTheSameSubscription(Subscription anotherPayment)
         {

@@ -10,7 +10,6 @@ namespace Domain
     {
         public int Id;
         public Student Student;
-        public int Amount;
         public override bool Equals(object anotherObject)
         {
             Payment anotherPayment = anotherObject as Payment;

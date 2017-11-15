@@ -15,11 +15,9 @@ namespace Testing
             Payment aPayment = new Payment();
             aPayment.Id = 123;
             aPayment.Student = new Student();
-            aPayment.Amount = 40;
             Payment anotherPayment = new Payment();
             anotherPayment.Id = 123;
             anotherPayment.Student = new Student();
-            anotherPayment.Amount = 40;
             Assert.IsTrue(aPayment.Equals(anotherPayment));
         }
         [TestMethod]
@@ -28,11 +26,9 @@ namespace Testing
             Payment aPayment = new Payment();
             aPayment.Id = 1;
             aPayment.Student = new Student();
-            aPayment.Amount = 40;
             Payment anotherPayment = new Payment();
             anotherPayment.Id = 123;
             anotherPayment.Student = new Student();
-            anotherPayment.Amount = 40;
             Assert.IsFalse(aPayment.Equals(anotherPayment));
         }
         [TestMethod]
@@ -41,10 +37,8 @@ namespace Testing
             Payment aPayment = new Payment();
             aPayment.Id = 1;
             aPayment.Student = new Student();
-            aPayment.Amount = 40;
             Assert.IsTrue(aPayment.Id.Equals(1));
             Assert.IsTrue(aPayment.Student.Equals(new Student()));
-            Assert.IsTrue(aPayment.Amount.Equals(40));
         }
         [TestMethod]
         public void CompareDifferentObjectPayment()
@@ -52,7 +46,6 @@ namespace Testing
             Payment aPayment = new Payment();
             aPayment.Id = 1;
             aPayment.Student = new Student();
-            aPayment.Amount = 40;
             int anotherObject = 5;
             Assert.IsFalse(aPayment.Equals(anotherObject));
         }
