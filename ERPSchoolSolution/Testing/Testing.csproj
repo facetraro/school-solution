@@ -66,6 +66,7 @@
     <Compile Include="LogicTest\StudentLogicTest.cs" />
     <Compile Include="LogicTest\SubjectLogicTest.cs" />
     <Compile Include="LogicTest\TeacherLogicTest.cs" />
+    <Compile Include="SubscriptionTest.cs" />
     <Compile Include="PaymentTest.cs" />
     <Compile Include="SchoolVanTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
