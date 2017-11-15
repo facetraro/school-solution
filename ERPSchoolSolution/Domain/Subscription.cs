@@ -15,7 +15,7 @@ namespace Domain
         {
             bool yearValidation = this.Date.Year == anotherPayment.Date.Year;
             bool studentValidation = this.Student.Equals(anotherPayment.Student);
-            return studentValidation && yearValidation;
+            return studentValidation && yearValidation && this.Date.Month == anotherPayment.Date.Month;
         }
     }
 }
