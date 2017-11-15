@@ -8,6 +8,11 @@ namespace Domain
 {
     public class Subscription : Payment
     {
-        public DateTime Date; 
+        public DateTime Date;
+
+        public bool IsTheSameSubscription(Subscription anotherPayment)
+        {
+            return true;
+        }
     }
 }
