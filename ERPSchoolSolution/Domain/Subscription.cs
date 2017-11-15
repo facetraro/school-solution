@@ -12,7 +12,7 @@ namespace Domain
 
         public bool IsTheSameSubscription(Subscription anotherPayment)
         {
-            return true;
+            return this.Student.Equals(anotherPayment.Student);
         }
     }
 }
