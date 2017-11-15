@@ -46,6 +46,16 @@ namespace Testing
             Subscription anotherPayment = TestSubscription();
             Assert.IsTrue(aPayment.IsTheSameSubscription(anotherPayment));
         }
+        [TestMethod]
+        public void IsTheSameSubscriptionFailStudent()
+        {
+            Subscription aPayment = TestSubscription();
+            Subscription anotherPayment = TestSubscription();
+            Student newStudent = new Student();
+            newStudent.Id = 5;
+            anotherPayment.Student = newStudent;
+            Assert.IsFalse(aPayment.IsTheSameSubscription(anotherPayment));
+        }
 
     }
 }
