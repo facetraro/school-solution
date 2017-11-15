@@ -56,6 +56,14 @@ namespace Testing
             anotherPayment.Student = newStudent;
             Assert.IsFalse(aPayment.IsTheSameSubscription(anotherPayment));
         }
-
+        [TestMethod]
+        public void IsTheSameSubscriptionFailYear()
+        {
+            Subscription aPayment = TestSubscription();
+            Subscription anotherPayment = TestSubscription();
+            DateTime newDate = new DateTime(2003, 4, 5, 4, 5, 6);
+            anotherPayment.Date = newDate;
+            Assert.IsFalse(aPayment.IsTheSameSubscription(anotherPayment));
+        }
     }
 }
