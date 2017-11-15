@@ -26,6 +26,25 @@ namespace Testing
             Assert.IsTrue(aPayment.Amount.Equals(newAmount));
             Assert.IsTrue(aPayment.Date.Equals(newDate));
         }
+        [TestMethod]
+        public void IsTheSameSubscriptionSuccess()
+        {
+            DateTime newDate = new DateTime();
+            int newAmount = 40;
+            int newId = 1;
+            Student newStudent = new Student();
+            Subscription aPayment = new Subscription();
+            aPayment.Id = newId;
+            aPayment.Student = newStudent;
+            aPayment.Amount = newAmount;
+            aPayment.Date = newDate;
+            Subscription anotherPayment = new Subscription();
+            anotherPayment.Id = newId;
+            anotherPayment.Student = newStudent;
+            anotherPayment.Amount = newAmount;
+            anotherPayment.Date = newDate;
+            Assert.IsTrue(aPayment.IsTheSameSubscription(anotherPayment));
+        }
 
     }
 }
