@@ -55,13 +55,13 @@ namespace Logic
             bool domainValidation = validator.IsValid(anotherObject);
             bool nonExists = !Exists(anotherObject);
             bool sameId = anObject.Equals(anotherObject);
+            Teacher aTeacher = anObject as Teacher;
+            Teacher anotherTeacher = anotherObject as Teacher;
             if (!(nonExists || sameId))
             {
-                throw new TeacherAlreadyExistsException("El id ingresado ya esta en el sistema");
+                throw new TeacherAlreadyExistsException("El numero profesor ya esta ingresado en el sistema");
             }
-            bool repositoryValidation = (nonExists || sameId);
-            bool validation = domainValidation && repositoryValidation;
-            return validation;
+            return domainValidation && (nonExists || sameId);
         }
         private bool CanIModify(Object anObject, Object anotherObject)
         {
