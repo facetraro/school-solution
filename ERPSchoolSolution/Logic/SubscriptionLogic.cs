@@ -11,10 +11,26 @@ namespace Logic
 {
     public class SubscriptionLogic : IAdd
     {
+        private bool CanIAdd(Object anObject)
+        {
+            bool validation = true;
+            foreach (Subscription item in GetAllSubscriptions())
+            {
+                if(item.IsTheSameSubscription(anObject as Subscription))
+                {
+                    validation = false;
+                    throw new AlreadySubscriptedException("El estudiante ya esta pago esa couta.");                   
+                }
+            }
+            return validation;
+        }
         public void Add(Object anObject)
         {
-            Subscription aSubscription = anObject as Subscription;
-            Insert(aSubscription);
+            if (CanIAdd(anObject))
+            {
+                Subscription aSubscription = anObject as Subscription;
+                Insert(aSubscription);
+            }
         }
         private void Insert(Subscription toAdd)
         {
@@ -32,6 +48,11 @@ namespace Logic
         {
             SubscriptionAccess context = new SubscriptionAccess();
             return context.GetAll();
+        }
+
+        public int Lenght()
+        {
+            return 1;
         }
     }
 }
