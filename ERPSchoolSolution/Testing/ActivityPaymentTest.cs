@@ -41,5 +41,17 @@ namespace Testing
             ActivityPayment anotherActivityPayment = TestActivityPayment();
             Assert.IsTrue(anActivityPayment.IsTheSameActivityPayment(anotherActivityPayment));
         }
+        [TestMethod]
+        public void IsTheSameActivityPaymentFail()
+        {
+            ActivityPayment anActivityPayment = TestActivityPayment();
+            ActivityPayment anotherActivityPayment = TestActivityPayment();
+            anActivityPayment.Id = 444;
+            Student newStudent = new Student();
+            anotherActivityPayment.Student = newStudent;
+            Activity newActivity = new Activity();
+            anotherActivityPayment.Activity = newActivity;
+            Assert.IsFalse(anActivityPayment.IsTheSameActivityPayment(anotherActivityPayment));
+        }
     }
 }
