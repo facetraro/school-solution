@@ -15,10 +15,15 @@ namespace Domain
             bool yearValidation = this.Date.Year == anotherDate.Year;
             return yearValidation;
         }
+        private bool IsTheSameMonth(DateTime anotherDate)
+        {
+            bool monthValidation = this.Date.Month == anotherDate.Month;
+            return monthValidation;
+        }
         private bool IsTheSameDate(DateTime anotherDate)
         {
             bool yearValidation = IsTheSameYear(anotherDate);
-            bool monthValidation = this.Date.Month == anotherDate.Month;
+            bool monthValidation = IsTheSameMonth(anotherDate);
             return yearValidation && monthValidation;
         }
         public bool IsTheSameSubscription(Subscription anotherPayment)
