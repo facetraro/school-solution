@@ -10,6 +10,10 @@ namespace Domain
     {
         public DateTime Date;
         public int Amount;
+        public bool IsBefore(DateTime anotherDate)
+        {
+            return true;
+        }
         public bool IsTheSameYear(DateTime anotherDate)
         {
             bool yearValidation = this.Date.Year == anotherDate.Year;
