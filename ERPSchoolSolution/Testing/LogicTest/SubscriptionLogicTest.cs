@@ -67,5 +67,16 @@ namespace Testing.LogicTest
             SubscriptionLogic logic = new SubscriptionLogic();
             Assert.IsFalse(logic.Exists(newSub));
         }
+        [TestMethod]
+        [ExpectedException(typeof(AlreadySubscriptedException))]
+        public void AddAlreadySubscriptedDateStudent()
+        {
+            SetUp();
+            Subscription newSub = TestSubscription();
+            SubscriptionLogic logic = new SubscriptionLogic();
+            logic.Add(newSub);
+            logic.Add(newSub);
+            Assert.IsTrue(logic.Lenght()==1);
+        }
     }
 }
