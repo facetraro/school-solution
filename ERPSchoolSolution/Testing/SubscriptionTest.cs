@@ -96,5 +96,16 @@ namespace Testing
             anotherPayment.Date = anotherDate;
             Assert.IsTrue(aPayment.IsTheSameYear(anotherPayment.Date));
         }
+        [TestMethod]
+        public void IsBeforeTrue()
+        {
+            Subscription aPayment = TestSubscription();
+            Subscription anotherPayment = TestSubscription();
+            DateTime newDate = new DateTime(2003, 1, 5, 4, 5, 6);
+            DateTime anotherDate = new DateTime(2003, 4, 5, 4, 5, 6);
+            aPayment.Date = newDate;
+            anotherPayment.Date = anotherDate;
+            Assert.IsTrue(aPayment.IsBefore(anotherPayment.Date));
+        }
     }
 }
