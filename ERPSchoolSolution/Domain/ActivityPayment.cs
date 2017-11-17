@@ -11,7 +11,9 @@ namespace Domain
         public Activity Activity;
 
         public bool IsTheSameActivityPayment(ActivityPayment anActivityPayment) {
-            return true;
+            bool sameStudent = this.Student.Equals(anActivityPayment.Student);
+            bool sameActivity = this.Activity.Equals(anActivityPayment.Activity);
+            return sameStudent && sameActivity;
         }
 
     }
