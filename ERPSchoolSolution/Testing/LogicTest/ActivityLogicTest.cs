@@ -16,5 +16,14 @@ namespace Testing.LogicTest
             testLogic.Add(newActivity);
             Assert.IsTrue(testLogic.Exists(newActivity));
         }
+        [TestMethod]
+        public void AddActivityFail()
+        {
+            SetUp();
+            Activity newActivity = new Activity();
+            ActivityLogic testLogic = new ActivityLogic();
+            Assert.IsFalse(testLogic.Exists(newActivity));
+        }
+
     }
 }
