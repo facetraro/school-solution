@@ -10,10 +10,14 @@ namespace Domain
     {
         public DateTime Date;
         public int Amount;
-
-        private bool IsTheSameDate(DateTime anotherDate)
+        public bool IsTheSameYear(DateTime anotherDate)
         {
             bool yearValidation = this.Date.Year == anotherDate.Year;
+            return yearValidation;
+        }
+        private bool IsTheSameDate(DateTime anotherDate)
+        {
+            bool yearValidation = IsTheSameYear(anotherDate);
             bool monthValidation = this.Date.Month == anotherDate.Month;
             return yearValidation && monthValidation;
         }
