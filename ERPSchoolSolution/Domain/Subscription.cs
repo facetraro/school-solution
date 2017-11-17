@@ -19,6 +19,10 @@ namespace Domain
             }
             return false;
         }
+        public bool IsAfter(DateTime anotherDate)
+        {
+            return true;
+        }
         public bool IsTheSameYear(DateTime anotherDate)
         {
             bool yearValidation = this.Date.Year == anotherDate.Year;
