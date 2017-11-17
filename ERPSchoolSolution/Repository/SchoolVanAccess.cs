@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class SchoolVanAccess : IDBAccess
+    public class SchoolVanAccess : ARMEAccess
     {
         public void Add(object anObject)
         {

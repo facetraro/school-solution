@@ -8,8 +8,8 @@ namespace Domain
 {
     public class Subscription : Payment
     {
-        public DateTime Date;
-        public int Amount;
+        public DateTime Date { get; set; }
+        public int Amount { get; set; }
         public bool IsBefore(DateTime anotherDate)
         {
             int comparationResult = this.Date.CompareTo(anotherDate);

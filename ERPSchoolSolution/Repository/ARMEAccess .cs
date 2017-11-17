@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    interface IDBAccess
-    {
-        void Add(Object anObject);
-        void Remove(Object anObject);
-        void Empty();
-         
+    interface ARMEAccess : IDBAccess
+    { 
+        void Modify(Object anObject);     
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class SubjectAccess : IDBAccess
+    public class SubjectAccess : ARMEAccess
     {
         public void Add(object anObject)
         {

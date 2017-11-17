@@ -11,6 +11,7 @@ namespace Domain
         private int studentNumber;
         private Coordinate coordinates;
         private List<Subject> subjects;
+        public List<Subscription> Subscriptions;
         public Student()
         {
             Id = 0;
@@ -18,6 +19,7 @@ namespace Domain
             LastName = "defaultlastname";
             coordinates = new Coordinate();
             subjects = new List<Subject>();
+            Subscriptions = new List<Subscription>();
         }
         public Coordinate GetCoordinates()
         {

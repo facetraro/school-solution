@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace Repository
 {
-    public class TeacherAccess : IDBAccess
+    public class TeacherAccess : ARMEAccess
     {
         public void Add(object anObject)
         {

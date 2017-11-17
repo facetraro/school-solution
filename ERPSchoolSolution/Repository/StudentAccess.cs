@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class StudentAccess : IDBAccess
+    public class StudentAccess : ARMEAccess
     {
         public void Add(object anObject)
         {
@@ -150,7 +150,7 @@ namespace Repository
                     context.SaveChanges();
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 throw new StudentPersistanceException("Se ha perdido la conexion con el servidor");
             }
