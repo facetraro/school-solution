@@ -1,7 +1,7 @@
 ﻿using System;
 using Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using Logic;
 namespace Testing.LogicTest
 {
     [TestClass]
