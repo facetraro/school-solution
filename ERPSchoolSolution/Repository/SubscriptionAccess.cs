@@ -13,30 +13,87 @@ namespace Repository
     {
         public void Add(object anObject)
         {
-           
+            Subscription subscription = anObject as Subscription;
+            AddSubscription(subscription);
+        }
+        private void AddSubscription(Subscription subscription)
+        {
+            using (var context = new ContextDB())
+            {
+                try
+                {
+                    context.Students.Attach(subscription.Student);
+                    context.Subscriptions.Add(subscription);
+                    context.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    throw new SubscriptionPersistanceException("Se ha perdido la conexion con el servidor");
+                }
+            }
         }
         public void Remove(object anObject)
         {
-            
+            Subscription subscription = anObject as Subscription;
+            RemoveSubscription(subscription);
+        }
+        private void RemoveSubscription(Subscription subscription)
+        {
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    context.Subscriptions.Attach(subscription);
+                    context.Subscriptions.Remove(subscription);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw new SubscriptionPersistanceException("Se ha perdido la conexion con el servidor");
+            }
         }
         public Subscription Get(int id)
         {
-            return new Subscription();
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    Subscription subscriptionToFind = context.Subscriptions.Find(id);
+                    context.Subscriptions.Include(d => d.Student).ToList();
+                    return subscriptionToFind;
+                }
+            }
+            catch (Exception)
+            {
+                throw new SubscriptionPersistanceException("Se ha perdido la conexion con el servidor");
+            }
         }
         public List<Subscription> GetAllLazyLoading()
         {
-            List<Subscription> allSubscriptions = new List<Subscription>();  
+            List<Subscription> allSubscriptions = new List<Subscription>();
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    allSubscriptions = context.Subscriptions.ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw new SubscriptionPersistanceException("Se ha perdido la conexion con el servidor");
+            }
             return allSubscriptions;
         }
         public List<Subscription> GetAll()
         {
             List<Subscription> lazyLoading = GetAllLazyLoading();
-            List<Subscription> allStudents = new List<Subscription>();
+            List<Subscription> allSubcriptions = new List<Subscription>();
             foreach (Subscription item in lazyLoading)
             {
-                allStudents.Add(Get(item.Id));
+                allSubcriptions.Add(Get(item.Id));
             }
-            return allStudents;
+            return allSubcriptions;
         }
         public void Empty()
         {

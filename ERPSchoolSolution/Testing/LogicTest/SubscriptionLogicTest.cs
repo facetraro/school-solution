@@ -60,7 +60,7 @@ namespace Testing.LogicTest
             Assert.IsTrue(logic.Exists(newSub));
         }
         [TestMethod]
-        public void ExistsFail()
+        public void ExistsSubscriptionFail()
         {
             SetUp();
             Subscription newSub = TestSubscription();

@@ -13,11 +13,16 @@ namespace Logic
     {
         public void Add(Object anObject)
         {
-         
+            Subscription aSubscription = anObject as Subscription;
+            SubscriptionAccess context = new SubscriptionAccess();
+            context.Add(aSubscription);
         }
         public bool Exists(Object anObject)
         {
-            return true;
+            SubscriptionAccess context = new SubscriptionAccess();
+            Subscription lookUp = anObject as Subscription;
+            bool exists = context.GetAll().Contains(lookUp);
+            return exists;
         }
     }
 }
