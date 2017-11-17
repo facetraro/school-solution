@@ -47,10 +47,12 @@ namespace Testing
             ActivityPayment anActivityPayment = TestActivityPayment();
             ActivityPayment anotherActivityPayment = TestActivityPayment();
             Student newStudent = new Student();
-            newStudent.Id = 1233;
+            int testIdStudent = 1233;
+            newStudent.Id = testIdStudent;
             anotherActivityPayment.Student = newStudent;
             Activity newActivity = new Activity();
-            newActivity.Id = 111;
+            int testIdActivity = 111;
+            newActivity.Id = testIdActivity;
             anotherActivityPayment.Activity = newActivity;
             Assert.IsFalse(anActivityPayment.IsTheSameActivityPayment(anotherActivityPayment));
         }
