@@ -12,7 +12,8 @@ namespace Domain
         public int Amount;
         public bool IsBefore(DateTime anotherDate)
         {
-            if (this.Date.CompareTo(anotherDate) < 0)
+            int comparationResult = this.Date.CompareTo(anotherDate);
+            if (comparationResult < 0)
             {
                 return true;
             }
