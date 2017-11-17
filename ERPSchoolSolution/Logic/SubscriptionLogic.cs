@@ -15,6 +15,9 @@ namespace Logic
         {
          
         }
-    
+        public bool Exists(Object anObject)
+        {
+            return true;
+        }
     }
 }

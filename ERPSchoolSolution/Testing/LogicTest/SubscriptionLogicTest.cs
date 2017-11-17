@@ -37,7 +37,7 @@ namespace Testing.LogicTest
             List<Student> allStudentsInDB = sLogic.GetAllStudents();
             if (allStudentsInDB.Count!=0)
             {
-                return allStudentsInDB.ElementAt(allStudentsInDB.Count);
+                return allStudentsInDB.ElementAt(allStudentsInDB.Count-1);
             }
             return testStudent;
         }
