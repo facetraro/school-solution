@@ -14,13 +14,15 @@ namespace Repository
         public DbSet<SchoolVan> SchoolVans { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
-
+        public DbSet<ActivityPayment> ActivityPayments { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Student>().HasKey(Student => Student.Id);
             modelBuilder.Entity<SchoolVan>().HasKey(SchoolVan => SchoolVan.Id);
             modelBuilder.Entity<Subject>().HasKey(Subject => Subject.Code);
             modelBuilder.Entity<Teacher>().HasKey(Teacher => Teacher.Id);
+            modelBuilder.Entity<ActivityPayment>().HasKey(ActivityPayment => ActivityPayment.Id);
+
         }  
     }
 }
