@@ -44,8 +44,8 @@ namespace Domain
             bool dateValidation = IsTheSameDate(anotherPayment.Date);
             bool studentValidation = this.Student.Equals(anotherPayment.Student);
             bool amountValidation = this.Amount == anotherPayment.Amount;
-            bool validation = studentValidation && dateValidation && amountValidation;
-            return validation;
+            bool allValidation = studentValidation && dateValidation && amountValidation;
+            return allValidation;
         }
     }
 }
