@@ -21,7 +21,8 @@ namespace Domain
         }
         public bool IsAfter(DateTime anotherDate)
         {
-            if (this.Date.CompareTo(anotherDate) > 0)
+            int comparationResult = this.Date.CompareTo(anotherDate);
+            if (comparationResult > 0)
             {
                 return true;
             }
