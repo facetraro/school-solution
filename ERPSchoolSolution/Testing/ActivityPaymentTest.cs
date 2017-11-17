@@ -13,10 +13,11 @@ namespace Testing
             ActivityPayment anActivityPayment = new ActivityPayment();
             Student newStudent = new Student();
             Activity newActivity = new Activity();
-            anActivityPayment.Id = 123;
+            int testId = 123;
+            anActivityPayment.Id = testId;
             anActivityPayment.Student = new Student();
             anActivityPayment.Activity = new Activity();
-            Assert.IsTrue(anActivityPayment.Id.Equals(123));
+            Assert.IsTrue(anActivityPayment.Id.Equals(testId));
             Assert.IsTrue(anActivityPayment.Student.Equals(newStudent));
             Assert.IsTrue(anActivityPayment.Activity.Equals(newActivity));
         }
