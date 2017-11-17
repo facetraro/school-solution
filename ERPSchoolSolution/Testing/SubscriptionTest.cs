@@ -101,10 +101,10 @@ namespace Testing
         {
             Subscription aPayment = TestSubscription();
             Subscription anotherPayment = TestSubscription();
-            DateTime newDate = new DateTime(2003, 1, 5, 4, 5, 6);
-            DateTime anotherDate = new DateTime(2003, 4, 5, 4, 5, 6);
-            aPayment.Date = newDate;
-            anotherPayment.Date = anotherDate;
+            DateTime firstDate = new DateTime(2003, 1, 5, 4, 5, 6);
+            DateTime lastDate = new DateTime(2003, 4, 5, 4, 5, 6);
+            aPayment.Date = firstDate;
+            anotherPayment.Date = lastDate;
             Assert.IsTrue(aPayment.IsBefore(anotherPayment.Date));
         }
     }
