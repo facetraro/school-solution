@@ -14,15 +14,24 @@ namespace Logic
         public void Add(Object anObject)
         {
             Subscription aSubscription = anObject as Subscription;
+            Insert(aSubscription);
+        }
+        private void Insert(Subscription toAdd)
+        {
             SubscriptionAccess context = new SubscriptionAccess();
-            context.Add(aSubscription);
+            context.Add(toAdd);
         }
         public bool Exists(Object anObject)
         {
             SubscriptionAccess context = new SubscriptionAccess();
             Subscription lookUp = anObject as Subscription;
-            bool exists = context.GetAll().Contains(lookUp);
+            bool exists = GetAllSubscriptions().Contains(lookUp);
             return exists;
+        }
+        public List<Subscription> GetAllSubscriptions()
+        {
+            SubscriptionAccess context = new SubscriptionAccess();
+            return context.GetAll();
         }
     }
 }
