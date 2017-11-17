@@ -19,6 +19,25 @@ namespace Repository
         {
             
         }
+        public Subscription Get(int id)
+        {
+            return new Subscription();
+        }
+        public List<Subscription> GetAllLazyLoading()
+        {
+            List<Subscription> allSubscriptions = new List<Subscription>();  
+            return allSubscriptions;
+        }
+        public List<Subscription> GetAll()
+        {
+            List<Subscription> lazyLoading = GetAllLazyLoading();
+            List<Subscription> allStudents = new List<Subscription>();
+            foreach (Subscription item in lazyLoading)
+            {
+                allStudents.Add(Get(item.Id));
+            }
+            return allStudents;
+        }
         public void Empty()
         {
             try

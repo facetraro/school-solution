@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    public interface IAddRemoveModify
+    public interface IAddRemoveModify : IAdd
     {
-        void Add(object anObject);
         void Remove(object anObject);
         void Modify(object anObject, object anotherObject);
         bool Exists(object anObject);
