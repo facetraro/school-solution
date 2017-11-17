@@ -41,4 +41,5 @@ namespace Testing
             ActivityPayment anotherActivityPayment = TestActivityPayment();
             Assert.IsTrue(anActivityPayment.IsTheSameActivityPayment(anotherActivityPayment));
         }
+    }
 }

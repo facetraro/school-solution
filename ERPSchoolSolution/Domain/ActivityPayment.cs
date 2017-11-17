@@ -9,5 +9,10 @@ namespace Domain
     public class ActivityPayment : Payment
     {
         public Activity Activity;
+
+        public bool IsTheSameActivityPayment(ActivityPayment anActivityPayment) {
+            return true;
+        }
+
     }
 }
