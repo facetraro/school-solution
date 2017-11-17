@@ -12,7 +12,11 @@ namespace Domain
         public int Amount;
         public bool IsBefore(DateTime anotherDate)
         {
-            return true;
+            if (this.Date.CompareTo(anotherDate) < 0)
+            {
+                return true;
+            }
+            return false;
         }
         public bool IsTheSameYear(DateTime anotherDate)
         {
