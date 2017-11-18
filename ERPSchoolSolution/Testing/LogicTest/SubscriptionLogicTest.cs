@@ -46,7 +46,7 @@ namespace Testing.LogicTest
             Subscription newSub = new Subscription();
             AddStudentToDB(TestStudent());
             newSub.Amount = 400;
-            newSub.Date = new DateTime(2017, 11, 5, 4, 5, 6);
+            newSub.Date = new DateTime(2017, 11, 5);
             newSub.Student = GetLastStudentInDB();
             return newSub;
         }

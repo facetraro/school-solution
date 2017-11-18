@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AlreadySubscriptedException.cs" />
     <Compile Include="InvalidObjectAddIntoSubscriptionException.cs" />
+    <Compile Include="StudentNotUpToDateException.cs" />
     <Compile Include="SchoolVanPersistanceException.cs" />
     <Compile Include="SubscriptionPersistanceException.cs" />
     <Compile Include="SubjectPersistanceException.cs" />

@@ -9,13 +9,14 @@ namespace Domain
 {
     public class SubscriptionValidator : IValidator
     {
-        private bool IsDateValid(Subscription theSubscription)
+        public bool IsDateValid(Subscription theSubscription)
         {
             if (theSubscription.IsAfter(new DateTime(2017, 11, 1, 0, 0, 0)))
             {
                 return true;
             }
-            throw new EmptyOrNullValueException("La fecha de pago no puede ser antes de Noviembre del 2017");
+            return false;
+            
         }
         public bool IsValid(Object anObject)
         {
@@ -25,7 +26,12 @@ namespace Domain
                 throw new InvalidObjectAddIntoSubscriptionException("Se esperaba un objeto del tipo [Subscription]");
             }
             bool dateValidation = IsDateValid(theSubscription);
+            if (!dateValidation)
+            {
+                throw new EmptyOrNullValueException("La fecha de pago no puede ser antes de Noviembre del 2017");
+            }
             return dateValidation;
         }
+    
     }
 }

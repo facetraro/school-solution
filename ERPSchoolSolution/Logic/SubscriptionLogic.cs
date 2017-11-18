@@ -19,8 +19,27 @@ namespace Logic
                 if (item.IsTheSameSubscription(anObject as Subscription))
                 {
                     validation = true;
-                    throw new AlreadySubscriptedException("El estudiante ya esta pago esa couta.");
                 }
+            }
+            return validation;
+        }
+        private bool IsStudentUpToDate(Object anObject)
+        {
+            bool validation = true;
+            Subscription subscription = anObject as Subscription;
+            Subscription checkSubscription = new Subscription();
+            checkSubscription.Date = new DateTime(subscription.Date.Year, subscription.Date.Month, 1);
+            checkSubscription.Date = checkSubscription.Date.AddMonths(-1);
+            SubscriptionValidator validator = new SubscriptionValidator();
+            while (validator.IsDateValid(checkSubscription))
+            {
+                if (!StudentAlreadyPayThisMonth(checkSubscription))
+                {
+                    validation = false;
+                    String message = "El estudiante debe coutas anteriores, la couta " + checkSubscription.Date.Month + "/" + checkSubscription.Date.Year + " no se ha pagado.";
+                    throw new StudentNotUpToDateException(message);
+                }
+                checkSubscription.Date = checkSubscription.Date.AddMonths(-1);
             }
             return validation;
         }
@@ -28,7 +47,17 @@ namespace Logic
         {
             SubscriptionValidator validator = new SubscriptionValidator();
             bool domainValidation = validator.IsValid(anObject);
-            return domainValidation && !StudentAlreadyPayThisMonth(anObject);
+            bool newSubscription = ! StudentAlreadyPayThisMonth(anObject);
+            bool studentUpToDate = false;
+            if (!newSubscription)
+            {
+                throw new AlreadySubscriptedException("El estudiante ya esta pago esa couta.");
+            }
+            else
+            {
+                studentUpToDate = IsStudentUpToDate(anObject);
+            }
+            return domainValidation && newSubscription && studentUpToDate;
         }
         public void Add(Object anObject)
         {
