@@ -20,6 +20,14 @@ namespace Domain
             }
             return true;
         }
+        private bool ValidFuelConsumption(SchoolVan aSchoolVan)
+        {
+            if (aSchoolVan.FuelConsumption <= 0)
+            {
+                throw new InvalidValueException("La camioneta debe tener un consumo mayor a 0.");
+            }
+            return true;
+        }
         private bool ValidId(SchoolVan aSchoolVan)
         {
             if (aSchoolVan.Id < min_id)
@@ -32,7 +40,8 @@ namespace Domain
         {
             bool capacityValidation = ValidCapacity(theSchoolVan);
             bool idValidation = ValidId(theSchoolVan);
-            return (capacityValidation && idValidation);
+            bool fuelConsumptionValidation = ValidFuelConsumption(theSchoolVan);
+            return (capacityValidation && idValidation && fuelConsumptionValidation);
         }
         public bool IsValid(object anObject)
         {
