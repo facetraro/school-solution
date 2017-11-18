@@ -102,5 +102,23 @@ namespace Testing.LogicTest
             logic.Add(thirdSub);
             Assert.IsTrue(logic.Lenght() == 2);
         }
+        [TestMethod]
+        public void AddAnotherStudentPayment()
+        {
+            SetUp();
+            Subscription firstSub = TestSubscription();
+            Subscription secondSub = TestSubscription();
+            Subscription thirdSub = TestSubscription();
+            secondSub.Date = firstSub.Date.AddMonths(1);
+            SubscriptionLogic logic = new SubscriptionLogic();
+            logic.Add(firstSub);
+            logic.Add(secondSub);
+            Student anotherStudent = TestStudent();
+            anotherStudent.Ci = 47801210;
+            AddStudentToDB(anotherStudent);
+            thirdSub.Student = GetLastStudentInDB();
+            logic.Add(thirdSub);
+            Assert.IsTrue(logic.Lenght() == 3);
+        }
     }
 }
