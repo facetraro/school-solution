@@ -415,6 +415,75 @@ namespace Testing.LogicTest
             Assert.IsTrue(obtainRoutes.SequenceEqual(expectedRoutes));
         }
         [TestMethod]
+        public void GetAdvancedBestRoutesBestFuel()
+        {
+            SetUp();
+            StudentLogic testLogic = new StudentLogic();
+            SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
+            Student student1 = TestStudent(1);
+            student1.Coordinates.X = 8;
+            student1.Coordinates.Y = 8;
+            testLogic.Add(student1);
+            student1.Id = testLogic.GetNextIdFree() - 1;
+
+            Student student4 = TestStudent(2);
+            student4.Coordinates.X = 5;
+            student4.Coordinates.Y = 5;
+            testLogic.Add(student4);
+            student4.Id = testLogic.GetNextIdFree() - 1;
+
+            Student student3 = TestStudent(3);
+            student3.Coordinates.X = 1;
+            student3.Coordinates.Y = 1;
+            testLogic.Add(student3);
+            student3.Id = testLogic.GetNextIdFree() - 1;
+
+            Student student2 = TestStudent(6);
+            student2.Coordinates.X = 9;
+            student2.Coordinates.Y = 9;
+            testLogic.Add(student2);
+            student2.Id = testLogic.GetNextIdFree() - 1;
+
+            Student student5 = TestStudent(8);
+            student5.Coordinates.X = 5;
+            student5.Coordinates.Y = 9;
+            testLogic.Add(student5);
+            student5.Id = testLogic.GetNextIdFree() - 1;
+
+            SchoolVanLogic logic = new SchoolVanLogic();
+            SchoolVan newSchoolVan = new SchoolVan();
+            newSchoolVan.Capacity = 2;
+            newSchoolVan.FuelConsumption = 4;
+            logic.Add(newSchoolVan);
+            newSchoolVan.Id = logic.GetNextIdFree() - 1;
+            SchoolVan anotherSchoolVan = new SchoolVan();
+            anotherSchoolVan.Capacity = 3;
+            anotherSchoolVan.Id = 76565;
+            anotherSchoolVan.FuelConsumption = 10;
+            logic.Add(anotherSchoolVan);
+            anotherSchoolVan.Id = logic.GetNextIdFree() - 1;
+
+            Route expectedRoute1 = new Route();
+            expectedRoute1.TheRoute.Add(new Coordinate());
+            expectedRoute1.TheRoute.Add(student3);
+            expectedRoute1.TheRoute.Add(student4);
+            expectedRoute1.TheRoute.Add(student1);
+            expectedRoute1.TheSchoolVan = anotherSchoolVan;
+
+            Route expectedRoute2 = new Route();
+            expectedRoute2.TheRoute.Add(new Coordinate());
+            expectedRoute2.TheRoute.Add(student5);
+            expectedRoute2.TheRoute.Add(student2);
+            expectedRoute2.TheSchoolVan = newSchoolVan;
+
+            List<Route> expectedRoutes = new List<Route>();
+            expectedRoutes.Add(expectedRoute2);
+            expectedRoutes.Add(expectedRoute1);
+            List<Route> obtainRoutes = schoolVanLogic.GetBestRoutes();
+
+            Assert.IsTrue(obtainRoutes.SequenceEqual(expectedRoutes));
+        }
+        [TestMethod]
         public void GetFirstNextIdFree()
         {
             SetUp();

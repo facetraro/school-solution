@@ -61,7 +61,7 @@ namespace Logic
                 if (validator.IsValid(toDelete))
                 {
                     canIDelete = true;
-                }  
+                }
             }
             catch (Exception)
             {
@@ -257,9 +257,15 @@ namespace Logic
             List<Student> sortedStudents = studentsSort.GenerateSortedList(context.GetAll());
             return sortedStudents;
         }
+        private List<SchoolVan> GetSchoolVansSorted()
+        {
+            List<SchoolVan> list = GetSchoolVansSortedByCapacity().OrderBy(o => (GetStudentsBySchoolVan(o).Count / o.FuelConsumption)).ToList();
+            list.Reverse();
+            return list;
+        }
         private List<Route> FindBestRoutes()
         {
-            List<SchoolVan> sortedSchoolVans = GetSchoolVansSortedByCapacity();
+            List<SchoolVan> sortedSchoolVans = GetSchoolVansSorted();
             List<Route> bestRoutes = new List<Route>();
             foreach (SchoolVan aSchoolVan in sortedSchoolVans)
             {

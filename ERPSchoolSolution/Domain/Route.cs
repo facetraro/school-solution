@@ -119,6 +119,7 @@ namespace Domain
             Route cloneRoute = new Route();
             cloneRoute.theSchoolVan.Capacity = this.theSchoolVan.Capacity;
             cloneRoute.theSchoolVan.Id = this.theSchoolVan.Id;
+            cloneRoute.theSchoolVan.FuelConsumption = this.theSchoolVan.FuelConsumption;
             foreach (IRouteObject anObject in this.theRoute)
             {
                 cloneRoute.Add(anObject);
