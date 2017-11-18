@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
 using System.Diagnostics.CodeAnalysis;
+using Exceptions;
 
 namespace Testing
 {
@@ -149,6 +150,15 @@ namespace Testing
             SubscriptionValidator validator = new SubscriptionValidator();
             bool validation = validator.IsValid(aPayment);
             Assert.IsTrue(validation);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(InvalidObjectAddIntoSubscriptionException))]
+        public void IsValidFailAnotherObject()
+        {
+            int anInt = 0;
+            SubscriptionValidator validator = new SubscriptionValidator();
+            bool validation = validator.IsValid(anInt);
+            Assert.IsFalse(validation);
         }
     }
 }
