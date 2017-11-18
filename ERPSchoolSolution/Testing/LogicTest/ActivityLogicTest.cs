@@ -72,5 +72,24 @@ namespace Testing.LogicTest
             testLogic.Remove(anActivity);
             Assert.IsFalse(testLogic.Exists(anActivity));
         }
+        [TestMethod]
+        public void ModifyActivitySuccess()
+        {
+            SetUp();
+            ActivityLogic testLogic = new ActivityLogic();
+            Activity newActivity = testActivity();
+            Activity anotherActivity = testActivity();
+            anotherActivity.Name = "newName";
+            testLogic.Add(newActivity);
+            anotherActivity.Id = GetLastActivityInDB().Id +1;
+            testLogic.Modify(newActivity, anotherActivity);
+            List<Activity> list = testLogic.GetAllActivities();
+            bool validation = false;
+            if (list.Count != 0)
+            {
+                validation = (list.ElementAt(0).Name == anotherActivity.Name);
+            }
+            Assert.IsTrue(validation);
+        }
     }
 }
