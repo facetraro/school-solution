@@ -93,5 +93,18 @@ namespace Testing.LogicTest
             Assert.IsTrue(validation);
         }
 
+        [TestMethod]
+        public void ModifyStudentFailCheckOldActivity()
+        {
+            SetUp();
+            ActivityLogic testLogic = new ActivityLogic();
+            Activity newActivity = testActivity();
+            Activity anotherActivity = testActivity();
+            anotherActivity.Name = "";
+            anotherActivity.Cost = -3;
+            testLogic.Add(newActivity);
+            testLogic.Modify(newActivity, anotherActivity);
+            Assert.IsTrue(testLogic.Exists(newActivity));
+        }
     }
 }
