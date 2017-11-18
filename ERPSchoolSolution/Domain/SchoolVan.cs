@@ -62,7 +62,7 @@ namespace Domain
         }
         public override string ToString()
         {
-            return "Camioneta: " + id + " [Capacidad " + capacity + "]";
+            return "[Camioneta " + id + "] Capacidad " + capacity + " - Consumo " + fuelConsumption;
         }
     }
 }

@@ -33,7 +33,7 @@ namespace ERPSchoolUI
         private void Load()
         {
             SchoolVanModule module = new SchoolVanModule();
-            module.LoadAllSchoolVans(listSchoolVans);
+            module.LoadAllSchoolVansSorted(listSchoolVans);
         }
         private void backButton_Click(object sender, EventArgs e)
         {

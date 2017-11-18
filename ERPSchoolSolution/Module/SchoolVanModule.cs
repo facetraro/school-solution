@@ -17,11 +17,12 @@ namespace Module
             this.Name = "Gestión Camioneta";
             this.Description = "Sector que pertime gestionar las acciones de Camioneta.";
         }
-        public void AddNewSchoolVan(int capacity)
+        public void AddNewSchoolVan(int capacity, int fuel)
         {
             SchoolVanLogic logic = new SchoolVanLogic();
             SchoolVan newSchoolVan = new SchoolVan();
             newSchoolVan.Capacity = capacity;
+            newSchoolVan.FuelConsumption = fuel;
             newSchoolVan.Id = logic.GetNextIdFree();
             logic.Add(newSchoolVan);
         }
@@ -39,8 +40,22 @@ namespace Module
                 list.Items.Add(item);
             }
         }
+        public void LoadAllSchoolVansSorted(ListBox list)
+        {
+            SchoolVanLogic logic = new SchoolVanLogic();
+            List<SchoolVan> allObjects = new List<SchoolVan>();
+            allObjects = logic.GetSchoolVansSorted();
+            if (allObjects.Count == 0)
+            {
+                throw new NoSchoolVanInSystemException("No hay Camionetas ingresadas en el sistema");
+            }
+            foreach (SchoolVan item in allObjects)
+            {
+                list.Items.Add(item);
+            }
+        }
 
-        public void LoadFields(object selectedObject, TextBox textId, NumericUpDown numericCapacity)
+        public void LoadFields(object selectedObject, TextBox textId, NumericUpDown numericCapacity, NumericUpDown numericFuel)
         {
             if (!(selectedObject is SchoolVan))
             {
@@ -49,9 +64,10 @@ namespace Module
             SchoolVan theSchoolVan = selectedObject as SchoolVan;
             textId.Text = theSchoolVan.Id + "";
             numericCapacity.Value = theSchoolVan.Capacity;
+            numericFuel.Value = theSchoolVan.FuelConsumption;
         }
 
-        public void ModifySchoolVan(object selectedObject, TextBox textName, NumericUpDown numericCapacity)
+        public void ModifySchoolVan(object selectedObject, TextBox textName, NumericUpDown numericCapacity, NumericUpDown numericFuel)
         {
             if (!(selectedObject is SchoolVan))
             {
@@ -62,6 +78,7 @@ namespace Module
             SchoolVan newSchoolVan = new SchoolVan();
             newSchoolVan.Id = oldSchoolVan.Id;
             newSchoolVan.Capacity = (int)numericCapacity.Value;
+            newSchoolVan.FuelConsumption = (int)numericFuel.Value;
             logic.Modify(oldSchoolVan, newSchoolVan);
         }
 

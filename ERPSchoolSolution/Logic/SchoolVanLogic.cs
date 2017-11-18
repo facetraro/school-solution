@@ -257,9 +257,25 @@ namespace Logic
             List<Student> sortedStudents = studentsSort.GenerateSortedList(context.GetAll());
             return sortedStudents;
         }
-        private List<SchoolVan> GetSchoolVansSorted()
+        private int GetHowManyStudentsSchoolVan(SchoolVan schoolVan)
         {
-            List<SchoolVan> list = GetSchoolVansSortedByCapacity().OrderBy(o => (GetStudentsBySchoolVan(o).Count / o.FuelConsumption)).ToList();
+            return GetStudentsBySchoolVan(schoolVan).Count;
+        }
+        private List<SchoolVan> SchoolVansWithStudents()
+        {
+            List<SchoolVan> list = new List<SchoolVan>();
+            foreach (SchoolVan item in GetSchoolVansSortedByCapacity())
+            {
+                if (GetHowManyStudentsSchoolVan(item) != 0)
+                {
+                    list.Add(item);
+                }
+            }
+            return list;
+        }
+        public List<SchoolVan> GetSchoolVansSorted()
+        {
+            List<SchoolVan> list = SchoolVansWithStudents().OrderBy(o => (GetHowManyStudentsSchoolVan(o) / o.FuelConsumption)).ToList();
             list.Reverse();
             return list;
         }
@@ -293,7 +309,7 @@ namespace Logic
         {
             List<Student> sortedStudent = GetStudentsSortedById();
             List<Student> studentsToSchoolVan = new List<Student>();
-            if (schoolVansWithMoreStudents >= actualLoop)
+            if (schoolVansWithMoreStudents > actualLoop)
             {
                 studentsToSchoolVan = SelectLessStudents(schoolVansWithMoreStudents, actualLoop, studentsPerSchoolVanFloor + 1);
                 return studentsToSchoolVan;
@@ -306,7 +322,7 @@ namespace Logic
             List<Student> studentsToSchoolVan;
             int countAllSchoolVans = GetSchoolVansSortedByCapacity().Count;
             double result = studentsPerSchoolVan - Math.Truncate(studentsPerSchoolVan);
-            int schoolVansWithMoreStudents = (int)(result * countAllSchoolVans);
+            int schoolVansWithMoreStudents = (int)Math.Ceiling(result * countAllSchoolVans);
 
             int studentsPerSchoolVanFloor = (int)Math.Floor(studentsPerSchoolVan);
             if (schoolVansWithMoreStudents != 0)

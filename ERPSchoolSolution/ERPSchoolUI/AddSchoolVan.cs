@@ -33,7 +33,7 @@ namespace ERPSchoolUI
             SchoolVanModule module = new SchoolVanModule();
             try
             {
-                module.AddNewSchoolVan((int)numericMaxCapacity.Value);
+                module.AddNewSchoolVan((int)numericMaxCapacity.Value, (int)numericFuel.Value);
                 MessageBox.Show("Camioneta ingresada con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 mainPanel.Controls.Clear();
                 SchoolVanMenu backMenu = new SchoolVanMenu(mainPanel);

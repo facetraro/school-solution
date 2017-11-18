@@ -33,7 +33,7 @@ namespace ERPSchoolUI
         private void Load()
         {
             SchoolVanModule module = new SchoolVanModule();
-            module.LoadFields(selectedObject, textIdSchoolVan, numericMaxCapacity);
+            module.LoadFields(selectedObject, textIdSchoolVan, numericMaxCapacity, numericFuel);
         }
         private void backButton_Click(object sender, EventArgs e)
         {
@@ -47,7 +47,7 @@ namespace ERPSchoolUI
             SchoolVanModule module = new SchoolVanModule();
             try
             {
-                module.ModifySchoolVan(selectedObject, textIdSchoolVan, numericMaxCapacity);
+                module.ModifySchoolVan(selectedObject, textIdSchoolVan, numericMaxCapacity, numericFuel);
                 MessageBox.Show("Camioneta modificada con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 mainPanel.Controls.Clear();
                 SchoolVanMenu backMenu = new SchoolVanMenu(mainPanel);
