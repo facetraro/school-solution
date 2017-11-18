@@ -23,13 +23,25 @@ namespace Logic
             }
             return validation;
         }
+        private DateTime GetFistDateToCheck(Subscription subscription)
+        {
+            DateTime date = subscription.Date;
+            DateTime dateToCheck = new DateTime(date.Year, date.Month, 1);
+            dateToCheck = dateToCheck.AddMonths(-1);
+            return dateToCheck;
+        }
+        private Subscription GetFirstSubscriptionToCheck(Subscription subscription)
+        {
+            Subscription checkSubscription = new Subscription();
+            checkSubscription.Date = GetFistDateToCheck(subscription);
+            checkSubscription.Student = subscription.Student;
+            return checkSubscription;
+        }
         private bool IsStudentUpToDate(Object anObject)
         {
             bool validation = true;
             Subscription subscription = anObject as Subscription;
-            Subscription checkSubscription = new Subscription();
-            checkSubscription.Date = new DateTime(subscription.Date.Year, subscription.Date.Month, 1);
-            checkSubscription.Date = checkSubscription.Date.AddMonths(-1);
+            Subscription checkSubscription = GetFirstSubscriptionToCheck(subscription);
             SubscriptionValidator validator = new SubscriptionValidator();
             while (validator.IsDateValid(checkSubscription))
             {
