@@ -78,5 +78,13 @@ namespace Testing.LogicTest
             logic.Add(newSub);
             Assert.IsTrue(logic.Lenght()==1);
         }
+        [TestMethod]
+        public void SusbscriptionLenght0()
+        {
+            SetUp();
+            Subscription newSub = TestSubscription();
+            SubscriptionLogic logic = new SubscriptionLogic();
+            Assert.IsTrue(logic.Lenght() == 0);
+        }
     }
 }
