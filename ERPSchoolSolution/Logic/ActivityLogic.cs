@@ -16,10 +16,15 @@ namespace Logic
             ActivityAccess context = new ActivityAccess();
             context.Add(toAdd);
         }
-
+        private void Delete(Activity anObject)
+        {
+            ActivityAccess context = new ActivityAccess();
+            context.Remove(anObject);
+        }
         public void Remove(Object anObject)
         {
-
+            Activity toDelete = anObject as Activity;
+            Delete(toDelete);
         }
         public void Modify(Object oldObject, Object newObject)
         {

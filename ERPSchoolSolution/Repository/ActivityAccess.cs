@@ -18,12 +18,44 @@ namespace Repository
         }
         public void Remove(Object anObject)
         {
-
+            Activity activity = anObject as Activity;
+            RemoveActivity(activity);
         }
-
+        private void RemoveActivity(Activity activity)
+        {
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    context.Activities.Attach(activity);
+                    context.Activities.Remove(activity);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw new ActivityPersistanceException("Se ha perdido la conexion con el servidor");
+            }
+        }
         public void Empty()
         {
-
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    List<Activity> activities = context.Activities.ToList();
+                    foreach (Activity actual in activities)
+                    {
+                        Activity toDelete = context.Activities.Find(actual.Id);
+                        context.Activities.Remove(toDelete);
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new ActivityPersistanceException("Se ha perdido la conexion con el servidor");
+            }
         }
         private List<ActivityPayment> GetActivityPaymentsListAttached(ContextDB context, Activity modifiedActivity)
         {
@@ -55,7 +87,19 @@ namespace Repository
         }
         public Activity Get(int id)
         {
-            return new Activity();
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    Activity activityToFind = context.Activities.Find(id);
+                    context.Activities.Include(d => d.ActivityPayments).ToList();
+                    return activityToFind;
+                }
+            }
+            catch (Exception)
+            {
+                throw new ActivityPersistanceException("Se ha perdido la conexion con el servidor");
+            }
         }
         public List<Activity> GetAllLazyLoading()
         {

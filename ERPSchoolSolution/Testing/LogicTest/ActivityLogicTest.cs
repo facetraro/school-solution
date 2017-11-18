@@ -67,6 +67,7 @@ namespace Testing.LogicTest
             ActivityLogic testLogic = new ActivityLogic();
             Activity anActivity = testActivity();
             testLogic.Add(anActivity);
+            int id = GetLastActivityInDB().Id;
             anActivity.Id = GetLastActivityInDB().Id;
             testLogic.Remove(anActivity);
             Assert.IsFalse(testLogic.Exists(anActivity));
