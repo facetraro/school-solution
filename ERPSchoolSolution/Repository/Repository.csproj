@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityAccess.cs" />
     <Compile Include="CleanDB.cs" />
     <Compile Include="ContextDB.cs" />
     <Compile Include="ARMEAccess .cs" />

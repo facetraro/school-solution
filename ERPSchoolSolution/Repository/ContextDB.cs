@@ -17,6 +17,7 @@ namespace Repository
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
         public DbSet<ActivityPayment> ActivityPayments { get; set; }
+        public DbSet<Activity> Activities { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Student>().HasKey(Student => Student.Id);
@@ -25,6 +26,8 @@ namespace Repository
             modelBuilder.Entity<Teacher>().HasKey(Teacher => Teacher.Id);
             modelBuilder.Entity<Subscription>().HasKey(Subscription => Subscription.Id);
             modelBuilder.Entity<ActivityPayment>().HasKey(ActivityPayment => ActivityPayment.Id);
-        }  
+            modelBuilder.Entity<Activity>().HasKey(Activity => Activity.Id);
+
+        }
     }
 }

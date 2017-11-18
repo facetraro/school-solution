@@ -15,6 +15,7 @@ namespace Repository
             access.Add(new TeacherAccess());
             access.Add(new SubjectAccess());
             access.Add(new SchoolVanAccess());
+            access.Add(new ActivityAccess());
             foreach (IDBAccess entity in access)
             {
                 entity.Empty();

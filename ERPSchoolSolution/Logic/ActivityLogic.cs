@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain;
+using Repository;
 
 namespace Logic
 {
@@ -10,7 +12,9 @@ namespace Logic
     {
         public void Add(Object anObject)
         {
-
+            Activity toAdd = anObject as Activity;
+            ActivityAccess context = new ActivityAccess();
+            context.Add(toAdd);
         }
 
         public void Remove(Object anObject)
@@ -23,8 +27,14 @@ namespace Logic
         }
         public bool Exists(Object anObject)
         {
-            return true;
+            Activity lookUp = anObject as Activity;
+            ActivityAccess context = new ActivityAccess();
+            return context.GetAll().Contains(lookUp);
         }
-
+        public List<Activity> GetAllActivities()
+        {
+            ActivityAccess context = new ActivityAccess();
+            return context.GetAll();
+        }
     }
 }

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityPersistanceException.cs" />
     <Compile Include="SchoolVanPersistanceException.cs" />
     <Compile Include="SubscriptionPersistanceException.cs" />
     <Compile Include="SubjectPersistanceException.cs" />
