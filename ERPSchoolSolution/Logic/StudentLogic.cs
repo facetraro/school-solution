@@ -13,12 +13,11 @@ namespace Logic
             bool newStudent = !Exists(anObject);
             if (!newStudent)
             {
-                Singleton theRepository = Singleton.Instance;
                 if (IsCiAlreadyUsed(anObject))
                 {
                     throw new InvalidCiException("La CI ya esta ingresada en el sistema");
                 }
-                if (theRepository.Students.Contains((Student)anObject))
+                if (GetAllStudents().Contains((Student)anObject))
                 {
                     throw new StudentAlreadyExistsException("El numero estudiante ya esta ingresado en el sistema");
                 }
@@ -127,8 +126,7 @@ namespace Logic
             context.Empty();
         }
         public bool Exists(Object anObject)
-        {
-            Singleton theRepository = Singleton.Instance;
+        {   
             Student lookUp = anObject as Student;
             bool ciValidation = IsCiAlreadyUsed(anObject);
             bool studentNumberValidation = GetAllStudents().Contains(lookUp);
@@ -137,7 +135,6 @@ namespace Logic
         }
         public bool IsCiAlreadyUsed(Object anObject)
         {
-            Singleton theRepository = Singleton.Instance;
             Student toAdd = anObject as Student;
             List<Student> list = GetAllStudents();
             foreach (Student item in list)

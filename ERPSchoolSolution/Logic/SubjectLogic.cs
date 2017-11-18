@@ -58,7 +58,6 @@ namespace Logic
             if (CanIAdd(anObject))
             {
                 {
-                    Singleton theRepository = Singleton.Instance;
                     Subject newSubject = anObject as Subject;
                     Insert(newSubject);
                 }
@@ -109,8 +108,8 @@ namespace Logic
         }
         public void Empty()
         {
-            Singleton theRepository = Singleton.Instance;
-            theRepository.Subjects = new List<Subject>();
+            SubjectAccess context = new SubjectAccess();
+            context.Empty();
         }
     }
 }

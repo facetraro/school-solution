@@ -83,8 +83,8 @@ namespace Logic
         }
         public void Empty()
         {
-            Singleton theRepository = Singleton.Instance;
-            theRepository.Teachers = new List<Teacher>();
+            TeacherAccess context = new TeacherAccess();
+            context.Empty();
         }
         public List<Teacher> GetAllTeachers()
         {
