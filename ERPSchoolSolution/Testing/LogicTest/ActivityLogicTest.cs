@@ -79,9 +79,9 @@ namespace Testing.LogicTest
             ActivityLogic testLogic = new ActivityLogic();
             Activity newActivity = testActivity();
             Activity anotherActivity = testActivity();
-            anotherActivity.Name = "newName";
+            anotherActivity.Name = "testName";
             testLogic.Add(newActivity);
-            anotherActivity.Id = GetLastActivityInDB().Id +1;
+            anotherActivity.Id = GetLastActivityInDB().Id;
             testLogic.Modify(newActivity, anotherActivity);
             List<Activity> list = testLogic.GetAllActivities();
             bool validation = false;
@@ -91,5 +91,6 @@ namespace Testing.LogicTest
             }
             Assert.IsTrue(validation);
         }
+
     }
 }

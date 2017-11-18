@@ -9,7 +9,7 @@ using Exceptions;
 
 namespace Repository
 {
-    public class ActivityAccess : IDBAccess
+    public class ActivityAccess : ARMEAccess
     {
         public void Add(Object anObject)
         {
@@ -126,6 +126,34 @@ namespace Repository
                 allActivities.Add(Get(item.Id));
             }
             return allActivities;
+        }
+
+        public void Modify(Object anObject)
+        {
+            Activity activity = anObject as Activity;
+            ModifyActivity(activity);
+        }
+        private void ModifyActivity(Activity modifiedActivity)
+        {
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    Activity oldActivity = Get(modifiedActivity.Id);
+                    context.Activities.Attach(oldActivity);
+                    oldActivity.Name = modifiedActivity.Name;
+                    oldActivity.Cost = modifiedActivity.Cost;
+                    oldActivity.Date = modifiedActivity.Date;
+                    oldActivity.Id = modifiedActivity.Id;
+                    oldActivity.ActivityPayments = GetActivityPaymentsListAttached(context, modifiedActivity);
+                    context.Entry(oldActivity).State = EntityState.Modified;
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new ActivityPersistanceException("Se ha perdido la conexion con el servidor");
+            }
         }
     }
 }

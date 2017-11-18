@@ -28,7 +28,9 @@ namespace Logic
         }
         public void Modify(Object oldObject, Object newObject)
         {
-
+            ActivityAccess context = new ActivityAccess();
+            Activity newActivity = newObject as Activity;
+            context.Modify(newActivity);
         }
         public bool Exists(Object anObject)
         {
