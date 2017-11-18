@@ -160,5 +160,16 @@ namespace Testing
             bool validation = validator.IsValid(anInt);
             Assert.IsFalse(validation);
         }
+        [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
+        public void IsValidFailOld()
+        {
+            Subscription aPayment = TestSubscription();
+            DateTime aDate = new DateTime(1995, 1, 5, 4, 5, 6);
+            aPayment.Date = aDate;
+            SubscriptionValidator validator = new SubscriptionValidator();
+            bool validation = validator.IsValid(aPayment);
+            Assert.IsFalse(validation);
+        }
     }
 }
