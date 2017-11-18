@@ -26,7 +26,9 @@ namespace Logic
         }
         private bool CanIAdd(Object anObject)
         {
-            return !StudentAlreadyPayThisMonth(anObject);
+            SubscriptionValidator validator = new SubscriptionValidator();
+            bool domainValidation = validator.IsValid(anObject);
+            return domainValidation && !StudentAlreadyPayThisMonth(anObject);
         }
         public void Add(Object anObject)
         {
