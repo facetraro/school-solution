@@ -12,7 +12,7 @@ namespace Testing.LogicTest
     {
         private Activity testActivity()
         {
-            Activity testActivity = new Activity();
+            Activity TestActivity = new Activity();
             int testId = 123;
             int testCost = 11;
             string testName = "testName";
@@ -20,12 +20,12 @@ namespace Testing.LogicTest
             int monthDate = 1;
             int dayDate = 2;
             DateTime testDate = new DateTime(yearDate, monthDate, dayDate);
-            testActivity.Id = testId;
-            testActivity.Cost = testCost;
-            testActivity.Name = testName;
-            testActivity.Date = testDate;
-            testActivity.ActivityPayments = new List<ActivityPayment>();
-            return testActivity;
+            TestActivity.Id = testId;
+            TestActivity.Cost = testCost;
+            TestActivity.Name = testName;
+            TestActivity.Date = testDate;
+            TestActivity.ActivityPayments = new List<ActivityPayment>();
+            return TestActivity;
         }
         private Activity GetLastActivityInDB()
         {
@@ -79,7 +79,8 @@ namespace Testing.LogicTest
             ActivityLogic testLogic = new ActivityLogic();
             Activity newActivity = testActivity();
             Activity anotherActivity = testActivity();
-            anotherActivity.Name = "testName";
+            string testName = "newName";
+            anotherActivity.Name = testName;
             testLogic.Add(newActivity);
             anotherActivity.Id = GetLastActivityInDB().Id;
             testLogic.Modify(newActivity, anotherActivity);
