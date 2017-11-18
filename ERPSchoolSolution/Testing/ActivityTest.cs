@@ -38,13 +38,13 @@ namespace Testing
             string testName = "testName";
             DateTime activityDate = new DateTime();
             int costTest = 1000;
-            List<Student> participantsList = new List<Student>();
+            List<ActivityPayment> activityPayments = new List<ActivityPayment>();
             anActivity.Id = testId;
             anActivity.Name = testName;
             anActivity.Date = new DateTime();
             anActivity.Cost = costTest;
-            anActivity.Participants = participantsList;
-            Assert.IsTrue(anActivity.Participants.Equals(participantsList));
+            anActivity.ActivityPayments = activityPayments;
+            Assert.IsTrue(anActivity.ActivityPayments.Equals(activityPayments));
             Assert.IsTrue(anActivity.Id.Equals(testId));
             Assert.IsTrue(anActivity.Name.Equals(testName));
             Assert.IsTrue(anActivity.Date.Equals(activityDate));

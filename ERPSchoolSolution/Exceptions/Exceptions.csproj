@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlreadySubscriptedException.cs" />
+    <Compile Include="ActivityPersistanceException.cs" />
     <Compile Include="SchoolVanPersistanceException.cs" />
     <Compile Include="SubscriptionPersistanceException.cs" />
     <Compile Include="SubjectPersistanceException.cs" />

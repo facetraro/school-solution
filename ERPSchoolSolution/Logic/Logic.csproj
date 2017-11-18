@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityLogic.cs" />
     <Compile Include="IAdd.cs" />
     <Compile Include="IAddRemoveModify.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
