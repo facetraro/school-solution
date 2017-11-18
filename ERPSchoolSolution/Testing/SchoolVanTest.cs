@@ -94,12 +94,12 @@ namespace Testing
             Assert.IsFalse(validator.IsValid(aVan));
         }
         [TestMethod]
-        public void toStringSubject()
+        public void toStringSchoolVan()
         {
             SchoolVan aSchoolVan = new SchoolVan();
             aSchoolVan.Id = 123;
             aSchoolVan.Capacity = 10;
-            Assert.IsTrue(aSchoolVan.ToString().Equals("Camioneta: 123 [Capacidad 10]"));
+            Assert.IsTrue(aSchoolVan.ToString().Equals("[Camioneta 123] Capacidad 10 - Consumo 1"));
         }
     }
 }
