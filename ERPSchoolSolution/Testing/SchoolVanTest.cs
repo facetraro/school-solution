@@ -80,6 +80,20 @@ namespace Testing
             Assert.IsFalse(validator.IsValid(aVan));
         }
         [TestMethod]
+        [ExpectedException(typeof(InvalidValueException))]
+        public void InvalidFuelConsumptionSchoolVan()
+        {
+            int aId = 1;
+            int capacity = 10;
+            int fuelConsumption = 0;
+            SchoolVan aVan = new SchoolVan();
+            aVan.Id = aId;
+            aVan.Capacity = capacity;
+            aVan.FuelConsumption = fuelConsumption;
+            SchoolVanValidator validator = new SchoolVanValidator();
+            Assert.IsFalse(validator.IsValid(aVan));
+        }
+        [TestMethod]
         public void toStringSubject()
         {
             SchoolVan aSchoolVan = new SchoolVan();
