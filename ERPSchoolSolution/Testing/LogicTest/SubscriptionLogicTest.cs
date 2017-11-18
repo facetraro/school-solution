@@ -86,5 +86,21 @@ namespace Testing.LogicTest
             SubscriptionLogic logic = new SubscriptionLogic();
             Assert.IsTrue(logic.Lenght() == 0);
         }
+        [TestMethod]
+        [ExpectedException(typeof(StudentNotUpToDateException))]
+        public void AddStudentNotUpToDate()
+        {
+            SetUp();
+            Subscription firstSub = TestSubscription();
+            Subscription secondSub = TestSubscription();
+            Subscription thirdSub = TestSubscription();
+            secondSub.Date = firstSub.Date.AddMonths(1);
+            thirdSub.Date = secondSub.Date.AddMonths(3);
+            SubscriptionLogic logic = new SubscriptionLogic();
+            logic.Add(firstSub);
+            logic.Add(secondSub);
+            logic.Add(thirdSub);
+            Assert.IsTrue(logic.Lenght() == 2);
+        }
     }
 }
