@@ -18,6 +18,7 @@ namespace Testing
             SchoolVan anotherVan = new SchoolVan();
             int aTestId = 1;
             aVan.Id = aTestId;
+            aVan.FuelConsumption = 4;
             anotherVan.Id = aTestId;
             Assert.IsTrue(aVan.Equals(anotherVan));
         }
@@ -49,9 +50,11 @@ namespace Testing
             int capacity = 5;
             SchoolVan aVan = new SchoolVan();
             aVan.Id = aId;
+            aVan.FuelConsumption = 4;
             aVan.Capacity = capacity;
             Assert.IsTrue(aVan.Id.Equals(aId));
             Assert.IsTrue(aVan.Capacity.Equals(capacity));
+            Assert.IsTrue(aVan.FuelConsumption.Equals(4));
         }
         [TestMethod]
         public void ValidSchoolVanCapacity()

@@ -10,9 +10,11 @@ namespace Domain
     {
         private int id;
         private int capacity;
+        private int fuelConsumption;
         public SchoolVan()
         {
             this.Id = 0;
+            this.fuelConsumption = 0;
             this.Capacity = 1;
         }
         public int Id
@@ -24,6 +26,17 @@ namespace Domain
             set
             {
                 this.id = value;
+            }
+        }
+        public int FuelConsumption
+        {
+            get
+            {
+                return this.FuelConsumption;
+            }
+            set
+            {
+                this.FuelConsumption = value;
             }
         }
         public int Capacity
