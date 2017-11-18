@@ -140,5 +140,15 @@ namespace Testing
             anotherPayment.Date = lastDate;
             Assert.IsFalse(aPayment.IsAfter(anotherPayment.Date));
         }
+        [TestMethod]
+        public void IsValidSuccess()
+        {
+            Subscription aPayment = TestSubscription();
+            DateTime aDate = new DateTime(2018, 1, 5, 4, 5, 6);
+            aPayment.Date = aDate;
+            SubscriptionValidator validator = new SubscriptionValidator();
+            bool validation = validator.IsValid(aPayment);
+            Assert.IsTrue(validation);
+        }
     }
 }
