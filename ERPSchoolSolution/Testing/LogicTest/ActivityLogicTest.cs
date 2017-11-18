@@ -13,10 +13,17 @@ namespace Testing.LogicTest
         private Activity testActivity()
         {
             Activity testActivity = new Activity();
-            testActivity.Id = 123;
-            testActivity.Cost = 11;
-            testActivity.Name = "testName";
-            testActivity.Date = new DateTime(2003, 1, 2, 3, 4, 50);
+            int testId = 123;
+            int testCost = 11;
+            string testName = "testName";
+            int yearDate = 2003;
+            int monthDate = 1;
+            int dayDate = 2;
+            DateTime testDate = new DateTime(yearDate, monthDate, dayDate);
+            testActivity.Id = testId;
+            testActivity.Cost = testCost;
+            testActivity.Name = testName;
+            testActivity.Date = testDate;
             testActivity.ActivityPayments = new List<ActivityPayment>();
             return testActivity;
         }
@@ -48,7 +55,8 @@ namespace Testing.LogicTest
         {
             SetUp();
             Activity newActivity = new Activity();
-            newActivity.Id = 122;
+            int testId = 122;
+            newActivity.Id = testId;
             ActivityLogic testLogic = new ActivityLogic();
             Assert.IsFalse(testLogic.Exists(newActivity));
         }
