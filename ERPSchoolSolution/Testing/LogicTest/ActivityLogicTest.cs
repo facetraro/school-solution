@@ -29,7 +29,7 @@ namespace Testing.LogicTest
         }
         private Activity GetLastActivityInDB()
         {
-            Activity anActivity= new Activity();
+            Activity anActivity = new Activity();
             ActivityLogic aLogic = new ActivityLogic();
             List<Activity> allActivitiesInDb = aLogic.GetAllActivities();
             if (allActivitiesInDb.Count != 0)
@@ -43,7 +43,7 @@ namespace Testing.LogicTest
         {
             SetUp();
             Activity newActivity = new Activity();
-            DateTime aDate = new DateTime(2003,4,5,4,5,6);
+            DateTime aDate = new DateTime(2003, 4, 5, 4, 5, 6);
             newActivity.Date = aDate;
             ActivityLogic testLogic = new ActivityLogic();
             testLogic.Add(newActivity);
@@ -60,6 +60,16 @@ namespace Testing.LogicTest
             ActivityLogic testLogic = new ActivityLogic();
             Assert.IsFalse(testLogic.Exists(newActivity));
         }
-
+        [TestMethod]
+        public void RemoveActivitySuccess()
+        {
+            SetUp();
+            ActivityLogic testLogic = new ActivityLogic();
+            Activity anActivity = testActivity();
+            testLogic.Add(anActivity);
+            anActivity.Id = GetLastActivityInDB().Id;
+            testLogic.Remove(anActivity);
+            Assert.IsFalse(testLogic.Exists(anActivity));
+        }
     }
 }
