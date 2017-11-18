@@ -12,6 +12,7 @@ namespace Domain
         private static int max_capacity = 15;
         private static int min_capacity = 1;
         private static int min_id = 0;
+        private static int min_fuelConsumption = 0;
         private bool ValidCapacity(SchoolVan aSchoolVan)
         {
             if (!(aSchoolVan.Capacity >= min_capacity && aSchoolVan.Capacity <= max_capacity))
@@ -22,9 +23,9 @@ namespace Domain
         }
         private bool ValidFuelConsumption(SchoolVan aSchoolVan)
         {
-            if (aSchoolVan.FuelConsumption <= 0)
+            if (aSchoolVan.FuelConsumption <= min_fuelConsumption)
             {
-                throw new InvalidValueException("La camioneta debe tener un consumo mayor a 0.");
+                throw new InvalidValueException("La camioneta debe tener un consumo mayor a "+ min_fuelConsumption);
             }
             return true;
         }
