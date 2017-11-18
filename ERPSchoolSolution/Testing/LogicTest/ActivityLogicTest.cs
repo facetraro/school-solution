@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Logic;
 using System.Collections.Generic;
 using System.Linq;
+using Exceptions;
 
 namespace Testing.LogicTest
 {
@@ -94,6 +95,7 @@ namespace Testing.LogicTest
         }
 
         [TestMethod]
+        [ExpectedException(typeof(EmptyOrNullValueException))]
         public void ModifyStudentFailCheckOldActivity()
         {
             SetUp();
@@ -103,6 +105,7 @@ namespace Testing.LogicTest
             anotherActivity.Name = "";
             anotherActivity.Cost = -3;
             testLogic.Add(newActivity);
+            newActivity.Id = GetLastActivityInDB().Id;
             testLogic.Modify(newActivity, anotherActivity);
             Assert.IsTrue(testLogic.Exists(newActivity));
         }

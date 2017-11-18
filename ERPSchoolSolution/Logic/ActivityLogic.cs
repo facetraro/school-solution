@@ -26,11 +26,25 @@ namespace Logic
             Activity toDelete = anObject as Activity;
             Delete(toDelete);
         }
+        private bool ModifyValidation(Object anObject, Object anotherObject)
+        {
+            ActivityValidator validator = new ActivityValidator();
+            bool domainValidation = validator.IsValid(anotherObject);
+            bool sameId = anObject.Equals(anotherObject);
+            return domainValidation && sameId;
+        }
+        private bool CanIModify(Object anObject, Object anotherObject)
+        {
+            return (Exists(anObject) && ModifyValidation(anObject, anotherObject));
+        }
         public void Modify(Object oldObject, Object newObject)
         {
-            ActivityAccess context = new ActivityAccess();
-            Activity newActivity = newObject as Activity;
-            context.Modify(newActivity);
+            if (CanIModify(oldObject,newObject))
+            {
+                ActivityAccess context = new ActivityAccess();
+                Activity newActivity = newObject as Activity;
+                context.Modify(newActivity);
+            }
         }
         public bool Exists(Object anObject)
         {
