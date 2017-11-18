@@ -53,11 +53,9 @@ namespace Logic
             SubscriptionAccess context = new SubscriptionAccess();
             return context.GetAll();
         }
-
         public int Lenght()
         {
-            SubscriptionAccess context = new SubscriptionAccess();
-            return context.GetAll().Count;
+            return GetAllSubscriptions().Count;
         }
     }
 }
