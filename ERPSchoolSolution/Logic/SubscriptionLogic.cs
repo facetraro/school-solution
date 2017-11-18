@@ -11,18 +11,22 @@ namespace Logic
 {
     public class SubscriptionLogic : IAdd
     {
-        private bool CanIAdd(Object anObject)
+        private bool StudentAlreadyPayThisMonth(Object anObject)
         {
-            bool validation = true;
+            bool validation = false;
             foreach (Subscription item in GetAllSubscriptions())
             {
-                if(item.IsTheSameSubscription(anObject as Subscription))
+                if (item.IsTheSameSubscription(anObject as Subscription))
                 {
-                    validation = false;
-                    throw new AlreadySubscriptedException("El estudiante ya esta pago esa couta.");                   
+                    validation = true;
+                    throw new AlreadySubscriptedException("El estudiante ya esta pago esa couta.");
                 }
             }
             return validation;
+        }
+        private bool CanIAdd(Object anObject)
+        {
+            return !StudentAlreadyPayThisMonth(anObject);
         }
         public void Add(Object anObject)
         {
