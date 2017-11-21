@@ -74,5 +74,10 @@ namespace ERPSchoolUI
             ActivityMenu theActivityMenu = new ActivityMenu(mainPanel);
             mainPanel.Controls.Add(theActivityMenu);
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

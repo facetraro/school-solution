@@ -119,14 +119,14 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="subjectManagement.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 126</value>
+    <value>81, 101</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="subjectManagement.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="subjectManagement.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 60</value>
+    <value>126, 48</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="subjectManagement.TabIndex" type="System.Int32, mscorlib">
@@ -145,16 +145,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;subjectManagement.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="studentManagement.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 234</value>
+    <value>81, 173</value>
   </data>
   <data name="studentManagement.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="studentManagement.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 60</value>
+    <value>126, 48</value>
   </data>
   <data name="studentManagement.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -172,16 +172,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;studentManagement.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="teacherManagement.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 348</value>
+    <value>81, 247</value>
   </data>
   <data name="teacherManagement.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="teacherManagement.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 60</value>
+    <value>126, 48</value>
   </data>
   <data name="teacherManagement.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -199,16 +199,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;teacherManagement.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="schoolVansManagement.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 458</value>
+    <value>81, 322</value>
   </data>
   <data name="schoolVansManagement.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="schoolVansManagement.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 60</value>
+    <value>126, 48</value>
   </data>
   <data name="schoolVansManagement.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -226,16 +226,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;schoolVansManagement.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="mainPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 109</value>
+    <value>301, 87</value>
   </data>
   <data name="mainPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="mainPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>638, 606</value>
+    <value>510, 485</value>
   </data>
   <data name="mainPanel.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -250,16 +250,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;mainPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="buttonTestData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 688</value>
+    <value>66, 550</value>
   </data>
   <data name="buttonTestData.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="buttonTestData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 46</value>
+    <value>154, 37</value>
   </data>
   <data name="buttonTestData.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -277,19 +277,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonTestData.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 565</value>
+    <value>81, 396</value>
   </data>
   <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 60</value>
+    <value>126, 48</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -307,13 +307,43 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>81, 467</value>
+  </data>
+  <data name="button2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 48</value>
+  </data>
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Gestión de Pagos</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>120, 120</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -326,8 +356,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACw4AAAsO
-        AUC+4UEAAP5PSURBVHhe5L33mxy3ma59/qhje4OtxByVJVu2JGd7nbNkReacMzmBw+GQw5xzEnMmxSQx
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACw0AAAsN
+        Ae0HwCwAAP5PSURBVHhe5L33mxy3ma59/qhje4OtxByVJVu2JGd7nbNkReacMzmBw+GQw5xzEnMmxSQx
         KlLJVqRseXfPnl18z/MCLwpAobp7hkNJ5/p+uK+e6UIhVOjGezeA+l93TJhu7piY584Afe92ZcI0z22O
         8D0lymvSdHPXpBkN0yv5/07i8pO6oO4s47bxZKrwjZAJjokxt01C+oDbJyOfOtwxZUaWO6fOLJg209wl
         zJLXXo7ejj6OvmT6LNOvQZhWQL6ah+apZRTMqmB2RO/pZFYXcPvMsPQJmVnQV5k1pzFmzon2L+WD7UJu
@@ -10486,7 +10516,7 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1049, 745</value>
+    <value>839, 596</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
