@@ -29,32 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModifyActivity));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textCostActivity = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.removeSubject = new System.Windows.Forms.Button();
-            this.addSubject = new System.Windows.Forms.Button();
-            this.listStudentsSelected = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textNameStudent = new System.Windows.Forms.TextBox();
-            this.listStudents = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.textNameActivity = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textStudentNumber = new System.Windows.Forms.TextBox();
+            this.textIDActivity = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textCostActivity
             // 
-            this.textBox1.Location = new System.Drawing.Point(251, 290);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(119, 22);
-            this.textBox1.TabIndex = 70;
+            this.textCostActivity.Location = new System.Drawing.Point(251, 290);
+            this.textCostActivity.Name = "textCostActivity";
+            this.textCostActivity.Size = new System.Drawing.Size(119, 22);
+            this.textCostActivity.TabIndex = 70;
             // 
             // label6
             // 
@@ -100,56 +93,6 @@
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(379, 370);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(180, 17);
-            this.label7.TabIndex = 65;
-            this.label7.Text = "Estudiantes seleccionados:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(122, 370);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 17);
-            this.label8.TabIndex = 64;
-            this.label8.Text = "Estudiantes totales:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // removeSubject
-            // 
-            this.removeSubject.Location = new System.Drawing.Point(301, 497);
-            this.removeSubject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.removeSubject.Name = "removeSubject";
-            this.removeSubject.Size = new System.Drawing.Size(52, 23);
-            this.removeSubject.TabIndex = 63;
-            this.removeSubject.Text = "<-";
-            this.removeSubject.UseVisualStyleBackColor = true;
-            // 
-            // addSubject
-            // 
-            this.addSubject.Location = new System.Drawing.Point(301, 430);
-            this.addSubject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.addSubject.Name = "addSubject";
-            this.addSubject.Size = new System.Drawing.Size(52, 23);
-            this.addSubject.TabIndex = 62;
-            this.addSubject.Text = "->";
-            this.addSubject.UseVisualStyleBackColor = true;
-            // 
-            // listStudentsSelected
-            // 
-            this.listStudentsSelected.FormattingEnabled = true;
-            this.listStudentsSelected.ItemHeight = 16;
-            this.listStudentsSelected.Location = new System.Drawing.Point(373, 398);
-            this.listStudentsSelected.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listStudentsSelected.Name = "listStudentsSelected";
-            this.listStudentsSelected.Size = new System.Drawing.Size(181, 148);
-            this.listStudentsSelected.TabIndex = 61;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -161,33 +104,13 @@
             this.label5.Text = "Modificar Actividad";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // textNameStudent
+            // textNameActivity
             // 
-            this.textNameStudent.Location = new System.Drawing.Point(251, 183);
-            this.textNameStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textNameStudent.Name = "textNameStudent";
-            this.textNameStudent.Size = new System.Drawing.Size(223, 22);
-            this.textNameStudent.TabIndex = 59;
-            // 
-            // listStudents
-            // 
-            this.listStudents.FormattingEnabled = true;
-            this.listStudents.ItemHeight = 16;
-            this.listStudents.Location = new System.Drawing.Point(82, 398);
-            this.listStudents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listStudents.Name = "listStudents";
-            this.listStudents.Size = new System.Drawing.Size(181, 148);
-            this.listStudents.TabIndex = 58;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(222, 342);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 17);
-            this.label3.TabIndex = 57;
-            this.label3.Text = "Participantes de la actividad";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.textNameActivity.Location = new System.Drawing.Point(251, 183);
+            this.textNameActivity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textNameActivity.Name = "textNameActivity";
+            this.textNameActivity.Size = new System.Drawing.Size(223, 22);
+            this.textNameActivity.TabIndex = 59;
             // 
             // label1
             // 
@@ -198,14 +121,14 @@
             this.label1.TabIndex = 56;
             this.label1.Text = "Nombre Actividad:";
             // 
-            // textStudentNumber
+            // textIDActivity
             // 
-            this.textStudentNumber.Location = new System.Drawing.Point(251, 135);
-            this.textStudentNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textStudentNumber.Name = "textStudentNumber";
-            this.textStudentNumber.ReadOnly = true;
-            this.textStudentNumber.Size = new System.Drawing.Size(119, 22);
-            this.textStudentNumber.TabIndex = 55;
+            this.textIDActivity.Location = new System.Drawing.Point(251, 135);
+            this.textIDActivity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textIDActivity.Name = "textIDActivity";
+            this.textIDActivity.ReadOnly = true;
+            this.textIDActivity.Size = new System.Drawing.Size(119, 22);
+            this.textIDActivity.TabIndex = 55;
             // 
             // label2
             // 
@@ -218,35 +141,29 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(482, 566);
+            this.saveButton.Location = new System.Drawing.Point(466, 549);
             this.saveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(105, 36);
             this.saveButton.TabIndex = 71;
             this.saveButton.Text = "Guardar";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // ModifyActivity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textCostActivity);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.backButton);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.removeSubject);
-            this.Controls.Add(this.addSubject);
-            this.Controls.Add(this.listStudentsSelected);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textNameStudent);
-            this.Controls.Add(this.listStudents);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textNameActivity);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textStudentNumber);
+            this.Controls.Add(this.textIDActivity);
             this.Controls.Add(this.label2);
             this.Name = "ModifyActivity";
             this.Size = new System.Drawing.Size(637, 630);
@@ -257,22 +174,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textCostActivity;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button removeSubject;
-        private System.Windows.Forms.Button addSubject;
-        private System.Windows.Forms.ListBox listStudentsSelected;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textNameStudent;
-        private System.Windows.Forms.ListBox listStudents;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textNameActivity;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textStudentNumber;
+        private System.Windows.Forms.TextBox textIDActivity;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button saveButton;
     }

@@ -18,6 +18,7 @@ namespace ERPSchoolUI
         {
             InitializeComponent();
             this.mainPanel = mainPanel;
+            Load();
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -25,6 +26,11 @@ namespace ERPSchoolUI
             mainPanel.Controls.Clear();
             ActivityMenu backMenu = new ActivityMenu(mainPanel);
             mainPanel.Controls.Add(backMenu);
+        }
+        private void Load()
+        {
+            ActivityModule module = new ActivityModule();
+            module.LoadAllActivities(listActivities);
         }
 
         private void confirmRemoveButton_Click(object sender, EventArgs e)
@@ -34,7 +40,7 @@ namespace ERPSchoolUI
                 foreach (Object item in listActivitiesSelected.Items)
                 {
                     ActivityModule module = new ActivityModule();
-                    //module.RemoveTeacher(item);
+                    module.RemoveActivity(item);
                 }
                 MessageBox.Show("Actividad(es) Eliminada(s) con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 mainPanel.Controls.Clear();
@@ -44,6 +50,35 @@ namespace ERPSchoolUI
             else
             {
                 MessageBox.Show("No se ha seleccionado ninguna Actividad para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private bool IsListSelected(ListBox list)
+        {
+            int selectedIndex = list.SelectedIndex;
+            if (selectedIndex == -1)
+            {
+                MessageBox.Show("No se ha seleccionado ninguna Actividad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+        private void selectActivity_Click(object sender, EventArgs e)
+        {
+            if (IsListSelected(listActivities))
+            {
+                Object selected = (Object)listActivities.SelectedItem;
+                listActivities.Items.Remove(selected);
+                listActivitiesSelected.Items.Add(selected);
+            }
+        }
+
+        private void unselectActivity_Click(object sender, EventArgs e)
+        {
+            if (IsListSelected(listActivitiesSelected))
+            {
+                Object selected = (Object)listActivitiesSelected.SelectedItem;
+                listActivitiesSelected.Items.Remove(selected);
+                listActivities.Items.Add(selected);
             }
         }
     }

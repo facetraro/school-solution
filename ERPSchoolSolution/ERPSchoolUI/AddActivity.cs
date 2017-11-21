@@ -38,12 +38,14 @@ namespace ERPSchoolUI
         private void saveButton_Click(object sender, EventArgs e)
         {
             ActivityModule module = new ActivityModule();
+            List<Object> activities = new List<Object>();
+
             try
             {
-                //module.AddNewActivity((int)numericMaxCapacity.Value);
+                module.AddNewActivity(textNameActivity.Text, dateTimePicker1.Value, int.Parse(textCost.Text));
                 MessageBox.Show("Actividad ingresada con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 mainPanel.Controls.Clear();
-                ActivityMenu backMenu = new ActivityMenu(mainPanel);
+                StudentMenu backMenu = new StudentMenu(mainPanel);
                 mainPanel.Controls.Add(backMenu);
             }
             catch (Exception ex)

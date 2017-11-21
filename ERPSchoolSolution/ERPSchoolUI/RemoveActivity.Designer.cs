@@ -32,8 +32,8 @@
             this.confirmRemoveButton = new System.Windows.Forms.Button();
             this.Docen = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.unselectSchoolVan = new System.Windows.Forms.Button();
-            this.selectSchoolVan = new System.Windows.Forms.Button();
+            this.unselectActivity = new System.Windows.Forms.Button();
+            this.selectActivity = new System.Windows.Forms.Button();
             this.listActivitiesSelected = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.listActivities = new System.Windows.Forms.ListBox();
@@ -71,25 +71,27 @@
             this.label8.Text = "Todas las actividades:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // unselectSchoolVan
+            // unselectActivity
             // 
-            this.unselectSchoolVan.Location = new System.Drawing.Point(275, 300);
-            this.unselectSchoolVan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.unselectSchoolVan.Name = "unselectSchoolVan";
-            this.unselectSchoolVan.Size = new System.Drawing.Size(52, 23);
-            this.unselectSchoolVan.TabIndex = 79;
-            this.unselectSchoolVan.Text = "<-";
-            this.unselectSchoolVan.UseVisualStyleBackColor = true;
+            this.unselectActivity.Location = new System.Drawing.Point(275, 300);
+            this.unselectActivity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.unselectActivity.Name = "unselectActivity";
+            this.unselectActivity.Size = new System.Drawing.Size(52, 23);
+            this.unselectActivity.TabIndex = 79;
+            this.unselectActivity.Text = "<-";
+            this.unselectActivity.UseVisualStyleBackColor = true;
+            this.unselectActivity.Click += new System.EventHandler(this.unselectActivity_Click);
             // 
-            // selectSchoolVan
+            // selectActivity
             // 
-            this.selectSchoolVan.Location = new System.Drawing.Point(275, 233);
-            this.selectSchoolVan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.selectSchoolVan.Name = "selectSchoolVan";
-            this.selectSchoolVan.Size = new System.Drawing.Size(52, 23);
-            this.selectSchoolVan.TabIndex = 78;
-            this.selectSchoolVan.Text = "->";
-            this.selectSchoolVan.UseVisualStyleBackColor = true;
+            this.selectActivity.Location = new System.Drawing.Point(275, 233);
+            this.selectActivity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.selectActivity.Name = "selectActivity";
+            this.selectActivity.Size = new System.Drawing.Size(52, 23);
+            this.selectActivity.TabIndex = 78;
+            this.selectActivity.Text = "->";
+            this.selectActivity.UseVisualStyleBackColor = true;
+            this.selectActivity.Click += new System.EventHandler(this.selectActivity_Click);
             // 
             // listActivitiesSelected
             // 
@@ -147,8 +149,8 @@
             this.Controls.Add(this.confirmRemoveButton);
             this.Controls.Add(this.Docen);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.unselectSchoolVan);
-            this.Controls.Add(this.selectSchoolVan);
+            this.Controls.Add(this.unselectActivity);
+            this.Controls.Add(this.selectActivity);
             this.Controls.Add(this.listActivitiesSelected);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listActivities);
@@ -164,8 +166,8 @@
         private System.Windows.Forms.Button confirmRemoveButton;
         private System.Windows.Forms.Label Docen;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button unselectSchoolVan;
-        private System.Windows.Forms.Button selectSchoolVan;
+        private System.Windows.Forms.Button unselectActivity;
+        private System.Windows.Forms.Button selectActivity;
         private System.Windows.Forms.ListBox listActivitiesSelected;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listActivities;
