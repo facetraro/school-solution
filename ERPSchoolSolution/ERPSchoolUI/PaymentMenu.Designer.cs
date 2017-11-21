@@ -73,6 +73,7 @@
             this.modifyActivity.TabIndex = 13;
             this.modifyActivity.Text = "Agregar pago Couta";
             this.modifyActivity.UseVisualStyleBackColor = true;
+            this.modifyActivity.Click += new System.EventHandler(this.modifyActivity_Click);
             // 
             // addActivity
             // 

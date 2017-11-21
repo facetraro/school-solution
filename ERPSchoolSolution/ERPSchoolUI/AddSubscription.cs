@@ -24,8 +24,8 @@ namespace ERPSchoolUI
         private void backButton_Click(object sender, EventArgs e)
         {
             mainPanel.Controls.Clear();
-            SchoolVanMenu backSchoolVanMenu = new SchoolVanMenu(mainPanel);
-            mainPanel.Controls.Add(backSchoolVanMenu);
+            PaymentMenu backMenu = new PaymentMenu(mainPanel);
+            mainPanel.Controls.Add(backMenu);
         }
 
         private void saveButton_Click(object sender, EventArgs e)

@@ -184,6 +184,12 @@
     <Compile Include="ModifyTeacherSelectList.Designer.cs">
       <DependentUpon>ModifyTeacherSelectList.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaymentMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PaymentMenu.Designer.cs">
+      <DependentUpon>PaymentMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrincipalWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyTeacherSelectList.resx">
       <DependentUpon>ModifyTeacherSelectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentMenu.resx">
+      <DependentUpon>PaymentMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrincipalWindow.ii.resx">
       <DependentUpon>PrincipalWindow.cs</DependentUpon>

@@ -77,7 +77,9 @@ namespace ERPSchoolUI
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-
+            mainPanel.Controls.Clear();
+            PaymentMenu thePaymentMenu = new PaymentMenu(mainPanel);
+            mainPanel.Controls.Add(thePaymentMenu);
         }
     }
 }

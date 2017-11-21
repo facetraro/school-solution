@@ -12,9 +12,24 @@ namespace ERPSchoolUI
 {
     public partial class PaymentMenu : UserControl
     {
-        public PaymentMenu()
+        Panel mainPanel;
+        public PaymentMenu(Panel mainPanel)
         {
             InitializeComponent();
+            this.mainPanel = mainPanel;
+            LoadLabels();
+        }
+
+        private void LoadLabels()
+        {
+           
+        }
+
+        private void modifyActivity_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            AddSubscription addNewActivity = new AddSubscription(mainPanel);
+            mainPanel.Controls.Add(addNewActivity);
         }
     }
 }
