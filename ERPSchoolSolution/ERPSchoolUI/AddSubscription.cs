@@ -19,6 +19,32 @@ namespace ERPSchoolUI
         {
             InitializeComponent();
             this.mainPanel = mainPanel;
+            try
+            {
+                LoadStudents();
+                this.mainPanel = mainPanel;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                PaymentMenu backMenu = new PaymentMenu(mainPanel);
+                mainPanel.Controls.Add(backMenu);
+            }
+        }
+        private void LoadStudents()
+        {
+            StudentModule module = new StudentModule();
+            module.LoadAllStudents(listStudents);
+        }
+        private bool IsListSelected()
+        {
+            int selectedIndex = listStudents.SelectedIndex;
+            if (selectedIndex == -1)
+            {
+                MessageBox.Show("No se ha seleccionado ningun alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
 
         private void backButton_Click(object sender, EventArgs e)
