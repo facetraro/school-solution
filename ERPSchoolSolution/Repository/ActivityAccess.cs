@@ -144,8 +144,6 @@ namespace Repository
                     oldActivity.Name = modifiedActivity.Name;
                     oldActivity.Cost = modifiedActivity.Cost;
                     oldActivity.Date = modifiedActivity.Date;
-                    oldActivity.Id = modifiedActivity.Id;
-                    oldActivity.ActivityPayments = GetActivityPaymentsListAttached(context, modifiedActivity);
                     context.Entry(oldActivity).State = EntityState.Modified;
                     context.SaveChanges();
                 }

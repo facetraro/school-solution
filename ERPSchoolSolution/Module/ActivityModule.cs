@@ -18,17 +18,14 @@ namespace Module
             this.Description = "Sector que permite gestionar las actividades";
         }
 
-        public void AddNewActivity(string name, DateTime date, int cost, List<ActivityPayment> listActivityPayments)
+        public void AddNewActivity(string name, DateTime date, int cost)
         {
             ActivityLogic logic = new ActivityLogic();
             Activity newActivity = new Activity();
             newActivity.Name = name;
             newActivity.Date = date;
             newActivity.Cost = cost;
-            foreach (Object item in listActivityPayments)
-            {
-                newActivity.ActivityPayments.Add((ActivityPayment)item);
-            }
+            newActivity.ActivityPayments = new List<ActivityPayment>();
             logic.Add(newActivity);
         }
 
@@ -55,10 +52,24 @@ namespace Module
             ActivityLogic logic = new ActivityLogic();
             logic.Remove(toDelete);
         }
-
-        public void LoadFields(Object anObject, TextBox textNameActivity, TextBox textCostActivity, DateTimePicker date)
+        public void LoadAllActivities(ListBox list)
+        {
+            ActivityLogic logic = new ActivityLogic();
+            List<Activity> allObjects = new List<Activity>();
+            allObjects = logic.GetAllActivities();
+            if (allObjects.Count == 0)
+            {
+                throw new NoActivityInSystemException("No hay Actividades ingresadas en el sistema");
+            }
+            foreach (Activity item in allObjects)
+            {
+                list.Items.Add(item);
+            }
+        }
+        public void LoadFields(Object anObject, TextBox textIDActivity, TextBox textNameActivity, TextBox textCostActivity, DateTimePicker date)
         {
             Activity activity = anObject as Activity;
+            textIDActivity.Text = activity.Id.ToString();
             textNameActivity.Text = activity.Name;
             textCostActivity.Text = activity.Cost.ToString();
             date.Value = activity.Date;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Module;
 
 namespace ERPSchoolUI
 {
@@ -16,7 +17,9 @@ namespace ERPSchoolUI
         public ModifyActivitySelectList(Panel mainPanel)
         {
             InitializeComponent();
+            LoadActivity();
             this.mainPanel = mainPanel;
+            
         }
         private bool IsListSelected()
         {
@@ -27,6 +30,11 @@ namespace ERPSchoolUI
                 return false;
             }
             return true;
+        }
+        private void LoadActivity()
+        {
+            ActivityModule module = new ActivityModule();
+            module.LoadAllActivities(listActivities);
         }
         private void button1_Click(object sender, EventArgs e)
         {

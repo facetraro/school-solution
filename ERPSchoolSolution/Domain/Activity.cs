@@ -30,5 +30,6 @@ namespace Domain
             }
             return (this.Id == theActivity.Id);
         }
+
     }
 }
