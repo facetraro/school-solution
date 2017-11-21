@@ -30,5 +30,10 @@ namespace Domain
             }
             return (this.Id == theActivity.Id);
         }
+
+        public override string ToString()
+        {
+            return "[Actividad " + Id + "] "+ Name + " | Costo: $" + Cost;
+        }
     }
 }

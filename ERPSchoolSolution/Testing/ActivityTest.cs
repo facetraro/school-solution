@@ -105,5 +105,19 @@ namespace Testing
             ActivityValidator validator = new ActivityValidator();
             Assert.IsTrue(validator.IsValid(anActivity));
         }
+
+        [TestMethod]
+        public void toStringActivity()
+        {
+            Activity anActivity = new Activity();
+            int idTest = 1;
+            string nameTest = "testName";
+            int costTest = 10;
+            anActivity.Id = idTest;
+            anActivity.Name = nameTest;
+            anActivity.Cost = costTest;
+            string ac = anActivity.ToString();
+            Assert.IsTrue(anActivity.ToString().Equals("[Actividad 1] testName | Costo: $10"));
+        }
     }
 }
