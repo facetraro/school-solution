@@ -22,12 +22,21 @@ namespace Logic
         {
             SubscriptionLogic subscriptionLogic = new SubscriptionLogic();
             List<Subscription> allSubscriptions = subscriptionLogic.GetAllSubscriptions();
-            List<Payment> allPayments = AddSubscriptionsToList(new List<Payment>(), allSubscriptions);           
+            List<Payment> allPayments = AddSubscriptionsToList(new List<Payment>(), allSubscriptions);
             return allPayments;
         }
         public List<Payment> GetAllPaymentsByStudent(Student student)
         {
-            return new List<Payment>();
+            List<Payment> allPayments = GetAllPayments();
+            List<Payment> paymentsByStudent = new List<Payment>();
+            foreach (Payment item in allPayments)
+            {
+                if (item.Student.Equals(student))
+                {
+                    paymentsByStudent.Add(item);
+                }
+            }
+            return paymentsByStudent;
         }
     }
 }
