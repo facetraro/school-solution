@@ -35,10 +35,9 @@ namespace Module
             Activity newActivity = new Activity();
             Activity oldActivity = (Activity)selectedObject;
             newActivity.Id = oldActivity.Id;
-            newActivity.Name = oldActivity.Name;
-            newActivity.Cost = oldActivity.Cost;
-            newActivity.Date = new DateTime();
-
+            newActivity.Name = name;
+            newActivity.Cost = cost;
+            newActivity.Date = date;
             logic.Modify(selectedObject, newActivity);
         }
 
