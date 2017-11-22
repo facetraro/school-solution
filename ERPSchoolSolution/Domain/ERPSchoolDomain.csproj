@@ -53,7 +53,6 @@
     <Compile Include="IRouteObject.cs" />
     <Compile Include="Payment.cs" />
     <Compile Include="Person.cs" />
-    <Compile Include="Route.cs" />
     <Compile Include="SortStudentById.cs" />
     <Compile Include="SortSchoolVanById.cs" />
     <Compile Include="SortSchoolVans.cs" />
