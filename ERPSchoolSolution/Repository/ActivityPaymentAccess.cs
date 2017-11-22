@@ -40,7 +40,23 @@ namespace Repository
         }
         public void Empty()
         {
-
+            try
+            {
+                using (var context = new ContextDB())
+                {
+                    List<ActivityPayment> activityPayments = context.ActivityPayments.ToList();
+                    foreach (ActivityPayment actual in activityPayments)
+                    {
+                        ActivityPayment toDelete = context.ActivityPayments.Find(actual.Id);
+                        context.ActivityPayments.Remove(toDelete);
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw new ActivityPaymentPersistanceException("Se ha perdido la conexion con el servidor");
+            }
         }
         public ActivityPayment Get(int id)
         {

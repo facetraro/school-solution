@@ -11,6 +11,7 @@ namespace Repository
         public void EmptyDB()
         {
             List<IDBAccess> access = new List<IDBAccess>();
+            access.Add(new ActivityPaymentAccess());
             access.Add(new SubscriptionAccess());
             access.Add(new StudentAccess());
             access.Add(new TeacherAccess());
