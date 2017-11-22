@@ -67,6 +67,12 @@ namespace Testing.LogicTest
             Student newStudent = new Student();
             Assert.IsTrue(paymentLogic.GetAllPaymentsByStudent(newStudent).Count == 0);
         }
-
+        [TestMethod]
+        public void GetAllPaymentsByStudentOnlySubscription()
+        {
+            AddTestSubscription();
+            PaymentLogic paymentLogic = new PaymentLogic();
+            Assert.IsTrue(paymentLogic.GetAllPaymentsByStudent(GetLastStudentInDB()).Count == 1);
+        }
     }
 }
