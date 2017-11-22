@@ -17,5 +17,13 @@ namespace Testing.LogicTest
             logic.Add(newActPay);
             Assert.IsTrue(logic.Exists(newActPay));
         }
+        [TestMethod]
+        public void ExistsActivityPaymentFail()
+        {
+            SetUp();
+            ActivityPayment newActPay = new ActivityPayment();
+            ActivityPaymentLogic logic = new ActivityPaymentLogic();
+            Assert.IsFalse(logic.Exists(newActPay));
+        }
     }
 }
