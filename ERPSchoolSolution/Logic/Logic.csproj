@@ -49,6 +49,7 @@
     <Compile Include="ActivityLogic.cs" />
     <Compile Include="IAdd.cs" />
     <Compile Include="IAddRemoveModify.cs" />
+    <Compile Include="PaymentLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SchoolVanLogic.cs" />
     <Compile Include="StudentLogic.cs" />
