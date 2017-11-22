@@ -62,6 +62,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CoordinateTest.cs" />
+    <Compile Include="LogicTest\ActivityPaymentLogicTest.cs" />
     <Compile Include="LogicTest\SchoolVanLogicTest.cs" />
     <Compile Include="LogicTest\StudentLogicTest.cs" />
     <Compile Include="LogicTest\SubjectLogicTest.cs" />

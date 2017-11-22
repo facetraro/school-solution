@@ -1,11 +1,12 @@
 ﻿using System;
 using Domain;
+using Logic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Testing.LogicTest
 {
     [TestClass]
-    public class ActivityPaymentLogicTest
+    public class ActivityPaymentLogicTest : SetUpLogic
     {
         [TestMethod]
         public void AddActivityPaymentSuccess()
