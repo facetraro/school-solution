@@ -46,7 +46,7 @@ namespace Testing.LogicTest
             Subscription newSub = new Subscription();
             AddStudentToDB(TestStudent());
             newSub.Amount = 400;
-            newSub.Date = new DateTime(2017, 11, 5);
+            newSub.Date = new DateTime(2017, 11, 2);
             newSub.Student = GetLastStudentInDB();
             return newSub;
         }
@@ -108,17 +108,26 @@ namespace Testing.LogicTest
             SetUp();
             Subscription firstSub = TestSubscription();
             Subscription secondSub = TestSubscription();
-            Subscription thirdSub = TestSubscription();
-            secondSub.Date = firstSub.Date.AddMonths(1);
             SubscriptionLogic logic = new SubscriptionLogic();
             logic.Add(firstSub);
-            logic.Add(secondSub);
             Student anotherStudent = TestStudent();
             anotherStudent.Ci = 47801210;
+            anotherStudent.StudentNumber = 654;
             AddStudentToDB(anotherStudent);
-            thirdSub.Student = GetLastStudentInDB();
-            logic.Add(thirdSub);
-            Assert.IsTrue(logic.Lenght() == 3);
+            secondSub.Student = GetLastStudentInDB();
+            logic.Add(secondSub);
+            Assert.IsTrue(logic.Lenght() == 2);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(StudentNotUpToDateException))]
+        public void AddInvalidStudentPayment()
+        {
+            SetUp();
+            Subscription firstSub = TestSubscription();
+            firstSub.Date = firstSub.Date.AddMonths(1);
+            SubscriptionLogic logic = new SubscriptionLogic();
+            logic.Add(firstSub);
+            Assert.IsTrue(logic.Lenght() == 0);
         }
     }
 }

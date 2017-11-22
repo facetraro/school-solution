@@ -8,8 +8,16 @@ namespace Domain
 {
     public class Subscription : Payment
     {
+        private static int DefaultAmount = 500;
         public DateTime Date { get; set; }
         public int Amount { get; set; }
+        public Subscription()
+        {
+            this.Id = 1;
+            this.Student = new Student();
+            this.Date = new DateTime();
+            this.Amount = DefaultAmount;
+        }
         public bool IsBefore(DateTime anotherDate)
         {
             int comparationResult = this.Date.CompareTo(anotherDate);

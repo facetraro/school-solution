@@ -47,16 +47,35 @@ namespace ERPSchoolUI
             return true;
         }
 
-        private void backButton_Click(object sender, EventArgs e)
+        private void GoBackMenu()
         {
             mainPanel.Controls.Clear();
             PaymentMenu backMenu = new PaymentMenu(mainPanel);
             mainPanel.Controls.Add(backMenu);
         }
 
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            GoBackMenu();
+        }
+
         private void saveButton_Click(object sender, EventArgs e)
         {
-           
+            if (IsListSelected())
+            {
+                PaymentModule module = new PaymentModule();
+                Object selected = (Object)listStudents.SelectedItem;
+                try
+                {
+                    module.AddSubscription(selected, (int)numericMaxYear.Value, (int)numericUpDownMonth.Value);
+                    MessageBox.Show("Se ha pagado la subscripcion con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GoBackMenu();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

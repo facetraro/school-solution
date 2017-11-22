@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Module;
 
 namespace ERPSchoolUI
 {
@@ -19,10 +20,11 @@ namespace ERPSchoolUI
             this.mainPanel = mainPanel;
             LoadLabels();
         }
-
-        private void LoadLabels()
+        public void LoadLabels()
         {
-           
+            PaymentModule module = new PaymentModule();
+            labelTitle.Text = module.Name;
+            labelDescription.Text = module.Description;
         }
 
         private void modifyActivity_Click(object sender, EventArgs e)
