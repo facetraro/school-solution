@@ -378,9 +378,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Module\Module.csproj">
+    <ProjectReference Include="..\Module\ERPSchoolModule.csproj">
       <Project>{156F9A8D-C5C6-47A4-8102-8E6748B311DB}</Project>
-      <Name>Module</Name>
+      <Name>ERPSchoolModule</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

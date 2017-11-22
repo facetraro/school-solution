@@ -66,9 +66,9 @@
     <Compile Include="Teacher.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Exceptions\Exceptions.csproj">
+    <ProjectReference Include="..\Exceptions\ERPSchoolExceptions.csproj">
       <Project>{115BA8EF-0B0E-4AE9-A576-A4145233618C}</Project>
-      <Name>Exceptions</Name>
+      <Name>ERPSchoolExceptions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

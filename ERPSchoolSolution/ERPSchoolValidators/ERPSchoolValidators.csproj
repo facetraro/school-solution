@@ -50,13 +50,13 @@
     <Compile Include="TeacherValidator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj">
+    <ProjectReference Include="..\Domain\ERPSchoolDomain.csproj">
       <Project>{0320B488-9247-4F8A-938C-3418358858B2}</Project>
-      <Name>Domain</Name>
+      <Name>ERPSchoolDomain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Exceptions\Exceptions.csproj">
+    <ProjectReference Include="..\Exceptions\ERPSchoolExceptions.csproj">
       <Project>{115BA8EF-0B0E-4AE9-A576-A4145233618C}</Project>
-      <Name>Exceptions</Name>
+      <Name>ERPSchoolExceptions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

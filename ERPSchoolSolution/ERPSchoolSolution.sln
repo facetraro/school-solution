@@ -5,17 +5,17 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPSchoolUI", "ERPSchoolUI\ERPSchoolUI.csproj", "{24E31082-B768-4B47-B8F7-3AB39027739E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{45F2AA8B-ADB7-460D-953B-7CA52E2C0588}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPSchoolTesting", "Testing\ERPSchoolTesting.csproj", "{45F2AA8B-ADB7-460D-953B-7CA52E2C0588}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{0320B488-9247-4F8A-938C-3418358858B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPSchoolDomain", "Domain\ERPSchoolDomain.csproj", "{0320B488-9247-4F8A-938C-3418358858B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{F7615243-8C9B-4505-A593-D9D592071E05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPSchoolLogic", "Logic\ERPSchoolLogic.csproj", "{F7615243-8C9B-4505-A593-D9D592071E05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{3995B9DB-972D-4706-941C-9C9DB825239E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPSchoolRepository", "Repository\ERPSchoolRepository.csproj", "{3995B9DB-972D-4706-941C-9C9DB825239E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{115BA8EF-0B0E-4AE9-A576-A4145233618C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPSchoolExceptions", "Exceptions\ERPSchoolExceptions.csproj", "{115BA8EF-0B0E-4AE9-A576-A4145233618C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module", "Module\Module.csproj", "{156F9A8D-C5C6-47A4-8102-8E6748B311DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPSchoolModule", "Module\ERPSchoolModule.csproj", "{156F9A8D-C5C6-47A4-8102-8E6748B311DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPSchoolValidators", "ERPSchoolValidators\ERPSchoolValidators.csproj", "{870895EE-A2DB-4141-8C56-A13BD4C47202}"
 EndProject

@@ -86,25 +86,25 @@
     <Compile Include="ActivityPaymentTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj">
+    <ProjectReference Include="..\Domain\ERPSchoolDomain.csproj">
       <Project>{0320b488-9247-4f8a-938c-3418358858b2}</Project>
-      <Name>Domain</Name>
+      <Name>ERPSchoolDomain</Name>
     </ProjectReference>
     <ProjectReference Include="..\ERPSchoolValidators\ERPSchoolValidators.csproj">
       <Project>{870895ee-a2db-4141-8c56-a13bd4c47202}</Project>
       <Name>ERPSchoolValidators</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Exceptions\Exceptions.csproj">
+    <ProjectReference Include="..\Exceptions\ERPSchoolExceptions.csproj">
       <Project>{115BA8EF-0B0E-4AE9-A576-A4145233618C}</Project>
-      <Name>Exceptions</Name>
+      <Name>ERPSchoolExceptions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Logic\Logic.csproj">
+    <ProjectReference Include="..\Logic\ERPSchoolLogic.csproj">
       <Project>{F7615243-8C9B-4505-A593-D9D592071E05}</Project>
-      <Name>Logic</Name>
+      <Name>ERPSchoolLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Repository\Repository.csproj">
+    <ProjectReference Include="..\Repository\ERPSchoolRepository.csproj">
       <Project>{3995B9DB-972D-4706-941C-9C9DB825239E}</Project>
-      <Name>Repository</Name>
+      <Name>ERPSchoolRepository</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
