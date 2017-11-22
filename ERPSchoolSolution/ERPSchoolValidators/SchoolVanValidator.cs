@@ -15,33 +15,48 @@ namespace ERPSchoolValidator
         private static int min_fuelConsumption = 0;
         private bool ValidCapacity(SchoolVan aSchoolVan)
         {
+            bool validationCapacity = true;
             if (!(aSchoolVan.Capacity >= min_capacity && aSchoolVan.Capacity <= max_capacity))
             {
-                throw new InvalidValueException("La camioneta debe tener la capacidad entre ["+ min_capacity + "-"+ max_capacity + "]");
+                validationCapacity = false;
             }
-            return true;
+            return validationCapacity;
         }
         private bool ValidFuelConsumption(SchoolVan aSchoolVan)
         {
+            bool fuelValidation = true;
             if (aSchoolVan.FuelConsumption <= min_fuelConsumption)
             {
-                throw new InvalidValueException("La camioneta debe tener un consumo mayor a "+ min_fuelConsumption);
+                fuelValidation = false;
             }
-            return true;
+            return fuelValidation;
         }
         private bool ValidId(SchoolVan aSchoolVan)
         {
+            bool validationId = true;
             if (aSchoolVan.Id < min_id)
             {
-                throw new EmptyOrNullValueException("El id debe ser mayor a "+min_id);
+                validationId = false;
             }
-            return true;
+            return validationId;
         }
         private bool AllAtributesAreValid(SchoolVan theSchoolVan)
         {
             bool capacityValidation = ValidCapacity(theSchoolVan);
+            if (!capacityValidation)
+            {
+                throw new InvalidValueException("La camioneta debe tener la capacidad entre [" + min_capacity + "-" + max_capacity + "]");
+            }
             bool idValidation = ValidId(theSchoolVan);
+            if (!idValidation)
+            {
+                throw new EmptyOrNullValueException("El id debe ser mayor a " + min_id);
+            }
             bool fuelConsumptionValidation = ValidFuelConsumption(theSchoolVan);
+            if (!fuelConsumptionValidation)
+            {
+                throw new InvalidValueException("La camioneta debe tener un consumo mayor a " + min_fuelConsumption);
+            }
             return (capacityValidation && idValidation && fuelConsumptionValidation);
         }
         public bool IsValid(object anObject)
