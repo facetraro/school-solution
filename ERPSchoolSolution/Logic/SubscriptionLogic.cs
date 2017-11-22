@@ -26,7 +26,7 @@ namespace Logic
         private DateTime GetFistDateToCheck(Subscription subscription)
         {
             DateTime date = subscription.Date;
-            DateTime dateToCheck = new DateTime(date.Year, date.Month, 1);
+            DateTime dateToCheck = new DateTime(date.Year, date.Month, 2);
             dateToCheck = dateToCheck.AddMonths(-1);
             return dateToCheck;
         }
