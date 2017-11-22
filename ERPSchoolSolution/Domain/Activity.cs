@@ -32,7 +32,7 @@ namespace Domain
         }
         public override string ToString()
         {
-            return "[Actividad " + Id + "] "+ Name + " | Costo: $" + Cost;
+            return "[" + Id + "] "+ Name + " - Costo: $" + Cost;
         }
 
     }

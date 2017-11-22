@@ -69,7 +69,7 @@ namespace Testing
             Subject aSubject = new Subject();
             aSubject.Code = "123";
             aSubject.Name = "test";
-            Assert.IsTrue(aSubject.ToString().Equals("Materia: test [123]"));
+            Assert.IsTrue(aSubject.ToString().Equals("test [123]"));
 
         }
         [TestMethod]

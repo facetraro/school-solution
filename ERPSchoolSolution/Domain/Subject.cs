@@ -30,7 +30,7 @@ namespace Domain
         }
         public override string ToString()
         {
-            return "Materia: " + Name + " [" + Code + "]";
+            return Name + " [" + Code + "]";
         }
     }
 }
