@@ -33,5 +33,12 @@ namespace ERPSchoolUI
             AddSubscription addNewActivity = new AddSubscription(mainPanel);
             mainPanel.Controls.Add(addNewActivity);
         }
+
+        private void addActivity_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            AddActivityPayment addNewActivityPayment = new AddActivityPayment(mainPanel);
+            mainPanel.Controls.Add(addNewActivityPayment);
+        }
     }
 }
