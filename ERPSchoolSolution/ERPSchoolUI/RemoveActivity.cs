@@ -17,8 +17,18 @@ namespace ERPSchoolUI
         public RemoveActivity(Panel mainPanel)
         {
             InitializeComponent();
-            this.mainPanel = mainPanel;
-            Load();
+            try
+            {
+                Load();
+                this.mainPanel = mainPanel;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                UserControl backMenu = new ActivityMenu(mainPanel);
+                mainPanel.Controls.Add(backMenu);
+                this.mainPanel = mainPanel;
+            }
         }
 
         private void backButton_Click(object sender, EventArgs e)

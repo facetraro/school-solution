@@ -17,9 +17,18 @@ namespace ERPSchoolUI
         public ModifyActivitySelectList(Panel mainPanel)
         {
             InitializeComponent();
-            LoadActivity();
-            this.mainPanel = mainPanel;
-            
+            try
+            {
+                LoadActivity();
+                this.mainPanel = mainPanel;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                UserControl backMenu = new ActivityMenu(mainPanel);
+                mainPanel.Controls.Add(backMenu);
+
+            }
         }
         private bool IsListSelected()
         {
@@ -45,6 +54,11 @@ namespace ERPSchoolUI
                 ModifyActivity modifyActivity = new ModifyActivity(mainPanel, selectedObject);
                 mainPanel.Controls.Add(modifyActivity);
             }
+        }
+
+        private void ModifyActivitySelectList_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

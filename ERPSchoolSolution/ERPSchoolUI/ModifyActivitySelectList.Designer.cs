@@ -82,6 +82,7 @@
             this.Controls.Add(this.listActivities);
             this.Name = "ModifyActivitySelectList";
             this.Size = new System.Drawing.Size(637, 630);
+            this.Load += new System.EventHandler(this.ModifyActivitySelectList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

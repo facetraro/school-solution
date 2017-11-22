@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain;
+using Exceptions;
 using Repository;
 
 namespace Logic
@@ -45,6 +46,16 @@ namespace Logic
                 Activity newActivity = newObject as Activity;
                 context.Modify(newActivity);
             }
+        }
+
+        private bool IsActivitiesEmpty()
+        {
+            bool activitiesEmpty = GetAllActivities().Count == 0;
+            if (activitiesEmpty)
+            {
+                throw new NoActivityInSystemException("No hay camionetas ingresadas en el sistema");
+            }
+            return activitiesEmpty;
         }
         public bool Exists(Object anObject)
         {
