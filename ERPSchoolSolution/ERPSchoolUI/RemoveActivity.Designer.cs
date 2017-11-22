@@ -42,10 +42,10 @@
             // 
             // confirmRemoveButton
             // 
-            this.confirmRemoveButton.Location = new System.Drawing.Point(452, 541);
-            this.confirmRemoveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.confirmRemoveButton.Location = new System.Drawing.Point(396, 434);
+            this.confirmRemoveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.confirmRemoveButton.Name = "confirmRemoveButton";
-            this.confirmRemoveButton.Size = new System.Drawing.Size(105, 36);
+            this.confirmRemoveButton.Size = new System.Drawing.Size(79, 29);
             this.confirmRemoveButton.TabIndex = 82;
             this.confirmRemoveButton.Text = "Confirmar";
             this.confirmRemoveButton.UseVisualStyleBackColor = true;
@@ -54,9 +54,10 @@
             // Docen
             // 
             this.Docen.AutoSize = true;
-            this.Docen.Location = new System.Drawing.Point(357, 163);
+            this.Docen.Location = new System.Drawing.Point(327, 132);
+            this.Docen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Docen.Name = "Docen";
-            this.Docen.Size = new System.Drawing.Size(149, 17);
+            this.Docen.Size = new System.Drawing.Size(112, 13);
             this.Docen.TabIndex = 81;
             this.Docen.Text = "Actividades a eliminar:";
             this.Docen.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -64,19 +65,20 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(97, 163);
+            this.label8.Location = new System.Drawing.Point(76, 132);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(149, 17);
+            this.label8.Size = new System.Drawing.Size(113, 13);
             this.label8.TabIndex = 80;
             this.label8.Text = "Todas las actividades:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // unselectActivity
             // 
-            this.unselectActivity.Location = new System.Drawing.Point(275, 300);
-            this.unselectActivity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.unselectActivity.Location = new System.Drawing.Point(228, 244);
+            this.unselectActivity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.unselectActivity.Name = "unselectActivity";
-            this.unselectActivity.Size = new System.Drawing.Size(52, 23);
+            this.unselectActivity.Size = new System.Drawing.Size(39, 19);
             this.unselectActivity.TabIndex = 79;
             this.unselectActivity.Text = "<-";
             this.unselectActivity.UseVisualStyleBackColor = true;
@@ -84,10 +86,10 @@
             // 
             // selectActivity
             // 
-            this.selectActivity.Location = new System.Drawing.Point(275, 233);
-            this.selectActivity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.selectActivity.Location = new System.Drawing.Point(229, 189);
+            this.selectActivity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.selectActivity.Name = "selectActivity";
-            this.selectActivity.Size = new System.Drawing.Size(52, 23);
+            this.selectActivity.Size = new System.Drawing.Size(39, 19);
             this.selectActivity.TabIndex = 78;
             this.selectActivity.Text = "->";
             this.selectActivity.UseVisualStyleBackColor = true;
@@ -96,31 +98,30 @@
             // listActivitiesSelected
             // 
             this.listActivitiesSelected.FormattingEnabled = true;
-            this.listActivitiesSelected.ItemHeight = 16;
-            this.listActivitiesSelected.Location = new System.Drawing.Point(345, 189);
-            this.listActivitiesSelected.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listActivitiesSelected.Location = new System.Drawing.Point(272, 154);
+            this.listActivitiesSelected.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listActivitiesSelected.Name = "listActivitiesSelected";
-            this.listActivitiesSelected.Size = new System.Drawing.Size(181, 196);
+            this.listActivitiesSelected.Size = new System.Drawing.Size(203, 160);
             this.listActivitiesSelected.TabIndex = 77;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(215, 53);
+            this.label5.Location = new System.Drawing.Point(161, 43);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(204, 29);
+            this.label5.Size = new System.Drawing.Size(159, 24);
             this.label5.TabIndex = 76;
             this.label5.Text = "Eliminar Actividad";
             // 
             // listActivities
             // 
             this.listActivities.FormattingEnabled = true;
-            this.listActivities.ItemHeight = 16;
-            this.listActivities.Location = new System.Drawing.Point(79, 189);
-            this.listActivities.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listActivities.Location = new System.Drawing.Point(29, 154);
+            this.listActivities.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listActivities.Name = "listActivities";
-            this.listActivities.Size = new System.Drawing.Size(181, 196);
+            this.listActivities.Size = new System.Drawing.Size(195, 160);
             this.listActivities.TabIndex = 75;
             // 
             // backButton
@@ -133,17 +134,17 @@
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton.ForeColor = System.Drawing.Color.Transparent;
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(39, 31);
-            this.backButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.backButton.Location = new System.Drawing.Point(29, 25);
+            this.backButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(91, 80);
+            this.backButton.Size = new System.Drawing.Size(68, 65);
             this.backButton.TabIndex = 83;
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // RemoveActivity
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.confirmRemoveButton);
@@ -154,8 +155,9 @@
             this.Controls.Add(this.listActivitiesSelected);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listActivities);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RemoveActivity";
-            this.Size = new System.Drawing.Size(637, 630);
+            this.Size = new System.Drawing.Size(491, 512);
             this.ResumeLayout(false);
             this.PerformLayout();
 

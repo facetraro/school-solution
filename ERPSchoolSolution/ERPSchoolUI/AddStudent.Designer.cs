@@ -99,10 +99,10 @@
             // listSubjects
             // 
             this.listSubjects.FormattingEnabled = true;
-            this.listSubjects.Location = new System.Drawing.Point(54, 317);
+            this.listSubjects.Location = new System.Drawing.Point(31, 317);
             this.listSubjects.Margin = new System.Windows.Forms.Padding(2);
             this.listSubjects.Name = "listSubjects";
-            this.listSubjects.Size = new System.Drawing.Size(137, 121);
+            this.listSubjects.Size = new System.Drawing.Size(181, 121);
             this.listSubjects.TabIndex = 21;
             // 
             // label3
@@ -149,16 +149,16 @@
             // listSubjectsSelected
             // 
             this.listSubjectsSelected.FormattingEnabled = true;
-            this.listSubjectsSelected.Location = new System.Drawing.Point(272, 317);
+            this.listSubjectsSelected.Location = new System.Drawing.Point(287, 317);
             this.listSubjectsSelected.Margin = new System.Windows.Forms.Padding(2);
             this.listSubjectsSelected.Name = "listSubjectsSelected";
-            this.listSubjectsSelected.Size = new System.Drawing.Size(137, 121);
+            this.listSubjectsSelected.Size = new System.Drawing.Size(183, 121);
             this.listSubjectsSelected.TabIndex = 29;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(278, 286);
+            this.label7.Location = new System.Drawing.Point(294, 289);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 13);
@@ -169,7 +169,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(99, 286);
+            this.label8.Location = new System.Drawing.Point(92, 295);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(84, 13);
@@ -179,7 +179,7 @@
             // 
             // removeSubject
             // 
-            this.removeSubject.Location = new System.Drawing.Point(218, 397);
+            this.removeSubject.Location = new System.Drawing.Point(233, 397);
             this.removeSubject.Margin = new System.Windows.Forms.Padding(2);
             this.removeSubject.Name = "removeSubject";
             this.removeSubject.Size = new System.Drawing.Size(39, 19);
@@ -190,7 +190,7 @@
             // 
             // addSubject
             // 
-            this.addSubject.Location = new System.Drawing.Point(218, 343);
+            this.addSubject.Location = new System.Drawing.Point(233, 343);
             this.addSubject.Margin = new System.Windows.Forms.Padding(2);
             this.addSubject.Name = "addSubject";
             this.addSubject.Size = new System.Drawing.Size(39, 19);
@@ -220,7 +220,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(356, 453);
+            this.saveButton.Location = new System.Drawing.Point(391, 452);
             this.saveButton.Margin = new System.Windows.Forms.Padding(2);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(79, 29);
@@ -354,7 +354,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddStudent";
-            this.Size = new System.Drawing.Size(478, 512);
+            this.Size = new System.Drawing.Size(486, 512);
             ((System.ComponentModel.ISupportInitialize)(this.numericY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCi)).EndInit();
