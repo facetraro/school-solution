@@ -25,5 +25,9 @@ namespace Logic
             List<Payment> allPayments = AddSubscriptionsToList(new List<Payment>(), allSubscriptions);           
             return allPayments;
         }
+        public List<Payment> GetAllPaymentsByStudent(Student student)
+        {
+            return new List<Payment>();
+        }
     }
 }
