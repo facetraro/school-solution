@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain;
+using ERPSchoolValidator;
 using Exceptions;
 using System.Data.Entity;
 

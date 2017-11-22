@@ -2,7 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Domain;
+using ERPSchoolValidator;
 using Logic;
 using System.Linq;
 using Exceptions;

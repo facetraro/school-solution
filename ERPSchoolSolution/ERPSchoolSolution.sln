@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module", "Module\Module.csproj", "{156F9A8D-C5C6-47A4-8102-8E6748B311DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPSchoolValidators", "ERPSchoolValidators\ERPSchoolValidators.csproj", "{870895EE-A2DB-4141-8C56-A13BD4C47202}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{156F9A8D-C5C6-47A4-8102-8E6748B311DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{156F9A8D-C5C6-47A4-8102-8E6748B311DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{156F9A8D-C5C6-47A4-8102-8E6748B311DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{870895EE-A2DB-4141-8C56-A13BD4C47202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{870895EE-A2DB-4141-8C56-A13BD4C47202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{870895EE-A2DB-4141-8C56-A13BD4C47202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{870895EE-A2DB-4141-8C56-A13BD4C47202}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

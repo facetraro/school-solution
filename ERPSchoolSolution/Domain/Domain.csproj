@@ -49,10 +49,8 @@
   <ItemGroup>
     <Compile Include="Activity.cs" />
     <Compile Include="ActivityPayment.cs" />
-    <Compile Include="ActivityValidator.cs" />
     <Compile Include="Coordinate.cs" />
     <Compile Include="IRouteObject.cs" />
-    <Compile Include="IValidator.cs" />
     <Compile Include="Payment.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Route.cs" />
@@ -60,17 +58,12 @@
     <Compile Include="SortSchoolVanById.cs" />
     <Compile Include="SortSchoolVans.cs" />
     <Compile Include="SortStudents.cs" />
-    <Compile Include="StudentValidator.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Subject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SchoolVan.cs" />
-    <Compile Include="SchoolVanValidator.cs" />
-    <Compile Include="SubscriptionValidator.cs" />
-    <Compile Include="SubjectValidator.cs" />
     <Compile Include="Subscription.cs" />
     <Compile Include="Teacher.cs" />
-    <Compile Include="TeacherValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Exceptions\Exceptions.csproj">

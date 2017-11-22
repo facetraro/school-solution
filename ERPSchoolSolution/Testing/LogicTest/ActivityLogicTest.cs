@@ -1,5 +1,5 @@
 ﻿using System;
-using Domain;
+using ERPSchoolValidator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Logic;
 using System.Collections.Generic;

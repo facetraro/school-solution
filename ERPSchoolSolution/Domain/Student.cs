@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace ERPSchoolValidator
 {
     public class Student : Person, IRouteObject
     {

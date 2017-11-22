@@ -90,6 +90,10 @@
       <Project>{0320b488-9247-4f8a-938c-3418358858b2}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ERPSchoolValidators\ERPSchoolValidators.csproj">
+      <Project>{870895ee-a2db-4141-8c56-a13bd4c47202}</Project>
+      <Name>ERPSchoolValidators</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Exceptions\Exceptions.csproj">
       <Project>{115BA8EF-0B0E-4AE9-A576-A4145233618C}</Project>
       <Name>Exceptions</Name>

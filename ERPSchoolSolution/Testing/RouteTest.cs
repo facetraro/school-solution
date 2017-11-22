@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Domain;
+using ERPSchoolValidator;
 using Exceptions;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
