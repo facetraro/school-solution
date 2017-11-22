@@ -17,15 +17,12 @@ namespace Logic
             }
             return allPayments;
         }
+
         public List<Payment> GetAllPayments()
         {
             SubscriptionLogic subscriptionLogic = new SubscriptionLogic();
             List<Subscription> allSubscriptions = subscriptionLogic.GetAllSubscriptions();
-            List<Payment> allPayments = new List<Payment>();
-            foreach (Payment item in allSubscriptions)
-            {
-                allPayments.Add(item);
-            }
+            List<Payment> allPayments = AddSubscriptionsToList(new List<Payment>(), allSubscriptions);           
             return allPayments;
         }
     }
