@@ -71,7 +71,7 @@ namespace Domain
         }
         public override string ToString()
         {
-            return "Alumno: " + Name + " " + LastName + " [" + StudentNumber + "]";
+            return Name + " " + LastName + " [" + StudentNumber + "]";
         }
         public bool IsInscriptedSubject(Subject aSubject)
         {

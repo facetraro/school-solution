@@ -136,7 +136,7 @@ namespace Testing
             aSubject.StudentNumber = 123;
             aSubject.Name = "testName";
             aSubject.LastName = "lastNameTest";
-            Assert.IsTrue(aSubject.ToString().Equals("Alumno: testName lastNameTest [123]"));
+            Assert.IsTrue(aSubject.ToString().Equals("testName lastNameTest [123]"));
         }
         [TestMethod]
         [ExpectedException(typeof(EmptyOrNullValueException))]

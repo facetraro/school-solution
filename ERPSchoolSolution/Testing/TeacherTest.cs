@@ -111,7 +111,7 @@ namespace Testing
             aTeacher.Name = "Juan";
             aTeacher.LastName = "Perez";
             aTeacher.Id = 123;
-            Assert.IsTrue(aTeacher.ToString().Equals("Profesor: Juan Perez [123]"));
+            Assert.IsTrue(aTeacher.ToString().Equals("Juan Perez [123]"));
 
         }
     }

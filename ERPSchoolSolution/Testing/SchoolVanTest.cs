@@ -99,7 +99,7 @@ namespace Testing
             SchoolVan aSchoolVan = new SchoolVan();
             aSchoolVan.Id = 123;
             aSchoolVan.Capacity = 10;
-            Assert.IsTrue(aSchoolVan.ToString().Equals("[Camioneta 123] Capacidad 10 - Consumo 1"));
+            Assert.IsTrue(aSchoolVan.ToString().Equals("[123] Capacidad 10 - Consumo 1"));
         }
     }
 }

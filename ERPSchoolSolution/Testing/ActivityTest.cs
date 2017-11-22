@@ -117,7 +117,7 @@ namespace Testing
             anActivity.Name = nameTest;
             anActivity.Cost = costTest;
             string ac = anActivity.ToString();
-            Assert.IsTrue(anActivity.ToString().Equals("[Actividad 1] testName | Costo: $10"));
+            Assert.IsTrue(anActivity.ToString().Equals("[1] testName - Costo: $10"));
         }
     }
 }
