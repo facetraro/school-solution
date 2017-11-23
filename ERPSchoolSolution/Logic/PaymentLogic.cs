@@ -17,12 +17,23 @@ namespace Logic
             }
             return allPayments;
         }
+        public List<Payment> AddSubscriptionsToList(List<Payment> allPayments, List<ActivityPayment> paymentsToAdd)
+        {
+            foreach (Payment item in paymentsToAdd)
+            {
+                allPayments.Add(item);
+            }
+            return allPayments;
+        }
 
         public List<Payment> GetAllPayments()
         {
             SubscriptionLogic subscriptionLogic = new SubscriptionLogic();
+            ActivityPaymentLogic ActivityPaymentLogic = new ActivityPaymentLogic();
             List<Subscription> allSubscriptions = subscriptionLogic.GetAllSubscriptions();
             List<Payment> allPayments = AddSubscriptionsToList(new List<Payment>(), allSubscriptions);
+            List<ActivityPayment> allActivityPayment = ActivityPaymentLogic.GetAllActivityPayments();
+            allPayments = AddSubscriptionsToList(allPayments, allActivityPayment);
             return allPayments;
         }
         public List<Payment> GetAllPaymentsByStudent(Student student)
