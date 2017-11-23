@@ -64,7 +64,7 @@
       <Project>{F7615243-8C9B-4505-A593-D9D592071E05}</Project>
       <Name>ERPSchoolLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Repository\Repository.csproj">
+    <ProjectReference Include="..\Repository\ERPSchoolRepository.csproj">
       <Project>{3995B9DB-972D-4706-941C-9C9DB825239E}</Project>
       <Name>Repository</Name>
     </ProjectReference>

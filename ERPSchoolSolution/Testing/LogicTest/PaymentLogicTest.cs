@@ -31,6 +31,11 @@ namespace Testing.LogicTest
             StudentAccess logic = new StudentAccess();
             logic.Add(aStudent);
         }
+        private void AddActivityToBD(Activity aActivity)
+        {
+            ActivityAccess logic = new ActivityAccess();
+            logic.Add(aActivity);
+        }
         private Student GetLastStudentInDB()
         {
             Student testStudent = new Student();
@@ -42,6 +47,17 @@ namespace Testing.LogicTest
             }
             return testStudent;
         }
+        private Activity GetLastActivityInDB()
+        {
+            Activity testActivity = new Activity();
+            ActivityLogic sLogic = new ActivityLogic();
+            List<Activity> allActivity = sLogic.GetAllActivities();
+            if (allActivity.Count != 0)
+            {
+                return allActivity.ElementAt(allActivity.Count - 1);
+            }
+            return testActivity;
+        }
         private void AddTestSubscription()
         {
             Subscription newSub = new Subscription();
@@ -51,6 +67,28 @@ namespace Testing.LogicTest
             newSub.Student = GetLastStudentInDB();
             SubscriptionLogic subscriptionLogic = new SubscriptionLogic();
             subscriptionLogic.Add(newSub);
+        }
+        private Activity TestActivity()
+        {
+            Activity TestActivity = new Activity();
+            int testId = 123;
+            int testCost = 11;
+            string testName = "testName";
+            int yearDate = 2003;
+            int monthDate = 1;
+            int dayDate = 2;
+            DateTime testDate = new DateTime(yearDate, monthDate, dayDate);
+            TestActivity.Id = testId;
+            TestActivity.Cost = testCost;
+            TestActivity.Name = testName;
+            TestActivity.Date = testDate;
+            TestActivity.ActivityPayments = new List<ActivityPayment>();
+            return TestActivity;
+        }
+        private void AddActivity()
+        {
+            Activity activity = TestActivity();
+            this.AddActivityToBD(activity);
         }
         [TestMethod]
         public void GetAllPaymentsOnlySubscriptions()
@@ -71,6 +109,20 @@ namespace Testing.LogicTest
         public void GetAllPaymentsByStudentOnlySubscription()
         {
             AddTestSubscription();
+            PaymentLogic paymentLogic = new PaymentLogic();
+            Assert.IsTrue(paymentLogic.GetAllPaymentsByStudent(GetLastStudentInDB()).Count == 1);
+        }
+        [TestMethod]
+        public void GetAllPaymentsByStudentOnlyActivityPayment()
+        {
+            AddActivity();
+            AddStudentToDB(TestStudent());
+            ActivityPayment payment = new ActivityPayment();
+            payment.Activity = this.GetLastActivityInDB();
+            payment.Student = this.GetLastStudentInDB();
+            payment.Id = 500;
+            ActivityPaymentAccess activityPaymentLogic = new ActivityPaymentAccess();
+            activityPaymentLogic.Add(payment);
             PaymentLogic paymentLogic = new PaymentLogic();
             Assert.IsTrue(paymentLogic.GetAllPaymentsByStudent(GetLastStudentInDB()).Count == 1);
         }
