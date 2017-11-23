@@ -17,6 +17,12 @@ namespace Repository
             ActivityPayment activityPayment = anObject as ActivityPayment;
             AddActivityPayment(activityPayment);
         }
+        private Activity GetActivityAttached(ContextDB context, int id)
+        {
+            Activity activityAttached = new Activity();
+            activityAttached = context.Activities.Where(b => b.Id == id).Include(b => b.ActivityPayments).FirstOrDefault();
+            return activityAttached;
+        }
         private void AddActivityPayment(ActivityPayment activityPayment)
         {
             using (var context = new ContextDB())
@@ -24,7 +30,7 @@ namespace Repository
                 try
                 {
                     context.Students.Attach(activityPayment.Student);
-                    context.Activities.Add(activityPayment.Activity);
+                    activityPayment.Activity = GetActivityAttached(context, activityPayment.Activity.Id);
                     context.ActivityPayments.Add(activityPayment);
                     context.SaveChanges();
                 }

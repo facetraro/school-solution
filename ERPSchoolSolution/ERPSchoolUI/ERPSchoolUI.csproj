@@ -70,6 +70,12 @@
     <Compile Include="AddActivity.Designer.cs">
       <DependentUpon>AddActivity.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddActivityPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddActivityPayment.Designer.cs">
+      <DependentUpon>AddActivityPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddSubscription.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddActivity.resx">
       <DependentUpon>AddActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddActivityPayment.resx">
+      <DependentUpon>AddActivityPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddSubscription.resx">
       <DependentUpon>AddSubscription.cs</DependentUpon>

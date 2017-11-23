@@ -14,8 +14,8 @@ namespace Module
     {
         public PaymentModule()
         {
-            this.Name = "Gestión de pagos";
-            this.Description = "Sector que pertime gestionar los pagos de coutas y actividades de los Alumnos.";
+            this.Name = "Gestión de Pagos";
+            this.Description = "Sector que permite gestionar los pagos de coutas y actividades de los Alumnos.";
         }
 
         public void AddSubscription(object selected, int year, int month)
@@ -25,6 +25,16 @@ namespace Module
             newSubscription.Date = new DateTime(year,month,2);
             newSubscription.Student = selected as Student;
             logic.Add(newSubscription);
+        }
+        public void AddNewActivityPayment(object selectedActivity, object selectedStudent)
+        {
+            ActivityPaymentLogic logic = new ActivityPaymentLogic();
+            ActivityPayment newActivityPayment = new ActivityPayment();
+            Activity activity = selectedActivity as Activity;
+            Student student = selectedStudent as Student;
+            newActivityPayment.Activity = activity;
+            newActivityPayment.Student = student;
+            logic.Add(newActivityPayment);
         }
     }
 }
