@@ -112,8 +112,8 @@ namespace Testing.LogicTest
             PaymentLogic paymentLogic = new PaymentLogic();
             Assert.IsTrue(paymentLogic.GetAllPaymentsByStudent(GetLastStudentInDB()).Count == 1);
         }
-        [TestMethod]
-        public void GetAllPaymentsByStudentOnlyActivityPayment()
+
+        private void AddActivityPayment()
         {
             AddActivity();
             AddStudentToDB(TestStudent());
@@ -123,6 +123,11 @@ namespace Testing.LogicTest
             payment.Id = 500;
             ActivityPaymentAccess activityPaymentLogic = new ActivityPaymentAccess();
             activityPaymentLogic.Add(payment);
+        }
+        [TestMethod]
+        public void GetAllPaymentsByStudentOnlyActivityPayment()
+        {
+            AddActivityPayment();
             PaymentLogic paymentLogic = new PaymentLogic();
             Assert.IsTrue(paymentLogic.GetAllPaymentsByStudent(GetLastStudentInDB()).Count == 1);
         }
