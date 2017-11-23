@@ -40,5 +40,12 @@ namespace ERPSchoolUI
             AddActivityPayment addNewActivityPayment = new AddActivityPayment(mainPanel);
             mainPanel.Controls.Add(addNewActivityPayment);
         }
+
+        private void removeActivity_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            ConsultPayments addNewActivityPayment = new ConsultPayments(mainPanel);
+            mainPanel.Controls.Add(addNewActivityPayment);
+        }
     }
 }

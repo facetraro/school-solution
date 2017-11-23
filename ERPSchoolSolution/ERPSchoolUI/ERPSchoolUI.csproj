@@ -112,6 +112,12 @@
     <Compile Include="CalculateRout.Designer.cs">
       <DependentUpon>CalculateRout.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultPayments.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConsultPayments.Designer.cs">
+      <DependentUpon>ConsultPayments.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultSchoolVans.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CalculateRout.resx">
       <DependentUpon>CalculateRout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultPayments.resx">
+      <DependentUpon>ConsultPayments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultSchoolVans.resx">
       <DependentUpon>ConsultSchoolVans.cs</DependentUpon>

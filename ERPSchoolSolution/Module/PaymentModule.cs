@@ -36,5 +36,14 @@ namespace Module
             newActivityPayment.Student = student;
             logic.Add(newActivityPayment);
         }
+        public void LoadConsultPaymentsByStudent(object selected, ListBox listBox)
+        {
+            Student selectedStudent = selected as Student;
+            PaymentLogic logic = new PaymentLogic();
+            foreach (var item in logic.GetAllPaymentsByStudent(selectedStudent))
+            {
+                listBox.Items.Add(item);
+            }
+        }
     }
 }

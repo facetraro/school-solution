@@ -37,9 +37,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(241, 143);
+            this.label1.Location = new System.Drawing.Point(181, 116);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 17);
+            this.label1.Size = new System.Drawing.Size(115, 13);
             this.label1.TabIndex = 39;
             this.label1.Text = "Seleccione un alumno:";
             // 
@@ -47,26 +48,28 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(208, 62);
+            this.label5.Location = new System.Drawing.Point(156, 50);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(229, 29);
+            this.label5.Size = new System.Drawing.Size(181, 24);
             this.label5.TabIndex = 38;
             this.label5.Text = "Modificar un alumno";
             // 
             // listStudents
             // 
             this.listStudents.FormattingEnabled = true;
-            this.listStudents.ItemHeight = 16;
-            this.listStudents.Location = new System.Drawing.Point(186, 180);
+            this.listStudents.Location = new System.Drawing.Point(63, 146);
+            this.listStudents.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listStudents.Name = "listStudents";
-            this.listStudents.Size = new System.Drawing.Size(265, 324);
+            this.listStudents.Size = new System.Drawing.Size(359, 264);
             this.listStudents.TabIndex = 37;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(474, 551);
+            this.button1.Location = new System.Drawing.Point(356, 448);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 32);
+            this.button1.Size = new System.Drawing.Size(66, 26);
             this.button1.TabIndex = 40;
             this.button1.Text = "Continuar";
             this.button1.UseVisualStyleBackColor = true;
@@ -74,14 +77,15 @@
             // 
             // ModifyStudentSelectList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listStudents);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ModifyStudentSelectList";
-            this.Size = new System.Drawing.Size(637, 630);
+            this.Size = new System.Drawing.Size(478, 512);
             this.ResumeLayout(false);
             this.PerformLayout();
 
