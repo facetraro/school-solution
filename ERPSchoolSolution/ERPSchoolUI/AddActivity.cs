@@ -42,11 +42,11 @@ namespace ERPSchoolUI
 
             try
             {
-                module.AddNewActivity(textNameActivity.Text, dateTimePicker1.Value, int.Parse(textCost.Text));
+                module.AddNewActivity(textNameActivity.Text, dateTimePicker1.Value, (int)numericUpDownPrice.Value);
                 MessageBox.Show("Actividad ingresada con Exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 mainPanel.Controls.Clear();
-                StudentMenu backMenu = new StudentMenu(mainPanel);
-                mainPanel.Controls.Add(backMenu);
+                ActivityMenu backActivityMenu = new ActivityMenu(mainPanel);
+                mainPanel.Controls.Add(backActivityMenu);
             }
             catch (Exception ex)
             {

@@ -107,12 +107,12 @@ namespace Module
             }
         }
 
-        public void LoadFields(Object anObject, TextBox textIDActivity, TextBox textNameActivity, TextBox textCostActivity, DateTimePicker date)
+        public void LoadFields(Object anObject, TextBox textIDActivity, TextBox textNameActivity, NumericUpDown numericCost, DateTimePicker date)
         {
             Activity activity = anObject as Activity;
             textIDActivity.Text = activity.Id.ToString();
             textNameActivity.Text = activity.Name;
-            textCostActivity.Text = activity.Cost.ToString();
+            numericCost.Value = activity.Cost;
             date.Value = activity.Date;
         }
     }

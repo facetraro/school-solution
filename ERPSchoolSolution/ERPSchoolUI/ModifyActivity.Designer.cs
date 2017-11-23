@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModifyActivity));
-            this.textCostActivity = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,37 +39,35 @@
             this.textIDActivity = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
+            this.numericUpDownCost = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCost)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textCostActivity
-            // 
-            this.textCostActivity.Location = new System.Drawing.Point(251, 290);
-            this.textCostActivity.Name = "textCostActivity";
-            this.textCostActivity.Size = new System.Drawing.Size(119, 22);
-            this.textCostActivity.TabIndex = 70;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(111, 290);
+            this.label6.Location = new System.Drawing.Point(83, 236);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 17);
+            this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 69;
             this.label6.Text = "Costo:";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(251, 236);
+            this.dateTimePicker1.Location = new System.Drawing.Point(188, 192);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(261, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(197, 20);
             this.dateTimePicker1.TabIndex = 68;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(111, 236);
+            this.label4.Location = new System.Drawing.Point(83, 192);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 17);
+            this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 67;
             this.label4.Text = "Fecha:";
             // 
@@ -85,10 +82,10 @@
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton.ForeColor = System.Drawing.Color.Transparent;
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.Location = new System.Drawing.Point(23, 13);
-            this.backButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.backButton.Location = new System.Drawing.Point(17, 11);
+            this.backButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(104, 92);
+            this.backButton.Size = new System.Drawing.Size(78, 75);
             this.backButton.TabIndex = 66;
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
@@ -97,65 +94,90 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(211, 50);
+            this.label5.Location = new System.Drawing.Point(158, 41);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(215, 29);
+            this.label5.Size = new System.Drawing.Size(167, 24);
             this.label5.TabIndex = 60;
             this.label5.Text = "Modificar Actividad";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textNameActivity
             // 
-            this.textNameActivity.Location = new System.Drawing.Point(251, 183);
-            this.textNameActivity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textNameActivity.Location = new System.Drawing.Point(188, 149);
+            this.textNameActivity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textNameActivity.Name = "textNameActivity";
-            this.textNameActivity.Size = new System.Drawing.Size(223, 22);
+            this.textNameActivity.Size = new System.Drawing.Size(197, 20);
             this.textNameActivity.TabIndex = 59;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(111, 186);
+            this.label1.Location = new System.Drawing.Point(83, 151);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 17);
+            this.label1.Size = new System.Drawing.Size(94, 13);
             this.label1.TabIndex = 56;
             this.label1.Text = "Nombre Actividad:";
             // 
             // textIDActivity
             // 
-            this.textIDActivity.Location = new System.Drawing.Point(251, 135);
-            this.textIDActivity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textIDActivity.Location = new System.Drawing.Point(188, 110);
+            this.textIDActivity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textIDActivity.Name = "textIDActivity";
             this.textIDActivity.ReadOnly = true;
-            this.textIDActivity.Size = new System.Drawing.Size(119, 22);
+            this.textIDActivity.Size = new System.Drawing.Size(197, 20);
             this.textIDActivity.TabIndex = 55;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(111, 135);
+            this.label2.Location = new System.Drawing.Point(83, 110);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 17);
+            this.label2.Size = new System.Drawing.Size(19, 13);
             this.label2.TabIndex = 54;
             this.label2.Text = "Id:";
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(466, 549);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.saveButton.Location = new System.Drawing.Point(350, 446);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(105, 36);
+            this.saveButton.Size = new System.Drawing.Size(79, 29);
             this.saveButton.TabIndex = 71;
             this.saveButton.Text = "Guardar";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // numericUpDownCost
+            // 
+            this.numericUpDownCost.Location = new System.Drawing.Point(188, 236);
+            this.numericUpDownCost.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.numericUpDownCost.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownCost.Name = "numericUpDownCost";
+            this.numericUpDownCost.Size = new System.Drawing.Size(197, 20);
+            this.numericUpDownCost.TabIndex = 72;
+            this.numericUpDownCost.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // ModifyActivity
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.numericUpDownCost);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.textCostActivity);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
@@ -165,16 +187,16 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textIDActivity);
             this.Controls.Add(this.label2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ModifyActivity";
-            this.Size = new System.Drawing.Size(637, 630);
+            this.Size = new System.Drawing.Size(478, 512);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCost)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textCostActivity;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
@@ -185,5 +207,6 @@
         private System.Windows.Forms.TextBox textIDActivity;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.NumericUpDown numericUpDownCost;
     }
 }

@@ -38,7 +38,7 @@ namespace ERPSchoolUI
             ActivityModule module = new ActivityModule();
             try
             {
-                module.LoadFields(anObject, textIDActivity, textNameActivity, textCostActivity, dateTimePicker1);
+                module.LoadFields(anObject, textIDActivity, textNameActivity, numericUpDownCost, dateTimePicker1);
             }
             catch (Exception ex)
             {
@@ -62,7 +62,7 @@ namespace ERPSchoolUI
             ActivityModule module = new ActivityModule();
             try
             {
-                module.ModifyActivity(selectedObject, textNameActivity.Text, int.Parse(textCostActivity.Text), dateTimePicker1.Value);
+                module.ModifyActivity(selectedObject, textNameActivity.Text, (int) numericUpDownCost.Value, dateTimePicker1.Value);
                 MessageBox.Show("Actividad modificada con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 mainPanel.Controls.Clear();
                 ActivityMenu backActivityMenu = new ActivityMenu(mainPanel);
