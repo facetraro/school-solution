@@ -18,7 +18,16 @@ namespace ERPSchoolUI
         {
             this.panel = aPanel;
             InitializeComponent();
-            LoadStudents();
+            try
+            {
+                LoadStudents();
+            }
+             catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                GoBackMenu();
+            }
+
         }
         private void LoadStudents()
         {
@@ -29,7 +38,7 @@ namespace ERPSchoolUI
         {
             PaymentModule module = new PaymentModule();
             listBox2.Items.Clear();
-            module.LoadConsultPaymentsByStudent(selected,listBox2);
+            module.LoadConsultPaymentsByStudent(selected, listBox2);
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
