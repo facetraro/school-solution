@@ -30,6 +30,7 @@ namespace ERPSchoolUI
             StudentModule module = new StudentModule();
             try
             {
+                listBoxSubjects.Items.Clear();
                 module.LoadFields(anObject, textBoxName, textBoxLastName, textBoxStudentNumber, numericUpDownCI, numericUpDownX, numericUpDownY, listBoxSubjects, new ListBox());
             }
             catch (Exception ex)
