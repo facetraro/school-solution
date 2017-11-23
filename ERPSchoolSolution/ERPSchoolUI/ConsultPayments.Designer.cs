@@ -64,6 +64,7 @@
             this.backButton.Size = new System.Drawing.Size(71, 73);
             this.backButton.TabIndex = 41;
             this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // label6
             // 

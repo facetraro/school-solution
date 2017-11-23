@@ -39,5 +39,16 @@ namespace ERPSchoolUI
                 LoadPaymentsByStudent(selected);
             }
         }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            GoBackMenu();
+        }
+        private void GoBackMenu()
+        {
+            panel.Controls.Clear();
+            PaymentMenu backMenu = new PaymentMenu(panel);
+            panel.Controls.Add(backMenu);
+        }
     }
 }
