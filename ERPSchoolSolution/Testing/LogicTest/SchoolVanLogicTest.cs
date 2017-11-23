@@ -39,11 +39,56 @@ namespace Testing.LogicTest
             Student testStudent = new Student();
             testStudent.Subjects.Add(newSubject);
             testStudent.Ci = 47803333 + id;
-            testStudent.StudentNumber = 0;
+            testStudent.StudentNumber = id;
             testStudent.Id = id;
             testStudent.Name = "TestName";
             testStudent.LastName = "TestLastName";
             return testStudent;
+        }
+        [TestMethod]
+        public void SchoolVanStudentAssignmentSuccess()
+        {
+            SetUp();
+            List<Tuple<SchoolVan, List<Student>>> expectedValue = new List<Tuple<SchoolVan, List<Student>>>();
+            StudentLogic testLogic = new StudentLogic();
+            SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
+            Student newStudent = TestStudent(100);
+            testLogic.Add(newStudent);
+            newStudent.Id = testLogic.GetNextIdFree() - 1;
+
+            Student lastStudent = TestStudent(200);
+            testLogic.Add(lastStudent);
+            lastStudent.Id = testLogic.GetNextIdFree() - 1;
+
+            Student otherStudent = TestStudent(300);
+            testLogic.Add(otherStudent);
+            otherStudent.Id = testLogic.GetNextIdFree() - 1;
+
+            Student anotherStudent = TestStudent(400);
+            testLogic.Add(anotherStudent);
+            anotherStudent.Id = testLogic.GetNextIdFree() - 1;
+
+            SchoolVanLogic logic = new SchoolVanLogic();
+            SchoolVan newSchoolVan = new SchoolVan();
+            newSchoolVan.Id = 15;
+            newSchoolVan.Capacity = 10;
+            logic.Add(newSchoolVan);
+            List<Student> firstStudentList = new List<Student>();
+            firstStudentList.Add(newStudent);
+            firstStudentList.Add(lastStudent);
+            SchoolVan anotherSchoolVan = new SchoolVan();
+            anotherSchoolVan.Id = 25;
+            anotherSchoolVan.Capacity = 14;
+            logic.Add(anotherSchoolVan);
+            List<Student> nextStudentList = new List<Student>();
+            nextStudentList.Add(otherStudent);
+            nextStudentList.Add(anotherStudent);
+            Tuple<SchoolVan, List<Student>> firstTouple = new Tuple<SchoolVan, List<Student>>(anotherSchoolVan, firstStudentList);
+            Tuple<SchoolVan, List<Student>> nextTouple = new Tuple<SchoolVan, List<Student>>(newSchoolVan, nextStudentList);
+            expectedValue.Add(firstTouple);
+            expectedValue.Add(nextTouple);
+            List<Tuple<SchoolVan, List<Student>>> ObtainValue = logic.StudentAssignment();
+            Assert.IsTrue(CompareStudentAssignment(ObtainValue, expectedValue));
         }
         [TestMethod]
         public void AddSchoolVanSuccess()
@@ -263,51 +308,6 @@ namespace Testing.LogicTest
             expectedRoutes.Add(expectedRoute);
             List<Route> obtainRoutes = schoolVanLogic.GetBestRoutes();
             Assert.IsTrue(obtainRoutes.SequenceEqual(expectedRoutes));
-        }
-        [TestMethod]
-        public void SchoolVanStudentAssignmentSuccess()
-        {
-            SetUp();
-            List<Tuple<SchoolVan, List<Student>>> expectedValue = new List<Tuple<SchoolVan, List<Student>>>();
-            StudentLogic testLogic = new StudentLogic();
-            SchoolVanLogic schoolVanLogic = new SchoolVanLogic();
-            Student newStudent = TestStudent(1);
-            testLogic.Add(newStudent);
-            newStudent.Id = testLogic.GetNextIdFree() - 1;
-
-            Student lastStudent = TestStudent(2);
-            testLogic.Add(lastStudent);
-            lastStudent.Id = testLogic.GetNextIdFree() - 1;
-
-            Student otherStudent = TestStudent(5);
-            testLogic.Add(otherStudent);
-            otherStudent.Id = testLogic.GetNextIdFree() - 1;
-
-            Student anotherStudent = TestStudent(6);
-            testLogic.Add(anotherStudent);
-            anotherStudent.Id = testLogic.GetNextIdFree() - 1;
-
-            SchoolVanLogic logic = new SchoolVanLogic();
-            SchoolVan newSchoolVan = new SchoolVan();
-            newSchoolVan.Id = 15;
-            newSchoolVan.Capacity = 10;
-            logic.Add(newSchoolVan);
-            List<Student> firstStudentList = new List<Student>();
-            firstStudentList.Add(newStudent);
-            firstStudentList.Add(lastStudent);
-            SchoolVan anotherSchoolVan = new SchoolVan();
-            anotherSchoolVan.Id = 25;
-            anotherSchoolVan.Capacity = 14;
-            logic.Add(anotherSchoolVan);
-            List<Student> nextStudentList = new List<Student>();
-            nextStudentList.Add(otherStudent);
-            nextStudentList.Add(anotherStudent);
-            Tuple<SchoolVan, List<Student>> firstTouple = new Tuple<SchoolVan, List<Student>>(anotherSchoolVan, firstStudentList);
-            Tuple<SchoolVan, List<Student>> nextTouple = new Tuple<SchoolVan, List<Student>>(newSchoolVan, nextStudentList);
-            expectedValue.Add(firstTouple);
-            expectedValue.Add(nextTouple);
-            List<Tuple<SchoolVan, List<Student>>> ObtainValue = logic.StudentAssignment();
-            Assert.IsTrue(CompareStudentAssignment(ObtainValue, expectedValue));
         }
         [TestMethod]
         public void SchoolVanStudentAssignmentDecimal()
