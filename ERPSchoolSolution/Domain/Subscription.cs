@@ -60,5 +60,9 @@ namespace ERPSchoolValidator
             bool allValidation = studentValidation && dateValidation && amountValidation;
             return allValidation;
         }
+        public override string ToString()
+        {
+            return ("Couta: " + this.Date.Month+"/"+this.Date.Year+" $"+this.Amount);
+        }
     }
 }
