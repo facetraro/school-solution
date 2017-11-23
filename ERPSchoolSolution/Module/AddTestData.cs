@@ -246,6 +246,30 @@ namespace Module
             activityLogic.Add(newActivity2);
             activityLogic.Add(newActivity3);
             activityLogic.Add(newActivity4);
+            ActivityPaymentLogic activityPaymentLogic = new ActivityPaymentLogic();
+            SubscriptionLogic subscriptionLogic = new SubscriptionLogic();
+            List<Student> allStudents = studentLogic.GetAllStudents();
+            foreach (Student item in allStudents)
+            {
+                List<Activity> allActivities = activityLogic.GetAllActivities();
+                Random random = new Random();
+                int randomActivity = random.Next(0, allActivities.Count-1);
+                ActivityPayment newActivityPayment = new ActivityPayment();
+                newActivityPayment.Activity = allActivities.ElementAt(randomActivity);
+                newActivityPayment.Student = item;
+                activityPaymentLogic.Add(newActivityPayment);
+               
+                int randomMonths = random.Next(0, 4);
+                for (int i = 0; i < randomMonths; i++)
+                {
+                    DateTime newDate = new DateTime(2017,11,5);
+                    newDate=newDate.AddMonths(i);
+                    Subscription newSubscription = new Subscription();
+                    newSubscription.Student = item;
+                    newSubscription.Date = newDate;
+                    subscriptionLogic.Add(newSubscription);
+                }
+            }
         }
     }
 }
