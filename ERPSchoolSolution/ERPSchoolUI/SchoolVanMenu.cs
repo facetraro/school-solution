@@ -58,9 +58,10 @@ namespace ERPSchoolUI
 
         private void button5_Click(object sender, EventArgs e)
         {
+            StudentModule studentModule = new StudentModule();
+            List<object> allStudents = studentModule.GetAllStudents();
             mainPanel.Controls.Clear();
-            CalculateRout calculateARoute = new CalculateRout(mainPanel);
-            mainPanel.Controls.Add(calculateARoute);
+            mainPanel.Controls.Add(new ModifyAllStudents(mainPanel, allStudents));
         }
     }
 }

@@ -108,7 +108,7 @@
             this.listSubjectsSelected.Location = new System.Drawing.Point(271, 314);
             this.listSubjectsSelected.Margin = new System.Windows.Forms.Padding(2);
             this.listSubjectsSelected.Name = "listSubjectsSelected";
-            this.listSubjectsSelected.Size = new System.Drawing.Size(137, 121);
+            this.listSubjectsSelected.Size = new System.Drawing.Size(189, 121);
             this.listSubjectsSelected.TabIndex = 45;
             // 
             // label6
@@ -170,10 +170,10 @@
             // listSubjects
             // 
             this.listSubjects.FormattingEnabled = true;
-            this.listSubjects.Location = new System.Drawing.Point(70, 314);
+            this.listSubjects.Location = new System.Drawing.Point(18, 314);
             this.listSubjects.Margin = new System.Windows.Forms.Padding(2);
             this.listSubjects.Name = "listSubjects";
-            this.listSubjects.Size = new System.Drawing.Size(137, 121);
+            this.listSubjects.Size = new System.Drawing.Size(189, 121);
             this.listSubjects.TabIndex = 37;
             // 
             // label3
@@ -227,7 +227,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(349, 452);
+            this.saveButton.Location = new System.Drawing.Point(381, 460);
             this.saveButton.Margin = new System.Windows.Forms.Padding(2);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(79, 29);
@@ -260,6 +260,11 @@
             // 
             // numericX
             // 
+            this.numericX.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.numericX.Location = new System.Drawing.Point(243, 255);
             this.numericX.Minimum = new decimal(new int[] {
             100,
@@ -267,11 +272,17 @@
             0,
             -2147483648});
             this.numericX.Name = "numericX";
+            this.numericX.ReadOnly = true;
             this.numericX.Size = new System.Drawing.Size(42, 20);
             this.numericX.TabIndex = 56;
             // 
             // numericY
             // 
+            this.numericY.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.numericY.Location = new System.Drawing.Point(333, 255);
             this.numericY.Minimum = new decimal(new int[] {
             100,
@@ -279,6 +290,7 @@
             0,
             -2147483648});
             this.numericY.Name = "numericY";
+            this.numericY.ReadOnly = true;
             this.numericY.Size = new System.Drawing.Size(42, 20);
             this.numericY.TabIndex = 55;
             // 

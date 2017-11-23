@@ -61,6 +61,17 @@ namespace Module
             }
         }
 
+        public List<object> GetAllStudents()
+        {
+            StudentLogic logic = new StudentLogic();
+            List<object> allObjects = new List<object>();
+            foreach (object item in logic.GetAllStudents())
+            {
+                allObjects.Add(item);
+            }
+            return allObjects;
+        }
+
         public void LoadSubjectsByStudents(Object anObject, ListBox listSubjects)
         {
             Student student = anObject as Student;

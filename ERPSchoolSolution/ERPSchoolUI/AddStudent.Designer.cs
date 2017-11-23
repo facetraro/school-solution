@@ -45,16 +45,9 @@
             this.addSubject = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.numericY = new System.Windows.Forms.NumericUpDown();
-            this.numericX = new System.Windows.Forms.NumericUpDown();
             this.textNameStudent = new System.Windows.Forms.TextBox();
             this.numericCi = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,7 +101,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(165, 273);
+            this.label3.Location = new System.Drawing.Point(165, 262);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(136, 13);
@@ -229,60 +222,6 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(75, 251);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 13);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "Cordenadas:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(215, 251);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(14, 13);
-            this.label10.TabIndex = 41;
-            this.label10.Text = "X";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(305, 251);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(14, 13);
-            this.label11.TabIndex = 42;
-            this.label11.Text = "Y";
-            // 
-            // numericY
-            // 
-            this.numericY.Location = new System.Drawing.Point(334, 249);
-            this.numericY.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.numericY.Name = "numericY";
-            this.numericY.Size = new System.Drawing.Size(42, 20);
-            this.numericY.TabIndex = 43;
-            // 
-            // numericX
-            // 
-            this.numericX.Location = new System.Drawing.Point(244, 249);
-            this.numericX.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.numericX.Name = "numericX";
-            this.numericX.Size = new System.Drawing.Size(42, 20);
-            this.numericX.TabIndex = 44;
-            // 
             // textNameStudent
             // 
             this.textNameStudent.Location = new System.Drawing.Point(208, 170);
@@ -330,11 +269,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label12);
             this.Controls.Add(this.numericCi);
-            this.Controls.Add(this.numericX);
-            this.Controls.Add(this.numericY);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.label7);
@@ -355,8 +289,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddStudent";
             this.Size = new System.Drawing.Size(486, 512);
-            ((System.ComponentModel.ISupportInitialize)(this.numericY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -381,11 +313,6 @@
         private System.Windows.Forms.Button addSubject;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.NumericUpDown numericY;
-        private System.Windows.Forms.NumericUpDown numericX;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textNameStudent;
         private System.Windows.Forms.NumericUpDown numericCi;
         private System.Windows.Forms.Label label12;

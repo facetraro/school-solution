@@ -142,6 +142,12 @@
     <Compile Include="ModifyActivitySelectList.Designer.cs">
       <DependentUpon>ModifyActivitySelectList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifyAllStudents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModifyAllStudents.Designer.cs">
+      <DependentUpon>ModifyAllStudents.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModifySchoolVan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -299,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyActivitySelectList.resx">
       <DependentUpon>ModifyActivitySelectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyAllStudents.resx">
+      <DependentUpon>ModifyAllStudents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifySchoolVan.resx">
       <DependentUpon>ModifySchoolVan.cs</DependentUpon>
