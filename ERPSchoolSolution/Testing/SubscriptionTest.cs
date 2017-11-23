@@ -171,5 +171,14 @@ namespace Testing
             bool validation = validator.IsValid(aPayment);
             Assert.IsFalse(validation);
         }
+        [TestMethod]
+        public void SubscriptionToString()
+        {
+            Subscription aPayment = TestSubscription();
+            DateTime aDate = new DateTime(2018, 1, 5, 4, 5, 6);
+            aPayment.Date = aDate;
+            string expectedValue = "Couta: 1/2018 $40";
+            Assert.AreEqual(aPayment.ToString(), expectedValue);
+        }
     }
 }
