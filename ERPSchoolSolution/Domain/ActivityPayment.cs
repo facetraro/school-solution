@@ -14,6 +14,9 @@ namespace ERPSchoolValidator
             bool sameActivity = this.Activity.Equals(anActivityPayment.Activity);
             return sameStudent && sameActivity;
         }
-
+        public override string ToString()
+        {
+            return ("Pago Actividad: " + this.Activity.Name);
+        }
     }
 }
