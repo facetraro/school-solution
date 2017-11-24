@@ -1,0 +1,11 @@
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ModuleSubjects\obj\Debug\ModuleSubjects.csprojResolveAssemblyReference.cache
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ModuleSubjects\obj\Debug\ModuleSubjects.AddSubject.resources
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ModuleSubjects\obj\Debug\ModuleSubjects.csproj.GenerateResource.Cache
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ModuleSubjects\obj\Debug\ERPSchoolUI.SubjectMenu.resources
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ModuleSubjects\bin\Debug\ModuleSubjects.exe.config
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ModuleSubjects\bin\Debug\ModuleSubjects.exe
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ModuleSubjects\bin\Debug\ModuleSubjects.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ModuleSubjects\bin\Debug\Module.exe
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ModuleSubjects\bin\Debug\Module.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ModuleSubjects\obj\Debug\ModuleSubjects.exe
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ModuleSubjects\obj\Debug\ModuleSubjects.pdb

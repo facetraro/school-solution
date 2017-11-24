@@ -7,3 +7,12 @@ C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\ERPSchoolValidato
 C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\ERPSchoolValidators\obj\Release\ERPSchoolValidators.csprojResolveAssemblyReference.cache
 C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\ERPSchoolValidators\obj\Release\ERPSchoolValidators.dll
 C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\ERPSchoolValidators\obj\Release\ERPSchoolValidators.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ERPSchoolValidators\bin\Release\ERPSchoolValidators.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ERPSchoolValidators\bin\Release\ERPSchoolValidators.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ERPSchoolValidators\bin\Release\Domain.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ERPSchoolValidators\bin\Release\Exceptions.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ERPSchoolValidators\bin\Release\Domain.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ERPSchoolValidators\bin\Release\Exceptions.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ERPSchoolValidators\obj\Release\ERPSchoolValidators.csprojResolveAssemblyReference.cache
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ERPSchoolValidators\obj\Release\ERPSchoolValidators.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\ERPSchoolValidators\obj\Release\ERPSchoolValidators.pdb

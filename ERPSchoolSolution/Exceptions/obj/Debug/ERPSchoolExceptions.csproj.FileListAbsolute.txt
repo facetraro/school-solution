@@ -2,3 +2,7 @@ C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Exceptions\bin\De
 C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Exceptions\bin\Debug\Exceptions.pdb
 C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Exceptions\obj\Debug\Exceptions.dll
 C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Exceptions\obj\Debug\Exceptions.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Exceptions\bin\Debug\Exceptions.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Exceptions\bin\Debug\Exceptions.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Exceptions\obj\Debug\Exceptions.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Exceptions\obj\Debug\Exceptions.pdb

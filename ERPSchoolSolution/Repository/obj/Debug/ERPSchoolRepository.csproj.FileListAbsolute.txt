@@ -12,3 +12,17 @@ C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\bin\De
 C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\obj\Debug\ERPSchoolRepository.csprojResolveAssemblyReference.cache
 C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\obj\Debug\Repository.dll
 C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\obj\Debug\Repository.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Repository\bin\Debug\Repository.dll.config
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Repository\bin\Debug\Repository.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Repository\bin\Debug\Repository.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Repository\bin\Debug\Domain.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Repository\bin\Debug\EntityFramework.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Repository\bin\Debug\Exceptions.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Repository\bin\Debug\Domain.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Repository\bin\Debug\Exceptions.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Repository\bin\Debug\EntityFramework.xml
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Repository\obj\Debug\ERPSchoolRepository.csprojResolveAssemblyReference.cache
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Repository\obj\Debug\Repository.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Repository\obj\Debug\Repository.pdb

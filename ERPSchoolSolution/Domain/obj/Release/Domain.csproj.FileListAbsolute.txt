@@ -1,0 +1,7 @@
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Domain\bin\Release\Domain.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Domain\bin\Release\Domain.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Domain\bin\Release\Exceptions.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Domain\bin\Release\Exceptions.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Domain\obj\Release\Domain.csprojResolveAssemblyReference.cache
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Domain\obj\Release\Domain.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Domain\obj\Release\Domain.pdb

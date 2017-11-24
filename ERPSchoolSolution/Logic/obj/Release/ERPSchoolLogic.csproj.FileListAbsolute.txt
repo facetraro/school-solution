@@ -13,3 +13,18 @@ C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\bin\Release
 C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\obj\Release\ERPSchoolLogic.csprojResolveAssemblyReference.cache
 C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\obj\Release\Logic.dll
 C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\obj\Release\Logic.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Logic\bin\Release\Logic.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Logic\bin\Release\Logic.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Logic\bin\Release\Domain.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Logic\bin\Release\ERPSchoolValidators.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Logic\bin\Release\Exceptions.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Logic\bin\Release\Repository.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Logic\bin\Release\EntityFramework.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Logic\bin\Release\Domain.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Logic\bin\Release\ERPSchoolValidators.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Logic\bin\Release\Exceptions.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Logic\bin\Release\Repository.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Logic\bin\Release\EntityFramework.xml
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Logic\obj\Release\ERPSchoolLogic.csprojResolveAssemblyReference.cache
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Logic\obj\Release\Logic.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Logic\obj\Release\Logic.pdb

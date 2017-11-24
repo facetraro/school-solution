@@ -15,3 +15,20 @@ C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Module\bin\Releas
 C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Module\obj\Release\ERPSchoolModule.csprojResolveAssemblyReference.cache
 C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Module\obj\Release\Module.dll
 C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Module\obj\Release\Module.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\bin\Release\Module.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\bin\Release\Module.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\bin\Release\Domain.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\bin\Release\Exceptions.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\bin\Release\Logic.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\bin\Release\Repository.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\bin\Release\ERPSchoolValidators.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\bin\Release\EntityFramework.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\bin\Release\Domain.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\bin\Release\Exceptions.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\bin\Release\Logic.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\bin\Release\Repository.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\bin\Release\ERPSchoolValidators.pdb
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\bin\Release\EntityFramework.xml
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\obj\Release\ERPSchoolModule.csprojResolveAssemblyReference.cache
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\obj\Release\Module.dll
+C:\Users\Seba\Documents\Visual Studio 2015\Projects\207425-193221\ERPSchoolSolution\Module\obj\Release\Module.pdb
