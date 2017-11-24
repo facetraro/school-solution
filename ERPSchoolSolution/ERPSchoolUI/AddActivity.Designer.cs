@@ -102,7 +102,6 @@
             this.label5.Size = new System.Drawing.Size(196, 24);
             this.label5.TabIndex = 42;
             this.label5.Text = "Agregar una Actividad";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textNameActivity
             // 
@@ -190,13 +189,10 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddActivity";
             this.Size = new System.Drawing.Size(478, 512);
-            this.Load += new System.EventHandler(this.AddActivity_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
         #endregion
 
         private System.Windows.Forms.TextBox textStudentNumber;

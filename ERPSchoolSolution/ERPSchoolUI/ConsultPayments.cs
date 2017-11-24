@@ -27,7 +27,6 @@ namespace ERPSchoolUI
                 MessageBox.Show(ex.Message);
                 GoBackMenu();
             }
-
         }
         private void LoadStudents()
         {

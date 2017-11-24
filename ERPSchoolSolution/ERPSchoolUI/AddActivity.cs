@@ -19,22 +19,6 @@ namespace ERPSchoolUI
             InitializeComponent();
             this.mainPanel = mainPanel;
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddActivity_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void saveButton_Click(object sender, EventArgs e)
         {
             ActivityModule module = new ActivityModule();
