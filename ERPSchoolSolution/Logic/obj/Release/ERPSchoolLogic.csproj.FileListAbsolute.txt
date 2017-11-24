@@ -1,0 +1,15 @@
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\bin\Release\Logic.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\bin\Release\Logic.pdb
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\bin\Release\Domain.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\bin\Release\ERPSchoolValidators.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\bin\Release\Exceptions.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\bin\Release\Repository.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\bin\Release\EntityFramework.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\bin\Release\Domain.pdb
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\bin\Release\ERPSchoolValidators.pdb
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\bin\Release\Exceptions.pdb
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\bin\Release\Repository.pdb
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\bin\Release\EntityFramework.xml
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\obj\Release\ERPSchoolLogic.csprojResolveAssemblyReference.cache
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\obj\Release\Logic.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Logic\obj\Release\Logic.pdb

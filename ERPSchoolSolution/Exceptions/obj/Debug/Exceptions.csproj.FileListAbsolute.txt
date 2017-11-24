@@ -1,0 +1,4 @@
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Exceptions\bin\Debug\Exceptions.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Exceptions\bin\Debug\Exceptions.pdb
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Exceptions\obj\Debug\Exceptions.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Exceptions\obj\Debug\Exceptions.pdb

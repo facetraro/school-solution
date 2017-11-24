@@ -1,0 +1,14 @@
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\bin\Debug\Repository.dll.config
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\bin\Debug\Repository.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\bin\Debug\Repository.pdb
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\bin\Debug\Domain.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\bin\Debug\EntityFramework.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\bin\Debug\Exceptions.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\bin\Debug\Domain.pdb
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\bin\Debug\Exceptions.pdb
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\bin\Debug\EntityFramework.xml
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\obj\Debug\ERPSchoolRepository.csprojResolveAssemblyReference.cache
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\obj\Debug\Repository.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Repository\obj\Debug\Repository.pdb

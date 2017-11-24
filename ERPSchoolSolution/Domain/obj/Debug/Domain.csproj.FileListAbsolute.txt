@@ -1,0 +1,7 @@
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Domain\bin\Debug\Domain.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Domain\bin\Debug\Domain.pdb
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Domain\bin\Debug\Exceptions.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Domain\bin\Debug\Exceptions.pdb
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Domain\obj\Debug\Domain.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\Domain\obj\Debug\Domain.pdb

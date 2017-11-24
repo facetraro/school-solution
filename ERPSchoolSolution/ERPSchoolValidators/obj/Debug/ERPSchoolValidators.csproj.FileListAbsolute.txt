@@ -1,0 +1,9 @@
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\ERPSchoolValidators\bin\Debug\ERPSchoolValidators.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\ERPSchoolValidators\bin\Debug\ERPSchoolValidators.pdb
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\ERPSchoolValidators\bin\Debug\Domain.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\ERPSchoolValidators\bin\Debug\Exceptions.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\ERPSchoolValidators\bin\Debug\Domain.pdb
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\ERPSchoolValidators\bin\Debug\Exceptions.pdb
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\ERPSchoolValidators\obj\Debug\ERPSchoolValidators.csprojResolveAssemblyReference.cache
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\ERPSchoolValidators\obj\Debug\ERPSchoolValidators.dll
+C:\Users\Fede\Documents\Oblidiseñosetiembre\ERPSchoolSolution\ERPSchoolValidators\obj\Debug\ERPSchoolValidators.pdb
